@@ -147,20 +147,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2017/201712/frame_YAF3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201801/base_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/frame_YAF3/">PHP_yaf框架 (3)</a>
+      <a class="article-title" href="/2018/201801/base_JS/">JavaScript_基础 (1)</a>
     </h1>
   
 
         
-        <a href="/2017/201712/frame_YAF3/" class="archive-article-date">
-  	<time datetime="2017-12-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2018/201801/base_JS/" class="archive-article-date">
+  	<time datetime="2018-01-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
 </a>
         
       </header>
@@ -170,17 +170,102 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="路由组件"><a href="#路由组件" class="headerlink" title="路由组件"></a>路由组件</h3><pre><code>路由组件有两个部分：路由器(Yaf_Router)和路由协议(Yaf_Route_Abstract).
-</code></pre><h4 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h4><pre><code>默认：Yaf_Router 
-路由器主要负责解析一个请求并且决定什么module、controller、action被请求；
-它同时也定义了一种方法来实现用户自定义路由，这也使得它成为最重要的一个MVC组组件.
-路由器主要负责管理和运行路由链,它根据路由协议栈倒序依次调用各个路由协议, 一直到某一个路由协议返回成功以后, 就匹配成功.
-</code></pre><h4 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h4><pre><code>默认：Yaf_Route_Abstract
-路由协议事实上主要负责匹配我们预先定义好的路由协议，
-默认是基于HTTP路由的, 它期望一个请求是HTTP请求并且请求对象是使用Yaf_Request_Http
+        <h2 id="JavaScript数组"><a href="#JavaScript数组" class="headerlink" title="JavaScript数组"></a>JavaScript数组</h2><h3 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h3><ul>
+<li>空数组<br>  var arr = new Array();</li>
+<li>指定长度数组<br>  var arr = new Array(Size);</li>
+<li>指定元素数组<br>  var arr = new Array(元素1, 元素2, …, 元素n);</li>
+<li>单维数组<br>  var arr = [元素1, 元素2, …, 元素n];</li>
+<li>多维数组<br>  var arr = new Array([数组序列1], [数组序列2], [数组序列n]);</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/201801/base_JS/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/radix_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/radix_SORT/">基数排序_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/radix_SORT/" class="archive-article-date">
+  	<time datetime="2018-01-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>透过键值的部份资讯，将要排序的元素分配至某些“桶”中，藉以达到排序的作用
+
+第一步、首先根据个位数的数值，在走访数值（从前到后走访，后面步骤相同）时将它们分配至编号0到9的桶子中
+第二步、接下来将这些桶子中的数值重新串接起来
+第三步、根据十位数的数值，在走访数值（从前到后走访，后面步骤相同）时将它们分配至编号0到9的桶子中
+第四步、接下来将这些桶子中的数值重新串接起来
+第五步、根据百位数的数值，在走访数值（从前到后走访，后面步骤相同）时将它们分配至编号0到9的桶子中：
+第六步、接下来将这些桶子中的数值重新串接起来
 </code></pre>
         
-          <a class="article-more-a" href="/2017/201712/frame_YAF3/#more">more >></a>
+          <a class="article-more-a" href="/2018/201801/radix_SORT/#more">more >></a>
         
       
 
@@ -194,7 +279,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">YAF</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -204,7 +289,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/frame_YAF3/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201801/radix_SORT/">展开全文 >></a>
         </p>
       
 
@@ -234,20 +319,20 @@
 
 
   
-    <article id="post-2017/201712/frame_YAF2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201801/merge_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/frame_YAF2/">PHP_yaf框架 (2)</a>
+      <a class="article-title" href="/2018/201801/merge_SORT/">归并排序_排序</a>
     </h1>
   
 
         
-        <a href="/2017/201712/frame_YAF2/" class="archive-article-date">
-  	<time datetime="2017-12-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
+        <a href="/2018/201801/merge_SORT/" class="archive-article-date">
+  	<time datetime="2018-01-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
 </a>
         
       </header>
@@ -257,9 +342,10 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">+ public</span><br><span class="line">    |- index.php                //入口文件</span><br><span class="line">    |- .htaccess                //重写规则    </span><br><span class="line">    |+ css</span><br><span class="line">    |+ img</span><br><span class="line">    |+ js</span><br><span class="line">+ conf</span><br><span class="line">    |- application.ini          //配置文件   </span><br><span class="line">+ application</span><br><span class="line">    |+ controllers</span><br><span class="line">        |- Index.php            //默认控制器</span><br><span class="line">    |+ views    </span><br><span class="line">    |   + index                 //控制器</span><br><span class="line">            |- index.phtml      //默认视图</span><br><span class="line">|+ modules                      //其他模块</span><br><span class="line">|+ library                      //本地类库</span><br><span class="line">|+ models                       //model目录</span><br><span class="line">|+ plugins                      //插件目录</span><br></pre></td></tr></table></figure>
+        <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>就是利用归并（合并）的思想实现的排序方法。它的原理是假设初始序列含有 n 个元素，则可以看成是 n 个有序的子序列，每个子序列的长度为 1，然后两两归并，得到 ⌈ n / 2⌉ （⌈ x ⌉ 表示不小于 x 的最小整数）个长度为 2 或 1 的有序序列；再两两归并，······，如此重复，直至得到一个长度为 n 的有序序列为止，这种排序方法就成为 2 路归并排序
+</code></pre>
         
-          <a class="article-more-a" href="/2017/201712/frame_YAF2/#more">more >></a>
+          <a class="article-more-a" href="/2018/201801/merge_SORT/#more">more >></a>
         
       
 
@@ -273,7 +359,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">YAF</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -283,7 +369,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/frame_YAF2/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201801/merge_SORT/">展开全文 >></a>
         </p>
       
 
@@ -313,20 +399,20 @@
 
 
   
-    <article id="post-2017/201712/frame_YAF" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201801/quick_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/frame_YAF/">PHP_yaf框架 (1)</a>
+      <a class="article-title" href="/2018/201801/quick_SORT/">交换排序_排序</a>
     </h1>
   
 
         
-        <a href="/2017/201712/frame_YAF/" class="archive-article-date">
-  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
+        <a href="/2018/201801/quick_SORT/" class="archive-article-date">
+  	<time datetime="2018-01-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
 </a>
         
       </header>
@@ -336,29 +422,512 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于yaf"><a href="#关于yaf" class="headerlink" title="关于yaf"></a>关于yaf</h2><pre><code>Yaf是一个C语言编写的PHP框架
-</code></pre><h2 id="yaf特点"><a href="#yaf特点" class="headerlink" title="yaf特点"></a>yaf特点</h2><ul>
-<li>优点<ul>
-<li>用C语言开发的PHP框架, 相比原生的PHP, 几乎不会带来额外的性能开销</li>
-<li>所有的框架类, 不需要编译, 在PHP启动的时候加载, 并常驻内存.</li>
-<li>更短的内存周转周期, 提高内存利用率, 降低内存占用率.</li>
-<li>灵巧的自动加载. 支持全局和局部两种加载规则, 方便类库共享.</li>
-<li>高性能的视图引擎.</li>
-<li>高度灵活可扩展的框架, 支持自定义视图引擎, 支持插件, 支持自定义路由等等.</li>
-<li>内建多种路由, 可以兼容目前常见的各种路由协议.</li>
-<li>强大而又高度灵活的配置文件支持. 并支持缓存配置文件, 避免复杂的配置结构带来的性能损失.</li>
-<li>在框架本身,对危险的操作习惯做了禁止.</li>
-<li>更快的执行速度, 更少的内存占用.</li>
-<li>自己的理解：性能高</li>
+        <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>通过一趟排序将待排记录分割成独立的两部分，其中一部分的关键字均比另一部分记录的关键字小，则可分别对这两部分记录继续进行快速排序，整个排序过程可以递归进行，以达到整个序列有序的目的。
+选择一个基准元素，通常选择第一个元素或者最后一个元素。通过一趟扫描，将待排序列分成两部分，一部分比基准元素小，一部分大于等于基准元素。此时基准元素在其排好序后的正确位置，然后再用同样的方法递归地排序划分的两部分
+</code></pre>
+        
+          <a class="article-more-a" href="/2018/201801/quick_SORT/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/quick_SORT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/bubble_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/bubble_SORT/">交换排序_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/bubble_SORT/" class="archive-article-date">
+  	<time datetime="2018-01-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止
+</code></pre>
+        
+          <a class="article-more-a" href="/2018/201801/bubble_SORT/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/bubble_SORT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/select_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/select_SORT/">选择排序_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/select_SORT/" class="archive-article-date">
+  	<time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>通过 n - i 次关键字间的比较，从 n - i + 1 个记录中选出关键字最小的记录，并和第 i （1 &lt;= i &lt;= n） 个记录交换，执行n-1趟 后就完成了记录序列的排序
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/201712/select_SORT/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/select_SORT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/heap_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/heap_SORT/">选择排序_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/heap_SORT/" class="archive-article-date">
+  	<time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>将待排序的序列构造成一个大根堆。此时，整个序列的最大值就是堆顶的根节点。将它移走（其实就是将其与堆数组的末尾元素交换，此时末尾元素就是最大值），然后将剩余的 n - 1 个序列重新构造成一个堆，这样就会得到 n 个元素中的次小的值。如此反复执行，便能得到一个有序序列了
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/201712/heap_SORT/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/heap_SORT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/insert_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/insert_SORT/">插入排序_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/insert_SORT/" class="archive-article-date">
+  	<time datetime="2017-12-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><h4 id="算法引入"><a href="#算法引入" class="headerlink" title="算法引入"></a>算法引入</h4><pre><code>扑克牌是我们几乎每个人都玩过的游戏。平时我们开始的时候一般都是一个人发牌，其他人都是一边摸牌，一边理牌，假如你摸上的第一张牌是 5，第二张牌是 3，自然而然的我们把 3 插到 5 的前面；第三张牌是 4，查到 3 和 5 的中间；第四张牌是 6，放到 5 的后面；第五张牌是 2，插到 3 的前面；……。最后当我们摸完所有的牌时，手上的牌都是从小到大（点数）排好序的
+</code></pre><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>直接插入排序的基本思想是 ： 每次从无序表中取出第一个元素，把它插入到有序表的合适位置，使有序表仍然有序。
+第一趟比较前两个数，然后把第二个数按大小插入到有序表中； 第二趟把第三个数据与前两个数从后向前扫描，把第三个数按大小插入到有序表中；依次进行下去，进行了(n-1)趟扫描以后就完成了整个排序过程。
+直接插入排序是由两层嵌套循环组成的。外层循环标识并决定待比较的数值。内层循环为待比较数值确定其最终位置。直接插入排序是将待比较的数值与它的前一个数值进行比较，所以外层循环是从第二个数值开始的。当前一数值比待比较数值大的情况下继续循环比较，直到找到比待比较数值小的并将待比较数值置入其后一位置，结束该次循环。
+插入排序的基本方法是：每步将一个待排序的记录按其关键字的大小插到前面已经排序的序列中的适当位置，直到全部记录插入完毕为止
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/201712/insert_SORT/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/insert_SORT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/shell_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/shell_SORT/">插入排序_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/shell_SORT/" class="archive-article-date">
+  	<time datetime="2017-12-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>记录按下标的一定增量分组，对每一组使用 直接插入排序 ，随着增量逐渐减少，每组包含的关键字越来越多，当增量减少至 1 时，整个序列恰好被分成一组，算法便终止
+初次取序列的一半为增量，以后每次减半，直到增量为1。
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/201712/shell_SORT/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/shell_SORT/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/arithmetic_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/arithmetic_SORT/">算法_排序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/arithmetic_SORT/" class="archive-article-date">
+  	<time datetime="2017-12-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    		
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><pre><code>排序有内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存
+</code></pre><h3 id="内部排序"><a href="#内部排序" class="headerlink" title="内部排序"></a>内部排序</h3><ul>
+<li>直接插入排序<ul>
+<li>基本思想：将一个记录插入到已排序好的有序表中，从而得到一个新，记录数增1的有序表。即：先将序列的第1个记录看成是一个有序的子序列，然后从第2个记录逐个进行插入，直至整个序列有序为止</li>
+<li>详情：<a href="/insert_SORT/">Straight Insertion Sort</a></li>
 </ul>
 </li>
-<li>缺点<ul>
-<li>C的扩展，致命性错误对C的要求很高</li>
+<li>希尔排序<ul>
+<li>基本思想：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</li>
+<li>详情：<a href="/shell_SORT/">Shell`s Sort</a></li>
+</ul>
+</li>
+<li>简单选择排序<ul>
+<li>基本思想：在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小（或者最大）的与第2个位置的数交换，依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止</li>
+<li>详情：<a href="/select_SORT/">Simple Selection Sort</a></li>
 </ul>
 </li>
 </ul>
         
-          <a class="article-more-a" href="/2017/201712/frame_YAF/#more">more >></a>
+          <a class="article-more-a" href="/2017/201712/arithmetic_SORT/#more">more >></a>
         
       
 
@@ -372,7 +941,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">YAF</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -382,404 +951,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/frame_YAF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/plugIn_JS2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/plugIn_JS2/">JS_插件(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/plugIn_JS2/" class="archive-article-date">
-  	<time datetime="2017-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    		
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用过的前端插件"><a href="#使用过的前端插件" class="headerlink" title="使用过的前端插件"></a>使用过的前端插件</h2><pre><code>下边写的都是一些自己使用过的插件，只是简单的写了一个例子，具体的还是要再看文档。
-</code></pre>
-        
-          <a class="article-more-a" href="/2017/201712/plugIn_JS2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/plugIn_JS2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/plugIn_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/plugIn_JS/">JS_插件(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/plugIn_JS/" class="archive-article-date">
-  	<time datetime="2017-12-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    		
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用过的前端插件"><a href="#使用过的前端插件" class="headerlink" title="使用过的前端插件"></a>使用过的前端插件</h2><pre><code>下边写的都是一些自己使用过的插件，只是简单的写了一个例子，具体的还是要再看文档。
-</code></pre>
-        
-          <a class="article-more-a" href="/2017/201712/plugIn_JS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/plugIn_JS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/timeStamp_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/timeStamp_JS/">JS_时间相关</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/timeStamp_JS/" class="archive-article-date">
-  	<time datetime="2017-12-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-12</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    		
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="页面上需要JS操作时间相关"><a href="#页面上需要JS操作时间相关" class="headerlink" title="页面上需要JS操作时间相关"></a>页面上需要JS操作时间相关</h1><h2 id="计算两个日期之间的天数"><a href="#计算两个日期之间的天数" class="headerlink" title="计算两个日期之间的天数"></a>计算两个日期之间的天数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> daysBetween(DateOne,DateTwo)  </span><br><span class="line">&#123;   </span><br><span class="line">    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf (<span class="string">'-'</span>));  </span><br><span class="line">    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf (<span class="string">'-'</span>)+1);  </span><br><span class="line">    var OneYear = DateOne.substring(0,DateOne.indexOf (<span class="string">'-'</span>));  </span><br><span class="line">  </span><br><span class="line">    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf (<span class="string">'-'</span>));  </span><br><span class="line">    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf (<span class="string">'-'</span>)+1);  </span><br><span class="line">    var TwoYear = DateTwo.substring(0,DateTwo.indexOf (<span class="string">'-'</span>));  </span><br><span class="line">  </span><br><span class="line">    var cha=((Date.parse(OneMonth+<span class="string">'/'</span>+OneDay+<span class="string">'/'</span>+OneYear)- Date.parse(TwoMonth+<span class="string">'/'</span>+TwoDay+<span class="string">'/'</span>+TwoYear))/86400000);   </span><br><span class="line">    <span class="built_in">return</span> Math.abs(cha);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/201712/timeStamp_JS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/timeStamp_JS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/function_PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/function_PHP/">PHP_封装函数</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/function_PHP/" class="archive-article-date">
-  	<time datetime="2017-12-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    		
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="PHP封装函数"><a href="#PHP封装函数" class="headerlink" title="PHP封装函数"></a>PHP封装函数</h2><h3 id="数组中value去空"><a href="#数组中value去空" class="headerlink" title="数组中value去空"></a>数组中value去空</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* <span class="variable">$param</span>[array,要去除value值中空格的数组]</span><br><span class="line">* <span class="variable">$isMoreArray</span>[bool,是否为多维数组]</span><br><span class="line">*/</span><br><span class="line"><span class="keyword">function</span> trimEmptyValue(<span class="variable">$param</span>, <span class="variable">$isMoreArray</span>) &#123;</span><br><span class="line">    foreach (<span class="variable">$param</span> as <span class="variable">$aKey</span>=&gt;<span class="variable">$aValue</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!is_array(<span class="variable">$aValue</span>)) &#123;</span><br><span class="line">            <span class="variable">$param</span>[<span class="variable">$aKey</span>] = trim(<span class="variable">$aValue</span>);</span><br><span class="line">        &#125; elseif (<span class="variable">$isMoreArray</span>) &#123;</span><br><span class="line">            foreach (<span class="variable">$aValue</span> as <span class="variable">$bKey</span>=&gt;<span class="variable">$bValue</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!is_array(<span class="variable">$bValue</span>)) &#123;</span><br><span class="line">                    <span class="variable">$param</span>[<span class="variable">$aKey</span>][<span class="variable">$bKey</span>] = trim(<span class="variable">$bValue</span>);</span><br><span class="line">                &#125; elseif (<span class="variable">$isMoreArray</span>) &#123;</span><br><span class="line">                    foreach (<span class="variable">$bValue</span> as <span class="variable">$cKey</span>=&gt;<span class="variable">$cValue</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (!is_array(<span class="variable">$cValue</span>)) &#123;</span><br><span class="line">                            <span class="variable">$param</span>[<span class="variable">$aKey</span>][<span class="variable">$bKey</span>] = trim(<span class="variable">$cValue</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/201712/function_PHP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/function_PHP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/batchHandle_PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/batchHandle_PHP/">PHP_批量取数据</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/batchHandle_PHP/" class="archive-article-date">
-  	<time datetime="2017-12-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    		
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="从MySQL数据库中批量取数据"><a href="#从MySQL数据库中批量取数据" class="headerlink" title="从MySQL数据库中批量取数据"></a>从MySQL数据库中批量取数据</h2><h3 id="以id为维度进行批量取数据"><a href="#以id为维度进行批量取数据" class="headerlink" title="以id为维度进行批量取数据"></a>以id为维度进行批量取数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">取最小id和最大id.<span class="string">"SELECT MIN(id) minId, MAX(id) maxId FROM 表名"</span></span><br><span class="line"><span class="variable">$startId</span> = <span class="variable">$minId</span>;</span><br><span class="line"><span class="variable">$tempSize</span> = 1000;</span><br><span class="line"><span class="variable">$tempSql</span> = <span class="string">"SELECT * FROM 表名 WHERE id &gt;= ? AND id &lt; ?"</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$startId</span> &lt;= <span class="variable">$maxId</span>&gt;) &#123;</span><br><span class="line">    <span class="variable">$tempBind</span> = [];</span><br><span class="line">    <span class="variable">$tempBind</span>[0] = <span class="variable">$startId</span>;       </span><br><span class="line">    <span class="variable">$tempId</span> = <span class="variable">$startId</span> + <span class="variable">$tempSize</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$tempId</span> &gt; <span class="variable">$maxId</span>&gt;) &#123;</span><br><span class="line">        <span class="variable">$tempBind</span>[1] = <span class="variable">$maxId</span> + 1;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="variable">$tempBind</span>[1] = <span class="variable">$tempId</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //pdo绑定参数</span><br><span class="line">    <span class="variable">$tempRes</span> = <span class="variable">$pdo</span>-&gt;fetchAll(<span class="variable">$tempSql</span>, <span class="variable">$tempBind</span>);</span><br><span class="line"></span><br><span class="line">    <span class="variable">$startId</span> = <span class="variable">$tempId</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/201712/batchHandle_PHP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/batchHandle_PHP/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/201712/arithmetic_SORT/">展开全文 >></a>
         </p>
       
 
@@ -811,7 +983,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -910,15 +1082,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">YAF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">YAF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
               </li>
              
               <li class="article-tag-list-item">

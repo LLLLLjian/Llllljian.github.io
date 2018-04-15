@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/201802/frame_YII15/index.html">
 <meta property="og:site_name" content="Llllljian_blog">
 <meta property="og:description" content="查询生成器查询生成器(QueryBuilder)用于创建动态的查询语句">
-<meta property="og:updated_time" content="2018-04-07T05:29:26.511Z">
+<meta property="og:updated_time" content="2018-04-07T06:36:06.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP_Yii框架 (15)">
 <meta name="twitter:description" content="查询生成器查询生成器(QueryBuilder)用于创建动态的查询语句">
@@ -230,6 +230,7 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$query</span>-&gt;from(<span class="string">'user'</span>);</span><br><span class="line">// 等同于 </span><br><span class="line">SELECT * FROM `user`</span><br><span class="line"></span><br><span class="line"><span class="variable">$query</span>-&gt;from([<span class="string">'public.user u'</span>, <span class="string">'public.post p'</span>]);</span><br><span class="line">// 等同于：</span><br><span class="line"><span class="variable">$query</span>-&gt;from(<span class="string">'public.user u, public.post p'</span>);</span><br><span class="line">// 等同于 </span><br><span class="line"><span class="variable">$query</span>-&gt;from([<span class="string">'u'</span> =&gt; <span class="string">'public.user'</span>, <span class="string">'p'</span> =&gt; <span class="string">'public.post'</span>]);</span><br><span class="line">// 等同于 </span><br><span class="line">SELECT * FROM `public.user u, public.post p`</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>WHERE</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 等同于 (<span class="built_in">type</span> = 1) AND (status = 2).  </span><br><span class="line">[<span class="string">'type'</span> =&gt; 1, <span class="string">'status'</span> =&gt; 2]   </span><br><span class="line"></span><br><span class="line">// 等同于 (id IN (1, 2, 3)) AND (status = 2)  </span><br><span class="line">[<span class="string">'id'</span> =&gt; [1, 2, 3], <span class="string">'status'</span> =&gt; 2]   </span><br><span class="line"></span><br><span class="line">// 等同于 status IS NULL  </span><br><span class="line">[<span class="string">'status'</span> =&gt; null]</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>字符串格式，例如：’status=1’</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$query</span>-&gt;<span class="built_in">where</span>(<span class="string">'status=1'</span>);</span><br><span class="line"></span><br><span class="line">// or use parameter binding to <span class="built_in">bind</span> dynamic parameter values</span><br><span class="line"><span class="variable">$query</span>-&gt;<span class="built_in">where</span>(<span class="string">'status=:status'</span>, [<span class="string">':status'</span> =&gt; <span class="variable">$status</span>]);</span><br><span class="line"><span class="variable">$query</span>-&gt;<span class="built_in">where</span>(<span class="string">'status=:status'</span>)-&gt;addParams([<span class="string">':status'</span> =&gt; <span class="variable">$status</span>]);</span><br><span class="line"></span><br><span class="line">// raw SQL using MySQL YEAR() <span class="keyword">function</span> on a date field</span><br><span class="line"><span class="variable">$query</span>-&gt;<span class="built_in">where</span>(<span class="string">'YEAR(somedate) = 2015'</span>);</span><br></pre></td></tr></table></figure>
@@ -242,7 +243,11 @@
 <li><p>and  </p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'and'</span>, <span class="string">'id=1'</span>, <span class="string">'id=2'</span>]</span><br><span class="line">// 等同于</span><br><span class="line">id=1 AND id=2</span><br><span class="line"></span><br><span class="line">[<span class="string">'and'</span>, <span class="string">'type=1'</span>, [<span class="string">'or'</span>, <span class="string">'id=1'</span>, <span class="string">'id=2'</span>]]</span><br><span class="line">// 等同于</span><br><span class="line"><span class="built_in">type</span>=1 AND (id=1 OR id=2)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>or ：类似and</p>
+<li><p>or</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 等同于 `(<span class="built_in">type</span> IN (7, 8, 9) OR (id IN (1, 2, 3)))`  </span><br><span class="line">[<span class="string">'or'</span>, [<span class="string">'type'</span> =&gt; [7, 8, 9]], [<span class="string">'id'</span> =&gt; [1, 2, 3]]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>not</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 等同于 `NOT (attribute IS NULL)`</span><br><span class="line">[<span class="string">'not'</span>, [<span class="string">'attribute'</span> =&gt; null]]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>between</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'between'</span>, <span class="string">'id'</span>, 1, 10] </span><br><span class="line">// 等同于</span><br><span class="line">id BETWEEN 1 AND 10</span><br></pre></td></tr></table></figure>
@@ -261,12 +266,12 @@
 </li>
 <li>not like</li>
 <li>or not like</li>
-<li>exists</li>
-<li>not exists</li>
-<li><blockquote>
-<p>, &lt;=</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'&gt;'</span>, <span class="string">'age'</span>, 10]</span><br><span class="line">// 等同于</span><br><span class="line">age &gt; 10</span><br></pre></td></tr></table></figure>
-</blockquote>
+<li><p>exists</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 等同于 EXISTS (SELECT <span class="string">"id"</span> FROM <span class="string">"users"</span> WHERE <span class="string">"active"</span>=1)  </span><br><span class="line">[<span class="string">'exists'</span>, (new Query())-&gt;select(<span class="string">'id'</span>)-&gt;from(<span class="string">'users'</span>)-&gt;<span class="built_in">where</span>([<span class="string">'active'</span> =&gt; 1])]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>not exists</p>
+</li>
+<li>>, &lt;=  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'&gt;'</span>, <span class="string">'age'</span>, 10]</span><br><span class="line">// 等同于</span><br><span class="line">age &gt; 10</span><br><span class="line"></span><br><span class="line">// 等同于 `id != 10`  </span><br><span class="line">[<span class="string">'!='</span>, <span class="string">'id'</span>, 10]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -308,12 +313,19 @@
 </li>
 </ul>
 <h4 id="查询方法"><a href="#查询方法" class="headerlink" title="查询方法"></a>查询方法</h4><ul>
-<li>all() ：将返回一个由行组成的数组，每一行是一个由名称和值构成的关联数组（译者注：省略键的数组称为索引数组）。</li>
-<li>one() ：返回结果集的第一行。</li>
-<li>column() ：返回结果集的第一列。</li>
-<li>scalar() ：返回结果集的第一行第一列的标量值。</li>
-<li>exists() ：返回一个表示该查询是否包结果集的值。</li>
-<li>count() ：返回 COUNT 查询的结果。</li>
+<li>one(): 根据查询结果返回查询的第一条记录。  </li>
+<li>all(): 根据查询结果返回所有记录。  </li>
+<li>count(): 返回记录的数量。  </li>
+<li>sum(): 返回指定列的总数。  </li>
+<li>average(): 返回指定列的平均值。  </li>
+<li>min(): 返回指定列的最小值。  </li>
+<li>max(): 返回指定列的最大值。  </li>
+<li>scalar(): 返回查询结果的第一行中的第一列的值。  </li>
+<li>column(): 返回查询结果中的第一列的值。  </li>
+<li>exists(): 返回一个值，该值指示查询结果是否有数据。  </li>
+<li>asArray(): 以数组的形式返回每条记录。</li>
+<li>with(): 该查询应执行的关系列表。  </li>
+<li>indexBy(): 根据索引的列的名称查询结果。   </li>
 </ul>
 
       
@@ -535,15 +547,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">YAF</a>
+                <a href="javascript:void(0)" class="js-tag color3">JQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,15 +555,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JQ</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">COMMON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">YAF</a>
               </li>
             
             <div class="clearfix"></div>

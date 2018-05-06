@@ -75,5 +75,46 @@ toc: true
     * 支持https、http
 - 代码修改
     ```bash
-        http://www.solves.com.cn/search-fulltext-tag-HDwiki--all-0-within-time-desc-1-2.html
+        // control/admin_friendlink.php old
+        if (substr($flink['url'],0,7) != "http://") {
+            $flink['url'] = "http://".$flink['url']; 
+        } 
+
+        // control/admin_friendlink.php new
+        if (substr($flink['url'],0,4) != "http") {
+            if (substr($flink['url'],0,5) =="https") {
+                $flink['url'] = "https://".$flink['url'];
+            } else {
+                $flink['url'] = "http://".$flink['url']; 
+            }
+        }
+
+        // control/admin_channel.php old
+        if (substr($channel['url'],0,7) != "http://") {
+            $channel['url'] = "http://".$channel['url'];
+        }
+
+        // control/admin_channel.php new
+        if (substr($channel['url'],0,4) != "http") {
+            if (substr($channel['url'],0,5) =="https") {
+                $channel['url'] = "https://".$channel['url'];
+            } else {
+                $channel['url'] = "http://".$channel['url']; 
+            }
+        }
+    ```
+
+#### No Aceess!注意敏感词修改
+- 场景
+    *  某些action可能有敏感词,会导致访问action失败
+- 修改结果
+    * 修改model\hdwiki.class.php中的逻辑
+- 代码修改
+    ```bash
+        // model\hdwiki.class.php\checksecurity
+        // add 如果当前登录用户不是超级管理员组 才进行敏感词验证
+        // 弊端:非管理员用户可能无法使用某些方法
+        if ($this->user['group'] != 4) {
+            ...
+        }
     ```

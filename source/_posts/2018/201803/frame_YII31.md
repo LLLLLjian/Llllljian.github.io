@@ -83,3 +83,42 @@ toc: true
         // 可以结合header跳转,当发生错误的时候跳转回之前的页面
         header('Refresh:3,Url='.$productUrl);
     ```
+
+#### 返回上一页
+- 场景
+    * xxx/make页面是从xxx/index页面点击跳转过去的,想在make页面添加一个返回上一页的链接
+- 优劣分析
+    * 1可以在任意一个action中写remember,根据不同的name去跳转.但命名注意不要重复
+    * 2如果直接访问xxx/make,链接会失效
+    * 3和4 相当于把url写死,后期要改的话可能比较费事
+    * 5如果直接访问xxx/make,链接会失效
+- 源码分析
+    ```bash
+        public function actionIndex()
+        {
+            ...
+            // 1.remember 记住当前url, 名称为xxx_index
+            Url::remember('', 'xxx_index');
+            ...
+        }
+
+        public function  actionMake()
+        {
+            ...
+            $url1 = Url::previous("xxx_index");
+            echo '<a href="'.$url1.'">返回上一页1</a>';
+
+            $url2 = Yii::$app->request->getReferrer();
+            echo '<a href="'.$url2.'">返回上一页2</a>';
+
+            $url3 = Url::to(['xxx/index']);
+            echo '<a href="'.$url3.'">返回上一页3</a>';
+
+            $url4 = Url::toRoute(['xxx/index']);
+            echo '<a href="'.$url4.'">返回上一页4</a>';
+
+            $url5 = "javascript:history.go(-1)";
+            echo '<a href="'.$url5.'">返回上一页5</a>';
+            ...
+        }
+    ```

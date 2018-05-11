@@ -25,6 +25,12 @@ toc: true
             {
                 public $basePath = '@webroot';
                 public $baseUrl = '@web';
+                public $jsOptions = [
+                    // 设置js加载的位置 
+                    // 加载在head头里 
+                    // 原因 : 页面上写jquery的时候会报$ is not defined
+                    'position' => \yii\web\View::POS_HEAD,
+                ];
                 public $css = [
                     'css/site.css',
                 ];

@@ -109,56 +109,85 @@ toc: true
 
 #### 使用实例
 - 显示当前时间
-	* date
-	* 2018年 04月 11日 星期三 15:33:28 CST
-	* date '+%c'
-	* 2018年04月11日 星期三 15时33分29秒
-	* date '+%D'
-	* 04/11/18
-	* date '+%x'
-	* 2018年04月11日
-	* date '+%T'
-	* 15:33:29
-	* date '+%X'
-	* 15时33分29秒
+	```bash
+		date
+		2018年 04月 11日 星期三 15:33:28 CST
+		
+		date '+%c'
+		*2018年04月11日 星期三 15时33分29秒
+
+		date '+%D'
+		04/11/18
+
+		date '+%x'
+		2018年04月11日
+
+		date '+%T'
+		15:33:29
+		
+		date '+%X'
+		15时33分29秒
+	```
 - 显示日期和设定时间
-	* date '+%c'
-	* 2018年04月11日 星期三 15时41分36秒
-	* date --date 08:42:00
-	* 2018年 04月 11日 星期三 08:42:00 CST
-	* date '+%c' --date 08:45:00
-	* 2018年04月11日 星期五 08时45分00秒
+	```bash
+		date '+%c'
+		2018年04月11日 星期三 15时41分36秒
+
+		date --date 08:42:00
+		2018年 04月 11日 星期三 08:42:00 CST
+
+		date '+%c' --date 08:45:00
+		2018年04月11日 星期五 08时45分00秒
+	```
 - date -d参数使用
-	* date -d "nov 22"
-	* 2018年 11月 22日 星期四 00:00:00 CST
-	* date -d '2 weeks'
-	* 2018年 04月 25日 星期三 15:44:42 CST
-	* date -d 'next monday'
-	* 2018年 04月 16日 星期一 00:00:00 CST
-	* date -d next-day +%Y%m%d
-	* 20180412
-	* date -d tomorrow +%Y%m%d
-	* 20180412
-	* date -d last-day +%Y%m%d
-	* 20180410
-	* date -d yesterday +%Y%m%d
-	* 20180410
-	* date -d last-month +%Y%m
-	* 201803
-	* date -d next-month +%Y%m
-	* 201805
-	* date -d '30 days ago'
-	* 2018年 03月 11日 星期日 15:44:42 CST
-	* date -d 'dec 14 -2 weeks'
-	* 2018年 11月 30日 星期五 00:00:00 CST
-	* date -d '-100 days'
-	* 2018年 01月 01日 星期一 15:44:42 CST
-	* date -d '50 days'
-	* 2018年 06月 01日 星期五 15:44:43 CST
+	```bash
+		date -d "nov 22"
+		2018年 11月 22日 星期四 00:00:00 CST
+
+		date -d '2 weeks'
+		2018年 04月 25日 星期三 15:44:42 CST
+
+		date -d 'next monday'
+		2018年 04月 16日 星期一 00:00:00 CST
+
+		date -d next-day +%Y%m%d
+		20180412
+
+		date -d tomorrow +%Y%m%d
+		20180412
+
+		date -d last-day +%Y%m%d
+		20180410
+
+		date -d yesterday +%Y%m%d
+		20180410
+
+		date -d last-month +%Y%m
+		201803
+
+		date -d next-month +%Y%m
+		201805
+
+		date -d '30 days ago'
+		2018年 03月 11日 星期日 15:44:42 CST
+
+		date -d 'dec 14 -2 weeks'
+		2018年 11月 30日 星期五 00:00:00 CST
+
+		date -d '-100 days'
+		2018年 01月 01日 星期一 15:44:42 CST
+
+		date -d '50 days'
+		2018年 06月 01日 星期五 15:44:43 CST
+	```
 - 显示月份和日数
-    * date  '+%B %d'
-    * 四月 11
+    ```bash
+		date  '+%B %d'
+		四月 11
+	```
 - 显示时间后跳行，再显示目前日期 
-    * date '+%T%n%D'
-    * 15:55:22
-    * 04/11/18
+	```bash
+    	date '+%T%n%D'
+    	15:55:22
+    	04/11/18
+	```

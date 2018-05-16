@@ -47,4 +47,25 @@ toc: true
         * 在没有额外参数的情况下,只能删除空的目录
 
 #### 关于执行文件路径的变量:$PATH
+- 不同身份用户预设的PATH不同，预设能够随意执行的指令也不同；  
+- PATH是可以修改的；  
+- 使用绝对路径或相对路径直接指定某个命令的文件名进行执行，会比查找PATH正确性更高；  
+- 命令应该要放到正确的目录下，执行才会比较方便；  
+- 本地目录(.)最好不要放到PATH当中[为了安全起见,防止有人恶意操作命令]
+```bash
+    执行命令 ls  
+    执行命令 /bin/ls 输出结果一致
+
+    echo $PATH  
+    /usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/llllljian/.local/bin:/home/llllljian/bin
+
+    分析一下当前执行文件路径
+    不同目录中间用冒号隔开,目录是有顺序之分的
+    /usr/local/bin: 用户自己编译的
+    /usr/bin: 系统repository提供的应用程序
+    /usr/local/sbin: 用户自己编译的
+    /usr/sbin: 放置一些用户安装的系统管理的必备程式
+    /home/llllljian/.local/bin: 当前用户家目录下本地的bin
+    /home/llllljian/bin  当前用户家目录下的bin
+```
 

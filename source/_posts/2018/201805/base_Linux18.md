@@ -38,44 +38,87 @@ toc: true
             lrwxrwxrwx 1 llllljian llllljian    5 5月  16 22:28 3_2.txt -> 3.txt
             -rwxrwxrwx 1 root      root         0 5月  16 21:49 3.txt
         ```
-- 自定义回收站功能
-    ```bash
-        ~/.bashrc
+    * 自定义回收站1
+        ```bash
+            ~/.bashrc
 
-        ## 伪删除 start
-        #创立一个目录作为回收站，这里运用的是用户家目录下的.trash目录
-        mkdir -p ~/.trash
-        #命令别名 rm改动为trash，经过将rm命令别名值trash来完成把rm改形成删除文件至回收站
-        alias rm=trash
-        # rl命令显现回收站中的文件
-        alias rl='ls ~/.trash'
-        # ur命令找回回收站中的文件
-        alias ur=undelfile
-        alias realdel=cleartrash
+            ## 伪删除 start
 
-        #这个函数的作用是找回回收站下的文件
-        undelfile()
-        {
-            mv -i ~/.trash/$@ ./
-        }
+            #创立一个目录作为回收站，这里运用的是用户家目录下的.trash目录
+            mkdir -p ~/.trash
 
-        #将指定的文件挪动到指定的目录下，经过将rm命令别名值trash来完成把rm改形成删除文件至回收站
-        trash()
-        {
-            mv $@ ~/.trash/
-        }
+            #命令别名 rm改动为trash，经过将rm命令别名值trash来完成把rm改形成删除文件至回收站
+            alias rm=trash
 
-        #这个函数的作用是清空回收站目录下的一切文件
-        cleartrash()
-        {
-            read -p "clear sure?[n]" confirm
-            [ $confirm == 'y' ] || [ $confirm == 'Y' ]  && /bin/rm -rf ~/.trash/*
-        }
-        ## 伪删除 end
+            # showdel命令显现回收站中的文件
+            alias showdel='ls -Al ~/.trash'
 
-        删除文件用rm
-        删除之后可以看到~/.trash/中有刚删除的问题
-        在删除目录下,ur可以将删除文件找回
-        realdel清空回收站
-    ```
+            alias realdel=cleartrash
+
+            #将指定的文件挪动到指定的目录下，经过将rm命令别名值trash来完成把rm改形成删除文件至回收站
+            trash()
+            {
+                mv $@ ~/.trash/
+            }
+
+            #这个函数的作用是清空回收站目录下的一切文件
+            cleartrash()
+            {
+                read -p "clear sure?[n]" confirm
+                [ $confirm == 'y' ] || [ $confirm == 'Y' ]  && /bin/rm -rf ~/.trash/*
+            }
+            ## 伪删除 end
+
+            删除文件用rm
+            删除之后可以看到~/.trash/中有刚删除的问题
+            查看删除文件用showdel
+            realdel清空回收站
+        ```
+    * 自定义回收站2
+        ```bash
+            ~/.bashrc
+
+            ## 伪删除 start
+
+            # 重新定义rm
+            alias rm=lllllljianrm
+            
+            # 展示删除的文件内容
+            alias showdel='ls -al /tmp/$(date +%Y%m%d)'
+
+            # 清空伪删除的文件
+            alias realdel=llllljiandel
+
+            # 清空全部伪删除的文件及文件夹
+            alias realdel=llllljiandelAll
+
+            lllllljianrm()
+            {
+                D=/tmp/$(date +%Y%m%d);
+                mkdir -m 777 -p $D;
+                U=$(basename ~);
+                F=$(basename ~)_$(date +%s)_$@;
+                mv $@ $D/$F && echo "moved to $D ok, new filename is $F, the updater is $U"
+            }
+
+            llllljiandel()
+            {
+                read -p "确认删除吗?" confirm
+                [ $confirm == 'y' ] || [ $confirm == 'Y' ] && /bin/rm /tmp/$(date +%Y%m%d)/$(basename ~)*
+            }
+
+            llllljiandelAll()
+            {
+                read -p "确认删除全部吗?" confirm
+                [ $confirm == 'y' ] || [ $confirm == 'Y' ] && /bin/rm /tmp/$(date +%Y%m%d)/* && /bin/rmdir /tmp/$(date +%Y%m%d)
+            }
+
+            ## 伪删除 end
+
+            删除文件rm
+            查看所有删除文件showdel
+            清空自己的伪删除文件realdel
+            清空所有的伪删除文件和文件夹realdelAll
+        ```
+
 

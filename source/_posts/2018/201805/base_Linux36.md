@@ -31,7 +31,7 @@ toc: true
         * +<起始栏位>-<结束栏位>：以指定的栏位来排序，范围由起始栏位到结束栏位的前一栏位。
     * 命令实例
         ```bash
-            [llllljian@llllljian-vir 20180528 19:36:03 #151]$ cat 1.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:36:03 #151]$ cat 1.txt
             aaa:10:1.1
             ccc:30:3.3
             ddd:40:4.4
@@ -39,7 +39,7 @@ toc: true
             eee:50:5.5
             eee:50:5.5
 
-            [llllljian@llllljian-vir 20180528 19:36:08 #152]$ sort 1.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:36:08 #152]$ sort 1.txt
             aaa:10:1.1
             bbb:20:2.2
             ccc:30:3.3
@@ -47,14 +47,14 @@ toc: true
             eee:50:5.5
             eee:50:5.5
 
-            [llllljian@llllljian-vir 20180528 19:36:54 #153]$ sort -u 1.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:36:54 #153]$ sort -u 1.txt
             aaa:10:1.1
             bbb:20:2.2
             ccc:30:3.3
             ddd:40:4.4
             eee:50:5.5
 
-            [llllljian@llllljian-vir 20180528 19:38:09 #155]$ cat 2.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:38:09 #155]$ cat 2.txt
             AAA:BB:CC
             aaa:30:1.6
             ccc:50:3.3
@@ -63,7 +63,7 @@ toc: true
             eee:40:5.4
             eee:60:5.1
 
-            [llllljian@llllljian-vir 20180528 19:38:14 #156]$ sort -nk 2 -t: 2.txt 
+            [llllljian@llllljian-virtual-machine 20180528 19:38:14 #156]$ sort -nk 2 -t: 2.txt 
             AAA:BB:CC
             bbb:10:2.5
             ddd:20:4.2
@@ -72,7 +72,7 @@ toc: true
             ccc:50:3.3
             eee:60:5.1
             
-            [llllljian@llllljian-vir 20180528 19:39:08 #158]$ sort -nrk 3 -t: 2.txt 
+            [llllljian@llllljian-virtual-machine 20180528 19:39:08 #158]$ sort -nrk 3 -t: 2.txt 
             eee:40:5.4
             eee:60:5.1
             ddd:20:4.2
@@ -104,7 +104,7 @@ toc: true
         * -w<字符位置>或--check-chars=<字符位置>：指定要比较的字符。
     * 命令实例
         ```bash
-            [llllljian@llllljian-vir 20180528 19:43:56 #166]$ cat 1.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:43:56 #166]$ cat 1.txt
             aaa:10:1.1
             ccc:30:3.3
             ddd:40:4.4
@@ -112,26 +112,26 @@ toc: true
             eee:50:5.5
             eee:50:5.5
 
-            [llllljian@llllljian-vir 20180528 19:44:11 #167]$ uniq 1.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:44:11 #167]$ uniq 1.txt
             aaa:10:1.1
             ccc:30:3.3
             ddd:40:4.4
             bbb:20:2.2
             eee:50:5.5
 
-            [llllljian@llllljian-vir 20180528 19:44:50 #168]$ uniq -u 1.txt
+            [llllljian@llllljian-virtual-machine 20180528 19:44:50 #168]$ uniq -u 1.txt
             aaa:10:1.1
             ccc:30:3.3
             ddd:40:4.4
             bbb:20:2.2
 
-            [llllljian@llllljian-vir 20180528 19:44:52 #169]$ sort 1.txt | uniq -c
+            [llllljian@llllljian-virtual-machine 20180528 19:44:52 #169]$ sort 1.txt | uniq -c
             1 aaa:10:1.1
             1 bbb:20:2.2
             1 ccc:30:3.3
             1 ddd:40:4.4
             2 eee:50:5.5
 
-            [llllljian@llllljian-vir 20180528 19:45:22 #170]$ sort 1.txt | uniq -d
+            [llllljian@llllljian-virtual-machine 20180528 19:45:22 #170]$ sort 1.txt | uniq -d
             eee:50:5.5
         ```

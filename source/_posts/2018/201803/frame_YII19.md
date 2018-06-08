@@ -6,13 +6,13 @@ toc: true
 ---
 
 ### 文件上传
-    在Yii里上传文件通常使用yii\web\UploadedFile类， 它把每个上传的文件封装成 UploadedFile 对象
+    在Yii里上传文件通常使用yii\web\UploadedFile类, 它把每个上传的文件封装成 UploadedFile 对象
 
 <!-- more -->
 
 #### 单文件上传
 - 创建模型
-    ```bash
+    ```php
         namespace app\models;
 
         use yii\base\Model;
@@ -42,7 +42,7 @@ toc: true
         }
     ```
 - 视图文件
-    ```bash
+    ```php
         <?php
         use yii\widgets\ActiveForm;
         ?>
@@ -56,7 +56,7 @@ toc: true
         <?php ActiveForm::end() ?>
     ```
 - 控制器文件
-    ```bash
+    ```php
         namespace app\controllers;
 
         use Yii;
@@ -85,7 +85,7 @@ toc: true
 
 #### 多文件上传
 - 创建模型
-    ```bash
+    ```php
         namespace app\models;
 
         use yii\base\Model;
@@ -120,7 +120,7 @@ toc: true
         }
     ```
 - 视图文件
-    ```bash
+    ```php
         <?php
         use yii\widgets\ActiveForm;
         ?>
@@ -134,7 +134,7 @@ toc: true
         <?php ActiveForm::end() ?>
     ```
 - 控制器文件
-    ```bash
+    ```php
         namespace app\controllers;
 
         use Yii;

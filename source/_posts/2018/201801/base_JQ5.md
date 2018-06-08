@@ -18,7 +18,7 @@ toc: true
 
 <!-- more -->
 
-```bash
+```javascript
     $("button").click(function() {
         $("#cont").load("xi.html", function() {
             $("li").css("background-color", "red");
@@ -41,7 +41,7 @@ toc: true
         * error 失败
         * not found 没有找到
         * notModified 没有修改
-    ```bash
+    ```javascript
         $.get("fan.txt", function(data, textStatus, fn) {
             if(textStatus == 'success') {
                 console.log(data);
@@ -49,7 +49,7 @@ toc: true
         }, "text")
     ```
 - 例子
-```bash
+```javascript
     $("button").click(function() {
         $.get("get_html.php", {
             'username' : $("#name").val,
@@ -71,7 +71,7 @@ toc: true
     * 参数3 : fn : 回调函数
     * 参数4 : dataType : 文件类型(html|xml|json|script|text)
 - 例子
-```bash
+```javascript
     $("button").click(function() {
         $.post("get_html.php", {
             'username' : $("#name").val,
@@ -100,7 +100,7 @@ toc: true
     * 参数1 : url : 地址 
     * 参数2 : fn : 回调函数(脚本文件加载完毕之后会调用)
 - 例子
-```bash
+```javascript
     $("button").click(function() {
         $.getScript("basejs.js", function() {
             $(this).css("background-color", randomColor());
@@ -114,7 +114,7 @@ toc: true
 - 原生js的json跨域请求
     * 创建script标签,并将其添加到body中
     * 请求数据
-    ```bash
+    ```javascript
         var sc = document.getElement("script");
         sc.setAttribute("type", "text/javascripts");
         sc.src = "http://localhost/jsonp.php?jsoncallback=callBack";
@@ -125,7 +125,7 @@ toc: true
         }
     ```
 - jQuery的json请求
-```bash
+```javascript
     $.getJson("http://localhost/jsonp.php?jsoncallback=?", function(data) {
         console.log(data);ss
     })
@@ -141,7 +141,7 @@ toc: true
     * success : function(data, dataTextStatus, jqxhr) {}
     * error : function(jqxhr, textStatus, error) {}
 - 例子
-```bash
+```javascript
     $.ajax({
         url : "demo.php",
         type : "post",

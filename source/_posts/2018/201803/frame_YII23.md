@@ -18,7 +18,7 @@ toc: true
     * SELECT nickname FROM `user` WHERE `id`=1
     * SELECT * FROM `user` WHERE `id`=2
 - 使用实例
-    ```bash
+    ```php
     // view.php
         use yii\widgets\DetailView;
 
@@ -67,7 +67,7 @@ toc: true
     * SELECT * FROM `liuyan` WHERE `id`='1'
     * SELECT `nickname` FROM `user` WHERE `id`=17
 - 使用实例
-    ```bash
+    ```php
     // view.php
         use yii\widgets\DetailView;
 
@@ -96,7 +96,7 @@ toc: true
         class Liuyan extends \yii\db\ActiveRecord
         {
             static public $ispublic = array(
-                //1公开，0隐藏
+                //1公开,0隐藏
                 0 => '隐藏',
                 1 => '公开',
             )

@@ -14,7 +14,7 @@ toc: true
 - 可生成标签
     * 常使用的 : area、img、input、p、div
 - 实例
-    ```bash
+    ```php
         // 视图页面使用
         use yii\helpers\Html;
 
@@ -55,7 +55,7 @@ toc: true
 - 说明
     * 这里说的只是针对HTML助手类的使用,视图页面中的ActiveForm是对Html助手类的一个封装
 - 创建表单
-    ```bash
+    ```php
         // 视图页面
         <?= Html::beginForm(['order/update', 'id' => 123], 'post', ['enctype' => 'multipart/form-data']) ?>
 
@@ -67,7 +67,7 @@ toc: true
         </form>
     ```
 - 按钮
-    ```bash
+    ```php
         // 视图页面
         <?= Html::button('Press me!', ['class' => 'btn btn-primary']) ?>
         <?= Html::submitButton('Submit', ['class' => 'btn btn-success']) ?>
@@ -79,7 +79,7 @@ toc: true
         <button type="reset" class="btn btn-warning">Reset</button>
     ```
 - 输入栏
-    ```bash
+    ```php
         // 可使用的input类型
         yii\helpers\Html::buttonInput()
         yii\helpers\Html::submitInput()
@@ -129,14 +129,14 @@ toc: true
         </label>
     ```
 - 样式表和脚本
-    ```bash
+    ```php
         // 如果是IE5再添加ie5.css样式
         <?= Html::cssFile('@web/css/ie5.css', ['condition' => 'IE 5']) ?>
 
         <?= Html::jsFile('@web/js/main.js') ?>
     ```
 - 超链接
-    ```bash
+    ```php
         <?= Html::a('Profile', ['user/view', 'id' => $model->sid], ['class' => 'profile-link']) ?>
         <?= Html::mailto('Contact us', 'admin@example.com') ?>
 
@@ -144,13 +144,13 @@ toc: true
         <a href="mailto:admin@example.com">Contact us</a>
     ```
 - 图片
-    ```bash
+    ```php
         <?= Html::img('@web/images/logo.png', ['alt' => 'My logo']) ?>
 
         <img src="http://example.com/images/logo.png" alt="My logo" />
     ```
 - 列表
-    ```bash
+    ```php
         // 控制器页面
         $array = [
             'a' => ['id' => 'a1', 'username' => 'a2', 'nickname' => 'a3'],

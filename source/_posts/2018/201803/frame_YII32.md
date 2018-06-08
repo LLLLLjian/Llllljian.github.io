@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### 分类1
-    ```bash
+    ```php
         class Menu extends \yii\db\ActiveRecord
         {
             ....
@@ -55,7 +55,7 @@ toc: true
                 return $list;
             }
 
-            //通过id查menuname，主要用于部分页面展示 
+            //通过id查menuname,主要用于部分页面展示 
             static function getMenunameByidArr($id) 
             {
                 $id = array_unique($id);
@@ -85,7 +85,7 @@ toc: true
     ```
 
 #### 分类2
-    ```bash
+    ```php
         // 控制器页面
         public function actionCreate()
         {

@@ -30,7 +30,7 @@ toc: true
 | version.php   | PHP程序文件 | 版本文件信息 |
 
 #### 请求生命周期
-* 用户向入口文件index.php 发起请求。
+* 用户向入口文件index.php 发起请求.
 * 加载hdwiki.class.php
 * 解析url,加载对应的控制器文件,判断是否允许访问相应路由
 * 加载base.class.php,初始化时间、用户、数据库等配置.
@@ -39,7 +39,7 @@ toc: true
 #### 请求
 - 请求相关的代码在hdwiki.class.php init_request
 - 源码分析
-    ```bash
+    ```php
         // url例子
         首页请求：/index.php
         百科分类的请求：/index.php?category
@@ -81,7 +81,7 @@ toc: true
 
         // 去调用相应的method
         $method = $this->get[1];
-		$exemption=true; //免检方法的标志，免检方法不需要经过权限检测
+		$exemption=true; //免检方法的标志,免检方法不需要经过权限检测
 		if('hd'!= substr($method, 0, 2)){
 			$exemption=false;
 			$method = 'do'.$this->get[1];

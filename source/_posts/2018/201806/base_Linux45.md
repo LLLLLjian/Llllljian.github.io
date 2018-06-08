@@ -13,7 +13,7 @@ toc: true
 #### demo1
 - 用户输入一个日期,计算出当天零点到该日期的天数
     ```bash
-        [liujian@node129 20180607 19:18:21 #60]$ cat 1.sh
+        [llllljian@llllljian-virtual-machine 20180607 19:18:21 #60]$ cat 1.sh
         #!/bin/bash
         #########################################################################
         # 文件名: 1.sh
@@ -55,15 +55,15 @@ toc: true
             exit 1
         fi
 
-        [liujian@node129 20180607 19:18:23 #61]$ sh 1.sh
+        [llllljian@llllljian-virtual-machine 20180607 19:18:23 #61]$ sh 1.sh
         请输入一个日期(YYYYMMDD, ex>20180607),计算当天到指定日期的天数: 20180605
         你输入的日期与 2018-06-07 00:00:00之间有 2 天
 
-        [liujian@node129 20180607 19:20:54 #62]$ sh 1.sh
+        [llllljian@llllljian-virtual-machine 20180607 19:20:54 #62]$ sh 1.sh
         请输入一个日期(YYYYMMDD, ex>20180607),计算当天到指定日期的天数: 20180607
         你输入的是当天
 
-        [liujian@node129 20180607 19:21:05 #63]$ sh 1.sh
+        [llllljian@llllljian-virtual-machine 20180607 19:21:05 #63]$ sh 1.sh
         请输入一个日期(YYYYMMDD, ex>20180607),计算当天到指定日期的天数: 20180609
         你输入的日期与 2018-06-07 00:00:00之间有 2 天
     ```
@@ -71,7 +71,7 @@ toc: true
 #### demo2
 - 生成等腰三角形数字树
     ```bash
-        [liujian@node129 20180607 20:03:22 #142]$ cat 2.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:03:22 #142]$ cat 2.sh
         #!/bin/bash
         #########################################################################
         # 文件名: 2.sh
@@ -119,19 +119,19 @@ toc: true
             exit 1
         fi
 
-        [liujian@node129 20180607 20:03:59 #143]$ sh 2.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:03:59 #143]$ sh 2.sh
         请输入一个正整数-5
         请输入正整数
 
-        [liujian@node129 20180607 20:04:10 #144]$ sh 2.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:04:10 #144]$ sh 2.sh
         请输入一个正整数0
         0不能生成数字树
 
-        [liujian@node129 20180607 20:04:13 #145]$ sh 2.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:04:13 #145]$ sh 2.sh
         请输入一个正整数120
         你输入的数字太大,无法生成数字树
 
-        [liujian@node129 20180607 20:04:19 #146]$ sh 2.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:04:19 #146]$ sh 2.sh
         请输入一个正整数10
                 01 
             02 02 
@@ -143,7 +143,7 @@ toc: true
         08 08 08 08 08 08 08 08 
         09 09 09 09 09 09 09 09 09 
 
-        [liujian@node129 20180607 20:04:25 #147]$ sh 2.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:04:25 #147]$ sh 2.sh
         请输入一个正整数20
                         01 
                         02 02 
@@ -169,7 +169,7 @@ toc: true
 #### demo3
 - 九九乘法表
     ```bash
-        [liujian@node129 20180607 20:25:26 #157]$ cat 3.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:25:26 #157]$ cat 3.sh
         #!/bin/bash
         #########################################################################
         # 文件名: 3.sh
@@ -197,7 +197,7 @@ toc: true
             echo
         done
 
-        [liujian@node129 20180607 20:25:35 #158]$ sh 3.sh
+        [llllljian@llllljian-virtual-machine 20180607 20:25:35 #158]$ sh 3.sh
         1*1=1  
         1*2=2    2*2=4  
         1*3=3    2*3=6    3*3=9  
@@ -267,7 +267,7 @@ toc: true
             endif
         endfunc
 
-        "新建文件后，自动定位到文件末尾
+        "新建文件后,自动定位到文件末尾
         autocmd BufNewFile *.sh normal 8G 6l
         autocmd BufRead *.sh normal G
         ...

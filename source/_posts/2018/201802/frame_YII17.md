@@ -6,12 +6,12 @@ toc: true
 ---
 
 #### 创建表单
-    在 Yii 中使用表单的主要方式是通过 yii\widgets\ActiveForm。如果是基于 模型的表单应首选这种方式。此外，在 yii\helpers\Html中也有一些实用的 方法用于添加按钮和帮助文本
+    在 Yii 中使用表单的主要方式是通过 yii\widgets\ActiveForm.如果是基于 模型的表单应首选这种方式.此外,在 yii\helpers\Html中也有一些实用的 方法用于添加按钮和帮助文本
 
 <!-- more -->
 
 #### ActiveForm
-    ```bash
+    ```php
         <?php  
         use yii\helpers\Html;  
         use yii\widgets\ActiveForm;  

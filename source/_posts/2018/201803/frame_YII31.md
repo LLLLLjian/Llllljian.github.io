@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### 获取通用URL
-    ```bash
+    ```php
         $relativeHomeUrl = Url::home();
         // string(22) "/advanced/backend/web/"
         var_dump($relativeHomeUrl);
@@ -32,7 +32,7 @@ toc: true
         var_dump($httpsAbsoluteBaseUrl);
     ```
 #### 创建URL
-    ```bash
+    ```php
         // 控制器页面
         $url = Url::toRoute(['product/view', 'id' => 42]);
         // /advanced/backend/web/product/view?id=42
@@ -56,7 +56,7 @@ toc: true
         console.log(url);         
     ```
 #### 记住URL
-    ```bash
+    ```php
         public function actionIndex() 
         {
             ....
@@ -93,7 +93,7 @@ toc: true
     * 3和4 相当于把url写死,后期要改的话可能比较费事
     * 5如果直接访问xxx/make,链接会失效
 - 源码分析
-    ```bash
+    ```php
         public function actionIndex()
         {
             ...

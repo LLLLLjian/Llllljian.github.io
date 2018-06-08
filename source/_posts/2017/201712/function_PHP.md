@@ -8,7 +8,7 @@ toc: true
 
 ### 数组中value去空
 
-``` bash
+``` php
     /**
     * $param[array,要去除value值中空格的数组]
     * $isMoreArray[bool,是否为多维数组]
@@ -38,11 +38,11 @@ toc: true
 
 ### 对数据进行编码转化
 
-``` bash
+``` php
     /**
     * $inCharset[string,输入内容编码]
     * $outCharset[string,输出内容编码]
-    * $param [要转化的内容，可以是数组也可以是字符串]
+    * $param [要转化的内容,可以是数组也可以是字符串]
     */
     function iconv_param($inCharset, $outCharset, $param) {
         if (is_array($param)) {
@@ -71,7 +71,7 @@ toc: true
 
 ### 对数据值进行去空
 
-``` bash
+``` php
     /**
     * $arr[array,去除空值的数组]
     * $trim
@@ -100,7 +100,7 @@ toc: true
 
 ### 两个数字进行比较
 
-``` bash
+``` php
     function floatcmp($f1,$f2,$percision=10)
     {
         if (!is_numeric($f1)) {
@@ -129,7 +129,7 @@ toc: true
 
 ### 通话时长转化
 
-``` bash
+``` php
 
     function convert_time_len($l) {
         $h = floor($l/3600);
@@ -141,7 +141,7 @@ toc: true
 
 ### 转化为秒数
 
-``` bash
+``` php
 
     function convert_time_string($tmp_rec_long) {
         if(is_numeric($tmp_rec_long)){
@@ -168,7 +168,7 @@ toc: true
 
 ### 检查两个数组是否不同
 
-``` bash
+``` php
 
     function checkChange($newValue, $oldValue, $filter = array()) {
         if (is_array($newValue) && is_array($oldValue)) {
@@ -192,7 +192,7 @@ toc: true
 
 ### 数组转化为树
 
-``` bash
+``` php
 
     function getTreebyArray($list, $pk='id', $pid = 'pid', $child = 'Children', $root = 0) {
         $tree = array();
@@ -224,7 +224,7 @@ toc: true
 
 ### 对用户名隐藏几位
 
-``` bash
+``` php
 
     function hideAccount($account){
         $account_hide = '';
@@ -248,7 +248,7 @@ toc: true
 
 ### 通过身份证获取年龄
 
-``` bash
+``` php
 
     function getAgeByIdcard($idcard){
         $birthday = substr($idcard, 10, 4);
@@ -263,7 +263,7 @@ toc: true
 
 ### 通过身份证获取性别
 
-``` bash
+``` php
 
     function getSexByIdcard($idcard, $type = 0) {
         $sexMap = array('男' => 1, '女' => 2);

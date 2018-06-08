@@ -30,9 +30,9 @@ toc: true
 
         vim ~/.vimrc
 
-        "新建.sh文件，自动插入文件头 
+        "新建.sh文件,自动插入文件头 
         autocmd BufNewFile *.sh exec ":call SetTitle1()" 
-        ""定义函数SetTitle1，自动插入文件头 
+        ""定义函数SetTitle1,自动插入文件头 
         func SetTitle1() 
             "如果文件类型为.sh文件 
             if &filetype == 'sh' 
@@ -47,7 +47,7 @@ toc: true
             endif
         endfunc 
 
-        "新建文件后，自动定位到文件末尾
+        "新建文件后,自动定位到文件末尾
         autocmd BufNewFile * normal G
     ```
 - 内容

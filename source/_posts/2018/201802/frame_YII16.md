@@ -19,30 +19,30 @@ toc: true
 - 查询数据生命周期
     * 前提 : find()数据的时候
     * 类的构造函数调用.
-    * yii\db\ActiveRecord::init()：触发 yii\db\ActiveRecord::EVENT_INIT 事件。
-    * yii\db\ActiveRecord::afterFind()：触发 yii\db\ActiveRecord::EVENT_AFTER_FIND 事件。
+    * yii\db\ActiveRecord::init()：触发 yii\db\ActiveRecord::EVENT_INIT 事件.
+    * yii\db\ActiveRecord::afterFind()：触发 yii\db\ActiveRecord::EVENT_AFTER_FIND 事件.
 
 - 保存数据生命周期
     * 前提 : save()方法插入或更新 AR 实例
-    * yii\db\ActiveRecord::beforeValidate()：触发 yii\db\ActiveRecord::EVENT_BEFORE_VALIDATE 事件。如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false，接下来的步骤都会被跳过。
-    * 执行数据验证。如果数据验证失败，步骤 3 之后的步骤将被跳过。
-    * yii\db\ActiveRecord::afterValidate()：触发 yii\db\ActiveRecord::EVENT_AFTER_VALIDATE 事件。
-    * yii\db\ActiveRecord::beforeSave()：触发 yii\db\ActiveRecord::EVENT_BEFORE_INSERT 或者 yii\db\ActiveRecord::EVENT_BEFORE_UPDATE 事件。 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false，接下来的步骤都会被跳过。
-    * 执行真正的数据插入或者更新。
-    * yii\db\ActiveRecord::afterSave()：触发 yii\db\ActiveRecord::EVENT_AFTER_INSERT 或者 yii\db\ActiveRecord::EVENT_AFTER_UPDATE 事件。
+    * yii\db\ActiveRecord::beforeValidate()：触发 yii\db\ActiveRecord::EVENT_BEFORE_VALIDATE 事件.如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
+    * 执行数据验证.如果数据验证失败,步骤 3 之后的步骤将被跳过.
+    * yii\db\ActiveRecord::afterValidate()：触发 yii\db\ActiveRecord::EVENT_AFTER_VALIDATE 事件.
+    * yii\db\ActiveRecord::beforeSave()：触发 yii\db\ActiveRecord::EVENT_BEFORE_INSERT 或者 yii\db\ActiveRecord::EVENT_BEFORE_UPDATE 事件. 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
+    * 执行真正的数据插入或者更新.
+    * yii\db\ActiveRecord::afterSave()：触发 yii\db\ActiveRecord::EVENT_AFTER_INSERT 或者 yii\db\ActiveRecord::EVENT_AFTER_UPDATE 事件.
 
 - 删除数据生命周期
     * 前提 : delete()数据的时候[updateAll(), deleteAll(), updateCounters(), updateAllCounters()]
-    * yii\db\ActiveRecord::beforeDelete()：触发 yii\db\ActiveRecord::EVENT_BEFORE_DELETE 事件。 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false，接下来的步骤都会被跳过。
-    * 执行真正的数据删除。
-    * yii\db\ActiveRecord::afterDelete()：触发 yii\db\ActiveRecord::EVENT_AFTER_DELETE 事件。
+    * yii\db\ActiveRecord::beforeDelete()：触发 yii\db\ActiveRecord::EVENT_BEFORE_DELETE 事件. 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
+    * 执行真正的数据删除.
+    * yii\db\ActiveRecord::afterDelete()：触发 yii\db\ActiveRecord::EVENT_AFTER_DELETE 事件.
 
 - 刷新数据生命周期
     * 前提 : refresh() 刷新 AR 实例
-    * 刷新成功方法返回 true，那么 yii\db\ActiveRecord::EVENT_AFTER_REFRESH 事件将被触发
+    * 刷新成功方法返回 true,那么 yii\db\ActiveRecord::EVENT_AFTER_REFRESH 事件将被触发
 
 #### 声明AR类
-    ```bash
+    ```php
         // Customer对应数据库中的customer表
         namespace app\models;
 
@@ -66,7 +66,7 @@ toc: true
     ```
 
 #### 建立数据库连接
-    ```bash
+    ```php
         // 可以在系统配置中直接配置
         return [
             'components' => [
@@ -98,7 +98,7 @@ toc: true
     * 使用 查询生成器的构建方法 来构建你的查询；
     * 调用 查询生成器的查询方法 来取出数据到 AR 实例中
 - 查询实例
-    ```bash
+    ```php
         // 返回 ID 为 123 的客户：
         // SELECT * FROM `customer` WHERE `id` = 123
         $customer = Customer::find()->where(['id' => 123])
@@ -148,7 +148,7 @@ toc: true
 
 #### 访问数据
 - 原始数据
-    ```bash
+    ```php
         // "id" 和 "email" 是 "customer" 表中的列名.
         // $customer对应于单个 AR 实例
         $customer = Customer::findOne(123);
@@ -156,8 +156,8 @@ toc: true
         $email = $customer->email;
     ```
 - 数据转换
-    ```bash
-        // 在PHP代码中，可以访问 $customer->birthdayText获取ymdhs时间类型
+    ```php
+        // 在PHP代码中,可以访问 $customer->birthdayText获取ymdhs时间类型
         class Customer extends ActiveRecord
         {
             // ...
@@ -174,8 +174,8 @@ toc: true
         }
     ```
 - 以数组形式获取数据
-    ```bash
-        // 返回大量数据时，为了防止内存被大量占用，可以使用数据形式获取数据
+    ```php
+        // 返回大量数据时,为了防止内存被大量占用,可以使用数据形式获取数据
         // 返回所有客户
         // 每个客户返回一个关联数组
         $customers = Customer::find()
@@ -183,20 +183,20 @@ toc: true
             ->all();
     ```
 - 批量获取数据
-    ```bash
+    ```php
         // 每次获取 10 条客户数据
         foreach (Customer::find()->batch(10) as $customers) {
             // $customers 是个最多拥有 10 条数据的数组
         }
 
-        // 每次获取 10 条客户数据，然后一条一条迭代它们
+        // 每次获取 10 条客户数据,然后一条一条迭代它们
         foreach (Customer::find()->each(10) as $customer) {
             // $customer 是个 `Customer` 对象
         }
 
         // 贪婪加载模式的批处理查询
         foreach (Customer::find()->with('orders')->each() as $customer) {
-            // $customer 是个 `Customer` 对象，并附带关联的 `'orders'`
+            // $customer 是个 `Customer` 对象,并附带关联的 `'orders'`
         }
     ```
 
@@ -204,9 +204,9 @@ toc: true
 - 保存步骤
     * 准备一个 AR 实例
     * 将新值赋给 AR 的属性
-    * 调用 yii\db\ActiveRecord::save() 保存数据到数据库中。
+    * 调用 yii\db\ActiveRecord::save() 保存数据到数据库中.
 - 保存实例
-    ```bash
+    ```php
         // 可以通过检查 AR 实例的 yii\db\ActiveRecord::isNewRecord 属性值来区分更新还是新增
 
         // 插入新记录 insert
@@ -221,7 +221,7 @@ toc: true
         $customer->save();
     ```
 - 块赋值
-    ```bash
+    ```php
         // 只有安全属性才可以批量赋值
         $values = [
             'name' => 'James',
@@ -234,7 +234,7 @@ toc: true
         $customer->save();
     ```
 - 更新计数
-    ```bash
+    ```php
         // 单个
         $post = Post::findOne(100);
         // UPDATE `post` SET `view_count` = `view_count` + 1 WHERE `id` = 100
@@ -245,7 +245,7 @@ toc: true
         Customer::updateAllCounters(['age' => 1]);
     ```
 - 更新
-    ```bash
+    ```php
         //update();  
         //runValidation boolen 是否通过validate()校验字段 默认为true   
         //attributeNames array 需要更新的字段   
@@ -263,13 +263,13 @@ toc: true
     ```
 
 #### 数据验证
-    当调用 yii\db\ActiveRecord::save() 时，默认情况下会自动调用 yii\db\ActiveRecord::validate()。 
-    只有当验证通过时，它才会真正地保存数据; 否则将简单地返回false
+    当调用 yii\db\ActiveRecord::save() 时,默认情况下会自动调用 yii\db\ActiveRecord::validate(). 
+    只有当验证通过时,它才会真正地保存数据; 否则将简单地返回false
     可以检查 yii\db\ActiveRecord::errors 属性来获取验证过程的错误消息
-    如果你确定你的数据不需要验证（比如说数据来自可信的场景）， 你可以调用 save(false) 来跳过验证过程。
+    如果你确定你的数据不需要验证（比如说数据来自可信的场景）, 你可以调用 save(false) 来跳过验证过程.
 - rules 验证规则
     * 位置
-        ```bash
+        ```php
             public function rules()
             {
                 return [
@@ -278,38 +278,38 @@ toc: true
             }
         ```
     * required : 必须值验证属性
-        ```bash
+        ```php
             [['字段名'], required, 'requiredValue'=>'必填值', 'message'=>'提示信息'], 
             ['email', 'required']
             [['email', 'name'], 'required']  
         ```
     * email : 邮箱验证
-        ```bash
+        ```php
             ['email', 'email']
         ```
     * url : 网址
-        ```bash
+        ```php
             ['website', 'url', 'defaultScheme' => 'http'];
         ```
     * safe : 安全
-        ```bash
+        ```php
             ['description', 'safe']
         ```
     * trim : 去除首尾空白字符
-        ```bash
+        ```php
             ['email', 'trim'] 或 ['email', 'filter', 'filter' => 'trim']  
         ```
     * default : 赋予默认值
-        ```bash
+        ```php
             ['age', 'default', 'value' => 20]  
         ```
     * string : 字符串格式长度
-        ```bash
+        ```php
             ['email', 'string', 'min' => 3, 'max' => 20] 或 ['email', 'string', 'length' => [3, 20]]  
             ['title','string','min'=>2,'max'=>200,'tooShort'=>'标题不能少于两位','tooLong'=>'标题不能大于200位'],
         ```
     * 格式类型验证
-        ```bash
+        ```php
             ['age', 'integer'] // 整数格式  
             ['salary', 'double'] // 浮点数格式  
             ['temperature', 'number'] // 数字格式  
@@ -319,44 +319,44 @@ toc: true
             ['website', 'url', 'defaultScheme' => 'http'] // URL格式  
         ```
     * 验证码
-        ```bash
+        ```php
             ['verificationCode', 'captcha']  
         ```
     * unique : 值在数据表中是唯一的
-        ```bash
+        ```php
             ['email', 'unique', 'targetClass' => 'commonmodelsUsers']  
         ```
     * exist : 值在数据表中已存在
-        ```bash
+        ```php
             ['email', 'exist', 'targetClass' => 'commonmodelsUser', 'filter' => ['status' => User::STATUS_ACTIVE], 'message' => 'There is no user with such email.']  
         ```
     * 检查输入的两个值是否一致
-        ```bash
+        ```php
             // 必须要加上这一句
             ['passwordRepeat', 'required'],
             ['passwordRepeat', 'compare', 'compareAttribute' => 'password', 'operator' => '===']  
         ```
     * 数值范围检查
-        ```bash
+        ```php
             ['age', 'compare', 'compareValue' => 30, 'operator' => '>=']  
             ['level', 'in', 'range' => [1, 2, 3]]  
         ```
     * 文件上传
-        ```bash
+        ```php
             ['textFile', 'file', 'extensions' => ['txt', 'rtf', 'doc'], 'maxSize' => 1024 * 1024 * 1024]
         ```
     * 图片上传
-        ```bash
+        ```php
             ['avatar', 'image', 'extensions' => ['png', 'jpg'], 'minWidth' => 100, 'maxWidth' => 1000,     'minHeight' => 100, 'maxHeight' => 1000, ] 
         ```
     * 正则验证
-        ```bash
+        ```php
             [['字段名'],'match','pattern'=>'/正则表达式/','message'=>'提示信息'];      
             [['字段名'],'match','not'=>ture,'pattern'=>'/正则表达式/','message'=>'提示信息'];
             ['username', 'match', 'pattern' => '/^[a-z]w*$/i']  
         ```
 - validator
-    ```bash
+    ```php
         打印 Validator::$builtInValidators,可以看到所有rules的验证规则源码
         [boolean] => yii\validators\BooleanValidator  
         [captcha] => yii\captcha\CaptchaValidator  
@@ -395,7 +395,7 @@ toc: true
     ```
 
 #### 删除数据
-    ```bash
+    ```php
         $customer = Customer::findOne(123);
         $customer->delete();
   
@@ -406,9 +406,9 @@ toc: true
 
 #### 使用关联数据
 - 声明关联关系
-    ```bash
+    ```php
         // 对应关系有两种 hasOne[一对一] hasMany[一对多]
-        // 每个关联方法必须这样命名：getXyz。然后通过 xyz（首字母小写）调用这个关联名[大小写敏感]
+        // 每个关联方法必须这样命名：getXyz.然后通过 xyz（首字母小写）调用这个关联名[大小写敏感]
         class Customer extends ActiveRecord
         {
             // ...
@@ -419,7 +419,7 @@ toc: true
 
                 // (相关联AR类名, [当前要声明关联的AR类的列, 相关数据的列])
                 // [先附表的主键, 后主表的主键]
-                // customer_id 是 Order 的属性，而 id是 Customer 的属性
+                // customer_id 是 Order 的属性,而 id是 Customer 的属性
                 return $this->hasMany(Order::className(), ['customer_id' => 'id']);
             }
         }
@@ -434,13 +434,13 @@ toc: true
 
                 // (相关联AR类名, [当前要声明关联的AR类的列, 相关数据的列])
                 // [先附表的主键, 后主表的主键]
-                // customer_id 是 Order 的属性，而 id是 Customer 的属性
+                // customer_id 是 Order 的属性,而 id是 Customer 的属性
                 return $this->hasOne(Customer::className(), ['id' => 'customer_id']);
             }
         }
     ```
 - 访问关联数据
-    ```bash
+    ```php
         // SELECT * FROM `customer` WHERE `id` = 123
         $customer = Customer::findOne(123);
 
@@ -452,7 +452,7 @@ toc: true
         $customer->getOrders(); // 返回 ActiveQuery 类的实例
     ```
 - 动态关联查询
-    ```bash
+    ```php
         class Customer extends ActiveRecord
         {
             public function getBigOrders($threshold = 100) // 老司机的提醒：$threshold 参数一定一定要给个默认值

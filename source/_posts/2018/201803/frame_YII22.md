@@ -6,13 +6,13 @@ toc: true
 ---
 
 ### 数据提供器
-    数据提供者是一个实现了 yii\data\DataProviderInterface 接口的类。 它主要用于获取分页和数据排序。它经常用在 data widgets 小物件里，方便终端用户进行分页与数据排序
+    数据提供者是一个实现了 yii\data\DataProviderInterface 接口的类. 它主要用于获取分页和数据排序.它经常用在 data widgets 小物件里,方便终端用户进行分页与数据排序
 
 <!-- more -->
 
 #### 活动数据提供者
 - 活动数据提供者[ActiveDataProvider]
-    ```bash
+    ```php
         use yii\data\ActiveDataProvider;
 
         $query = Banji::find();
@@ -79,7 +79,7 @@ toc: true
 
 #### SQL数据提供者
 - SQL数据提供者[SqlDataProvider]
-    ```bash
+    ```php
         use yii\data\SqlDataProvider;
 
         // 获取总数
@@ -112,7 +112,7 @@ toc: true
 
 #### 数组数据提供者
 - 数组数据提供者[ArrayDataProvider]
-    ```bash
+    ```php
         use yii\data\ArrayDataProvider;
 
         $data = [

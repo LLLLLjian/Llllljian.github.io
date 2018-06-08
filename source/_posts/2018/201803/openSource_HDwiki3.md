@@ -13,7 +13,7 @@ toc: true
 <!-- more -->
 
 #### 基本结构
-    ```bash
+    ```php
         !defined('IN_HDwiki') && exit('Access Denied');
 
         // 所有类名都叫control 继承 base类

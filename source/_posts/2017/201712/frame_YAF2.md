@@ -7,7 +7,7 @@ toc: true
 
 ### 目录结构
 
-```bash 
+```php 
     + public
         |- index.php                //入口文件
         |- .htaccess                //重写规则    
@@ -34,7 +34,7 @@ toc: true
 
 - 控制器controller
 
-```bash 
+```php 
     <?php
     class IndexController extends Yaf_Controller_Abstract 
     {
@@ -49,7 +49,7 @@ toc: true
 
 - 视图view
 
-```bash
+```php
     <html>
         <head>
             <title>Hello World</title>
@@ -66,7 +66,7 @@ toc: true
 
 - 修改入口文件
 
-```bash
+```php
     <?php
     define("APPLICATION_PATH",  dirname(__FILE__));
     $app  = new Yaf_Application(APPLICATION_PATH . "/conf/application.ini");
@@ -76,7 +76,7 @@ toc: true
 
 - 重写Bootstrap类
 
-```bash 
+```php 
     <?php
     class Bootstrap extends Yaf_Bootstrap_Abstract
     {
@@ -261,13 +261,13 @@ toc: true
 
 - 自定义插件
 
-```bash 
+```php 
     <?php
     class UserPlugin extends Yaf_Plugin_Abstract 
     {
         //插件类是用户编写的, 但是它需要继承自Yaf_Plugin_Abstract. 
         //对于自定义插件来说, 上边提到的6个Hook(钩子), 不需要全部都重写,
-        //用到哪个就写哪个，和上边钩子事件同名方法即可, 那么这个方法就会在该事件触发的时候被调用.
+        //用到哪个就写哪个,和上边钩子事件同名方法即可, 那么这个方法就会在该事件触发的时候被调用.
         //而插件方法, 可以接受俩个参数, Yaf_Request_Abstract实例和Yaf_Response_Abstract实例.
         
         //这里, 插件UserPlugin只关心俩个事件. 所以就定义了俩个方法.
@@ -285,7 +285,7 @@ toc: true
 
 - 注册插件
 
-```bash
+```php
     <?php
     class Bootstrap extends Yaf_Bootstrap_Abstract
     {

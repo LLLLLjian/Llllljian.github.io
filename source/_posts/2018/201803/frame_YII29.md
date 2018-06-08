@@ -14,7 +14,7 @@ toc: true
 - 作用
     * 获取数组或者对象中的值
 - 实例
-    ```bash
+    ```php
         public function actionView($id)
         {
             $model = $this->findModel($id);
@@ -46,7 +46,7 @@ toc: true
     * 设置数组或者对象中的值
     * 注意 : yii2.0.13才有这个属性
 - 实例
-    ```bash
+    ```php
         public function actionView($id)
         {
             $model = $this->findModel($id);
@@ -71,9 +71,9 @@ toc: true
 
 #### remove
 - 作用
-    * 获得一个值，然后立即从数组中删除它
+    * 获得一个值,然后立即从数组中删除它
 - 实例
-    ```bash
+    ```php
         $paramsArr = Yii::$app->request->queryParams;
         var_dump($paramsArr);
         echo "<br />";
@@ -92,7 +92,7 @@ toc: true
 - 作用
     * key是否存在,支持大小写
 - 实例
-    ```bash
+    ```php
         $data1 = [
             'first' => null, 
             'second' => 4
@@ -123,7 +123,7 @@ toc: true
 - 作用
     * 获取二维数组或者对象中的某一列元素,类似array_column($arr, $key)
 - 实例
-    ```bash
+    ```php
         $banjiInfo = $dataProvider->getModels();
         $idArr = ArrayHelper::getColumn($banjiInfo, 'classauthorid');
         var_dump($idArr);
@@ -142,7 +142,7 @@ toc: true
 - 作用
     * 取出某一列作为多维数组的key
 - 实例
-    ```bash
+    ```php
         $array = [
             ['id' => 'a1', 'username' => 'a2', 'nickname' => 'a3'],
             ['id' => 'b1', 'username' => 'b2', 'nickname' => 'b3'],
@@ -189,7 +189,7 @@ toc: true
 - 作用
     * 取出数组或者对象中的某几列组成一个新的数组
 - 实例
-    ```bash
+    ```php
         $array = [
             ['id' => 'a1', 'username' => 'a2', 'nickname' => 'a3'],
             ['id' => 'b1', 'username' => 'b2', 'nickname' => 'b3'],
@@ -224,7 +224,7 @@ toc: true
 - 作用
     * 实现二维数组或对象排序
 - 实例
-    ```bash
+    ```php
         $array = [
             ['id' => '1', 'username' => '3', 'nickname' => 'a3'],
             ['id' => '3', 'username' => '2', 'nickname' => 'b3'],
@@ -251,7 +251,7 @@ toc: true
 - 作用
     * 判断数组是**关联数组**[键值是字符串,并且是人为的规定]还是**索引数组**[键是整数,而且从0开始以此类推]
 - 实例
-    ```bash
+    ```php
         $indexed = ['aaa', 'bbb'];
         var_dump(ArrayHelper::isIndexed($indexed));
         echo "<br />";
@@ -275,7 +275,7 @@ toc: true
     * 对数组中的内容是否进行Html转义.
     * 第二个参数默认是true,不对key进行处理.false也对key进行处理
 - 实例
-    ```bash
+    ```php
         $data = array(
             "<strong>html</strong>" => "<br />换行",
             "换行",
@@ -299,11 +299,11 @@ toc: true
 - 作用
     * 合并数组
     * 如果每个数组都有一个具有相同字符串键值的元素,则后者将覆盖前者
-    * 如果两个数组都有一个数组类型的元素并且具有相同的键,则将执行递归合并。 
+    * 如果两个数组都有一个数组类型的元素并且具有相同的键,则将执行递归合并. 
     * 对于整数键的元素,来自后一个数组的元素将被附加到前一个数组.
-    * 可以使用 yii\helpers\UnsetArrayValue对象来取消前一个数组的值或 yii\helpers\ReplaceArrayValue以强制替换先前的值而不是递归合并。
+    * 可以使用 yii\helpers\UnsetArrayValue对象来取消前一个数组的值或 yii\helpers\ReplaceArrayValue以强制替换先前的值而不是递归合并.
 - 实例
-    ```bash
+    ```php
         $array1 = [
             'name' => 'Yii',
             'version' => '1.1',
@@ -359,6 +359,6 @@ toc: true
     * 数组中是否存在
     * ？对象中是否存在？ => 验证失败
 - 实例
-    ```bash
+    ```php
         var_dump(ArrayHelper::isIn('a', ['a'])); // bool(true) 
     ```

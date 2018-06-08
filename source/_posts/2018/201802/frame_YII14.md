@@ -6,12 +6,12 @@ toc: true
 ---
 
 ### 数据访问层
-    数据访问层(DAO)提供了简单高效的SQL查询，可以用在与数据库交互的各个地方
+    数据访问层(DAO)提供了简单高效的SQL查询,可以用在与数据库交互的各个地方
 
 <!-- more -->
 
 #### 创建数据库连接
-    ```bash
+    ```php
         // 写在应用组件配置中
         return [
             // mysql
@@ -43,7 +43,7 @@ toc: true
     ```
 
 #### 执行SQL查询
-    ```bash
+    ```php
         // 返回多行. 每行都是列名和值的关联数组.
         // 如果该查询没有结果则返回空数组
         $posts = Yii::$app->db->createCommand('SELECT * FROM post')
@@ -94,8 +94,8 @@ toc: true
     ```
 
 #### 非查询SQL执行
-    ```bash
-        // execute() 方法返回执行 SQL 所影响到的行数。
+    ```php
+        // execute() 方法返回执行 SQL 所影响到的行数.
 
         // INSERT (table name, column values)
         Yii::$app->db->createCommand()

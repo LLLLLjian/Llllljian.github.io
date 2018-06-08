@@ -20,7 +20,7 @@ toc: true
             done
         ```
     * 说明
-        * 一直执行，直到条件不符合，才停止
+        * 一直执行,直到条件不符合,才停止
         * 当condition条件成立时就进行循环,直到condition条件不成立才停止
     * 实例
         ```bash
@@ -185,7 +185,7 @@ toc: true
                 * {start..end}
                 * $(seq [start [step]] end) 
             * 返回列表的命令 $(COMMAND) 
-            * 使用glob，如：*.sh 
+            * 使用glob,如：*.sh 
             * 变量引用； $@, $*
     * 实例
         ```bash

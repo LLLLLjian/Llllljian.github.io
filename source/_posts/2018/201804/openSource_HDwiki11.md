@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 升级HDwiki6.0
-    HDwiki5.1升级到6.0。
+    HDwiki5.1升级到6.0.
 
 <!-- more -->
 
@@ -14,13 +14,13 @@ toc: true
 - control/admin_language.php
 - view/default/admin_language.htm
 - 控制器action分析
-    ```bash
+    ```php
         function dodefault()
         {
             根据前台下拉框中的值选择展示的语言类型.默认是前台语言包
             $this->view->setlang($this->setting['lang_name'], 'front');
 
-            //timeoffset内容为数组，所以释放
+            //timeoffset内容为数组,所以释放
             unset($this->view->lang['timeoffset']);
 
             如果没有查找内容,将$this->view->lang中的内容展示到页面上

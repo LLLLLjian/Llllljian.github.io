@@ -6,19 +6,19 @@ toc: true
 ---
 
 ## 使用过的前端插件
-    下边写的都是一些自己使用过的插件，只是简单的写了一个例子，具体的还是要再看文档。
+    下边写的都是一些自己使用过的插件,只是简单的写了一个例子,具体的还是要再看文档.
 
 <!-- more -->
 
 ### 图片类
 - 图片上传插件zyupload
     * HTML
-        ``` bash  
+        ``` javascript  
             <input type="hidden" name="file" id="file">
             <div id="zyupload" class="zyupload"></div>
         ```
     * JS
-        ``` bash     
+        ``` javascript     
             $(function() {
                 var fileSet = [];
                 $("#zyupload").zyUpload({
@@ -63,7 +63,7 @@ toc: true
                             alert(data.msg)
                         } else {
                             fileSet[file.index] = data.arr.filename;
-                            //将回调地址放到表单中，多个文件用 |  隔开
+                            //将回调地址放到表单中,多个文件用 |  隔开
                             $('#file').val(fileSet.filter(filter).join('|'));
                         }
                     }
@@ -71,19 +71,19 @@ toc: true
             });
         ```
     * 服务器端
-        ``` bash
-            $_FILES接收文件内容，调用文件上传类，储存文件，成功或失败都返回json数据给前端
+        ``` javascript
+            $_FILES接收文件内容,调用文件上传类,储存文件,成功或失败都返回json数据给前端
         ```
 
 - 点击查看大图imgbox.pack
     * HTML
-        ``` bash  
+        ``` javascript  
             <a class="fjImage" href="图片地址">
                 <img src="图片地址">
             </a>
         ```
     * JS
-        ``` bash     
+        ``` javascript     
             $('.fjImage').imgbox({
                 'speedIn'       : 0,
                 'speedOut'      : 0,
@@ -95,30 +95,30 @@ toc: true
 
 - 点击查看大图imgbox简易版
     * HTML
-        ``` bash  
+        ``` javascript  
             <a class="zoom-1" href="图片地址"><img src="图片地址"/></a>
         ```
     * jQuery
-        ``` bash     
+        ``` javascript     
             $("a.zoom-1").imgbox();
         ```
 
 ### 文字类
 - 代码高亮SyntaxHighlighter
     * HTML
-        ``` bash  
+        ``` javascript  
             <div class="syntaxhighlighter">
 
             </div>
         ```
     * 插件注释
-        ``` bash 
-            useScriptTags   true      是否支持解析 <script type=”syntaxhighlighter” /> 标签。
+        ``` javascript 
+            useScriptTags   true      是否支持解析 <script type=”syntaxhighlighter” /> 标签.
             
-            bloggerMode     false     博客模式。如果在博客网上使用该插件，因为通常博主习惯用 <br /> 替换所有的新行(’\n’)，这会造成SyntaxHighlighter 插件无法拆开每一行。
+            bloggerMode     false     博客模式.如果在博客网上使用该插件,因为通常博主习惯用 <br /> 替换所有的新行(’\n’),这会造成SyntaxHighlighter 插件无法拆开每一行.
                                     开启此选项内部会将 <br /> 替换为新行’\n’
 
-            stringBrs       false     如果您的软件会在每行末尾添加 < br / > 标记，此选项允许您忽略这些标记。
+            stringBrs       false     如果您的软件会在每行末尾添加 < br / > 标记,此选项允许您忽略这些标记.
 
             <div class="syntaxhighlighter  php">
                 <table border="0" cellpadding="0" cellspacing="0">
@@ -143,10 +143,10 @@ toc: true
 ### 时间类
 - 时间插件WdatePicker
     * HTML
-        ```bash  
+        ```javascript  
             
         ```
     * jQuery
-        ``` bash     
+        ``` javascript     
             
         ```

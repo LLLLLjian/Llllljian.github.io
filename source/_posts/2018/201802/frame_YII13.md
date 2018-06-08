@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### TimestampBehavior
-    ```bash
+    ```php
         namespace app\models\User;
 
         use yii\db\ActiveRecord;
@@ -24,10 +24,10 @@ toc: true
             public function behaviors()
             {
                 return [
-                    // 当记录插入时，行为将当前时间戳赋值给 created_at 和 updated_at 属性；
-                    // 当记录更新时，行为将当前时间戳赋值给 updated_at 属性。
+                    // 当记录插入时,行为将当前时间戳赋值给 created_at 和 updated_at 属性；
+                    // 当记录更新时,行为将当前时间戳赋值给 updated_at 属性.
                     [
-                        // 匿名的行为，仅直接给出行为的类名称 
+                        // 匿名的行为,仅直接给出行为的类名称 
                         'class' => TimestampBehavior::className(),
                         // 写明表中需要插入的时间字段[可根据自己表的实际情况修改]
                         'createdAtAttribute' => 'created_at',    
@@ -48,7 +48,7 @@ toc: true
     ```
 
 #### BlameableBehavior
-    ```bash
+    ```php
         namespace app\models\User;
 
         use yii\db\ActiveRecord;
@@ -59,10 +59,10 @@ toc: true
             public function behaviors()
             {
                 return [
-                    // 当记录插入时，行为将当前用户id赋值给 author_id 和 updater_id 属性；
-                    // 当记录更新时，行为将当前用户id赋值给 updater_id 属性。
+                    // 当记录插入时,行为将当前用户id赋值给 author_id 和 updater_id 属性；
+                    // 当记录更新时,行为将当前用户id赋值给 updater_id 属性.
                     [
-                        // 匿名的行为，仅直接给出行为的类名称 
+                        // 匿名的行为,仅直接给出行为的类名称 
                         'class' => BlameableBehavior::className(),
                         // 写明表中需要插入的操作者字段[可根据自己表的实际情况修改]
                         'createdByAttribute' => 'author_id',    
@@ -81,7 +81,7 @@ toc: true
     ```
 
 #### AttributeBehavior
-    ```bash
+    ```php
         namespace app\models\User;
 
         use yii\db\ActiveRecord;
@@ -93,8 +93,8 @@ toc: true
             public function behaviors()
             {
                 return [
-                    // 当记录插入时，行为将value的返回值给 attribute1 属性；
-                    // 当记录更新时，行为将value的返回值给 attribute2 属性；
+                    // 当记录插入时,行为将value的返回值给 attribute1 属性；
+                    // 当记录更新时,行为将value的返回值给 attribute2 属性；
                     [
                         'class' => AttributeBehavior::className(),
                         'attributes' => [
@@ -112,7 +112,7 @@ toc: true
 
 #### 针对1,2优化
     优化情况为 : 所有表中涉及的创建时间 更新时间 创建人 更新人字段名都相同
-    ```bash
+    ```php
         namespace common\models\activeRecord;
 
         use yii;
@@ -156,7 +156,7 @@ toc: true
 
 #### 实例[关于1,3]
     前提：表goods和表news都要能上传附件[利用行为快速实现]
-    ```bash
+    ```php
         class News extends \yii\db\ActiveRecord
         {
             public function behaviors() 

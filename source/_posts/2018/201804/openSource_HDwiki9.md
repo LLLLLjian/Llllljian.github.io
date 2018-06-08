@@ -16,7 +16,7 @@ toc: true
 - 修改结果
     * 将其设置为逗号","或者空格 可能更容易让人接受
 - 代码修改
-    ```bash
+    ```php
         doc.class.php old
         function spilttags($tag){
             $taglist=array();
@@ -74,7 +74,7 @@ toc: true
 - 修改结果
     * 支持https、http
 - 代码修改
-    ```bash
+    ```php
         // control/admin_friendlink.php old
         if (substr($flink['url'],0,7) != "http://") {
             $flink['url'] = "http://".$flink['url']; 
@@ -110,7 +110,7 @@ toc: true
 - 修改结果
     * 修改model\hdwiki.class.php中的逻辑
 - 代码修改
-    ```bash
+    ```php
         // model\hdwiki.class.php\checksecurity
         // add 如果当前登录用户不是超级管理员组 才进行敏感词验证
         // 弊端:非管理员用户可能无法使用某些方法

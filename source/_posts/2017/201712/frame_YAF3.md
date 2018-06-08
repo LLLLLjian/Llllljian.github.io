@@ -13,20 +13,20 @@ toc: true
 
     默认：Yaf_Router 
     路由器主要负责解析一个请求并且决定什么module、controller、action被请求；
-    它同时也定义了一种方法来实现用户自定义路由，这也使得它成为最重要的一个MVC组组件.
+    它同时也定义了一种方法来实现用户自定义路由,这也使得它成为最重要的一个MVC组组件.
     路由器主要负责管理和运行路由链,它根据路由协议栈倒序依次调用各个路由协议, 一直到某一个路由协议返回成功以后, 就匹配成功.
 
 #### 路由协议
 
     默认：Yaf_Route_Abstract
-    路由协议事实上主要负责匹配我们预先定义好的路由协议，
+    路由协议事实上主要负责匹配我们预先定义好的路由协议,
     默认是基于HTTP路由的, 它期望一个请求是HTTP请求并且请求对象是使用Yaf_Request_Http
 
 <!-- more -->
 
 - Yaf_Route_Static
 
-```bash    
+```php    
     <?php
      /**
       * 默认的路由协议Yaf_Route_Static, 就是分析请求中的request_uri, 在去除掉base_uri以后, 获取到真正的负载路由信息的request_uri片段, 
@@ -70,7 +70,7 @@ toc: true
 
 - Yaf_Route_Simple
 
-```bash
+```php
     <?php
      /**
       * Yaf_Route_Simple是基于请求中的query string来做路由的, 在初始化一个Yaf_Route_Simple路由协议的时候, 我们需要给出3个参数, 
@@ -96,7 +96,7 @@ toc: true
 
 - Yaf_Route_Supervar
 
-```bash
+```php
     <?php
      /**
       * Yaf_Route_Supervar和Yaf_Route_Simple相似, 都是在query string中获取路由信息, 不同的是, 它获取的是一个类似包含整个路由信息的request_uri
@@ -121,7 +121,7 @@ toc: true
 
 - Yaf_Route_Map
 
-```bash
+```php
     <?php
      /**
       * Yaf_Route_Map议是一种简单的路由协议, 它将REQUEST_URI中以'/'分割的节, 组合在一起, 形成一个分层的控制器或者动作的路由结果. 
@@ -144,7 +144,7 @@ toc: true
 
 - Yaf_Route_Rewrite
 
-```bash
+```php
     <?php
      //创建一个路由协议实例
      $route = new Yaf_Route_Rewrite(
@@ -166,7 +166,7 @@ toc: true
 
 - Yaf_Route_Regex
 
-```bash
+```php
     <?php
         //完成数字到字符变量的映射
         $route = new Yaf_Route_Regex( 'product/([a-zA-Z-_0-9]+)', array( 'controller' => 'products', 'action' => 'view'), array(1 => 'ident'));

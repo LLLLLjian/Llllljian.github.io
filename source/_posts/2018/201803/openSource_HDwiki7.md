@@ -28,7 +28,7 @@ toc: true
 - toplist
     * 说明 : 排行榜数据调用
     * 使用
-        ```bash
+        ```php
             <!-- rows=1表示展示排行榜的前1条数据 排序方式为credit2 默认desc -->
             {HDwiki:toplist rows=1 orderby=credit2}
                 <!-- 展示哪些字段见标签说明 -->
@@ -45,7 +45,7 @@ toc: true
 - recentupdate
     * 说明 : 最近更新词条列表数据调用
     * 使用 : 
-        ```bash
+        ```php
             <!-- rows=2展示前2条 默认按最后修改时间desc排序 展示字段下边有解释 -->
             {HDwiki:recentupdate rows=2}
 				<p>词条链接为<a href="{url doc-view-[field:did/]}" >[field:title/]</a></p>
@@ -58,7 +58,7 @@ toc: true
 - catelist
     * 说明 : 分类的数据调用
     * 使用 
-        ```bash
+        ```php
             {HDwiki:catelist}
                 <p>一级分类的链接为
                 	<a href="{url category-view-[field:cid/]}" >[field:name/]</a>
@@ -68,7 +68,7 @@ toc: true
 - commentlist
     * 说明 : 单个词条评论的数据调用
     * 使用 
-        ```bash
+        ```php
             <!-- title=词条名称 docid=5 可选填,如果都填写,则title优先级高 -->
             {HDwiki:commentlist title="" docid=19 rows=10}
 			  	<p>评论链接为 
@@ -83,7 +83,7 @@ toc: true
 - userlist
     * 说明 : 最新会员的数据调用
     * 使用 
-        ```bash
+        ```php
             <!-- 去user表中groupid=4的前十个用户 默认排序uid DESC-->
             {HDwiki:userlist groupid=4 rows=10}
 				<p>

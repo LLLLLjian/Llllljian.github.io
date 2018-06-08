@@ -54,21 +54,23 @@ toc: true
 ```
 
 #### 命令运行的判断依据
-<table><tr><th>指令下达情况</th><th>说明</th></tr><tr><td>cmd1 ; cmd2</td><td>不考虑命令相关性的连续命令下达</td></tr><tr><td>cmd1 && cmd2</td><td>(1)若 cmd1 运行完毕且正确运行($?=0)，则开始运行cmd2。<br />(2)若cmd1运行完毕且为错误($?≠0)，则cmd2不执行</td></tr><tr><td>cmd1 || cmd2</td><td>(1)若 cmd1 运行完毕且正确运行(?=0)，则cmd2不执行。<br />(2)若cmd1运行完毕且为错误(?≠0)，则开始执行cmd2。 </td></tr></table>
-```bash
-    假设/tmp/llllljian不存在,下边三种情况运行的结果
-    
-    ls /tmp/llllljian ; echo "exist" ; echo "not exist"
-    ls: 无法访问'/tmp/llllljian': 没有那个文件或目录
-    exist
-    not exist
+- 列表
+    <table><tr><th>指令下达情况</th><th>说明</th></tr><tr><td>cmd1 ; cmd2</td><td>不考虑命令相关性的连续命令下达</td></tr><tr><td>cmd1 && cmd2</td><td>(1)若 cmd1 运行完毕且正确运行($?=0),则开始运行cmd2.<br />(2)若cmd1运行完毕且为错误($?≠0),则cmd2不执行</td></tr><tr><td>cmd1 || cmd2</td><td>(1)若 cmd1 运行完毕且正确运行(?=0),则cmd2不执行.<br />(2)若cmd1运行完毕且为错误(?≠0),则开始执行cmd2. </td></tr></table>
+- 实例
+    ```bash
+        假设/tmp/llllljian不存在,下边三种情况运行的结果
+        
+        ls /tmp/llllljian ; echo "exist" ; echo "not exist"
+        ls: 无法访问'/tmp/llllljian': 没有那个文件或目录
+        exist
+        not exist
 
-    ls /tmp/llllljian && echo "exist" || echo "not exist"
-    ls: 无法访问'/tmp/llllljian': 没有那个文件或目录
-    not exist
+        ls /tmp/llllljian && echo "exist" || echo "not exist"
+        ls: 无法访问'/tmp/llllljian': 没有那个文件或目录
+        not exist
 
-    ls /tmp/vbirding || echo "not exist" && echo "exist"
-    ls: 无法访问'/tmp/vbirding': 没有那个文件或目录
-    not exist
-    exist
-```
+        ls /tmp/vbirding || echo "not exist" && echo "exist"
+        ls: 无法访问'/tmp/vbirding': 没有那个文件或目录
+        not exist
+        exist
+    ```

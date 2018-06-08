@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 禁用退格键
-```bash
+```javascript
     document.onkeydown = function(e) {
         e = e||event; 
         if(e.keyCode == 8) {
@@ -25,7 +25,7 @@ toc: true
     ondragstart="return false" 禁止鼠标在网页上拖动
     ondragenter 当用户拖曳对象到一个合法拖曳目标时在目标元素上触发
     onpaste="return false" 禁止粘贴
-```bash
+```javascript
     <input class="xinput" 
             maxlength=4 
             size="5" 
@@ -42,7 +42,7 @@ toc: true
 ### 文本域快捷键
     enter和ctrl+enter操作
     alt+enter为换行
-```bash
+```javascript
     $("textarea").keydown(function(event) {
         if (event.altKey && event.keyCode == 13) {
             var e = $(this).val();
@@ -60,20 +60,20 @@ toc: true
 ```
 
 ### 只输入数字
-```bash
+```javascript
     <script type="text/javascript">
 		function onlyNumber (obj) {
 	        //得到第一个字符是否为负号
 	        var t = obj.value.charAt(0);
-	        //先把非数字的都替换掉，除了数字和.
+	        //先把非数字的都替换掉,除了数字和.
 	        obj.value = obj.value.replace(/[^\d\.]/g,'');
 	        //必须保证第一个为数字而不是.
 	        obj.value = obj.value.replace(/^\./g,'');
 	        //保证只有一个.而没有多个.
 	        obj.value = obj.value.replace(/\.{2,}/g,'.');
-	        //保证.只出现一次，而不能出现两次以上
+	        //保证.只出现一次,而不能出现两次以上
 	        obj.value = obj.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');
-	        //如果第一个位是负号，则允许添加
+	        //如果第一个位是负号,则允许添加
 	        if(t == '-'){
 	            obj.value = '-'+obj.value;
 	        }
@@ -84,7 +84,7 @@ toc: true
 ```
 
 ### 实时获取文本框内容
-```bash
+```javascript
     <script type="text/javascript">
 	var formBind = {
 		initialize:function(){

@@ -22,16 +22,16 @@ toc: true
     * 更快的执行速度, 更少的内存占用.
     * 自己的理解：性能高
 - 缺点
-    * C的扩展，致命性错误对C的要求很高
+    * C的扩展,致命性错误对C的要求很高
 
 <!-- more -->
 
 ## yaf安装
-- 说一下自己的安装过程。
-- 通过phpinfo()查看其中的Thread Safety 查看是否线程安全，如果是enabled就下载Ts版的yaf扩展，否则就下载nts版
+- 说一下自己的安装过程.
+- 通过phpinfo()查看其中的Thread Safety 查看是否线程安全,如果是enabled就下载Ts版的yaf扩展,否则就下载nts版
 - 配置php.ini支持yaf扩展
 
-```bash
+```php
     [yaf]
     yaf.environ = product
     yaf.library = NULL
@@ -44,14 +44,14 @@ toc: true
     extension=yaf.so //关键步骤
 ```
 
-- 重启服务器，在phpinfo()页面查找yaf，找到就是安装成功
+- 重启服务器,在phpinfo()页面查找yaf,找到就是安装成功
 
 ## yaf设置
 
-- 添加.htaccess文件，限制唯一访问入口为public/index.php，展示在其中的代码为RewriteRule .* index.php
-- 修改index.php文件，定义APPLICATION常量
+- 添加.htaccess文件,限制唯一访问入口为public/index.php,展示在其中的代码为RewriteRule .* index.php
+- 修改index.php文件,定义APPLICATION常量
 
-```bash
+```php
     <?php
     define("APP_PATH",  realpath(dirname(__FILE__) . '/../')); /* 指向public的上一级 */
     $app  = new Yaf_Application(APP_PATH . "/conf/application.ini");
@@ -60,20 +60,20 @@ toc: true
 
 - 在config目录中添加配置文件application.ini中定义directory
 
-```bash 
+```php 
     [product]
     ;支持直接写PHP中的已定义常量
     application.directory=APPLICATION_PATH
     application.dispatcher.throwException=1
     application.dispatcher.catchException=0
 
-    ;说明：如下的配置都是Ap的默认配置，可以省略
+    ;说明：如下的配置都是Ap的默认配置,可以省略
     
     ;加载第三方类库
     application.library=APPLICATION_PATH "/../library"
     application.bootstrap=APPLICATION_PATH"/Bootstrap.php"
 
-    ;默认的Url前缀，不指定的时候，由Ap自行设计
+    ;默认的Url前缀,不指定的时候,由Ap自行设计
     application.baseUri=""
     ;默认的脚本后缀名
     application.ext=php
@@ -112,9 +112,9 @@ toc: true
 
     ;database config 数据库配置
 
-    database.db_driver = "mysqli"  ;选择不同的数据库DB 引擎，一般默认mysqli,或者mysql,pdo
+    database.db_driver = "mysqli"  ;选择不同的数据库DB 引擎,一般默认mysqli,或者mysql,pdo
     ;主库配置
-    database.default.db_type   = 1 ;0-单个服务器，1-读写分离，2-随机
+    database.default.db_type   = 1 ;0-单个服务器,1-读写分离,2-随机
     database.default.0.host = 127.0.0.1
     database.default.0.username = "root"
     database.default.0.password = ""

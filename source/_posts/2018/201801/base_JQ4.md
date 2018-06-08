@@ -10,7 +10,7 @@ toc: true
 ### 触发事件
 - .trigger("事件名")
     * 在每一个匹配的元素上触发某类事件
-    ```bash
+    ```javascript
         $("button").trigger("click");
         $("input").trigger("focus");
     ```
@@ -20,7 +20,7 @@ toc: true
 ### 自定义事件
 - 必须通过on bind绑定
 - 通过trigger()触发函数
-```bash
+```javascript
     $("div").on("slideup", function() {
         $(this).html("上滑");
     })
@@ -73,7 +73,7 @@ toc: true
     * 新添加的子元素同样可以相应事件
 - 优点3
     * 如果所有的子元素要求实现同样的效果,这个时候可以考虑添加到父元素,让父元素代替子元素去响应事件
-```bash
+```javascript
     $("table").click(function(e) {
         $(e.target).not("tbody,tr,table").css("background-color", "red");
     })
@@ -84,7 +84,7 @@ toc: true
     * 让元素显示,相当于.css("display", "block")
 - hide(slow|normal|num)
     * 让元素隐藏,相当于.css("display", "none")
-```bash
+```javascript
     $("button:eq(0)").click(function() {
         if($("div").css("display") == 'none') {
             $("div").show(1000);
@@ -97,7 +97,7 @@ toc: true
 - fadeOut()
 - fadeTOggle()
     * 通过不透明度的变化来开关所有匹配元素的淡入淡出效果,并在动画完成之后可选的触发一个回调函数
-```bash
+```javascript
     $("button:eq(0)").click(function() {
         if($("div").css("display") == 'none') {
             $("div").fadeIn(1000);
@@ -114,31 +114,31 @@ toc: true
 ### 自定义动画
     $("div").animate(最终状态, 执行时间, 回调函数)
 - 顺序执行
-    ```bash
+    ```javascript
         $("div").animate({"left" : "500px"}, 2000, function() {console.log("over");});
         $("div").animate({"top" : "500px"}, 2000, function() {console.log("down");});
     ```
 
 - 同时执行 
-    ```bash
+    ```javascript
         $("div").animate({"top" : "500px", "left" : "500px"}, 2000});
     ```
 
 - 累加动画
     * delay(时间)延迟
-    ```bash 
+    ```javascript 
         $("div").delay(2000).animate({"left" : "+=500"}, 2000);
     ```
 
 - 延迟动画
     * delay(时间)延迟
-    ```bash
+    ```javascript
         $("div").delay(2000).animate({"left" : "+=500"}, 2000);
     ```
 
 - 停止动画
     * stop(是否清空动画队列, 是否显示最终效果)
-    ```bash
+    ```javascript
         $("div").hover(function() {
             $(this).stop(true);
             $(this).animate({"width" : "400px"}, 1000);

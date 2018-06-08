@@ -19,7 +19,7 @@ toc: true
     * 在/block/对应主题内 新建一个文件夹[xxxxx]
 - 步骤2
     * 添加必要文件block.php[名字固定]
-        ```bash
+        ```php
             <?php
                 // 添加版块 列表展示项
                 $block['name'] = '测试模块';
@@ -46,7 +46,7 @@ toc: true
             ?>
         ```
     * 添加必要文件 xxxxx.php[与文件夹名一致]
-        ```bash
+        ```php
             <?php
                 // 与文件同名
                 class xxxxx{
@@ -75,7 +75,7 @@ toc: true
             ?>
         ```
     * 添加必要文件 test1.htm[对应$block('func')]
-        ```bash
+        ```php
             <!-- 外边框div和bid="{$bid}"属性是必须的 -->
             <div  class="columns reci {$data['config']['style']}" bid="{$bid}">
                 <h2 class="col-h2">测试模板1</h2>
@@ -87,7 +87,7 @@ toc: true
             </div>
         ```  
     * 添加非必要文件 test1_inc.htm[对应test1.htm文件]
-        ```bash
+        ```php
             <!-- 此模块方法的配置表单 -->
             <ul class="col-ul ul_l_s">
                 <li><span>选择边框样式：</span>
@@ -101,7 +101,7 @@ toc: true
                     <option value="style_06">样式六</option>
                     <option value="style_07">样式七</option>
                     <option value="style_08">样式八</option>
-                    </select><br />如果默认则不使用额外样式设置。
+                    </select><br />如果默认则不使用额外样式设置.
                 </li>
             </ul>
         ```

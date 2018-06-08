@@ -13,7 +13,7 @@ toc: true
 <!-- more -->
 
 #### 基本结构
-    ```bash
+    ```php
         !defined('IN_HDwiki') && exit('Access Denied');
 
         // 每个model类的名称均是 文件名 + models

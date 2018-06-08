@@ -46,7 +46,7 @@ toc: true
     * model : setting.class.php
     * view : 参照control中的视图.
     * eg : admin_listdisplay.htm : 后台-全局-内容设置-列表设置[存放一些列表展示的数量 纯数字]
-        ```bash
+        ```php
             <tr>
                 <!-- 需要在后台文字文件中添加的lang -->
                 <td >{lang categoryLetter}</td>
@@ -55,7 +55,7 @@ toc: true
             </tr>
         ```
     * eg ： admin_base.htm : 后台-全局-站点设置[没有限制]
-        ```bash
+        ```php
             <tr>
                 <!-- 同上 -->
                 <td><span>{lang closeWebsiteReason}</span>{lang closeWebsiteReasonTip}</td>

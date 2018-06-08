@@ -12,7 +12,7 @@ toc: true
 
 #### 表单相关
 - 表单验证,两个参数中至少需要一个
-    ```bash
+    ```php
         public function rules()
         {
             return [
@@ -28,14 +28,14 @@ toc: true
         }
     ```
 - 去除首尾空格 
-    ```bash
+    ```php
         public function rules()
         {
             return [[title', 'content'],'trim']];
         }
     ```
 - 检查字段是否存在
-    ```bash
+    ```php
         // uid字段对应User表中的id字段.检测uid在User表中是否存在 
         public function rules()
         {
@@ -44,20 +44,20 @@ toc: true
                 [['uid'], 'exist',
                     'targetClass' => User::className(),
                     'targetAttribute' => 'id',
-                    'message' => '此{attribute}不存在。'
+                    'message' => '此{attribute}不存在.'
                 ],
                 ...
             ];
         }
     ```
 - 获取save()失败的原因
-    ```bash
+    ```php
         echo array_values($model->getFirstErrors())[0];exit;
         var_dump($model->getErrors());
         exit;
     ```
 - 为某些action关闭csrf验证
-    ```bash
+    ```php
         1.新建一个Behavior[后期方便维护]
         use Yii;
         use yii\base\Behavior;
@@ -113,14 +113,14 @@ toc: true
 
 #### 数据查询
 - where多条件
-    ```bash
+    ```php
         User::find()->where(['and', ['xxx' => 0, 'yyy' => 2], ['>', 'zzz', $time]]);
 
         // 相当于
         SELECT * FROM user WHERE xxx = 0 AND yyy = 2 AND zzz > $time
     ```
 - SQL随机取十个
-    ```bash         
+    ```php         
         User::find()->select('ID, City,State,StudentName')
                     ->from('student')                               
                     ->where(['IsActive' => 1])
@@ -129,15 +129,15 @@ toc: true
                     ->limit(10);
     ```
 - like查询
-    ```bash
-        ['like', 'name', 'tester'] 会生成 name LIKE '%tester%'。
+    ```php
+        ['like', 'name', 'tester'] 会生成 name LIKE '%tester%'.
 
         ['like', 'name', '%tester', false] => name LIKE '%tester'
 
         $query = User::find()->where(['LIKE', 'name', $id.'%', false]);
     ```
 - 获取sql语句
-    ```bash
+    ```php
         $query = User::find(1);// SELECT * FROM user WHERE id = 1
 
         $commandQuery = clone $query;
@@ -145,7 +145,7 @@ toc: true
         echo $commandQuery->createCommand()->getRawSql(); 
     ```
 - 不为空查询
-    ```bash
+    ```php
         $userInfoArr = User::find()->where(['not' => ['realname' => null]])
                                    ->asArray()
                                    ->all();
@@ -153,7 +153,7 @@ toc: true
 
 #### MySQL处理
 - 清除表结构缓存
-    ```bash
+    ```php
         // 清除指定表结构缓存数据
         Yii::$app->db->getSchema()->refreshTableSchema($tableName);
 
@@ -161,7 +161,7 @@ toc: true
         Yii::$app->db->getSchema()->refresh();
     ```
 - 字段去重 
-    ```bash
+    ```php
         1.groupBy
         static::find()->where(['user_id' => $user_id,])
                       ->groupBy('uuid')
@@ -175,7 +175,7 @@ toc: true
                       ->all();
     ```
 - 关于事务
-    ```bash
+    ```php
         Yii::$app->db->transaction(function() {
             $order = new Order($customer);
             $order->save();
@@ -195,7 +195,7 @@ toc: true
         }
     ```
 - 批量插入数据
-    ```bash
+    ```php
         1.clone
         $model = new User();
         foreach($data as $attributes)
@@ -217,12 +217,12 @@ toc: true
 
 #### 前端展示
 - 生成URL
-    ```bash
+    ```php
         Html::a("链接1", \yii\helpers\Url::toRoute(['product/view', 'id' => 42]);
         Html::a("链接1", \yii\helpers\Url::Yii::$app->urlManager->createUrl(['product/view', 'id' => 42]);
     ```
 - 在一个控制器中调用其他控制器的action方法
-    ```bash
+    ```php
         Yii::$app->runAction('new_controller/new_action', $params);
 
         $this->redirect(array('/site/contact','id'=>12));
@@ -230,7 +230,7 @@ toc: true
 
 #### 其它
 - 获取当前控制器及action
-    ```bash
+    ```php
         1.在控制器中
         // 控制器名 
         $controller = $this->id;

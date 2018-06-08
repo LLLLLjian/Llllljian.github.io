@@ -12,16 +12,16 @@ toc: true
 
 #### 使用过滤器
 - 预过滤
-    * 按顺序执行应用主体中behaviors()列出的过滤器。
-    * 按顺序执行模块中behaviors()列出的过滤器。
-    * 按顺序执行控制器中behaviors()列出的过滤器。
-    * 如果任意过滤器终止动作执行， 后面的过滤器（包括预过滤和后过滤）不再执行。
-- 成功通过预过滤后执行动作。
+    * 按顺序执行应用主体中behaviors()列出的过滤器.
+    * 按顺序执行模块中behaviors()列出的过滤器.
+    * 按顺序执行控制器中behaviors()列出的过滤器.
+    * 如果任意过滤器终止动作执行, 后面的过滤器（包括预过滤和后过滤）不再执行.
+- 成功通过预过滤后执行动作.
 - 后过滤
-    * 倒序执行控制器中behaviors()列出的过滤器。
-    * 倒序执行模块中behaviors()列出的过滤器。
+    * 倒序执行控制器中behaviors()列出的过滤器.
+    * 倒序执行模块中behaviors()列出的过滤器.
     * 倒序执行应用主体中behaviors()列出的过滤器
-```bash
+```php
     //基本模板
     public function behaviors() 
     {
@@ -30,7 +30,7 @@ toc: true
         ];
     }
 ```
-```bash
+```php
     方式1:
     <?php 
     namespace common\lib;
@@ -84,7 +84,7 @@ toc: true
     }
     ?>
 ```
-```bash
+```php
     //方式2:
     <?php
 
@@ -127,7 +127,7 @@ toc: true
 ```
 
 #### 创建过滤器
-    ```bash
+    ```php
         namespace app\components;
 
         use Yii;
@@ -154,10 +154,10 @@ toc: true
 
 #### 核心过滤器
 - AccessControl
-    ```bash
-        //允许所有访客（还未经认证的用户）执行 login 和 signup 动作。 
-        //roles 选项包含的问号 ? 是一个特殊的标识，代表”访客用户”。
-        //允许已认证用户执行 logout 动作。@是另一个特殊标识， 代表”已认证用户”。
+    ```php
+        //允许所有访客（还未经认证的用户）执行 login 和 signup 动作. 
+        //roles 选项包含的问号 ? 是一个特殊的标识,代表”访客用户”.
+        //允许已认证用户执行 logout 动作.@是另一个特殊标识, 代表”已认证用户”.
         use yii\web\Controller;
         use yii\filters\AccessControl;
 
@@ -188,7 +188,7 @@ toc: true
         }
     ```
 - 认证方法过滤器
-    ```bash
+    ```php
         use yii\filters\auth\HttpBasicAuth;
 
         public function behaviors()
@@ -201,7 +201,7 @@ toc: true
         }
     ```
 - ContentNegotiator
-    ```bash
+    ```php
         //配置ContentNegotiator支持JSON和XML 响应格式和英语（美国）和德语
         use yii\filters\ContentNegotiator;
         use yii\web\Response;
@@ -224,7 +224,7 @@ toc: true
         }
     ```
 - HttpCache 
-    ```bash
+    ```php
         use yii\filters\HttpCache;
 
         public function behaviors()
@@ -242,8 +242,8 @@ toc: true
         }
     ```
 - PageCache
-    ```bash
-        //PageCache应用在 index 动作， 缓存整个页面 60 秒或 post 表的记录数发生变化
+    ```php
+        //PageCache应用在 index 动作, 缓存整个页面 60 秒或 post 表的记录数发生变化
         use yii\filters\PageCache;
         use yii\caching\DbDependency;
 
@@ -267,8 +267,8 @@ toc: true
     ```
 - RateLimiter
 - VerbFilter 
-    ```bash
-        //VerbFilter检查请求动作的HTTP请求方式是否允许执行， 如果不允许，会抛出HTTP 405异常。 如下示例，VerbFilter指定CRUD动作所允许的请求方式
+    ```php
+        //VerbFilter检查请求动作的HTTP请求方式是否允许执行, 如果不允许,会抛出HTTP 405异常. 如下示例,VerbFilter指定CRUD动作所允许的请求方式
         use yii\filters\VerbFilter;
 
         public function behaviors()

@@ -40,7 +40,7 @@ toc: true
     * 光标移到要处理的块区域上 ctrl+v
     * 移动光标选择要处理的块,此时光标移动过的区域会反白
     * 一般指令模式下按y进行复制,移动到你想复制的地方,然后按p进行复制
-    <table><tr><th colspan="2">一般模式下，块选择的按键意义</th></tr><tr><td>v</td><td>字符选择，会将光标经过的地方反白选择</td></tr><tr><td>V</td><td>行选择，会将光标经过的列反白选择</td></tr><tr><td>[Ctrl]+v</td><td>区块选择,可以用长方形的方式选择文档</td></tr><tr><td>y</td><td>将选中地方复制起来</td></tr><tr><td>d</td><td>将选中地方删除</td></tr><tr><td>p</td><td>将刚刚复制的区块在游标所在处进行粘贴</td></tr></table>
+    <table><tr><th colspan="2">一般模式下,块选择的按键意义</th></tr><tr><td>v</td><td>字符选择,会将光标经过的地方反白选择</td></tr><tr><td>V</td><td>行选择,会将光标经过的列反白选择</td></tr><tr><td>[Ctrl]+v</td><td>区块选择,可以用长方形的方式选择文档</td></tr><tr><td>y</td><td>将选中地方复制起来</td></tr><tr><td>d</td><td>将选中地方删除</td></tr><tr><td>p</td><td>将刚刚复制的区块在游标所在处进行粘贴</td></tr></table>
 
 #### 多文件编辑
 - 场景

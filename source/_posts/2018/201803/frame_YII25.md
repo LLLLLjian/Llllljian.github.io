@@ -6,13 +6,13 @@ toc: true
 ---
 
 ### 安全_认证
-    认证是鉴定用户身份的过程。它通常使用一个标识符 （如用户名或电子邮件地址）和一个加密令牌（比如密码或者存取令牌）来 鉴别用户身份。认证是登录功能的基础
+    认证是鉴定用户身份的过程.它通常使用一个标识符 （如用户名或电子邮件地址）和一个加密令牌（比如密码或者存取令牌）来 鉴别用户身份.认证是登录功能的基础
 
 <!-- more -->
 
 #### 认证
 - 应用配置
-    ```bash
+    ```php
         return [
             'components' => [
                 'user' => [
@@ -29,8 +29,8 @@ toc: true
         ];
     ```
 - common\models\User.php
-    ```bash
-        // 实现认证逻辑的类，通常用关联了持久性存储的用户信息的AR模型Active Record实现
+    ```php
+        // 实现认证逻辑的类,通常用关联了持久性存储的用户信息的AR模型Active Record实现
         class User extends ActiveRecord implements IdentityInterface
         {
             public static function tableName()
@@ -38,7 +38,7 @@ toc: true
                 return 'user';
             }
 
-            // 生成随机的auth_key，用于cookie登陆. 新增的时候添加auth_key字段
+            // 生成随机的auth_key,用于cookie登陆. 新增的时候添加auth_key字段
             public function beforeSave($insert)
             {
                 if (parent::beforeSave($insert)) {
@@ -82,22 +82,22 @@ toc: true
         }
     ```
 - yii\web\User.php
-    * EVENT_BEFORE_LOGIN：在登录 yii\web\User::login() 时引发。 如果事件句柄将事件对象的 isValid 属性设为 false， 登录流程将会被取消。
-    * EVENT_AFTER_LOGIN：登录成功后引发。
-    * EVENT_BEFORE_LOGOUT：注销 yii\web\User::logout() 前引发。 如果事件句柄将事件对象的 isValid 属性设为 false， 注销流程将会被取消。
-    * EVENT_AFTER_LOGOUT：成功注销后引发。
-    ```bash
-        // 当前用户的身份实例。未认证用户则为 Null 。
+    * EVENT_BEFORE_LOGIN：在登录 yii\web\User::login() 时引发. 如果事件句柄将事件对象的 isValid 属性设为 false, 登录流程将会被取消.
+    * EVENT_AFTER_LOGIN：登录成功后引发.
+    * EVENT_BEFORE_LOGOUT：注销 yii\web\User::logout() 前引发. 如果事件句柄将事件对象的 isValid 属性设为 false, 注销流程将会被取消.
+    * EVENT_AFTER_LOGOUT：成功注销后引发.
+    ```php
+        // 当前用户的身份实例.未认证用户则为 Null .
         $identity = Yii::$app->user->identity;
 
-        // 当前用户的ID。 未认证用户则为 Null 。
+        // 当前用户的ID. 未认证用户则为 Null .
         $id = Yii::$app->user->id;
 
         // 判断当前用户是否是游客（未认证的）
         $isGuest = Yii::$app->user->isGuest;
 
-        // 使用指定用户名获取用户身份实例。
-        // 请注意，如果需要的话您可能要检验密码
+        // 使用指定用户名获取用户身份实例.
+        // 请注意,如果需要的话您可能要检验密码
         $identity = User::findOne(['username' => $username]);
 
         // 登录用户

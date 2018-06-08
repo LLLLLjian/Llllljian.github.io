@@ -7,7 +7,7 @@ toc: true
 
 ### 数据格式器
 #### 配置Formatter
-    ```bash
+    ```php
         return [
             'charset' => 'utf-8',
             'language' => 'zh-CN',
@@ -31,7 +31,7 @@ toc: true
 <!-- more -->
 
 #### 时间/日期数据
-    ```bash
+    ```php
         // 控制器中输出
         echo Yii::$app->formatter->asDate('now');
         // 对应配置中的dateFormat
@@ -78,7 +78,7 @@ toc: true
     ```
 
 #### 格式化数字
-    ```bash
+    ```php
         echo Yii::$app->formatter->asInteger(86399);
         // 格式化为整型
         // 86,399
@@ -100,7 +100,7 @@ toc: true
         echo Yii::$app->formatter->asCurrency(86399);
         // 格式化为货币
         // bool(true) ￥86,399.00
-        // 出现货币单位有两个要点。1.开启intl扩展;2.设置货币单位currencyCode
+        // 出现货币单位有两个要点.1.开启intl扩展;2.设置货币单位currencyCode
 
         echo Yii::$app->formatter->asSize(150);
         // 人可读的字节数
@@ -112,7 +112,7 @@ toc: true
     ```
 
 #### 其他格式化
-    ```bash
+    ```php
         echo Yii::$app->formatter->asRaw(1463606983);
         // 简单输出输入值
         // 1463606983
@@ -134,7 +134,7 @@ toc: true
         // 输出: <a href="mailto:admin@example.com">admin@example.com</a>
 
         echo Yii::$app->formatter->asParagraphs('hello');
-        // 值会转换成HTML编码的文本段落，用<p>标签包裹；
+        // 值会转换成HTML编码的文本段落,用<p>标签包裹；
         // hello
 
         echo Yii::$app->formatter->asUrl('www.baidu.com');

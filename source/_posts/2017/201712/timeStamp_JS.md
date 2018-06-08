@@ -8,7 +8,7 @@ toc: true
 
 ## 计算两个日期之间的天数
 
-``` bash
+``` javascript
 function daysBetween(DateOne,DateTwo)  
 {   
     var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));  
@@ -27,7 +27,7 @@ function daysBetween(DateOne,DateTwo)
 
 ## 多少天之后
 
-``` bash
+``` javascript
 Date.prototype.addDays = function(days)
 {
     var date = new Date(this);
@@ -38,7 +38,7 @@ Date.prototype.addDays = function(days)
 
 ## 指定时间日期格式
 
-``` bash
+``` javascript
 var newDate = new Date();
 
 Date.prototype.format = function(format) {

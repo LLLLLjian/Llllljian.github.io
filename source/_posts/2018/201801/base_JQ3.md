@@ -10,21 +10,21 @@ toc: true
 ### 添加事件
 -  基本用法
     * on("事件名", 响应函数)
-    ```bash
+    ```javascript
         $("div").on("click", function(){
             console.log("这是点击事件");
         })
     ```
 - 多个事件添加同一个函数
     * on("事件名 事件名", 响应函数)
-    ```bash
+    ```javascript
         $("div").on("click mouseover", function(){
             console.log("这是点击事件");
         })
     ```
 - 一次性添加多个事件的响应
     * on({"事件名1" : "响应函数1", "事件名2" : "响应函数2", "事件名n" : "响应函数n",})
-    ```bash
+    ```javascript
         $("div").on({
             "click" : function() {console.log("click");},
             "mouseover" : function() {console.log("mouseover");},
@@ -37,13 +37,13 @@ toc: true
 - 响应事件传参
     * 参数写在函数名的后面,用逗号分隔
     * 参数为对象或者数字
-    ```bash
+    ```javascript
         $("div").on("click", {"key" : "value"}, function(event) {
             console.log(event.data);
         })
     ```
 - 链式操作
-    ```bash
+    ```javascript
         $("div").on("click", function() {console.log("click")})
                 .on("mouseover", function() {console.log("mouseover")})
                 .on("click", hand);
@@ -84,7 +84,7 @@ toc: true
 ### 合成事件
 - hover()
     * $("").hover(mouseover的事件函数, mouseout的事件函数)
-    ```bash
+    ```javascript
         //mouseover和mouseout的合成
         $(function() {
             $("div").hover(function() {
@@ -96,10 +96,10 @@ toc: true
     ```
 
 ### 常见事件
-    focus和blur是由内像外进行事件冒泡。focusin和focusout是由外像内进行捕获，所以当父元素添加了focusin和focusout时子元素也会触发聚焦或者失焦事件
+    focus和blur是由内像外进行事件冒泡.focusin和focusout是由外像内进行捕获,所以当父元素添加了focusin和focusout时子元素也会触发聚焦或者失焦事件
 - foucus
 - foousout
-    ```bash
+    ```javascript
         .input {
             display : none;
         }
@@ -126,7 +126,7 @@ toc: true
 
 ### toggle()
 - 如果被选元素可见,则隐藏这些元素,否则显示这些元素
-    ```bash
+    ```javascript
         <ul>
             <p>快速导航栏</p>
             <li>热卖商品</li><div class="div1"></div>
@@ -150,7 +150,7 @@ toc: true
     * 有样式移除 没有样式添加
 - hasClass
     * 判断元素是否有指定class,没有就返回false,有就返回true
-```bash
+```javascript
     $("#b1").click(function () {
         $("div").addClass("c1");
     })
@@ -190,7 +190,7 @@ toc: true
     * type
         * 获取事件名
 
-```bash 
+```javascript 
     $("body").click(function() {
         console.log("body!");
         console.log(event.target);

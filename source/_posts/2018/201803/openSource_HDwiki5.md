@@ -15,7 +15,7 @@ toc: true
 <!-- more -->
 
 #### 基本结构
-    ```bash
+    ```php
         // 控制器中
         // 将$navigation变量的值传递给navigation,页面中可以直接调用nvaigation
         $this->view->assign('navigation',$navigation);
@@ -24,7 +24,7 @@ toc: true
     ```
 
 #### 语法
-    ```bash
+    ```php
         1.引入其它视图文件
         {template header}
 

@@ -106,7 +106,7 @@ toc: true
 - :contains(指定文本值)
     * 查找所有的包含指定文本值的元素
     * 查找出页面中所有包含"招聘"二字的div,把招聘高亮显示
-    ```bash
+    ```javascript
         var num = $("div:contains(招聘)");
         for (var i = 0; i < num.length; i++>) {
             var div = num[i];

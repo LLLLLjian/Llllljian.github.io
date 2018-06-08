@@ -16,7 +16,7 @@ toc: true
 - 修改结果
     * 和图片统一放到upload中,使用原后缀
 - 代码修改
-    ```bash
+    ```php
         // control/attachment.php/doupload old
         $destfile = 'data/attachment/'.date('y-m').'/'.date('Y-m-d').'_'.util::random(10).'.attach';
         file::createaccessfile('data/attachment/'.date('y-m').'/');
@@ -59,7 +59,7 @@ toc: true
     * index.php中将错误开启.去除控制器中的构造方法中的&[5.4开始不支持参数中带&]
     * 控制器中代码修改可以使用编辑器的全局搜索和替换
 - 代码修改
-    ```bash
+    ```php
         // index.php
         error_reporting(All);
 

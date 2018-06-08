@@ -10,7 +10,7 @@ toc: true
 
 <!-- more -->
 
-```bash
+```xml
 <form method="post" onsubmit="return checkForm(this)">
     <div class="ant-row ant-form-item">
         <div class="ant-col-6 ant-form-item-label">
@@ -19,7 +19,7 @@ toc: true
         <div class="ant-col-18 ant-form-item-control-wrapper">
             <div class="ant-form-item-control ">
                 <span class="ant-input-affix-wrapper">
-                    <input type="text" placeholder="只能使用字母+数字，且字母开头" maxlength="11" id="username" name="username" class="ant-input ant-input-lg">
+                    <input type="text" placeholder="只能使用字母+数字,且字母开头" maxlength="11" id="username" name="username" class="ant-input ant-input-lg">
                 </span>
             </div>
         </div>
@@ -129,7 +129,7 @@ toc: true
     <div class="ant-row" style="display: flex; flex-direction: row;">
         <input type="submit" id="submit" class="submit ant-btn ant-btn-primary ant-btn-lg" value="注 册" disabled="disabled">
         <button type="button" class="ant-btn ant-btn-primary ant-btn-lg" style="margin-left: 5px;" onclick="window.location.href='/index.php/public/login'">
-            <span>已有账号，去登录</span>
+            <span>已有账号,去登录</span>
         </button>
     </div>
 </form>
@@ -176,7 +176,7 @@ toc: true
     function send() {
         var phone=$('#phone').val();
         if(checkPhone(phone)==false){
-            alert('手机号码有误，请重填');
+            alert('手机号码有误,请重填');
             return false;
         }
         $.get(
@@ -216,7 +216,7 @@ toc: true
 
         var re = /^[a-zA-Z][a-zA-Z0-9]*$/;
         if(!re.test(username.val())){
-            alert('用户名只能使用字母或数字，且第一位为字母');
+            alert('用户名只能使用字母或数字,且第一位为字母');
             return false;
         }
         if(username.val().length<4){
@@ -224,7 +224,7 @@ toc: true
             return false;
         }
         if(checkPhone(phone.val())==false){
-            alert('手机号码有误，请重填');
+            alert('手机号码有误,请重填');
             return false;
         }
         if(!sms_code.val()){

@@ -6,12 +6,12 @@ toc: true
 ---
 
 #### 分页
-    当一次要在一个页面上显示很多数据时， 通常需要将其分成几部分， 每个部分都包含一些数据列表并且一次只显示一部分.使用条件：数据量过多或者表过大,否则直接使用ActiveDataProvider即可
+    当一次要在一个页面上显示很多数据时, 通常需要将其分成几部分, 每个部分都包含一些数据列表并且一次只显示一部分.使用条件：数据量过多或者表过大,否则直接使用ActiveDataProvider即可
 
 <!-- more -->
 
 - Search
-    ```bash
+    ```php
         use yii\data\Pagination;
 
         // 创建一个 DB 查询来获得所有 status 为 1 的文章
@@ -33,7 +33,7 @@ toc: true
     ```
 
 - views
-    ```bash
+    ```php
         use yii\widgets\LinkPager;
 
         echo LinkPager::widget([
@@ -42,10 +42,10 @@ toc: true
     ```
 
 #### 排序
-    展示多条数据时，通常需要对数据按照用户指定的列进行排序
+    展示多条数据时,通常需要对数据按照用户指定的列进行排序
 
 - Search
-    ```bash
+    ```php
         use yii\data\Sort;
 
         $sort = new Sort([
@@ -68,7 +68,7 @@ toc: true
     ```
 
 - Active Record
-    ```bash
+    ```php
         public function attributeLabels()
         {
             return [

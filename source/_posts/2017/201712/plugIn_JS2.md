@@ -6,14 +6,14 @@ toc: true
 ---
 
 ## 使用过的前端插件
-    下边写的都是一些自己使用过的插件，只是简单的写了一个例子，具体的还是要再看文档。
+    下边写的都是一些自己使用过的插件,只是简单的写了一个例子,具体的还是要再看文档.
 
 <!-- more -->
 
 ### 页面类
 - 分享选中内容插件
     * HTML
-        ``` bash  
+        ``` javascript  
             <div id="share">  
                 <div class="bdsharebuttonbox" data-tag="share_1">  
                     <a class="bds_mshare" data-cmd="mshare">mshare</a>  
@@ -26,7 +26,7 @@ toc: true
             </div>  
         ```
     * JS
-        ``` bash     
+        ``` javascript     
             window._bd_share_config = {  
                 "common": {  
                     "bdSnsKey": {},  
@@ -49,7 +49,7 @@ toc: true
             with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
         ```
     * CSS
-        ``` bash  
+        ``` javascript  
             /*
             .bdsharebuttonbox a
             {
@@ -74,20 +74,20 @@ toc: true
 
 - 页面消息提示toastr
     * AJAX响应部分
-        ``` bash  
+        ``` javascript  
             success : function (data) {
                 data.err? toastr.error(data.msg) : toastr.success(data.msg);
             }
 
             其它颜色响应：
 
-            //常规消息提示，默认背景为浅蓝色  
+            //常规消息提示,默认背景为浅蓝色  
             toastr.info("你有新消息了!");  
-            //成功消息提示，默认背景为浅绿色 
+            //成功消息提示,默认背景为浅绿色 
             toastr.success("你有新消息了!"); 
-            //警告消息提示，默认背景为橘黄色 
+            //警告消息提示,默认背景为橘黄色 
             toastr.warning("你有新消息了!"); 
-            //错误消息提示，默认背景为浅红色 
+            //错误消息提示,默认背景为浅红色 
             toastr.error("你有新消息了!");  
             //带标题的消息框
             toastr.success("你有新消息了!","消息提示");
@@ -95,7 +95,7 @@ toc: true
             toastr["info"]("你有新消息了!","消息提示");
         ```
     * JS自定义配置
-        ``` bash     
+        ``` javascript     
             toastr.options = {  
                 closeButton: false, //是否显示关闭按钮（提示框右上角关闭按钮）；
                 debug: false,  //是否为调试； 
@@ -117,7 +117,7 @@ toc: true
             toast-top-left  顶端左边
             toast-top-right    顶端右边
             toast-top-center  顶端中间
-            toast-top-full-width 顶端，宽度铺满整个屏幕
+            toast-top-full-width 顶端,宽度铺满整个屏幕
             toast-botton-right  
             toast-bottom-left
             toast-bottom-center
@@ -127,13 +127,13 @@ toc: true
 ### 表格类
 - 表格头固定fixedtableheader
     * HTML
-        ``` bash  
+        ``` javascript  
             <table id="tdata-1">
 
             </table>
         ```
     * jQuery
-        ``` bash     
+        ``` javascript     
             $(document).ready(function() { 
                 $('#tdata-1').fixedtableheader({ 
                 　　highlightrow: true,
@@ -145,7 +145,7 @@ toc: true
 
 - 导出表格数据tableexcel
     * HTML
-        ``` bash  
+        ``` javascript  
             <table>
                 <thead>
                     <tr class="noExl">
@@ -179,7 +179,7 @@ toc: true
                 </table> 
         ```
     * jQuery
-        ``` bash     
+        ``` javascript     
             $("#table2excel").table2excel({
                 // 不被导出的表格行的CSS class类
                 exclude: ".noExl",
@@ -190,13 +190,13 @@ toc: true
             });
         ```
     * 配置参数
-        ``` bash
-            exclude：不被导出的表格行的CSS class类。
-            name：导出的Excel文档的名称。
-            filename：Excel文件的名称。
-            exclude_img：是否导出图片。
+        ``` javascript
+            exclude：不被导出的表格行的CSS class类.
+            name：导出的Excel文档的名称.
+            filename：Excel文件的名称.
+            exclude_img：是否导出图片.
             exclude_links：是否导出超链接
-            exclude_inputs：是否导出输入框中的内容。
+            exclude_inputs：是否导出输入框中的内容.
         ```
 
 ###   树插件类

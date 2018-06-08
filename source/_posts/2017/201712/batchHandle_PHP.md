@@ -9,7 +9,7 @@ toc: true
 
 ### 以id为维度进行批量取数据
 
-``` bash
+``` php
     取最小id和最大id."SELECT MIN(id) minId, MAX(id) maxId FROM 表名"
     $startId = $minId;
     $tempSize = 1000;
@@ -34,7 +34,7 @@ toc: true
 
 ### 以时间为维度进行批量取数据
 
-``` bash
+``` php
     取起始时间和截止时间的时间戳.$sTime $eTime
     $startTime = $sTime;
     $tempSql = "SELECT * FROM 表名 WHERE time >= ? AND time < ?";
@@ -51,7 +51,7 @@ toc: true
 
 ### 根据limit进行批量取数据       
 
-``` bash
+``` php
     $loop = 1;
     $startId = 0;
     $size = 1000;

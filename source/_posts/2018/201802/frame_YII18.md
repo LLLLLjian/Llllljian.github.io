@@ -7,10 +7,10 @@ toc: true
 
 #### 输入验证
     对用户输入的内容始终保持怀疑态度,后台需要经过验证之后再进行处理
-    ```bash
-        // 调用 yii\base\Model::validate() 方法验证用户输入的内容。
-        // 该方法会返回一个布尔值，指明是否通过验证。
-        // 若没有通过，可以通过 yii\base\Model::errors 属性获取相应的报错信息
+    ```php
+        // 调用 yii\base\Model::validate() 方法验证用户输入的内容.
+        // 该方法会返回一个布尔值,指明是否通过验证.
+        // 若没有通过,可以通过 yii\base\Model::errors 属性获取相应的报错信息
         $model = new \app\models\ContactForm();
 
         // populate model attributes with user inputs
@@ -29,7 +29,7 @@ toc: true
 
 #### 声明规则
     可以在继承Model的xxxForm中重写rule
-    ```bash
+    ```php
         public function rules()
         {
             return [
@@ -48,7 +48,7 @@ toc: true
     
 #### 创建验证器
 - 行内验证器
-    ```bash
+    ```php
         use yii\base\Model;
 
         class MyForm extends Model
@@ -82,7 +82,7 @@ toc: true
         }
     ```
 - 独立验证器
-    ```bash
+    ```php
         namespace app\models;
 
         use Yii;

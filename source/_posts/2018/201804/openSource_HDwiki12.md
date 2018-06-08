@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 升级HDwiki6.0
-    HDwiki5.1升级到6.0。
+    HDwiki5.1升级到6.0.
 
 <!-- more -->
 
@@ -20,7 +20,7 @@ toc: true
     * 将表单中提交的内容转为json格式进行传输
     * 焦点移动到某个输入框的时候,对输入框添加一个属性,表单提交的时候只提交有特定值的那些选项
 - 源码分析
-    ```bash
+    ```php
         // 先说一下上边三个方法的优劣
         1. 本地开发的话直接修改php.ini是最便捷的,但是代码上传到服务器的时候总不能要求所有的配置都符合你的要求
         2. 后台php文件获取post的json花了点时间,别的暂时没有
@@ -126,14 +126,14 @@ toc: true
         * 需要设置 php.ini 中的 always_populate_raw_post_data 值为 On 才会生效
         * 当\$_POST 与 php://input可以取到值时$HTTP_RAW_POST_DATA 为空
         * 不能用于 enctype="multipart/form-data"
-        * PHP7中已经移除了这个全局变量，用 php://input 替代
+        * PHP7中已经移除了这个全局变量,用 php://input 替代
     * php://input
         * php://input可通过输入流以文件读取方式取得未经处理的POST原始数据,允许读取 POST 的原始数据.
-        * 和 $HTTP_RAW_POST_DATA 比起来，它给内存带来的压力较小
+        * 和 $HTTP_RAW_POST_DATA 比起来,它给内存带来的压力较小
         * 不需要任何特殊的 php.ini 设置
         * 不能用于 enctype="multipart/form-data"
     * 代码示例
-        ```bash
+        ```php
             // post.html
             <!DOCTYPE html>
             <html>

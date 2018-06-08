@@ -20,7 +20,7 @@ toc: true
     * SELECT * FROM `user` WHERE `id`=2
     * 每一条记录都会去查发送人和请求人,上边两条sql执行测试 = 当页数据条数 * 2
 - 使用实例
-    ```bash
+    ```php
     // index.php
         use yii\grid\GridView;
         use yii\widgets\Pjax;
@@ -75,7 +75,7 @@ toc: true
     * SELECT * FROM `message` LIMIT 20
     * SELECT `id`, `nickname` FROM `user` WHERE `id` IN (1, 2, 4, 3)
 - 使用实例
-    ```bash
+    ```php
     // index.php
         use yii\grid\GridView;
         use yii\widgets\Pjax;
@@ -141,11 +141,11 @@ toc: true
     * 基础列
     * 属性
         * options：列组标记的HTML属性
-        * header：允许为头部行设置内容。
-        * footer：允许为尾部行设置内容。
+        * header：允许为头部行设置内容.
+        * footer：允许为尾部行设置内容.
         * visible：定义某个列是否可见
         * content：允许你传递一个有效的PHP回调来为一行返回数据
-            ```bash
+            ```php
                 function ($model, $key, $index, $column) {
                     return 'a string';
                 }
@@ -154,13 +154,13 @@ toc: true
     * 默认列表,从yii\grid\Column扩展而来
     * 属性
         * attribute：与此列关联的属性名称
-        * filter：表示用于此数据列的过滤器输入（例如文本字段，下拉列表）的HTML代码
+        * filter：表示用于此数据列的过滤器输入（例如文本字段,下拉列表）的HTML代码
         * format：每个数据模型的值以何种格式显示
-        * label：显示标签，并在为此列启用排序时用作排序链接标签,可对应继承AR类中的attribute
+        * label：显示标签,并在为此列启用排序时用作排序链接标签,可对应继承AR类中的attribute
         * value：一个匿名函数或用于确定要显示在当前列中的值的字符串
 - yii\grid\SerialColumn
     * 序号自增列,从yii\grid\Column扩展而来
-    * 渲染行号，以1起始并自动增长
+    * 渲染行号,以1起始并自动增长
 - yii\grid\ActionColumn
     * 动作列,从yii\grid\Column扩展而来
     * 属性
@@ -169,7 +169,7 @@ toc: true
             * `修改` `update` &lt;span class="glyphicon glyphicon-pencil">&lt;/span>
             * `删除` `delete` &lt;span class="glyphicon glyphicon-trash">&lt;/span>
         * buttons：回调函数相关
-            ```bash
+            ```php
                 function ($url, $model, $key) {
                     // return the button HTML code
                     // $url：列为按钮创建的URL
@@ -190,7 +190,7 @@ toc: true
 - 要点:只有该属性是安全的才能被搜索
 - 使用实例[方式1]
     * search
-        ```bash
+        ```php
             <?php
             namespace app\models;
 
@@ -239,7 +239,7 @@ toc: true
                         'desc' => ['author.name' => SORT_DESC],
                     ];
 
-                    // 从参数的数据中加载过滤条件，并验证
+                    // 从参数的数据中加载过滤条件,并验证
                     if (!($this->load($params) && $this->validate())) {
                         return $dataProvider;
                     }
@@ -256,7 +256,7 @@ toc: true
             }
         ```
     * controller
-        ```bash
+        ```php
             $searchModel = new PostSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->get());
 
@@ -266,7 +266,7 @@ toc: true
             ]);
         ```
     * view
-        ```bash
+        ```php
             echo GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
@@ -277,7 +277,7 @@ toc: true
         ```
 - 使用实例[方式2]
     * search
-        ```bash
+        ```php
             namespace common\models;
 
             use Yii;
@@ -356,7 +356,7 @@ toc: true
             }
         ```
     * controller
-        ```bash
+        ```php
             $searchModel = new PostSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->get());
 
@@ -366,7 +366,7 @@ toc: true
             ]);
         ```
     * view
-        ```bash
+        ```php
             echo GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
@@ -378,7 +378,7 @@ toc: true
 
 
 #### 实例整理
-    ```bash
+    ```php
         use yii\helpers\Html;
         use yii\helpers\Url;
         use yii\grid\GridView;

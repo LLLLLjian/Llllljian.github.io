@@ -10,61 +10,61 @@ toc: true
 ### BOM含义
     浏览器对象模型（BOM）：与浏览器交互的方法和接口
     Browser Object Model
-    BOM 是为了操作浏览器出现的 API，window 是其的一个对象。
+    BOM 是为了操作浏览器出现的 API,window 是其的一个对象.
 
 <!-- more -->
 
 ### Window对象
-    Window 对象是 JavaScript层级中的顶层对象。
-    Window 对象代表一个浏览器窗口或一个框架。
-    Window 对象会在 <body>或<frameset>每次出现时被自动创建。
+    Window 对象是 JavaScript层级中的顶层对象.
+    Window 对象代表一个浏览器窗口或一个框架.
+    Window 对象会在 <body>或<frameset>每次出现时被自动创建.
 - 对象属性
     * window //窗户自身, window=window.self可使用全局属性window访问　Window对象
-    * document 对 Document 对象的只读引用。请参阅Document对象。
-    * history 对 History 对象的只读引用。请参数History对象。
-    * location 用于窗口或框架的 Location 对象。请参阅Location对象。
-    * screen 对 Screen 对象的只读引用。请参数Screen对象。
-    * navigator 对 Navigator 对象的只读引用。请参数Navigator对象。
-    * defaultStatus 设置或返回窗口状态栏中的默认文本。
-    * innerheight 返回窗口的文档显示区的高度。
-    * innerwidth 返回窗口的文档显示区的宽度。
-    * outerheight 返回窗口的外部高度。
-    * outerwidth 返回窗口的外部宽度。
-    * pageXOffset 设置或返回当前页面相对于窗口显示区左上角的 X 位置。
-    * pageYOffset 设置或返回当前页面相对于窗口显示区左上角的 Y 位置。
-    * name 设置或返回窗口的名称。
-    * parent 返回父窗口。
-    * top 返回最顶层的先辈窗口。
-    * status 设置窗口状态栏的文本。
-    * window.location //URL地址，配备布置这个属性可以打开新的页面
+    * document 对 Document 对象的只读引用.请参阅Document对象.
+    * history 对 History 对象的只读引用.请参数History对象.
+    * location 用于窗口或框架的 Location 对象.请参阅Location对象.
+    * screen 对 Screen 对象的只读引用.请参数Screen对象.
+    * navigator 对 Navigator 对象的只读引用.请参数Navigator对象.
+    * defaultStatus 设置或返回窗口状态栏中的默认文本.
+    * innerheight 返回窗口的文档显示区的高度.
+    * innerwidth 返回窗口的文档显示区的宽度.
+    * outerheight 返回窗口的外部高度.
+    * outerwidth 返回窗口的外部宽度.
+    * pageXOffset 设置或返回当前页面相对于窗口显示区左上角的 X 位置.
+    * pageYOffset 设置或返回当前页面相对于窗口显示区左上角的 Y 位置.
+    * name 设置或返回窗口的名称.
+    * parent 返回父窗口.
+    * top 返回最顶层的先辈窗口.
+    * status 设置窗口状态栏的文本.
+    * window.location //URL地址,配备布置这个属性可以打开新的页面
 - 对象方法
     * window.close(); //关闭窗口
-    * window.alert("message"); //弹出一个具有OK按钮的系统消息框，显示指定的文本
-    * window.confirm("Are you sure?"); //弹出一个具有OK和Cancel按钮的询问对话框，返回一个布尔值
-    * window.prompt("What's your name?", "Default"); //提示用户输入信息，接受两个参数，即要显示给用户的文本和文本框中的默认值，将文本框中的值作为函数值返回
+    * window.alert("message"); //弹出一个具有OK按钮的系统消息框,显示指定的文本
+    * window.confirm("Are you sure?"); //弹出一个具有OK和Cancel按钮的询问对话框,返回一个布尔值
+    * window.prompt("What's your name?", "Default"); //提示用户输入信息,接受两个参数,即要显示给用户的文本和文本框中的默认值,将文本框中的值作为函数值返回
     * window.status //可以使状态栏的文本暂时改变
-    * window.defaultStatus //默认的状态栏信息，可在用户离开当前页面前一直改变文本
-    * window.setTimeout("alert('xxx')", 1000); //设置在指定的毫秒数后执行指定的代码，接受2个参数，要执行的代码和等待的毫秒数
-    * window.clearTimeout("ID"); //取消还未执行的暂停，将暂停ID传递给它
-    * window.setInterval(function, 1000); //无限次地每隔指定的时间段重复一次指定的代码，参数同setTimeout()一样
-    * window.clearInterval("ID"); //取消时间间隔，将间隔ID传递给它
-    * window.history.go(-1); //访问浏览器窗口的历史，负数为后退，正数为前进
+    * window.defaultStatus //默认的状态栏信息,可在用户离开当前页面前一直改变文本
+    * window.setTimeout("alert('xxx')", 1000); //设置在指定的毫秒数后执行指定的代码,接受2个参数,要执行的代码和等待的毫秒数
+    * window.clearTimeout("ID"); //取消还未执行的暂停,将暂停ID传递给它
+    * window.setInterval(function, 1000); //无限次地每隔指定的时间段重复一次指定的代码,参数同setTimeout()一样
+    * window.clearInterval("ID"); //取消时间间隔,将间隔ID传递给它
+    * window.history.go(-1); //访问浏览器窗口的历史,负数为后退,正数为前进
     * window.history.back(); //同上
     * window.history.forward(); //同上
     * window.history.length //可以查看历史中的页面数  
-    * clearInterval() 取消由 setInterval() 设置的timeout。
-    * clearTimeout() 取消由 setTimeout() 方法设置的timeout。
-    * createPopup() 创建一个 pop-up 窗口。
-    * moveBy() 可相对窗口的当前坐标把它移动指定的像素。
-    * moveTo() 把窗口的左上角移动到一个指定的坐标。
-    * open() 打开一个新的浏览器窗口或查找一个已命名的窗口。
-    * print() 打印当前窗口的内容。
-    * resizeBy() 按照指定的像素调整窗口的大小。
-    * resizeTo() 把窗口的大小调整到指定的宽度和高度。
-    * scrollBy() 按照指定的像素值来滚动内容。
-    * scrollTo() 把内容滚动到指定的坐标。
-    * setInterval() 按照指定的周期（以毫秒计）来调用函数或计算表达式。
-    * setTimeout(方法,秒数) 在指定的毫秒数后调用函数或计算表达式。　
+    * clearInterval() 取消由 setInterval() 设置的timeout.
+    * clearTimeout() 取消由 setTimeout() 方法设置的timeout.
+    * createPopup() 创建一个 pop-up 窗口.
+    * moveBy() 可相对窗口的当前坐标把它移动指定的像素.
+    * moveTo() 把窗口的左上角移动到一个指定的坐标.
+    * open() 打开一个新的浏览器窗口或查找一个已命名的窗口.
+    * print() 打印当前窗口的内容.
+    * resizeBy() 按照指定的像素调整窗口的大小.
+    * resizeTo() 把窗口的大小调整到指定的宽度和高度.
+    * scrollBy() 按照指定的像素值来滚动内容.
+    * scrollTo() 把内容滚动到指定的坐标.
+    * setInterval() 按照指定的周期（以毫秒计）来调用函数或计算表达式.
+    * setTimeout(方法,秒数) 在指定的毫秒数后调用函数或计算表达式.　
     * timeOutEvent = setTimeout("longPress('" + obj + "')",1500);定时器传参数
 - 成员对象
     * window.event

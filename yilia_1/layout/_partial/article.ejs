@@ -8,23 +8,6 @@
         <% } %>
       </header>
     <% } %>
-    <script type="text/javascript">
-	window.onload = function () {
-	var toc_link = document.getElementsByClassName("toc-link");
-	var length = toc_link.length;
-
-	for (var i = 0; i < length; i++) {
-		var toc_text_obj = toc_link[i];
-		var next1 = toc_text_obj.nextSibling;
-		var next2 = next1.nextSibling;
-		next2.parentNode.removeChild(next2); 
-		
-		next1.setAttribute("style","display:none"); 
-		var title = next1.title;
-		toc_text_obj.getElementsByClassName("toc-text")[0].innerHTML = title;
-	}
-}
-    </script>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>

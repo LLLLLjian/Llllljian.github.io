@@ -55,15 +55,15 @@ toc: true
     ```php
         eg : http://example.com/admin/index.php/product?id=100
 
-        yii\web\Request::url：返回 /admin/index.php/product?id=100, 此URL不包括host info部分.
-        yii\web\Request::absoluteUrl：返回 http://example.com/admin/index.php/product?id=100, 包含host infode的整个URL.
-        yii\web\Request::hostInfo：返回 http://example.com, 只有host info部分.
-        yii\web\Request::pathInfo：返回 /product, 这个是入口脚本之后,问号之前（查询字符串）的部分.
-        yii\web\Request::queryString：返回 id=100,问号之后的部分.
-        yii\web\Request::baseUrl：返回 /admin, host info之后, 入口脚本之前的部分.
-        yii\web\Request::scriptUrl：返回 /admin/index.php, 没有path info和查询字符串部分.
-        yii\web\Request::serverName：返回 example.com, URL中的host name.
-        yii\web\Request::serverPort：返回 80, 这是web服务中使用的端口.
+        yii\web\Request::url:返回 /admin/index.php/product?id=100, 此URL不包括host info部分.
+        yii\web\Request::absoluteUrl:返回 http://example.com/admin/index.php/product?id=100, 包含host infode的整个URL.
+        yii\web\Request::hostInfo:返回 http://example.com, 只有host info部分.
+        yii\web\Request::pathInfo:返回 /product, 这个是入口脚本之后,问号之前（查询字符串）的部分.
+        yii\web\Request::queryString:返回 id=100,问号之后的部分.
+        yii\web\Request::baseUrl:返回 /admin, host info之后, 入口脚本之前的部分.
+        yii\web\Request::scriptUrl:返回 /admin/index.php, 没有path info和查询字符串部分.
+        yii\web\Request::serverName:返回 example.com, URL中的host name.
+        yii\web\Request::serverPort:返回 80, 这是web服务中使用的端口.
     ```
 
 #### HTTP头
@@ -107,17 +107,17 @@ toc: true
 
         //如果指定请求失败,可以抛出相对应的HTTP异常
         throw new \yii\web\NotFoundHttpException; 状态码404
-        yii\web\BadRequestHttpException：状态码 400.
-        yii\web\ConflictHttpException：状态码 409.
-        yii\web\ForbiddenHttpException：状态码 403.
-        yii\web\GoneHttpException：状态码 410.
-        yii\web\MethodNotAllowedHttpException：状态码 405.
-        yii\web\NotAcceptableHttpException：状态码 406.
-        yii\web\NotFoundHttpException：状态码 404.
-        yii\web\ServerErrorHttpException：状态码 500.
-        yii\web\TooManyRequestsHttpException：状态码 429.
-        yii\web\UnauthorizedHttpException：状态码 401.
-        yii\web\UnsupportedMediaTypeHttpException：状态码 415.
+        yii\web\BadRequestHttpException:状态码 400.
+        yii\web\ConflictHttpException:状态码 409.
+        yii\web\ForbiddenHttpException:状态码 403.
+        yii\web\GoneHttpException:状态码 410.
+        yii\web\MethodNotAllowedHttpException:状态码 405.
+        yii\web\NotAcceptableHttpException:状态码 406.
+        yii\web\NotFoundHttpException:状态码 404.
+        yii\web\ServerErrorHttpException:状态码 500.
+        yii\web\TooManyRequestsHttpException:状态码 429.
+        yii\web\UnauthorizedHttpException:状态码 401.
+        yii\web\UnsupportedMediaTypeHttpException:状态码 415.
 
         //也可以新创建一个异常,带上状态码抛出
         throw new \yii\web\HttpException(402);

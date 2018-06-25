@@ -26,6 +26,10 @@
     			<% } %>
             <%}%>
 		</nav>
+		<nav class="header-smart-menu">
+			<a href="/archives">共<%= site.posts.length %>篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><%= site.tags.length %>个标签</a>	
+		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				<% for (var i in theme.subnav){ %>

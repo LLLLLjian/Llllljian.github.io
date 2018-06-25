@@ -8,7 +8,7 @@ toc: true
 ## DOM基本操作
 
 ### DOM含义
-    文档对象模型 （DOM）:处理网页内容的方法和接口
+    文档对象模型 （DOM）：处理网页内容的方法和接口
     Document Object Model
     DOM 是为了操作文档出现的 API,document 是其的一个对象；
 
@@ -101,13 +101,13 @@ toc: true
 - substring(offset, count) : 返回由offset起的count个节点
 
 ### DOM事件
-    DOM同时两种事件模型:冒泡型事件和捕获型事件
+    DOM同时两种事件模型：冒泡型事件和捕获型事件
     冒泡型 : 
         事件按照从最特定的事件目标到最不特定的事件目标的顺序触发
-        触发的顺序是:div、body、html(IE 6.0和Mozilla 1.0)、document、window(Mozilla 1.0)
+        触发的顺序是：div、body、html(IE 6.0和Mozilla 1.0)、document、window(Mozilla 1.0)
     捕获型 : 
         事件从最不精确的对象开始触发,然后到最精确
-        触发的顺序是:document、div
+        触发的顺序是：document、div
 - 事件处理函数/监听函数
     * JavaScript中 : obj.onclick = function(){ //onclick只能用小写 }
     * HTML中 : &lt;div onclick="javascript: alert("Clicked!")">&lt;/div> //onclick大小写任意
@@ -115,12 +115,12 @@ toc: true
     * addHandler()
     * removeHandler()
 - 事件类型
-    * 鼠标事件:click、dbclick、mousedown、mouseup、mouseover、mouseout、mousemove
-    * 键盘事件:keydown、keypress、keyup
-    * HTML事件:load、unload、abort、error、select、change、submit、reset、resize、scroll、focus、blur
+    * 鼠标事件：click、dbclick、mousedown、mouseup、mouseover、mouseout、mousemove
+    * 键盘事件：keydown、keypress、keyup
+    * HTML事件：load、unload、abort、error、select、change、submit、reset、resize、scroll、focus、blur
 - 事件处理器
     * 执行JavaScript 代码的程序在事件发生时会对事件做出响应.为了响应一个特定事件而被执行的代码称为事件处理器.
-    * 在HTML标签中使用事件处理器的语法是:<HTML标签 事件处理器="JavaScript代码''>
+    * 在HTML标签中使用事件处理器的语法是：<HTML标签 事件处理器="JavaScript代码''>
 - 事件处理程序
     * 事件就是用户或浏览器自身执行的某种动作.比如click,mouseup,keydown,mouseover等都是事件的名字.而响应某个事件的函数就叫事件处理程序（事件监听器）,
     * 事件处理程序以on开头,因此click的事件处理程序就是onclick

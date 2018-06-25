@@ -119,7 +119,7 @@ toc: true
     if ($model->validate()) {
         // 所有输入数据都有效 all inputs are valid
     } else {
-        // 验证失败:$errors 是一个包含错误信息的数组
+        // 验证失败：$errors 是一个包含错误信息的数组
         $errors = $model->errors;
     }
 
@@ -161,7 +161,7 @@ toc: true
 
 #### 非安全属性
 ```php
-    //yii\base\Model::scenarios() 方法提供两个用处:定义哪些属性应被验证,定义哪些属性安全
+    //yii\base\Model::scenarios() 方法提供两个用处：定义哪些属性应被验证,定义哪些属性安全
     public function scenarios()
     {
         return [

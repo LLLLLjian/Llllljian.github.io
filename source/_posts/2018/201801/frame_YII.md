@@ -14,7 +14,7 @@ toc: true
 - 与其他框架相比
     * 实现了 MVC（Model-View-Controller）设计模式并基于该模式组织代码.
     * 代码简洁优雅
-    * 是一个全栈框架,提供了大量久经考验,开箱即用的特性: 对关系型和 NoSQL 数据库都提供了查询生成器和 ActiveRecord；RESTful API 的开发支持；多层缓存支持,等等
+    * 是一个全栈框架,提供了大量久经考验,开箱即用的特性： 对关系型和 NoSQL 数据库都提供了查询生成器和 ActiveRecord；RESTful API 的开发支持；多层缓存支持,等等
     * 非常易于扩展
     * 高性能
     * 社区多,开发者团队持续跟进开发
@@ -26,7 +26,7 @@ toc: true
     * 通过归档文件安装
         * 从 yiiframework.com 下载归档文件.
         * 将下载的文件解压缩到 Web 访问的文件夹中.
-        * 修改 config/web.php 文件,给 cookieValidationKey 配置项 添加一个密钥（若你通过 Composer 安装,则此步骤会自动完成）:
+        * 修改 config/web.php 文件,给 cookieValidationKey 配置项 添加一个密钥（若你通过 Composer 安装,则此步骤会自动完成）：
     * 通过 Composer 安装
         * 先安装Composer(如果已经安装请忽略) 
             ```php 

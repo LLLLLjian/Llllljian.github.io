@@ -103,7 +103,7 @@ toc: true
     * ps -l：显示当前终端下开启的任务. 
     * ps -al：显示当前终端下所有的任务. 
     ```bash
-        [llllljian@llllljian-virtual-machine] ~ 20:37:46 #13]$ ps -l
+        [llllljian@llllljian-virtual-machine ~ 20:37:46 #13]$ ps -l
         F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
         0 S  1000  1837  1835  0  80   0 -  1737 wait   pts/0    00:00:00 bash
         0 R  1000  1897  1837  0  80   0 -  1952 -      pts/0    00:00:00 ps

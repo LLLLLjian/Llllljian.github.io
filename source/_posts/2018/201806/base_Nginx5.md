@@ -119,7 +119,7 @@ toc: true
         tcp6       0      0 :::8002                 :::*                    LISTEN      9240/nginx: master
 
         [llllljian@llllljian-virtual-machine www 17:35:07 #483]$ netstat -tunlp | grep 8002
-        （并非所有进程都能被检测到，所有非本用户的进程信息将不会显示，如果想看到所有信息，则必须切换到 root 用户）
+        （并非所有进程都能被检测到,所有非本用户的进程信息将不会显示,如果想看到所有信息,则必须切换到 root 用户）
         tcp        0      0 0.0.0.0:8002            0.0.0.0:*               LISTEN      -
         tcp6       0      0 :::8002                 :::*                    LISTEN      -
 

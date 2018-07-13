@@ -1,0 +1,80 @@
+---
+title: MySQL_基础 (4)
+date: 2018-07-12
+tags: MySQL
+toc: true
+---
+
+### 慢查询Explain
+    Explain命令在解决数据库性能上是第一推荐使用命令,大部分的性能问题可以通过此命令来简单的解决,Explain可以用来查看 SQL 语句的执行效 果,可以帮助选择更好的索引和优化查询语句,写出更好的优化语句
+
+    5.6之前explain只支持select
+    5.6之后支持explain update/delete
+
+    这里只分析一下SELECT
+
+<!-- more -->
+
+#### 命令分析
+- 说明
+    * 执行计划,包含了一个SELECT(后续版本支持UPDATE等语句)的执行
+- 语法
+    * explain select … from … [where ...]    
+- 输出字段
+    ```sql
+        +----+-------------+-------+-------+-------------------+---------+---------+-------+------+-------+
+
+        | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
+
+        +----+-------------+-------+-------+-------------------+---------+---------+-------+------+-------+
+    ```
+    * id
+        * SELECT的查询序列号
+        * 从1开始,执行的时候从大到小,相同编号从上到下依次执行
+    * select_type
+        * SIMPLE：简单SELECT(不使用UNION或子查询等)
+        * PRIMARY：最外面的SELECT
+        * UNION：UNION中的第二个或后面的SELECT语句
+        * DEPENDENT UNION：UNION中的第二个或后面的SELECT语句,取决于外面的查询
+        * UNION RESULT：UNION的结果.
+        * SUBQUERY：子查询中的第一个SELECT
+        * DEPENDENT SUBQUERY：子查询中的第一个SELECT,取决于外面的查询
+        * DERIVED：导出表的SELECT(FROM子句的子查询)
+    * table
+        * 显示这一行的数据是关于哪张表的
+    * type
+        * 这列最重要,显示了连接使用了哪种类别,有无使用索引,是使用Explain命令分析性能瓶颈的关键项之一
+        * 从好到坏依次是：system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL
+        * 至少达到range级别,最好能达到ref
+        * system表仅有一行(=系统表).这是const联接类型的一个特例.
+	    * const表最多有一个匹配行,它将在查询开始时被读取.因为仅有一行,在这行的列值可被优化器剩余部分认为是常数.const表很快,因为它们只读取一次！
+	    * eq_ref对于每个来自于前面的表的行组合,从该表中读取一行.这可能是最好的联接类型,除了const类型.它用在一个索引的所有部分被联接使用并且索引是UNIQUE或PRIMARY KEY.
+	    * ref对于每个来自于前面的表的行组合,所有有匹配索引值的行将从这张表中读取.如果联接只使用键的最左边的前缀,或如果键不是UNIQUE或PRIMARY KEY(换句话说,如果联接不能基于关键字选择单个行的话),则使用ref.如果使用的键仅仅匹配少量行,该联接类型是不错的.ref可以用于使用=或<=>操作符的带索引的列.ref_or_null该联接类型如同ref,但是添加了MySQL可以专门搜索包含NULL值的行.在解决子查询中经常使用该联接类型的优化.
+	    * index_merge该联接类型表示使用了索引合并优化方法.在这种情况下,key列包含了使用的索引的清单,key_len包含了使用的索引的最长的关键元素.
+	    * unique_subquery该类型替换了下面形式的IN子查询的ref：value IN (SELECT primary_key FROM single_table WHERE some_expr). unique_subquery是一个索引查找函数,可以完全替换子查询,效率更高.index_subquery该联接类型类似于unique_subquery.可以替换IN子查询,但只适合下列形式的子查询中的非唯一索引：value IN (SELECT key_column FROM single_table WHERE some_expr)
+	    * range只检索给定范围的行,使用一个索引来选择行.key列显示使用了哪个索引.key_len包含所使用索引的最长关键元素.在该类型中ref列为NULL. 当使用=、<>、>、>=、<、<=、IS NULL、<=>、BETWEEN或者IN操作符,用常量比较关键字列时,可以使用range.
+	    * index该联接类型与ALL相同,除了只有索引树被扫描.这通常比ALL快,因为索引文件通常比数据文件小. 当查询只使用作为单索引一部分的列时,MySQL可以使用该联接类型.
+	    * ALL对于每个来自于先前的表的行组合,进行完整的表扫描.如果表是第一个没标记const的表,这通常不好,并且通常在它情况下很差.通常可以增加更多的索引而不要使用ALL,使得行能基于前面的表中的常数值或列值被检索出.
+    * possible_keys
+        * 列指出MySQL能使用哪个索引在该表中找到行
+    * key
+        * 显示MySQL实际决定使用的键（索引）.如果没有选择索引,键是NULL
+    * key_len
+        * 显示MySQL决定使用的键长度.如果键是NULL,则长度为NULL.使用的索引的长度.在不损失精确性的情况下,长度越短越好
+    * ref
+        * 显示使用哪个列或常数与key一起从表中选择行.
+    * rows
+        * 显示MySQL认为它执行查询时必须检查的行数.
+    * Extra
+        * 包含MySQL解决查询的详细信息
+        * Distinct:一旦MYSQL找到了与行相联合匹配的行,就不再搜索了
+        * Not exists: MYSQL优化了LEFT JOIN,一旦它找到了匹配LEFT JOIN标准的行,就不再搜索了
+        * Range checked for each Record（index map:#）:没有找到理想的索引,因此对于从前面表中来的每一个行组合,MYSQL检查使用哪个索引,并用它来从表中返回行.这是使用索引的最慢的连接之一
+	    * Using filesort: 看到这个的时候,查询就需要优化了.MYSQL需要进行额外的步骤来发现如何对返回的行排序.它根据连接类型以及存储排序键值和匹配条件的全部行的行指针来排序全部行
+        * Using index: 列数据是从仅仅使用了索引中的信息而没有读取实际的行动的表返回的,这发生在对表的全部的请求列都是同一个索引的部分的时候
+        * Using temporary 看到这个的时候,查询需要优化了.这里,MYSQL需要创建一个临时表来存储结果,这通常发生在对不同的列集进行ORDER BY上,而不是GROUP BY上
+        * Where used 使用了WHERE从句来限制哪些行将与下一张表匹配或者是返回给用户.如果不想返回表中的全部行,并且连接类型ALL或index,这就会发生,或者是查询有问题不同连接类型的解释（按照效率高低的顺序排序
+
+#### 实例分析
+    运行环境
+    MySQL

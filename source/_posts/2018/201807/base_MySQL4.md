@@ -22,11 +22,9 @@ toc: true
     * explain select … from … [where ...]    
 - 输出字段
     ```sql
-        +----+-------------+-------+-------+-------------------+---------+---------+-------+------+-------+
-
-        | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
-
-        +----+-------------+-------+-------+-------------------+---------+---------+-------+------+-------+
+        +----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+        | id | select_type | table | partitions | type  | possible_keys | key     | key_len | ref   | rows | filtered | Extra |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
     ```
     * id
         * SELECT的查询序列号
@@ -42,6 +40,8 @@ toc: true
         * DERIVED：导出表的SELECT(FROM子句的子查询)
     * table
         * 显示这一行的数据是关于哪张表的
+    * partitions 
+        * 分区中的记录将被查询相匹配.显示此列仅在使用分区关键字.该值为NULL对于非分区表
     * type
         * 这列最重要,显示了连接使用了哪种类别,有无使用索引,是使用Explain命令分析性能瓶颈的关键项之一
         * 从好到坏依次是：system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL
@@ -65,6 +65,8 @@ toc: true
         * 显示使用哪个列或常数与key一起从表中选择行.
     * rows
         * 显示MySQL认为它执行查询时必须检查的行数.
+    * filtered
+        * 指返回结果的行占需要读到的行(rows列的值)的百分比
     * Extra
         * 包含MySQL解决查询的详细信息
         * Distinct:一旦MYSQL找到了与行相联合匹配的行,就不再搜索了
@@ -76,5 +78,117 @@ toc: true
         * Where used 使用了WHERE从句来限制哪些行将与下一张表匹配或者是返回给用户.如果不想返回表中的全部行,并且连接类型ALL或index,这就会发生,或者是查询有问题不同连接类型的解释（按照效率高低的顺序排序
 
 #### 实例分析
-    运行环境
-    MySQL
+- MySQL版本 : 5717
+- 数据量 : 约16w
+- 建表语句
+    ```sql
+        CREATE TABLE `batch` (
+            `id` INT(11) NOT NULL AUTO_INCREMENT,
+            `uid` INT(11) NOT NULL,
+            `sid` INT(11) NOT NULL,
+            `aid` INT(11) NOT NULL,
+            `tradeno` CHAR(10) NOT NULL,
+            `time1` INT(11) NOT NULL,
+            `time2` INT(11) NOT NULL,
+            `type` TINYINT(4) NOT NULL,
+            `attach` VARCHAR(255) NULL DEFAULT NULL,
+            `demo` VARCHAR(255) NULL DEFAULT NULL,
+            PRIMARY KEY (`id`),
+            INDEX `uid` (`uid`),
+            INDEX `sid` (`sid`),
+            INDEX `aid` (`aid`),
+            INDEX `tradeno` (`tradeno`),
+            INDEX `time1` (`time1`),
+            INDEX `time2` (`time2`)
+        )
+        COLLATE='utf8_general_ci'
+        ENGINE=InnoDB
+        AUTO_INCREMENT=168688
+        ;
+    ```
+- 慢查询
+    ```sql
+        mysql> EXPLAIN SELECT * FROM batch;
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------+
+        |  1 | SIMPLE      | batch | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 165996 |   100.00 | NULL  |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------+
+        1 row in set, 1 warning (0.01 sec)
+
+        # 主键索引 > | < | != | =
+        mysql> EXPLAIN SELECT * FROM batch WHERE id = 2018;
+        +----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+        | id | select_type | table | partitions | type  | possible_keys | key     | key_len | ref   | rows | filtered | Extra |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+        |  1 | SIMPLE      | batch | NULL       | const | PRIMARY       | PRIMARY | 4       | const |    1 |   100.00 | NULL  |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+        1 row in set, 1 warning (0.00 sec)
+
+        mysql> EXPLAIN SELECT * FROM batch WHERE id > 2018;
+        +----+-------------+-------+------------+-------+---------------+---------+---------+------+-------+----------+-------------+
+        | id | select_type | table | partitions | type  | possible_keys | key     | key_len | ref  | rows  | filtered | Extra       |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+------+-------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | range | PRIMARY       | PRIMARY | 4       | NULL | 82998 |   100.00 | Using where |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+------+-------+----------+-------------+
+        1 row in set, 1 warning (0.00 sec)
+
+        # 主键索引 like in
+        mysql> EXPLAIN SELECT * FROM batch WHERE id like "%20%";
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 165996 |    11.11 | Using where |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        1 row in set, 1 warning (0.01 sec)
+
+        mysql> EXPLAIN SELECT * FROM batch WHERE id like "20%";
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | ALL  | PRIMARY       | NULL | NULL    | NULL | 165996 |    11.11 | Using where |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        1 row in set, 1 warning (0.00 sec)
+
+        mysql> EXPLAIN SELECT * FROM batch WHERE id in (3000, 4000, 5000);
+        +----+-------------+-------+------------+-------+---------------+---------+---------+------+------+----------+-------------+
+        | id | select_type | table | partitions | type  | possible_keys | key     | key_len | ref  | rows | filtered | Extra       |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+------+------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | range | PRIMARY       | PRIMARY | 4       | NULL |    3 |   100.00 | Using where |
+        +----+-------------+-------+------------+-------+---------------+---------+---------+------+------+----------+-------------+
+        1 row in set, 1 warning (0.00 sec)
+
+        # 普通索引 > | < | != | =
+        mysql> EXPLAIN SELECT * FROM batch WHERE aid = 33333;
+        +----+-------------+-------+------------+------+---------------+------+---------+-------+------+----------+-------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref   | rows | filtered | Extra |
+        +----+-------------+-------+------------+------+---------------+------+---------+-------+------+----------+-------+
+        |  1 | SIMPLE      | batch | NULL       | ref  | aid           | aid  | 4       | const |    1 |   100.00 | NULL  |
+        +----+-------------+-------+------------+------+---------------+------+---------+-------+------+----------+-------+
+        1 row in set, 1 warning (0.00 sec)
+
+        mysql> EXPLAIN SELECT * FROM batch WHERE aid > 33333;
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | ALL  | aid           | NULL | NULL    | NULL | 165996 |    50.00 | Using where |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        1 row in set, 1 warning (0.00 sec)
+
+        # 不使用索引
+        mysql> EXPLAIN SELECT * FROM batch WHERE type = 1;
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 165996 |    10.00 | Using where |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        1 row in set, 1 warning (0.07 sec)
+
+        mysql> EXPLAIN SELECT * FROM batch WHERE type > 5;
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        | id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        |  1 | SIMPLE      | batch | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 165996 |    33.33 | Using where |
+        +----+-------------+-------+------------+------+---------------+------+---------+------+--------+----------+-------------+
+        1 row in set, 1 warning (0.00 sec)
+    ```

@@ -16,12 +16,12 @@ toc: true
 
 #### 字符串
 - String
-    * Redis string是redis最基本的类型，可以理解成与Memcached一模一样的类型，一个key对应一个value
+    * Redis string是redis最基本的类型,可以理解成与Memcached一模一样的类型,一个key对应一个value
     * Redis string类型是二进制安全的.意思是redis的string可以包含任何数据.比如jpg图片或者序列化的对象
-    * Redis string类型是Redis最基本的数据类型，一个键最大能存储512MB
+    * Redis string类型是Redis最基本的数据类型,一个键最大能存储512MB
 - 使用
     * 实现业务上的统计计数需求
-    * 使用INCR命令族(INCR, DECR, INCRBY)，将字符串作为原子计数器[同上]
+    * 使用INCR命令族(INCR, DECR, INCRBY),将字符串作为原子计数器[同上]
     * 使用APPEND命令追加字符串
     * 使用GETRANGE和SETRANGE命令,使字符串作为随机访问向量
     * 编码大量数据到一个很小的空间,或使用GETBIT和SETBIT命令,创建一个基于Redis的布隆过滤器
@@ -33,29 +33,29 @@ toc: true
     * GET key 
         * 获取指定key的值.
     * GETRANGE key start end 
-        * 返回key中字符串值的子字符，字符串的截取范围由start和end两个偏移量决定(包括start和end在内)
+        * 返回key中字符串值的子字符,字符串的截取范围由start和end两个偏移量决定(包括start和end在内)
     * GETSET key value
-        * 将给定key的值设为value，并返回key的旧值(old value).当key不存在时，返回 nil.当key存在但不是字符串类型时，返回一个错误
+        * 将给定key的值设为value,并返回key的旧值(old value).当key不存在时,返回 nil.当key存在但不是字符串类型时,返回一个错误
     * GETBIT key offset
-        * 对key所储存的字符串值，获取指定偏移量上的位(bit).
+        * 对key所储存的字符串值,获取指定偏移量上的位(bit).
     * MGET key1 [key2..]
         * 获取所有(一个或多个)给定key的值.
     * SETBIT key offset value
-        * 对key所储存的字符串值，设置或清除指定偏移量上的位(bit).
+        * 对key所储存的字符串值,设置或清除指定偏移量上的位(bit).
     * SETEX key seconds value
-        * 将值value关联到key，并将 key 的过期时间设为seconds(以秒为单位).
+        * 将值value关联到key,并将 key 的过期时间设为seconds(以秒为单位).
     * SETNX key value
         * 只有在key不存在时设置key的值.
     * SETRANGE key offset value
-        * 用value参数覆写给定key所储存的字符串值，从偏移量offset开始.
+        * 用value参数覆写给定key所储存的字符串值,从偏移量offset开始.
     * STRLEN key
         * 返回key所储存的字符串值的长度.
     * MSET key value [key value ...]
         * 同时设置一个或多个key-value 对.
     * MSETNX key value [key value ...] 
-        * 同时设置一个或多个key-value对，当且仅当所有给定key都不存在.
+        * 同时设置一个或多个key-value对,当且仅当所有给定key都不存在.
     * PSETEX key milliseconds value
-        * 这个命令和SETEX命令相似，但它以毫秒为单位设置key的生存时间，而不是像SETEX命令那样，以秒为单位
+        * 这个命令和SETEX命令相似,但它以毫秒为单位设置key的生存时间,而不是像SETEX命令那样,以秒为单位
     * INCR key
         * 将key中储存的数字值增一.
     * INCRBY key increment
@@ -67,7 +67,7 @@ toc: true
     * DECRBY key decrement
         * key所储存的值减去给定的减量值（decrement） .
     * APPEND key value
-        * 如果key已经存在并且是一个字符串，APPEND命令将指定的value追加到该key原来值(value)的末尾
+        * 如果key已经存在并且是一个字符串,APPEND命令将指定的value追加到该key原来值(value)的末尾
 - eg
     ```bash
         [llllljian@llllljian-virtual-machine src 10:21:42 #24]$ ./redis-cli
@@ -122,7 +122,7 @@ toc: true
 #### 哈希
 - Hash
     * Redis hash是一个键值(key=>value)对集合
-    * Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象
+    * Redis hash是一个string类型的field和value的映射表,hash特别适合用于存储对象
     * Redis中每个hash可以存储2^32 - 1键值对（40多亿）
 - 使用
     * 用户要存储其全名、姓氏、年龄
@@ -130,7 +130,7 @@ toc: true
     * HDEL key field1 [field2]
         * 删除一个或多个哈希表字段
     * HEXISTS key field 
-        * 查看哈希表key中，指定的字段是否存在
+        * 查看哈希表key中,指定的字段是否存在
     * HGET key field
         * 获取存储在哈希表中指定字段的值
     * HGETALL key 
@@ -150,7 +150,7 @@ toc: true
 	* HSET key field value 
 	    * 将哈希表key中的字段field的值设为value .
 	* HSETNX key field value 
-	    * 只有在字段field不存在时，设置哈希表字段的值.
+	    * 只有在字段field不存在时,设置哈希表字段的值.
 	* HVALS key 
 	    * 获取哈希表中所有值
 	* HSCAN key cursor [MATCH pattern] [COUNT count] 
@@ -185,7 +185,7 @@ toc: true
 
 #### 列表
 - List
-    * Redis list是简单的字符串列表，按照插入顺序排序.你可以添加一个元素到列表的头部（左边）或者尾部（右边）
+    * Redis list是简单的字符串列表,按照插入顺序排序.你可以添加一个元素到列表的头部（左边）或者尾部（右边）
     * 一个list最多可以包含2^32 - 1个元素 (4294967295, 每个列表超过40亿个元素)
 - 使用
     * 实现一个消息队列
@@ -195,11 +195,11 @@ toc: true
     * 使用LPUSH和LTRIM命令创建一个不会超过给定数量元素的列表,只储存最近的N个元素
 - 命令
     * BLPOP key1 [key2 ] timeout 
-	    * 移出并获取列表的第一个元素，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
+	    * 移出并获取列表的第一个元素,如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
 	* BRPOP key1 [key2 ] timeout 
-	    * 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
+	    * 移出并获取列表的最后一个元素, 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
 	* BRPOPLPUSH source destination timeout 
-	    * 从列表中弹出一个值，将弹出的元素插入到另外一个列表中并返回它； 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
+	    * 从列表中弹出一个值,将弹出的元素插入到另外一个列表中并返回它； 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
 	* LINDEX key index 
 	    * 通过索引获取列表中的元素
 	* LINSERT key BEFORE|AFTER pivot value 
@@ -219,11 +219,11 @@ toc: true
 	* LSET key index value 
 	    * 通过索引设置列表元素的值
 	* LTRIM key start stop 
-	    * 对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除.
+	    * 对一个列表进行修剪(trim),就是说,让列表只保留指定区间内的元素,不在指定区间之内的元素都将被删除.
 	* RPOP key 
 	    * 移除并获取列表最后一个元素
 	* RPOPLPUSH source destination 
-	    * 移除列表的最后一个元素，并将该元素添加到另一个列表并返回
+	    * 移除列表的最后一个元素,并将该元素添加到另一个列表并返回
 	* RPUSH key value1 [value2] 
 	    * 在列表中添加一个或多个值
 	* RPUSHX key value 
@@ -272,8 +272,8 @@ toc: true
 
 #### 集合
 - Set
-    * Redis 的 Set 是 String 类型的无序集合.集合成员是唯一的，这就意味着集合中不能出现重复的数据.
-    * Redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1).
+    * Redis 的 Set 是 String 类型的无序集合.集合成员是唯一的,这就意味着集合中不能出现重复的数据.
+    * Redis 中集合是通过哈希表实现的,所以添加,删除,查找的复杂度都是 O(1).
     * 集合中最大的成员数为 232 - 1 (4294967295, 每个集合可存储40多亿个成员).
 - 使用
     * 把每一个用户的标签都存储在一个集合之中
@@ -355,7 +355,7 @@ toc: true
     * 将用户年龄作为元素的分数,用户的id作为元素值,可以用ZRANGEBYSCORE命令取出年龄区间内的用户
 - 命令
 	* ZADD key score1 member1 [score2 member2] 
-	    * 向有序集合添加一个或多个成员，或者更新已存在成员的分数
+	    * 向有序集合添加一个或多个成员,或者更新已存在成员的分数
 	* ZCARD key 
 	    * 获取有序集合的成员数
 	* ZCOUNT key min max 
@@ -383,15 +383,15 @@ toc: true
 	* ZREMRANGEBYSCORE key min max 
 	    * 移除有序集合中给定的分数区间的所有成员
 	* ZREVRANGE key start stop [WITHSCORES] 
-	    * 返回有序集中指定区间内的成员，通过索引，分数从高到底
+	    * 返回有序集中指定区间内的成员,通过索引,分数从高到底
 	* ZREVRANGEBYSCORE key max min [WITHSCORES] 
-	    * 返回有序集中指定分数区间内的成员，分数从高到低排序
+	    * 返回有序集中指定分数区间内的成员,分数从高到低排序
 	* ZREVRANK key member 
-	    * 返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序
+	    * 返回有序集合中指定成员的排名,有序集成员按分数值递减(从大到小)排序
 	* ZSCORE key member 
-	    * 返回有序集中，成员的分数值
+	    * 返回有序集中,成员的分数值
 	* ZUNIONSTORE destination numkeys key [key ...] 
-	    * 计算给定的一个或多个有序集的并集，并存储在新的 key 中
+	    * 计算给定的一个或多个有序集的并集,并存储在新的 key 中
 	* ZSCAN key cursor [MATCH pattern] [COUNT count] 
 	    * 迭代有序集合中的元素(包括元素成员和元素分值)
 - eg

@@ -1,7 +1,7 @@
 ---
-title: 插入排序_排序
+title: SORT_插入排序
 date: 2017-12-28
-tags: 算法
+tags: SORT
 toc: true
 ---
 

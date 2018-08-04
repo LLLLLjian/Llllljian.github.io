@@ -82,8 +82,8 @@ toc: true
 - 删除文档
     ```php
         $bulk = new MongoDB\Driver\BulkWrite;
-        $bulk->delete(['x' => 1], ['limit' => 1]);   // limit 为 1 时，删除第一条匹配数据
-        $bulk->delete(['x' => 2], ['limit' => 0]);   // limit 为 0 时，删除所有匹配数据
+        $bulk->delete(['x' => 1], ['limit' => 1]);   // limit 为 1 时,删除第一条匹配数据
+        $bulk->delete(['x' => 2], ['limit' => 0]);   // limit 为 0 时,删除所有匹配数据
 
         $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");  
         $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
@@ -245,7 +245,6 @@ toc: true
         /**
          * File Name: mongodbTest1.php
          * Author: llllljian
-         * mail: 18634678077@163.com
          * Created Time: 2018年07月28日 星期六 16时20分56秒
          **/
 

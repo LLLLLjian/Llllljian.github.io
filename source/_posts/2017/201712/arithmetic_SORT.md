@@ -1,7 +1,7 @@
 ---
-title: 算法_排序
+title: SORT_列表
 date: 2017-12-27
-tags: 算法
+tags: SORT
 toc: true
 ---
 

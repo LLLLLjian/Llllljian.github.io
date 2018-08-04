@@ -67,3 +67,18 @@ toc: true
         }
     ```
 
+#### Nginx如何解析PHP
+- Nginx解析php是通过fast-cgi + php-fpm配合完成的
+- nginx的worker进程直接管理每一个请求到nginx的网络请求
+- php-fpm的进程管理程序来对这些被请求的php程序进行管理
+- 流程
+    * www.example.com
+    * Nginx
+    * 路由到www.example.com/index.php
+    * 加载nginx的fast-cgi模块
+    * fast-cgi监听127.0.0.1:9000地址
+    * www.example.com/index.php请求到达127.0.0.1:9000
+    * php-fpm 监听127.0.0.1:9000
+    * php-fpm 接收到请求,启用worker进程处理请求
+    * php-fpm 处理完请求,返回给nginx
+    * nginx将结果通过http返回给浏览器

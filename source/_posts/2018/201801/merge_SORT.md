@@ -1,7 +1,7 @@
 ---
-title: 归并排序_排序
+title: SORT_归并排序
 date: 2018-01-03
-tags: 算法
+tags: SORT
 toc: true
 ---
 

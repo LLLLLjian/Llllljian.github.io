@@ -1,7 +1,7 @@
 ---
-title: 交换排序_排序
+title: SORT_交换排序
 date: 2018-01-02
-tags: 算法
+tags: SORT
 toc: true
 ---
 

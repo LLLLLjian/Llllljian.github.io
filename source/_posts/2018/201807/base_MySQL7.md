@@ -13,7 +13,8 @@ toc: true
 <!-- more -->
 
 #### InnoDB和MyISAM区别
-- InnoDB支持事务和行级锁以及外键,MyISAM不支持
+- MyISAM：只支持表级锁,用户在操作myisam表时,select,update,delete,insert语句都会给表自动加锁,如果加锁以后的表满足insert并发的情况下,可以在表的尾部插入新的数据.
+- InnoDB：支持事务和行级锁,是innodb的最大特色.行锁大幅度提高了多用户并发操作的新能.但是InnoDB的行锁,只是在WHERE的主键是有效的,非主键的WHERE都会锁全表的
 - InnoDB引擎DELETE 表时,是一行一行的删除,MyISAM引擎则是先drop表,然后重建表
 - MyISAM相对简单所以在效率上要优于InnoDB
 - 读多写少用MyISAM,读少写多高并发用InnoDB
@@ -106,3 +107,8 @@ toc: true
 - 如果组中的所有操作都成功,则认为事务成功,即使只有一个操作失败,事务也不成功.如果所有操作 完成,事务则提交,其修改将作用于所有其他数据库进程.如果一个操作失败,则事务将回滚,该事务所有操作的影响都将取消.
 - 原子性 一致性 隔离性 持久性
 
+#### MySQL四种隔离级别
+- Serializable (串行化)：可避免脏读、不可重复读、幻读的发生.（锁表）
+- Repeatable read (可重复读)：可避免脏读、不可重复读的发生.
+- Read committed (读已提交)：可避免脏读的发生.（一个事务只能看见已经提交事务所做的改变）
+- Read uncommitted (读未提交)：最低级别,任何情况都无法保证.（脏读）

@@ -161,3 +161,104 @@ toc: true
 		<input type="button" name="sub" id="sub" value="提交">
 	</form>
 ```
+
+### 删除数据时弹出一个确认对话框
+```javascript
+    <button onclick="return doconfirm('{$value.nickname}', '修改');">修改</button>
+    <button onclick="return doconfirm('{$value.nickname}', '删除');">删除</button>
+
+    <script>
+        function doconfirm(siName, msg)
+        {
+            var flag = window.confirm('确定要对\'' + siName + '\'进行' + msg + '操作吗?');
+
+            if (flag) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+```
+
+### 批量操作
+```javascript
+    <script>
+        $(document).ready(function() {
+            $("input.select-all").click(function () {
+                if (!$(this).attr("checked")) {
+                    $(":input.ids").attr("checked", false);
+                    $("input.select-all").attr("checked", false);
+                } else {
+                    $("input.select-all").attr("checked", true);
+                    $(":input.ids:not(:disabled)").attr("checked", true);
+                }
+            });
+
+            $("input.distribute-select-btn").click(function () {
+                var id_arr = [];
+                if ($('.ids:checked').length == 0) {
+                    alert('不能为空');
+                } else {
+                    $('.ids:checked').each(function () {
+                        id_arr.push($(this).val());
+                    });
+                    if (id_arr.length == 0) {
+                        alert('不能为空');
+                    } else {
+                        var idsStr = id_arr.join(',');
+                    }
+                }
+            });
+        })
+    </script>
+```
+
+### 复制内容时添加信息
+```javascript
+    <div id="ctrlfscont" data-desc="复制的内容">
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+	</div>
+
+    <script type="text/javascript">
+    	function setClipboardText(event){ 
+            event.preventDefault();
+            var node = document.createElement('div');
+            var desc = answer.getAttributeNode("data-desc").value;
+            node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+            var htmlData = '<div style="background:#f9f9f9;">'
+            				+ node.innerHTML + '<br /><br />'
+            				+ desc;
+            var textData = 	window.getSelection().getRangeAt(0)+' \n\n'
+            				+ desc;
+            if (event.clipboardData) {  
+                event.clipboardData.setData("text/html", htmlData); 
+                event.clipboardData.setData("text/plain",textData);
+            } else if(window.clipboardData) {  
+                return window.clipboardData.setData("text", textData);  
+            }  
+        };  
+        var answer = document.getElementById("ctrlfscont");
+        answer.addEventListener('copy',function(e){
+            setClipboardText(e);
+        });
+    </script>
+```

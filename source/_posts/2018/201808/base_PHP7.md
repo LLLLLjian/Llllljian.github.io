@@ -66,7 +66,7 @@ toc: true
 #### 工厂模式
 - 工厂方法代替new操作的一种模式
 - 好处
-    * 如果想要更改所实例化的类名等,则只需更改该工厂方法内容即可,不需逐一寻找代码中具体实例化的地方（new处）修改了
+    * 如果想要更改所实例化的类名等,则只需更改该工厂方法内容即可,不需逐一寻找代码中具体实例化的地方(new处）修改了
     * 为系统结构提供灵活的动态扩展机制,减少了耦合
 - eg
     ```php
@@ -154,7 +154,7 @@ toc: true
             abstract function PrintPage();
         }
 
-        // 用于客户端是IE时调用的类（环境角色）
+        // 用于客户端是IE时调用的类(环境角色）
         class ieAgent extends baseAgent 
         {
             function PrintPage() 
@@ -163,7 +163,7 @@ toc: true
             }
         }
 
-        // 用于客户端不是IE时调用的类（环境角色）
+        // 用于客户端不是IE时调用的类(环境角色）
         class otherAgent extends baseAgent 
         {
             function PrintPage() 

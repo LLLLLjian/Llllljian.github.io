@@ -22,7 +22,7 @@ toc: true
                 'username',
                 [
                     'attribute' => 'sex',
-                    // 使用匿名函数格式化（参数为当前模型对象）,也可以在模型类中定义该方法
+                    // 使用匿名函数格式化(参数为当前模型对象）,也可以在模型类中定义该方法
                     'value' => function($model) {
                         $sex = ['保密', '男', '女'];
                         return $sex[$model->sex];
@@ -54,7 +54,7 @@ toc: true
         <?= ListView::widget([
             // 数据提供器
             'dataProvider' => $dataProvider,
-            // 指定item视图（该视图文件与当前视图在同一个目录下)
+            // 指定item视图(该视图文件与当前视图在同一个目录下)
             'itemView' => '_diary',
             'viewParams' => [
                 // 传参数给每一个item
@@ -69,7 +69,7 @@ toc: true
             ],
 
             'pager' => [
-                //'options' => ['class' => 'hidden'],//关闭分页（默认开启）
+                //'options' => ['class' => 'hidden'],//关闭分页(默认开启）
                 /* 分页按钮设置 */
                 'maxButtonCount' => 5,//最多显示几个分页按钮
                 'firstPageLabel' => '首页',
@@ -82,7 +82,7 @@ toc: true
 
         view/test/_diary.php
         <div class="item">
-            <h4 style="font-weight:bold"><?= Html::encode($model->title ? $model->title : '（无题）') ?></h4>
+            <h4 style="font-weight:bold"><?= Html::encode($model->title ? $model->title : '(无题）') ?></h4>
         
             <p style="font-size:13px">
                 <span style="color:orangered"><?= date('Y.m.d', $model->day) ?></span><br>
@@ -123,7 +123,7 @@ toc: true
             // 数据列
             'columns' => [
                 [
-                    // 显示复选框（每个复选框的值为当前记录的数据库主键值,名称为selection[]）
+                    // 显示复选框(每个复选框的值为当前记录的数据库主键值,名称为selection[])
                     'class' => 'yii\grid\CheckboxColumn',
                     // 该列底部占8格
                     'footerOptions' => ['colspan' => 8],
@@ -194,7 +194,7 @@ toc: true
                     'footerOptions' => ['class' => 'hide']
                 ],
         
-                // 显示查看、编辑、删除等按钮（默认）
+                // 显示查看、编辑、删除等按钮(默认）
                 //['class' => 'yii\grid\ActionColumn'],
                 [
                     // 自定义设置操作按钮
@@ -246,7 +246,7 @@ toc: true
             // 没有数据时是否显示表格
             'showOnEmpty' => true,
             'pager' => [
-                // 关闭分页（默认开启）
+                // 关闭分页(默认开启）
                 //'options' => ['class' => 'hidden']
                 /* 默认不显示的按钮设置 */
                 'firstPageLabel' => '首页',
@@ -322,20 +322,20 @@ toc: true
 - config
     ```php
         'dataProvider' => $dataProvider,//数据提供器,即yii\data\ActiveDataProvider类实例
-        'filterModel' => $searchModel,//搜索模型,即AR类实例（不配置则搜索行消失）
+        'filterModel' => $searchModel,//搜索模型,即AR类实例(不配置则搜索行消失）
         'columns' => [//数据列
             [
                 'class' => 'yii\grid\DataColumn’,
                 /**
                   * DataColumn：显示数据,默认值.
                   * ActionColumn：显示操作按钮等
-                  * CheckboxColumn：显示操复选框（复选框值为数据表主键值）
-                  * RadioButtonColumn：显示单选按钮（单选框值为数据表主键值）
+                  * CheckboxColumn：显示操复选框(复选框值为数据表主键值）
+                  * RadioButtonColumn：显示单选按钮(单选框值为数据表主键值）
                   * SerialColumn：显示行号
                   **/
                 'attribute' => 'day',//AR模型属性名称,即要显示的数据表字段名称
                 'label' => '日期',//设置属性标签
-                'header' => '日期',//设置该列标题（和label类似,区别是使用header设置之后该列无法使用排序功能）
+                'header' => '日期',//设置该列标题(和label类似,区别是使用header设置之后该列无法使用排序功能）
                 'format' => ['date', 'php:Y.m.d'],//设置日期格式
                 'enableSorting' => false,//是否开启排序功能,默认为true
                 'visible' => true,//设置该列内容是否可见,默认为true
@@ -362,7 +362,7 @@ toc: true
                 　　　　　　　　　　　　
                 /* 自定义设置操作按钮 */
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}',//展示按钮（默认{view} {update} {delete}）
+                'template' => '{view} {update} {delete}',//展示按钮(默认{view} {update} {delete})
                 'buttons' => [//没有在这里自定义设置的按钮使用默认设置
                     'delete' => function($url, $model, $key) {//自定义删除按钮
                         return Html::a('<i class="fa fa-ban"></i> 删除',
@@ -378,19 +378,19 @@ toc: true
                 ]
             ],
             
-            'layout' => "{items}\n{summary}\n{pager}",//整体布局与样式设置,由上而下分别为：表格、简介、分页（默认为：{summary}\n{items}\n{pager}）
-            'tableOptions' => ['class' => 'table table-striped table-bordered'],//设置表格样式（默认设置）
-            'showHeader' => true,//是否显示表格头部（默认为true,为false则表格标题行和搜索行都消失）
-            'showFooter' => true,//是否显示表格底部部（默认为false,为true时底部多一空行）
+            'layout' => "{items}\n{summary}\n{pager}",//整体布局与样式设置,由上而下分别为：表格、简介、分页(默认为：{summary}\n{items}\n{pager})
+            'tableOptions' => ['class' => 'table table-striped table-bordered'],//设置表格样式(默认设置）
+            'showHeader' => true,//是否显示表格头部(默认为true,为false则表格标题行和搜索行都消失）
+            'showFooter' => true,//是否显示表格底部部(默认为false,为true时底部多一空行）
             'rowOptions' => function($model) {//每一行自定义样式(这里设置每一行id)
                 eturn ['id' => 'tr_'.$model->id];
             },
 
             'emptyText' => '暂时没有任何生活记录！',//设置没有数据时显示的信息
             'emptyTextOptions' => ['style' => 'color:red;font-weight:bold'],//没有数据时显示信息的样式设置
-            'showOnEmpty' => true,//没有数据时是否显示表格（默认为true）
+            'showOnEmpty' => true,//没有数据时是否显示表格(默认为true）
             'pager' => [
-                //'options' => ['class' => 'hidden']//关闭分页（默认开启）
+                //'options' => ['class' => 'hidden']//关闭分页(默认开启）
                 /* 分页按钮设置 */
                 'firstPageLabel' => '首页',
                 'prevPageLabel' => '上一页',

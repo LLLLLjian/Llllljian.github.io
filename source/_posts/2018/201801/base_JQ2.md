@@ -23,7 +23,7 @@ toc: true
 
 - $("").removeAttr("属性")
     * 从每一个匹配的元素中删除一个属性
-    * $（""）.removeAttr("my")
+    * $("").removeAttr("my")
 - $("").prop("属性")
     * 获取在陪陪的元素集中的一个元素的属性值
     * $(":checkbox").attr("checked")
@@ -50,7 +50,7 @@ toc: true
 
 ### css相关属性
 - $("").offset()
-    * 返回或设置匹配元素相对于文档的偏移（位置）
+    * 返回或设置匹配元素相对于文档的偏移(位置）
     * offset 可以获取,可以改变
     * $("#parent").offset({left : 300, top : 300})
 - $("").position()

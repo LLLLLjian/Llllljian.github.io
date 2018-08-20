@@ -8,7 +8,7 @@ toc: true
 ## DOM基本操作
 
 ### DOM含义
-    文档对象模型 （DOM）：处理网页内容的方法和接口
+    文档对象模型 (DOM)：处理网页内容的方法和接口
     Document Object Model
     DOM 是为了操作文档出现的 API,document 是其的一个对象；
 
@@ -122,5 +122,5 @@ toc: true
     * 执行JavaScript 代码的程序在事件发生时会对事件做出响应.为了响应一个特定事件而被执行的代码称为事件处理器.
     * 在HTML标签中使用事件处理器的语法是：<HTML标签 事件处理器="JavaScript代码''>
 - 事件处理程序
-    * 事件就是用户或浏览器自身执行的某种动作.比如click,mouseup,keydown,mouseover等都是事件的名字.而响应某个事件的函数就叫事件处理程序（事件监听器）,
+    * 事件就是用户或浏览器自身执行的某种动作.比如click,mouseup,keydown,mouseover等都是事件的名字.而响应某个事件的函数就叫事件处理程序(事件监听器）,
     * 事件处理程序以on开头,因此click的事件处理程序就是onclick

@@ -8,7 +8,7 @@ toc: true
 ## BOM基本操作
 
 ### BOM含义
-    浏览器对象模型（BOM）：与浏览器交互的方法和接口
+    浏览器对象模型(BOM）：与浏览器交互的方法和接口
     Browser Object Model
     BOM 是为了操作浏览器出现的 API,window 是其的一个对象.
 
@@ -63,7 +63,7 @@ toc: true
     * resizeTo() 把窗口的大小调整到指定的宽度和高度.
     * scrollBy() 按照指定的像素值来滚动内容.
     * scrollTo() 把内容滚动到指定的坐标.
-    * setInterval() 按照指定的周期（以毫秒计）来调用函数或计算表达式.
+    * setInterval() 按照指定的周期(以毫秒计）来调用函数或计算表达式.
     * setTimeout(方法,秒数) 在指定的毫秒数后调用函数或计算表达式.　
     * timeOutEvent = setTimeout("longPress('" + obj + "')",1500);定时器传参数
 - 成员对象

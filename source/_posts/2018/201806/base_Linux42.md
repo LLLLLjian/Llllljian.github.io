@@ -74,14 +74,14 @@ toc: true
         test –b file   #文件是否块设备文件
         test –c File   #文件并且是字符设备文件
         test –d File   #文件并且是目录
-        test –e File   #文件是否存在 （常用）
-        test –f File   #文件是否为正规文件 （常用）
+        test –e File   #文件是否存在 (常用）
+        test –f File   #文件是否为正规文件 (常用）
         test –g File   #文件是否是设置了组id
         test –G File   #文件属于的有效组ID
-        test –h File   #文件是否是一个符号链接（同-L）
+        test –h File   #文件是否是一个符号链接(同-L）
         test –k File   #文件是否设置了Sticky bit位
         test –b File   #文件存在并且是块设备文件
-        test –L File   #文件是否是一个符号链接（同-h）
+        test –L File   #文件是否是一个符号链接(同-h）
         test –o File   #文件的属于有效用户ID
         test –p File   #文件是一个命名管道
         test –r File   #文件是否可读

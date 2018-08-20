@@ -34,7 +34,7 @@ toc: true
     * 做完所有的动作和条件类型
     * 若还有后续的行的数据,就重复上面1-3步骤,知道所有的数据都读完
 - 内置变量
-    <table><tr><th>变量名称</th><th>代表意义</th></tr><tr><td>FS</td><td>输入字段分隔符, 默认为空白字符</td></tr><tr><td>OFS</td><td>输出字段分隔符, 默认为空白字符</td></tr><tr><td>RS</td><td>输入记录分隔符(输入换行符), 指定输入时的换行符</td></tr><tr><td>ORS</td><td>输出记录分隔符（输出换行符）,输出时用指定符号代替换行符</td></tr><tr><td>NF</td><td>number of Field,当前行的字段的个数(即当前行被分割成了几列),字段数量</td></tr><tr><td>NR</td><td>行号,当前处理的文本行的行号.</td></tr><tr><td>FNR</td><td>各文件分别计数的行号</td></tr><tr><td>FILENAME</td><td>当前文件名<tr><td>ARGC</td><td>命令行参数的个数</td></tr><tr><td>ARGV</td><td>数组,保存的是命令行所给定的各参数</td></tr><tr><td>$0</td><td>代表整行</td></tr><tr><td>${n}</td><td>当前行分割后的第n列</td></tr><tr><td>$NF</td><td>当前行分割后的最后一列</td></tr></table>
+    <table><tr><th>变量名称</th><th>代表意义</th></tr><tr><td>FS</td><td>输入字段分隔符, 默认为空白字符</td></tr><tr><td>OFS</td><td>输出字段分隔符, 默认为空白字符</td></tr><tr><td>RS</td><td>输入记录分隔符(输入换行符), 指定输入时的换行符</td></tr><tr><td>ORS</td><td>输出记录分隔符(输出换行符）,输出时用指定符号代替换行符</td></tr><tr><td>NF</td><td>number of Field,当前行的字段的个数(即当前行被分割成了几列),字段数量</td></tr><tr><td>NR</td><td>行号,当前处理的文本行的行号.</td></tr><tr><td>FNR</td><td>各文件分别计数的行号</td></tr><tr><td>FILENAME</td><td>当前文件名<tr><td>ARGC</td><td>命令行参数的个数</td></tr><tr><td>ARGV</td><td>数组,保存的是命令行所给定的各参数</td></tr><tr><td>$0</td><td>代表整行</td></tr><tr><td>${n}</td><td>当前行分割后的第n列</td></tr><tr><td>$NF</td><td>当前行分割后的最后一列</td></tr></table>
 - 逻辑运算符
     <table><tr><th>运算单元</th><th>代表意义</th></tr><tr><td>></td><td>大于</td></tr><tr><td><</td><td>小于</td></tr><tr><td>>=</td><td>大于或等于</td></tr><tr><td><=</td><td>小于或等于</td></tr><tr><td>==</td><td>等于</td></tr><tr><td>!=</td><td>不等于</td></tr></table>
 - 最常用的动作

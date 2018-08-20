@@ -52,7 +52,7 @@ toc: true
         * $connection_requests : 当前通过一个连接获得的请求数量.
         * $msec : 日志写入时间.单位为秒,精度是毫秒.
         * $pipe : 如果请求是通过HTTP流水线(pipelined)发送,pipe值为“p”,否则为“.”.
-        * $request_length : 请求的长度（包括请求行,请求头和请求正文）.
+        * $request_length : 请求的长度(包括请求行,请求头和请求正文）.
         * $request_time : 请求处理时间,单位为秒,精度毫秒； 从读入客户端的第一个字节开始,直到把最后一个字符发送给客户端后进行日志写入为止.
         * $status : 响应状态.
         * $time_iso8601 : ISO8601标准格式下的本地时间.
@@ -104,7 +104,7 @@ toc: true
         * keepalive_timeout 75s;
     * 位置
         * http块, server块, location块
-    * timeout : 设置客户端的长连接在服务器端保持的最长时间（在此时间客户端未发起新请求,则长连接关闭）
+    * timeout : 设置客户端的长连接在服务器端保持的最长时间(在此时间客户端未发起新请求,则长连接关闭）
     * header_timeout : 可选项,设置“Keep-Alive: timeout=time”响应头的值. 可以为这两个参数设置不同的值
 - keepalive_requests
     * 说明
@@ -134,7 +134,7 @@ toc: true
     * 匹配顺序为 : 确切的名字 &gt; 通配符起始的server_name > 通配符结束的server_name > 按顺序第一个匹配成功的正则表达式名字
 - location
     * 说明
-        * 为某个请求URI（路径）建立配置
+        * 为某个请求URI(路径）建立配置
     * 语法
         * location [ = | ~ | ~* | ^~ ] uri { ... }
         * location @name { ... }

@@ -54,7 +54,7 @@ toc: true
         	* A 	文件的atime(access time)不可被修改,这样可以减少磁盘I/O数量,对于笔记本电脑有利于提高续航能力
             * S 	硬盘I/O同步选项,功能类似sync
             * a 	即append,设定该参数后,只能向文件中添加数据,而不能删除,多用于服务器日志文件安全,只有root才能设定这个属性
-            * i 	文件不能被删除、改名、设定链接关系,同时不能写入或新增内容（即使是root用户）.只有root才能设定这个属性
+            * i 	文件不能被删除、改名、设定链接关系,同时不能写入或新增内容(即使是root用户）.只有root才能设定这个属性
             * c 	即compresse,文件会自动的经压缩后再存储,读取时会自动的解压
             * d 	即no dump,设定文件不能成为dump程序的备份目标
             * j 	即journal,设定此参数使得当通过mount参数”data=ordered”或”data=writeback”挂载的文件系统,文件在写入时会先被记录(在journal中).如果filesystem被设定参数为data=journal,则该参数自动失效

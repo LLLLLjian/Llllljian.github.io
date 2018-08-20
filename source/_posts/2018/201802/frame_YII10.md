@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 请求
-    一个应用的请求是用 yii\web\Request 对象来表示的,该对象提供了诸如 请求参数（通常是GET参数或者POST参数）、HTTP头、cookies等信息
+    一个应用的请求是用 yii\web\Request 对象来表示的,该对象提供了诸如 请求参数(通常是GET参数或者POST参数）、HTTP头、cookies等信息
 
 <!-- more -->
 
@@ -58,7 +58,7 @@ toc: true
         yii\web\Request::url：返回 /admin/index.php/product?id=100, 此URL不包括host info部分.
         yii\web\Request::absoluteUrl：返回 http://example.com/admin/index.php/product?id=100, 包含host infode的整个URL.
         yii\web\Request::hostInfo：返回 http://example.com, 只有host info部分.
-        yii\web\Request::pathInfo：返回 /product, 这个是入口脚本之后,问号之前（查询字符串）的部分.
+        yii\web\Request::pathInfo：返回 /product, 这个是入口脚本之后,问号之前(查询字符串）的部分.
         yii\web\Request::queryString：返回 id=100,问号之后的部分.
         yii\web\Request::baseUrl：返回 /admin, host info之后, 入口脚本之前的部分.
         yii\web\Request::scriptUrl：返回 /admin/index.php, 没有path info和查询字符串部分.

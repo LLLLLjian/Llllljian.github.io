@@ -24,7 +24,7 @@ toc: true
         #进程文件
         pid  /usr/local/nginx/logs/nginx.pid;
         
-        #一个nginx进程打开的最多文件描述符数目,理论值应该是最多打开文件数（系统的值ulimit -n）与nginx进程数相除,但是nginx分配请求并不均匀,所以建议与ulimit -n的值保持一致.
+        #一个nginx进程打开的最多文件描述符数目,理论值应该是最多打开文件数(系统的值ulimit -n）与nginx进程数相除,但是nginx分配请求并不均匀,所以建议与ulimit -n的值保持一致.
         worker_rlimit_nofile 65535;
         
         #工作模式与连接数上限
@@ -33,7 +33,7 @@ toc: true
             #参考事件模型,use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]; epoll模型是Linux 2.6以上版本内核中的高性能网络I/O模型,如果跑在FreeBSD上面,就用kqueue模型.
             use epoll;
         
-            #单个进程最大连接数（最大连接数=连接数*进程数）
+            #单个进程最大连接数(最大连接数=连接数*进程数）
             worker_connections 65535;
         }
         
@@ -88,7 +88,7 @@ toc: true
             gzip on; #开启gzip压缩输出
             gzip_min_length 1k; #最小压缩文件大小
             gzip_buffers 4 16k; #压缩缓冲区
-            gzip_http_version 1.0; #压缩版本（默认1.1,前端如果是squid2.5请使用1.0）
+            gzip_http_version 1.0; #压缩版本(默认1.1,前端如果是squid2.5请使用1.0）
             gzip_comp_level 2; #压缩等级
             gzip_types text/plain application/x-javascript text/css application/xml;
             #压缩类型,默认就已经包含textml,所以下面就不用再写了,写上去也不会有问题,但是会有一个warn.
@@ -157,9 +157,9 @@ toc: true
                     proxy_connect_timeout 90; #nginx跟后端服务器连接超时时间(代理连接超时)
                     proxy_send_timeout 90; #后端服务器数据回传时间(代理发送超时)
                     proxy_read_timeout 90; #连接成功后,后端服务器响应时间(代理接收超时)
-                    proxy_buffer_size 4k; #设置代理服务器（nginx）保存用户头信息的缓冲区大小
+                    proxy_buffer_size 4k; #设置代理服务器(nginx）保存用户头信息的缓冲区大小
                     proxy_buffers 4 32k; #proxy_buffers缓冲区,网页平均在32k以下的设置
-                    proxy_busy_buffers_size 64k; #高负荷下缓冲大小（proxy_buffers*2）
+                    proxy_busy_buffers_size 64k; #高负荷下缓冲大小(proxy_buffers*2）
                     proxy_temp_file_write_size 64k; #设定缓存文件夹大小,大于这个值,将从upstream服务器传
                 }
             

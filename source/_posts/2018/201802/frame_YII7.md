@@ -61,11 +61,11 @@ toc: true
         <?= /*$form->field($model, 'hobby')->checkbox(['label'=>'爱好','uncheck'=>null,'value'=>1])*/ ?>  
 
 
-        <!--多选框（多个）默认多选框是纵向排列  使用->inline()横向排列-->  
+        <!--多选框(多个）默认多选框是纵向排列  使用->inline()横向排列-->  
         <?php echo $form->field($model, 'hobby')->inline()->checkboxList(['1'=>'篮球','2'=>'排球'])?>  
 
 
-        <!--多选框（多个）template设置模板,separator设置分割符 -->  
+        <!--多选框(多个）template设置模板,separator设置分割符 -->  
         <?php echo $form->field($model,'hobby')->inline()->checkboxList(['1'=>'篮球','2'=>'排球'])?>  
 
 

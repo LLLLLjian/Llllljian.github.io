@@ -25,7 +25,7 @@ toc: true
                 root     17773  0.0  0.0  64264  3056 ?        Ss   Apr11   0:00 nginx: master process /usr/local/nginx-1.6.0/sbin/nginx
             ```
     * 信号列表
-        <table><thead><tr><th>信号</th><th>作用</th></tr></thead><tbody><tr><td>TERM 或 INT</td><td>快速停止 Nginx 服务</td></tr><tr><td>QUIT</td><td>平滑停止 Nginx 服务</td></tr><tr><td>HUP</td><td>平滑重启（使用新的配置文件启动进程,之后平缓停止原有进程）</td></tr><tr><td>USR1</td><td>重新打开日志文件,常用于日志切割</td></tr><tr><td>USR2</td><td>平滑升级（使用新版本的 Nginx 文件启动服务,之后平缓停止原有 Nginx 进程）</td></tr><tr><td>WINCH</td><td>平缓停止 worker process ,用于 Nginx 服务器平滑升级</td></tr></tbody></table>
+        <table><thead><tr><th>信号</th><th>作用</th></tr></thead><tbody><tr><td>TERM 或 INT</td><td>快速停止 Nginx 服务</td></tr><tr><td>QUIT</td><td>平滑停止 Nginx 服务</td></tr><tr><td>HUP</td><td>平滑重启(使用新的配置文件启动进程,之后平缓停止原有进程）</td></tr><tr><td>USR1</td><td>重新打开日志文件,常用于日志切割</td></tr><tr><td>USR2</td><td>平滑升级(使用新版本的 Nginx 文件启动服务,之后平缓停止原有 Nginx 进程）</td></tr><tr><td>WINCH</td><td>平缓停止 worker process ,用于 Nginx 服务器平滑升级</td></tr></tbody></table>
 - Nginx 服务的启动
     * 使用默认的配置文件启动 Nginx 服务:
         ```bash

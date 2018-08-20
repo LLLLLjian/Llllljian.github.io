@@ -81,7 +81,7 @@ toc: true
             public function iconv_array($inCharset, $outCharset, $v)
             {
                 if (is_array($v)) {
-                    // 如果传递的是数组，则进行循环编码转换
+                    // 如果传递的是数组,则进行循环编码转换
                     foreach ($v as $key => $val) {
                         // 对key做转换
                         if (is_string($key)) {
@@ -92,12 +92,12 @@ toc: true
 
                         $v[$key_tmp] = $this->iconv_array($inCharset, $outCharset, $val);
                         if ($key != $key_tmp) {
-                            // 如果编码之后的key和原来的key不一样，则把编码前的key数据删除
+                            // 如果编码之后的key和原来的key不一样,则把编码前的key数据删除
                             unset($v[$key]);
                         }
                     }
                 } else {
-                    // 如果不是数组，就用iconv进行转换
+                    // 如果不是数组,就用iconv进行转换
                     if (is_string($v)) {
                         $v = iconv($inCharset, $outCharset, $v);
                     }

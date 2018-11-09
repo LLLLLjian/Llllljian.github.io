@@ -65,10 +65,32 @@ toc: true
     * 第二层循环：将本轮选择的元素(selected)与已经排好序的元素(ordered)相比较.如果：selected > ordered,那么将二者交换
 - 代码
     ```php
-
+        function insertSort($arr) 
+        {
+            $len=count($arr); 
+            for($i=1; $i<$len; $i++) {
+                $tmp = $arr[$i];
+                for($j=$i-1;$j>=0;$j--) {
+                    if($tmp < $arr[$j]) {
+                        $arr[$j+1] = $arr[$j];
+                        $arr[$j] = $tmp;
+                    } else {
+                        break;
+                    }
+                }
+            }
+            return $arr;
+        }
     ```
 
 #### 冒泡排序
+- 简介
+    * 每次从后向前进行（第i次）,j=n-1,n-2,...,i,比较V[j-1]和V[j]的关键字,如果发生逆序,则交换V[j-1]和V[j]
+- 实现
+    * 将序列当中的左右元素,依次比较,保证右边的元素始终大于左边的元素
+    * 第一轮结束后,序列最后一个元素一定是当前序列的最大值
+    * 对序列当中剩下的n-1个元素再次执行步骤1.
+    * 对于长度为n的序列,一共需要执行n-1轮比较
 - 代码
     ```php
         function bubbleSort($arr)

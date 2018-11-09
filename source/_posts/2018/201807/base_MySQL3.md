@@ -95,14 +95,14 @@ toc: true
         ```sql
             ALTER TABLE t3 ADD INDEX MultiIdx ('id', 'age', 'name');
 
-            什么语句
+            语句1
             select * from zimu where a = '1'  
 
-            select * from zimu where a = '1' and b = ‘2’  
+            select * from zimu where a = '1' and b = '2'  
 
-            select * from zimu where a = '1' and b = ‘2’  and c='3'
+            select * from zimu where a = '1' and b = '2'  and c='3'
 
-            下面的语句
+            语句2
             select * from zimu where c = '1' 
 
             select * from zimu where b =‘1’ and c ='2'
@@ -197,6 +197,8 @@ toc: true
                     Extra: Using where
             1 row in set (0.00 sec)
         ```
+    * 注意最左前缀,并不是是指：一定要按照各个字段出现在where中的顺序来建立复合索引的,这是对最左前缀极大的误解
+    * 复合索引,哪个字段放在最前面,需要根据哪个字段经常出现在where条件中,哪个字段的选择性最好来判断的
 
 #### MySQL索引结构
 - BTree索引

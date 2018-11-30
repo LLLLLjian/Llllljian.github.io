@@ -41,7 +41,7 @@ toc: true
             default-character-set=utf8
         ```
 - MySQL字符集
-    * character_set_client：客户端使用的字符集,当客户端向服务器发送请求时,请求以客户端字符集进行编码。
+    * character_set_client：客户端使用的字符集,当客户端向服务器发送请求时,请求以客户端字符集进行编码.
     * character_set_connection ：客户端/数据库建立的通信连接使用的字符集,MySQL服务器接收客户端的查询请求后,将其转换为character_set_connection变量指定的字符集.
     * character_set_database：数据库服务器中某个数据库的字符集,如果没有默认数据库字符集,使用 character_set_server指定的字符集.
     * character_set_results：数据库给客户端返回时的字符集,MySQL数据库把结果集和错误信息转换为character_set_results指定的字符集,并发送给客户端.

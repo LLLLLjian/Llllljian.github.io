@@ -1,6 +1,6 @@
 ---
 title: jQuery_基础 (7)
-date: 2018-11-21
+date: 2018-11-23
 tags: JQ
 toc: true
 ---
@@ -129,7 +129,7 @@ toc: true
                         return false;
                 }
 
-            //方式三：利用fieldValue()方法,fieldValue 是表单插件的一个方法,它能找出表单中的元素的值,返回一个集合。
+            //方式三：利用fieldValue()方法,fieldValue 是表单插件的一个方法,它能找出表单中的元素的值,返回一个集合.
             var usernameValue = $('input[name=name]').fieldValue();
             var addressValue = $('input[name=address]').fieldValue();
             if (!usernameValue[0] || !addressValue[0]) {

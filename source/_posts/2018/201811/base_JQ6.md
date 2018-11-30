@@ -1,6 +1,6 @@
 ---
 title: jQuery_基础 (5)
-date: 2018-11-20
+date: 2018-11-22
 tags: JQ
 toc: true
 ---
@@ -23,7 +23,7 @@ toc: true
 #### 添加cookie
 - 添加一个"会话cookie"
     ```javascript
-        // 这里没有指明 cookie有效时间,所创建的cookie有效期默认到用户关闭浏览器为止,所以被称为 “会话cookie（session cookie）”。
+        // 这里没有指明 cookie有效时间,所创建的cookie有效期默认到用户关闭浏览器为止,所以被称为 “会话cookie（session cookie）”.
         $.cookie('the_cookie', 'the_value');
     ```
 - 创建一个cookie并设置有效时间为7天

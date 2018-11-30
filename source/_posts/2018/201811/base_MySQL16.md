@@ -15,7 +15,7 @@ toc: true
 - 特性
     * 使用C和C++编写,并使用了多种编译器进行测试,保证源代码的可移植性 　　
     * 支持AIX、FreeBSD、HP-UX、Linux、Mac OS、Novell Netware、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统
-    * 为多种编程语言提供了API。编程语言包括C、C++、Python、Java、Perl、PHP、Eiffel、Ruby和Tcl等。 　　
+    * 为多种编程语言提供了API.编程语言包括C、C++、Python、Java、Perl、PHP、Eiffel、Ruby和Tcl等. 　　
     * 支持多线程,充分利用CPU资源 　　
     * 优化的SQL查询算法,有效地提高查询速度 　　
     * 既能够作为一个单独的应用程序应用在客户端服务器网络环境中,也能够作为一个库而嵌入到其他的软件中提供多语言支持,常见的编码如中文的GB 2312、BIG5,日文的Shift_JIS等都可以用作数据表名和数据列名 　　

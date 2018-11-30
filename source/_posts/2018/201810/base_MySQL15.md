@@ -7,7 +7,7 @@ toc: true
 
 ### MySQL基础配置文件
     学习一下MySQL的配置文件
-    my.ini（Linux系统下是my.cnf）,当mysql服务器启动时它会读取这个文件,设置相关的运行环境参数。
+    my.ini(Linux系统下是my.cnf),当mysql服务器启动时它会读取这个文件,设置相关的运行环境参数.
     my.ini分为两块：Client Section和Server Section.
     Client Section用来配置MySQL客户端参数
 

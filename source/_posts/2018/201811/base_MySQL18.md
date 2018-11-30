@@ -16,7 +16,7 @@ toc: true
 #### SQL语言基础
 - 数据定义语言(DDL)
     * Data Definition Language
-    * 用于定义和管理数据对象,包括数据库、数据表、函数、视图、索引、触发器等。例如：CREATE、DROP、ALTER等语句
+    * 用于定义和管理数据对象,包括数据库、数据表、函数、视图、索引、触发器等.例如：CREATE、DROP、ALTER等语句
 - 数据控制语言(DCL)
     * Data Control Language
     * 用来管理数据库的语言,包含授权用户访问、拒绝用户访问、撤销授予的权限.例如：GRANT、DENY、REVOKE、COMMIT、ROLLBACK等语句

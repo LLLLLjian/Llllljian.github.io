@@ -69,9 +69,9 @@ toc: true
                     newchar = "";
                     //小数点前进行转化
                     for (i = part[0].length - 1; i >= 0; i--) {
-                        // 若数量超过拾亿单位，提示
+                        // 若数量超过拾亿单位,提示
                         if (part[0].length > 10) { 
-                            alert("位数过大，无法计算"); 
+                            alert("位数过大,无法计算"); 
                             return ""; 
                         }
 

@@ -13,7 +13,7 @@ toc: true
 
 #### 算术运算符
 - list
-    <table><tbody><tr><th>运算符</th><th>描述</th><th>实例</th></tr><tr><th align="center" valign="middle" colspan="3">假设a为10，变量b为21</th></tr><tr><td>+</td><td>加 - 两个对象相加</td><td> a + b 输出结果 31</td></tr><tr><td>-</td><td>减 - 得到负数或是一个数减去另一个数</td><td> a - b 输出结果 -11</td></tr><tr><td>\*</td><td>乘 - 两个数相乘或是返回一个被重复若干次的字符串</td><td> a * b 输出结果 210</td></tr><tr><td>/</td><td>除 - x 除以 y</td><td> b / a 输出结果 2.1</td></tr><tr><td>%</td><td>取模 - 返回除法的余数</td><td> b % a 输出结果 1</td></tr><tr><td>\**</td><td>幂 - 返回x的y次幂</td><td> a\**b 为10的21次方</td></tr><tr><td>//</td><td>取整除 - 向下取接近除数的整数</td><td> <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="lit">9</span><span class="com">//2</span><span class="pln"></span><br /><span class="lit">4</span><span class="pln"></span><br /><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">9</span><span class="com">//2</span><span class="pln"></span><br /><span class="pun">-</span><span class="lit">5</span></pre></td></tr></tbody></table>
+    <table><tbody><tr><th>运算符</th><th>描述</th><th>实例</th></tr><tr><th align="center" valign="middle" colspan="3">假设a为10,变量b为21</th></tr><tr><td>+</td><td>加 - 两个对象相加</td><td> a + b 输出结果 31</td></tr><tr><td>-</td><td>减 - 得到负数或是一个数减去另一个数</td><td> a - b 输出结果 -11</td></tr><tr><td>\*</td><td>乘 - 两个数相乘或是返回一个被重复若干次的字符串</td><td> a * b 输出结果 210</td></tr><tr><td>/</td><td>除 - x 除以 y</td><td> b / a 输出结果 2.1</td></tr><tr><td>%</td><td>取模 - 返回除法的余数</td><td> b % a 输出结果 1</td></tr><tr><td>\**</td><td>幂 - 返回x的y次幂</td><td> a\**b 为10的21次方</td></tr><tr><td>//</td><td>取整除 - 向下取接近除数的整数</td><td> <pre class="prettyprint prettyprinted" style=""><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="lit">9</span><span class="com">//2</span><span class="pln"></span><br /><span class="lit">4</span><span class="pln"></span><br /><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">9</span><span class="com">//2</span><span class="pln"></span><br /><span class="pun">-</span><span class="lit">5</span></pre></td></tr></tbody></table>
 - eg
     ```python
         #!/usr/bin/python3
@@ -60,7 +60,7 @@ toc: true
 
 #### 比较（关系）运算符
 - list
-    <table class="reference"><tbody><tr><th width="10%">运算符</th><th>描述</th><th>实例</th></tr><tr><th align="center" valign="middle" colspan="3">假设a为10，变量b为21</th><tr><td>==</td><td> 等于 - 比较对象是否相等</td><td> (a == b) 返回 False。</td></tr><tr><td>!=</td><td> 不等于 - 比较两个对象是否不相等</td><td> (a != b) 返回 True。</td></tr><tr><td>&gt;</td><td> 大于 - 返回x是否大于y</td><td> (a &gt; b) 返回 False。</td></tr><tr><td>&lt;</td><td> 小于 - 返回x是否小于y。所有比较运算符返回1表示真，返回0表示假。这分别与特殊的变量True和False等价。注意，这些变量名的大写。</td><td> (a &lt; b) 返回 True。</td></tr><tr><td>&gt;=</td><td> 大于等于 - 返回x是否大于等于y。</td><td> (a &gt;= b) 返回 False。</td></tr><tr><td>&lt;=</td><td> 小于等于 - 返回x是否小于等于y。</td><td> (a &lt;= b) 返回 True。</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th width="10%">运算符</th><th>描述</th><th>实例</th></tr><tr><th align="center" valign="middle" colspan="3">假设a为10,变量b为21</th><tr><td>==</td><td> 等于 - 比较对象是否相等</td><td> (a == b) 返回 False.</td></tr><tr><td>!=</td><td> 不等于 - 比较两个对象是否不相等</td><td> (a != b) 返回 True.</td></tr><tr><td>&gt;</td><td> 大于 - 返回x是否大于y</td><td> (a &gt; b) 返回 False.</td></tr><tr><td>&lt;</td><td> 小于 - 返回x是否小于y.所有比较运算符返回1表示真,返回0表示假.这分别与特殊的变量True和False等价.注意,这些变量名的大写.</td><td> (a &lt; b) 返回 True.</td></tr><tr><td>&gt;=</td><td> 大于等于 - 返回x是否大于等于y.</td><td> (a &gt;= b) 返回 False.</td></tr><tr><td>&lt;=</td><td> 小于等于 - 返回x是否小于等于y.</td><td> (a &lt;= b) 返回 True.</td></tr></tbody></table>
 - eg
     ```python
         #!/usr/bin/python3
@@ -114,7 +114,7 @@ toc: true
 
 #### 赋值运算符
 - list
-    <table class="reference"><tbody><tr><th>运算符</th><th>描述</th><th>实例</th></tr><tr><th align="center" valign="middle" colspan="3">假设a为10，变量b为21</th></tr><tr><td>=</td><td>简单的赋值运算符</td><td> c = a + b 将 a + b 的运算结果赋值为 c</td></tr><tr><td>+=</td><td>加法赋值运算符</td><td> c += a 等效于 c = c + a</td></tr><tr><td>-=</td><td>减法赋值运算符</td><td> c -= a 等效于 c = c - a</td></tr><tr><td>*=</td><td>乘法赋值运算符</td><td> c *= a 等效于 c = c * a</td></tr><tr><td>/=</td><td>除法赋值运算符</td><td> c /= a 等效于 c = c / a</td></tr><tr><td>%=</td><td>取模赋值运算符</td><td> c %= a 等效于 c = c % a</td></tr><tr><td>**=</td><td>幂赋值运算符</td><td> c **= a 等效于 c = c ** a</td></tr><tr><td>//=</td><td> 取整除赋值运算符</td><td> c //= a 等效于 c = c // a</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th>运算符</th><th>描述</th><th>实例</th></tr><tr><th align="center" valign="middle" colspan="3">假设a为10,变量b为21</th></tr><tr><td>=</td><td>简单的赋值运算符</td><td> c = a + b 将 a + b 的运算结果赋值为 c</td></tr><tr><td>+=</td><td>加法赋值运算符</td><td> c += a 等效于 c = c + a</td></tr><tr><td>-=</td><td>减法赋值运算符</td><td> c -= a 等效于 c = c - a</td></tr><tr><td>*=</td><td>乘法赋值运算符</td><td> c *= a 等效于 c = c * a</td></tr><tr><td>/=</td><td>除法赋值运算符</td><td> c /= a 等效于 c = c / a</td></tr><tr><td>%=</td><td>取模赋值运算符</td><td> c %= a 等效于 c = c % a</td></tr><tr><td>**=</td><td>幂赋值运算符</td><td> c **= a 等效于 c = c ** a</td></tr><tr><td>//=</td><td> 取整除赋值运算符</td><td> c //= a 等效于 c = c // a</td></tr></tbody></table>
 - eg
     ```python
         #!/usr/bin/python3

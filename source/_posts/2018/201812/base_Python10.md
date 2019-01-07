@@ -19,7 +19,7 @@ toc: true
     ```python
         三种元组方式
         tuple1:
-        tup1 = ('Google', 'Runoob', 1997, 2000);
+        tup1 = ('Google', 'llllljian', 1997, 2000);
 
         tuple2:
         tup2 = (1, 2, 3, 4, 5 );
@@ -83,7 +83,7 @@ toc: true
     ```python
         #!/usr/bin/python3
  
-        tup = ('Google', 'Runoob', 1997, 2000)
+        tup = ('Google', 'llllljian', 1997, 2000)
         
         print (tup)
         del tup;
@@ -96,10 +96,10 @@ toc: true
 
 #### 元组索引\截取
 - list
-    <table class="reference"><tbody><tr><th style="width:33%">Python 表达式</th><th style="width:33%">结果</th><th style="width:33%"> 描述</th></tr><tr><th colspan="2">L = ('llllljian0', 'llllljian1', 'llllljian2')</th></tr><tr><td>L[2]</td><td>'llllljian2'</td><td>读取第三个元素</td></tr><tr><td>L[-2]</td><td>'llllljian1'</td><td>反向读取；读取倒数第二个元素</td></tr><tr><td>L[1:]</td><td>('llllljian1', 'llllljian2')</td><td>截取元素，从第二个开始后的所有元素。</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th style="width:33%">Python 表达式</th><th style="width:33%">结果</th><th style="width:33%"> 描述</th></tr><tr><th colspan="3">L = ('llllljian0', 'llllljian1', 'llllljian2')</th></tr><tr><td>L[2]</td><td>'llllljian2'</td><td>读取第三个元素</td></tr><tr><td>L[-2]</td><td>'llllljian1'</td><td>反向读取；读取倒数第二个元素</td></tr><tr><td>L[1:]</td><td>('llllljian1', 'llllljian2')</td><td>截取元素，从第二个开始后的所有元素。</td></tr></tbody></table>
 
 ##### 元组内置函数
 - list
-    <table class="reference"><tbody><tr><th style="width:25%">方法及描述</th><th style="width:45%">实例</th></tr><tr><td>len(tuple)<br>计算元组元素个数。</td><td><pre class="prettyprint">&gt;&gt;&gt; tuple1 = ('Google', 'Runoob', 'Taobao')&gt;&gt;&gt; len(tuple1)3&gt;&gt;&gt;</pre></td></tr><tr><td>max(tuple)<br>返回元组中元素最大值。</td><td><pre class="prettyprint">&gt;&gt;&gt; tuple2 = ('5', '4', '8')&gt;&gt;&gt; max(tuple2)'8'&gt;&gt;&gt;</pre></td></tr><tr><td>min(tuple)<br>返回元组中元素最小值。</td><td><pre class="prettyprint">&gt;&gt;&gt; tuple2 = ('5', '4', '8')&gt;&gt;&gt; min(tuple2)'4'&gt;&gt;&gt;</pre></td></tr><tr><td>tuple(seq)<br>将列表转换为元组。</td><td><pre class="prettyprint">&gt;&gt;&gt; list1= ['Google', 'Taobao', 'Runoob', 'Baidu']&gt;&gt;&gt; tuple1=tuple(list1)&gt;&gt;&gt; tuple1('Google', 'Taobao', 'Runoob', 'Baidu')</pre></td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th style="width:25%">方法</th><th style="width:45%">描述</th></tr><tr><td>len(tuple)</td><td>计算元组元素个数</td></tr><tr><td>max(tuple)</td><td>返回元组中元素最大值<</td></tr><tr><td>min(tuple)</td><td>返回元组中元素最小值</td></tr><tr><td>tuple(seq)</td><td>将列表转换为元组</td></tr></tbody></table>
 
 

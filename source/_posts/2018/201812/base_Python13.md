@@ -22,15 +22,15 @@ toc: true
     ```
 - 说明
     * 如果 "condition_1" 为 True 将执行 "statement_block_1" 块语句
-    * 如果 "condition_1" 为False，将判断 "condition_2"
+    * 如果 "condition_1" 为False,将判断 "condition_2"
     * 如果"condition_2" 为 True 将执行 "statement_block_2" 块语句
-    * 如果 "condition_2" 为False，将执行"statement_block_3"块语句
+    * 如果 "condition_2" 为False,将执行"statement_block_3"块语句
 - 注意
-    * 每个条件后面要使用冒号 :，表示接下来是满足条件后要执行的语句块。
-    * 使用缩进来划分语句块，相同缩进数的语句在一起组成一个语句块。
-    * 在Python中没有switch – case语句。
+    * 每个条件后面要使用冒号 :,表示接下来是满足条件后要执行的语句块.
+    * 使用缩进来划分语句块,相同缩进数的语句在一起组成一个语句块.
+    * 在Python中没有switch – case语句.
 - 常用操作运算符
-    <table class="reference"><tbody><tr><th>操作符</th><th>描述</th></tr><tr><td><code>&lt;</code></td><td>小于</td></tr><tr><td><code>&lt;=</code></td><td>小于或等于</td></tr><tr><td><code>&gt;</code></td><td>大于</td></tr><tr><td><code>&gt;=</code></td><td>大于或等于</td></tr><tr><td><code>==</code></td><td>等于，比较对象是否相等</td></tr><tr><td><code>!=</code></td><td>不等于</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th>操作符</th><th>描述</th></tr><tr><td><code>&lt;</code></td><td>小于</td></tr><tr><td><code>&lt;=</code></td><td>小于或等于</td></tr><tr><td><code>&gt;</code></td><td>大于</td></tr><tr><td><code>&gt;=</code></td><td>大于或等于</td></tr><tr><td><code>==</code></td><td>等于,比较对象是否相等</td></tr><tr><td><code>!=</code></td><td>不等于</td></tr></tbody></table>
 - if嵌套
     ```python
         if 表达式1:
@@ -76,7 +76,7 @@ toc: true
                     print("相当于人类：",human)
                     #break
             except ValueError:
-                print("输入不合法，请输入有效年龄")
+                print("输入不合法,请输入有效年龄")
             print("")
             control = input("退出(Y/N)？")
             print("")
@@ -131,6 +131,6 @@ toc: true
         except (KeyboardInterrupt, SystemExit):
             print("你别瞎点呀");
         except NameError as e:
-            print("输入不合法，请输入有效身高和体重", e)
+            print("输入不合法,请输入有效身高和体重", e)
     ```
 

@@ -14,7 +14,7 @@ toc: true
     元组的元素不能修改
 
 #### 元组创建
-    在括号中添加元素，并使用逗号隔开
+    在括号中添加元素,并使用逗号隔开
 - eg
     ```python
         三种元组方式
@@ -31,15 +31,15 @@ toc: true
         tup4 = ();
     ```
 - 注意的点
-    * 元组中只包含一个元素时，需要在元素后面添加逗号，否则括号会被当作运算符使用
+    * 元组中只包含一个元素时,需要在元素后面添加逗号,否则括号会被当作运算符使用
     * eg
         ```python
             >>>tup1 = (50)
-            >>> type(tup1)     # 不加逗号，类型为整型
+            >>> type(tup1)     # 不加逗号,类型为整型
             <class 'int'>
             
             >>> tup1 = (50,)
-            >>> type(tup1)     # 加上逗号，类型为元组
+            >>> type(tup1)     # 加上逗号,类型为元组
             <class 'tuple'>
         ```
         
@@ -78,7 +78,7 @@ toc: true
     ```
 
 #### 删除元组
-    不能删除单个，但使用del语句来删除整个元组
+    不能删除单个,但使用del语句来删除整个元组
 - eg
     ```python
         #!/usr/bin/python3
@@ -96,7 +96,7 @@ toc: true
 
 #### 元组索引\截取
 - list
-    <table class="reference"><tbody><tr><th style="width:33%">Python 表达式</th><th style="width:33%">结果</th><th style="width:33%"> 描述</th></tr><tr><th colspan="3">L = ('llllljian0', 'llllljian1', 'llllljian2')</th></tr><tr><td>L[2]</td><td>'llllljian2'</td><td>读取第三个元素</td></tr><tr><td>L[-2]</td><td>'llllljian1'</td><td>反向读取；读取倒数第二个元素</td></tr><tr><td>L[1:]</td><td>('llllljian1', 'llllljian2')</td><td>截取元素，从第二个开始后的所有元素。</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th style="width:33%">Python 表达式</th><th style="width:33%">结果</th><th style="width:33%"> 描述</th></tr><tr><th colspan="3">L = ('llllljian0', 'llllljian1', 'llllljian2')</th></tr><tr><td>L[2]</td><td>'llllljian2'</td><td>读取第三个元素</td></tr><tr><td>L[-2]</td><td>'llllljian1'</td><td>反向读取；读取倒数第二个元素</td></tr><tr><td>L[1:]</td><td>('llllljian1', 'llllljian2')</td><td>截取元素,从第二个开始后的所有元素.</td></tr></tbody></table>
 
 ##### 元组内置函数
 - list

@@ -35,7 +35,7 @@ toc: true
     * for k, v in d.items()
 
 #### 练习
-    请使用迭代查找一个list中最小和最大值，并返回一个tuple
+    请使用迭代查找一个list中最小和最大值,并返回一个tuple
 - 测试
     ```python
         # 测试

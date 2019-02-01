@@ -21,7 +21,7 @@ toc: true
     ```python
         #!/usr/bin/python3
  
-        list1 = ['llllljian', 'Runoob', 1997, 2000];
+        list1 = ['llllljian', 'llllljian', 1997, 2000];
         list2 = [1, 2, 3, 4, 5, 6, 7 ];
         
         print ("list1[0]: ", list1[0])
@@ -62,8 +62,8 @@ toc: true
 
         输出结果
 
-        原始列表 :  ['Google', 'Runoob', 1997, 2000]
-        删除第三个元素 :  ['Google', 'Runoob', 2000]
+        原始列表 :  ['Google', 'llllljian', 1997, 2000]
+        删除第三个元素 :  ['Google', 'llllljian', 2000]
     ```
 
 #### 列表脚本操作符

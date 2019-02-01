@@ -157,10 +157,10 @@ toc: true
 	    * 迭代哈希表中的键值对
 - eg
     ```bash
-        127.0.0.1:6379> HMSET runoobkey name "redis tutorial" description "redis basic commands for caching" likes 20 visitors 23000
+        127.0.0.1:6379> HMSET llllljiankey name "redis tutorial" description "redis basic commands for caching" likes 20 visitors 23000
         OK
 
-        127.0.0.1:6379> HGETALL runoobkey
+        127.0.0.1:6379> HGETALL llllljiankey
         1) "name"
         2) "redis tutorial"
         3) "description"
@@ -170,16 +170,16 @@ toc: true
         7) "visitors"
         8) "23000"
 
-        127.0.0.1:6379> HEXISTS runoobkey likes
+        127.0.0.1:6379> HEXISTS llllljiankey likes
         (integer) 1
 
-        127.0.0.1:6379> HEXISTS runoobkey likes2
+        127.0.0.1:6379> HEXISTS llllljiankey likes2
         (integer) 0
 
-        127.0.0.1:6379> HGET runoobkey visitors
+        127.0.0.1:6379> HGET llllljiankey visitors
         "23000"
 
-        127.0.0.1:6379> HGET runoobkey visitors2
+        127.0.0.1:6379> HGET llllljiankey visitors2
         (nil)
     ```
 
@@ -230,43 +230,43 @@ toc: true
 	    * 为已存在的列表添加值
 - eg
     ```bash
-        127.0.0.1:6379> LPUSH runoobkey redis
+        127.0.0.1:6379> LPUSH llllljiankey redis
         (integer) 1
 
-        127.0.0.1:6379> LPUSH runoobkey redis1
+        127.0.0.1:6379> LPUSH llllljiankey redis1
         (integer) 2
 
-        127.0.0.1:6379> LPUSH runoobkey redis2
+        127.0.0.1:6379> LPUSH llllljiankey redis2
         (integer) 3
 
-        127.0.0.1:6379> LPUSH runoobkey redis3
+        127.0.0.1:6379> LPUSH llllljiankey redis3
         (integer) 4
         
-        127.0.0.1:6379> LPUSH runoobkey redis4
+        127.0.0.1:6379> LPUSH llllljiankey redis4
         (integer) 5
 
-        127.0.0.1:6379> LRANGE runoobkey 0 10
+        127.0.0.1:6379> LRANGE llllljiankey 0 10
         1) "redis4"
         2) "redis3"
         3) "redis2"
         4) "redis1"
         5) "redis"
 
-        127.0.0.1:6379> LRANGE runoobkey 0 2
+        127.0.0.1:6379> LRANGE llllljiankey 0 2
         1) "redis4"
         2) "redis3"
         3) "redis2"
 
-        127.0.0.1:6379> LINDEX runoobkey 0 
+        127.0.0.1:6379> LINDEX llllljiankey 0 
         "redis4"
 
-        127.0.0.1:6379> LINDEX runoobkey 2
+        127.0.0.1:6379> LINDEX llllljiankey 2
         "redis2"
 
-        127.0.0.1:6379> LINDEX runoobkey 1
+        127.0.0.1:6379> LINDEX llllljiankey 1
         "redis3"
 
-        127.0.0.1:6379> LLEN runoobkey
+        127.0.0.1:6379> LLEN llllljiankey
         (integer) 5
     ```
 
@@ -313,34 +313,34 @@ toc: true
 	    * 迭代集合中的元素
 - eg
     ```bash
-        127.0.0.1:6379> SADD runoobkey1 redis
+        127.0.0.1:6379> SADD llllljiankey1 redis
         (integer) 1
 
-        127.0.0.1:6379> SADD runoobkey1 mongodb
+        127.0.0.1:6379> SADD llllljiankey1 mongodb
         (integer) 1
 
-        127.0.0.1:6379> SADD runoobkey1 mysql
+        127.0.0.1:6379> SADD llllljiankey1 mysql
         (integer) 1
 
-        127.0.0.1:6379> SADD runoobkey1 mysql
+        127.0.0.1:6379> SADD llllljiankey1 mysql
         (integer) 0
 
-        127.0.0.1:6379> SMEMBERS runoobkey1
+        127.0.0.1:6379> SMEMBERS llllljiankey1
         1) "redis"
         2) "mysql"
         3) "mongodb"
 
-        127.0.0.1:6379> SADD runoobkey2 mysql
+        127.0.0.1:6379> SADD llllljiankey2 mysql
         (integer) 1
 
-        127.0.0.1:6379> SMEMBERS runoobkey2
+        127.0.0.1:6379> SMEMBERS llllljiankey2
         1) "mysql"
 
-        127.0.0.1:6379> SDIFF runoobkey1 runoobkey2 
+        127.0.0.1:6379> SDIFF llllljiankey1 llllljiankey2 
         1) "redis"
         2) "mongodb"
 
-        127.0.0.1:6379> SINTER runoobkey1 runoobkey2
+        127.0.0.1:6379> SINTER llllljiankey1 llllljiankey2
         1) "mysql"
     ```
 
@@ -396,31 +396,31 @@ toc: true
 	    * 迭代有序集合中的元素(包括元素成员和元素分值)
 - eg
     ```bash
-        127.0.0.1:6379>  ZADD runoobkey3 1 redis
+        127.0.0.1:6379>  ZADD llllljiankey3 1 redis
         (integer) 1
 
-        127.0.0.1:6379>  ZADD runoobkey3 3 redis
+        127.0.0.1:6379>  ZADD llllljiankey3 3 redis
         (integer) 0
 
-        127.0.0.1:6379>  ZADD runoobkey3 3 redis3
+        127.0.0.1:6379>  ZADD llllljiankey3 3 redis3
         (integer) 1
 
-        127.0.0.1:6379>  ZADD runoobkey3 5 redis5
+        127.0.0.1:6379>  ZADD llllljiankey3 5 redis5
         (integer) 1
 
-        127.0.0.1:6379>  ZADD runoobkey3 2 redis2
+        127.0.0.1:6379>  ZADD llllljiankey3 2 redis2
         (integer) 1
 
-        127.0.0.1:6379>  ZADD runoobkey3 4 redis4
+        127.0.0.1:6379>  ZADD llllljiankey3 4 redis4
         (integer) 1
 
-        127.0.0.1:6379>  ZADD runoobkey3 6 redis4
+        127.0.0.1:6379>  ZADD llllljiankey3 6 redis4
         (integer) 0
 
-        127.0.0.1:6379>  ZADD runoobkey3 7 redis4
+        127.0.0.1:6379>  ZADD llllljiankey3 7 redis4
         (integer) 0
 
-        127.0.0.1:6379> ZRANGE runoobkey3 0 10 WITHSCORES
+        127.0.0.1:6379> ZRANGE llllljiankey3 0 10 WITHSCORES
         1) "redis2"
         2) "2"
         3) "redis"

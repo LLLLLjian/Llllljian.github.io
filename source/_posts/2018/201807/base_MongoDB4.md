@@ -26,7 +26,7 @@ toc: true
         $m = new MongoClient(); 
         // 获取名称为 "test" 的数据库
         $db = $m->test; 
-        $collection = $db->createCollection("runoob");
+        $collection = $db->createCollection("llllljian");
         echo "集合创建成功";
     ```
 - 插入文档
@@ -72,7 +72,7 @@ toc: true
     ```php
         $m = new MongoClient();    
         $db = $m->test;            
-        $collection = $db->runoob;
+        $collection = $db->llllljian;
         // 更新
         $collection->update(
             array(
@@ -95,7 +95,7 @@ toc: true
     ```php
         $m = new MongoClient();    
         $db = $m->test;            
-        $collection = $db->runoob; 
+        $collection = $db->llllljian; 
         
         // 移除文档
         $collection->remove(

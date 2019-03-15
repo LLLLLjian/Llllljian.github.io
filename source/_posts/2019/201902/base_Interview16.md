@@ -24,10 +24,10 @@ toc: true
     * 合并压缩js css
     * 代码优化
         * HTML头部的JavaScript和写在HTML标签中的Style会阻塞页面的渲染
-        * 按需加载，把统计、分享等 js 在页面 onload 后再进行加载，可以提高访问速度
-        * 优化cookie，减少cookie体积
+        * 按需加载,把统计、分享等 js 在页面 onload 后再进行加载,可以提高访问速度
+        * 优化cookie,减少cookie体积
         * 避免&lt;img>的src为空
-        * 尽量避免设置图片大小，多次重设图片大小会引发图片的多次重绘，影响性能
+        * 尽量避免设置图片大小,多次重设图片大小会引发图片的多次重绘,影响性能
         * 合理使用display属性
             a.display:inline后不应该再使用width、height、margin、padding以及float
             b.display:inline-block后不应该再使用float

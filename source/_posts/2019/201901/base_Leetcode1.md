@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 两数之和
-    Leetcode学习
+    Leetcode学习-1
 
 <!-- more -->
 

@@ -33,7 +33,7 @@ toc: true
 
 #### 问题3
     ```php
-        q : 写一个函数，尽可能高效的，从一个标准 url 里取出文件的扩展名
+        q : 写一个函数,尽可能高效的,从一个标准 url 里取出文件的扩展名
 
         a1 :
         $url_path = "http://www.sina.com.cn/abc/de/fg.php?id=1";

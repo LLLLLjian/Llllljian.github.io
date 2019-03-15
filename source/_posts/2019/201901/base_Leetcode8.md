@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 第二高的薪水
-    Leetcode学习
+    Leetcode学习-176
 
 <!-- more -->
 

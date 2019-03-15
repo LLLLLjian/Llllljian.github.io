@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 整数反转
-    Leetcode学习
+    Leetcode学习-7
 
 <!-- more -->
 

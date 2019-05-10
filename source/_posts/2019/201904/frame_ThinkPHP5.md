@@ -10,12 +10,6 @@ toc: true
 
 <!-- more -->
 
-视图实例化
-模板引擎
-模板赋值
-模板渲染
-输出替换
-
 #### 内置模板引擎
     在应用配置文件中配置template参数
 - eg
@@ -91,37 +85,3 @@ toc: true
                 }
             }
         ```
-
-#### 模板渲染
-    fetch('[模板文件]'[,'模板变量（数组）'])
-- list
-    * 不带任何参数 : 自动定位当前操作的模板文件
-    * \[模块@]\[控制器/]\[操作] : 常用写法,支持跨模块
-    * 完整的模板文件名 : 直接使用完整的模板文件名（包括模板后缀）
-
-#### 输出替换
-    支持对视图输出的内容进行字符替换
-- 控制器替换
-    ```php
-        namespace index\app\controller;
-        class Index extends \think\Controller
-        {
-            public function index()
-            {
-                $this->assign('name','thinkphp');
-                return $this->fetch('index',[],['__PUBLIC__'=>'/public/']);
-            }
-        }
-    ```
-- 配置替换
-    ```php
-        'view_replace_str' => [
-            '__PUBLIC__'=>'/public/',
-            '__ROOT__' => '/',
-        ]
-    ```
-
-#### 系统变量
-
-
-

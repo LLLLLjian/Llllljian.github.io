@@ -1,6 +1,6 @@
 ---
 title: Leetcode_基础 (39)
-date: 2019-04-20
+date: 2019-04-18
 tags: Leetcode
 toc: true
 ---
@@ -33,24 +33,29 @@ toc: true
         class Solution {
             /**
             * @param Integer[] $nums
-            * @param Integer $k
-            * @return NULL
+            * @return Integer
             */
-            function rotate(&$nums, $k) {
-                for ($k;$k>0;$k--) {
-                    $last = array_pop($nums);
-                    array_unshift($nums, $last);
+            function rob($nums) {
+                $result = array();
+                if (empty($nums) || !is_array($nums)) {
+                    return 0;
+                } else {
+                    $count = count($nums);
+                    
+                    if ($count == 1) {
+                        return $nums[0];
+                    } elseif ($count == 2) {
+                        return max($nums[0], $nums[1]);
+                    } else {
+                        $result[0] = $nums[0];
+                        $result[1] = max($nums[0], $nums[1]);
+                        
+                        for ($i=2;$i<$count;$i++) {
+                            $result[$i] = max($result[$i-1], $result[$i-2] + $nums[$i]);
+                        }
+                        return max($result);
+                    }
                 }
-                return $nums;
-            }
-
-            function rotate1(&$nums, $k) {
-                for ($k;$k>0;$k--) {
-                    array_unshift($nums, end($nums));
-                    unset($nums[count($nums) - 1]);
-                }
-                
-                return $nums;
             }
         }
     ```

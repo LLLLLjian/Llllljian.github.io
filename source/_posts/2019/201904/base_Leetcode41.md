@@ -27,5 +27,24 @@ toc: true
 
 #### A
     ```php
-        
+        class Solution {
+            /**
+             * @param Integer $n
+             * @return Boolean
+             */
+            function isHappy($n) 
+            {
+                if ($n == 1) {
+                    return true;
+                } elseif ($n == 4) {
+                    return false;
+                }
+                $n1 = 0;
+                $n = strval($n);
+                for ($i=0;$i<strlen($n);$i++) {
+                    $n1 += pow($n[$i], 2);
+                }
+                return $this->isHappy($n1);
+            }
+        }
     ```

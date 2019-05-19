@@ -41,7 +41,7 @@ toc: true
 
 #### 系统变量
 - 系统变量输出
-    * 普通的模板变量需要首先赋值后才能在模板中输出，但是系统变量则不需要，可以直接在模板中输出，系统变量的输出通常以**{$Think** 打头
+    * 普通的模板变量需要首先赋值后才能在模板中输出,但是系统变量则不需要,可以直接在模板中输出,系统变量的输出通常以**{$Think** 打头
     * eg
         ```php
             {$Think.server.script_name} // 输出$_SERVER['SCRIPT_NAME']变量
@@ -59,7 +59,7 @@ toc: true
     * {$Think.lang.var_error}
 
 #### 请求参数
-    模板支持直接输出 Request 请求对象的方法参数，用法为$Request.方法名.参数
+    模板支持直接输出 Request 请求对象的方法参数,用法为$Request.方法名.参数
 - eg
     ```php
         // 调用Request对象的get方法 传入参数为id
@@ -70,7 +70,7 @@ toc: true
         {$Request.param.user.nickname}
         // 调用Request对象的root方法
         {$Request.root}
-        // 调用Request对象的root方法，并且传入参数true
+        // 调用Request对象的root方法,并且传入参数true
         {$Request.root.true}
         // 调用Request对象的path方法
         {$Request.path}
@@ -145,9 +145,9 @@ toc: true
         {
             public function add()
             {
-                // 模板输出启用了布局模板，并且采用默认的layout布局模板。
+                // 模板输出启用了布局模板,并且采用默认的layout布局模板.
                 $this->view->engine->layout(true);
-                // 要使用不同的布局模板，可以动态的指定布局模板名称
+                // 要使用不同的布局模板,可以动态的指定布局模板名称
                 //$this->view->engine->layout('Layout/newlayout');
                 // 动态关闭当前模板的布局功能
                 //$this->view->engine->layout(false);

@@ -6,48 +6,36 @@ toc: true
 ---
 
 ### 存在重复元素
-    Leetcode学习-217
+    Leetcode学习-182
 
 <!-- more -->
 
 #### Q
-    给定一个整数数组，判断是否存在重复元素。
+    编写一个 SQL 查询,查找 Person 表中所有重复的电子邮箱.
 
-    如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
+    示例：
 
-    示例 1:
+    +----+---------+
+    | Id | Email   |
+    +----+---------+
+    | 1  | a@b.com |
+    | 2  | c@d.com |
+    | 3  | a@b.com |
+    +----+---------+
+    根据以上输入,你的查询应返回以下结果：
 
-    输入: [1,2,3,1]
-    输出: true
-    示例 2:
-
-    输入: [1,2,3,4]
-    输出: false
-    示例 3:
-
-    输入: [1,1,1,3,3,4,3,2,4,2]
-    输出: true
+    +---------+
+    | Email   |
+    +---------+
+    | a@b.com |
+    +---------+
+    说明：所有电子邮箱都是小写字母.
 
 #### A
-    ```php
-        class Solution {
-            /**
-            * @param Integer[] $nums
-            * @return Boolean
-            */
-            function containsDuplicate($nums) 
-            {
-                if (!empty($nums) && is_array($nums)) {
-                    $tempArr = array_count_values($nums);
-                    
-                    if (count($nums) == count($tempArr)) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                } else {
-                    return false;
-                }
-            }
-        }
+    ```sql
+        # Write your MySQL query statement below
+        SELECT Email
+        FROM Person 
+        GROUP BY Email 
+        HAVING count(Email) > 1
     ```

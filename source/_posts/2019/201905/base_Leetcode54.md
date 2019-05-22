@@ -5,8 +5,8 @@ tags: Leetcode
 toc: true
 ---
 
-### 有效的字母异位词
-    Leetcode学习-242
+### 单词最短距离
+    Leetcode学习-243
 
 <!-- more -->
 
@@ -25,5 +25,15 @@ toc: true
 
 #### A
     ```php
-        http://leetcode.liangjiateng.cn/leetcode/algorithm
+        class Solution {
+            function shortestDistance($words, $word1, $word2) {
+                if (empty($words)) {
+                    return false;
+                } else {
+                    $tempArr = array($word1, $word2);
+                    $temp = array_keys(array_intersect($a, $b));
+                    return $temp[1]-$temp[0];
+                }
+            }
+        }
     ```

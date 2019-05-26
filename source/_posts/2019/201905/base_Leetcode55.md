@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### Q
-    写一个函数来确定一个数字是否是strobogrammatic。一个数字翻转180度后仍为原数据的数
+    写一个函数来确定一个数字是否是strobogrammatic.一个数字翻转180度后仍为原数据的数
 
     例1：
 
@@ -61,4 +61,9 @@ toc: true
                 return true;
             }
         }
+
+        $a = new Solution();
+        var_dump($a->isStrobogrammatic(69));
+        var_dump($a->isStrobogrammatic(88));
+        var_dump($a->isStrobogrammatic(962));
     ```

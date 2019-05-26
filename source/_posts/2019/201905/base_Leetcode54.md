@@ -11,17 +11,17 @@ toc: true
 <!-- more -->
 
 #### Q
-    给定一个单词列表和两个单词word1和word2，返回列表中这两个单词之间的最短距离。
+    给定一个单词列表和两个单词word1和word2,返回列表中这两个单词之间的最短距离.
 
     示例：
-    假设words = ["practice", "makes", "perfect", "coding", "makes"]。
+    假设words = ["practice", "makes", "perfect", "coding", "makes"].
 
-    输入： word1 = “coding”，word2 = “practice”
+    输入： word1 = “coding”,word2 = “practice”
     输出： 3
-    输入： word1 = "makes"，word2 = "coding"
-    输出： 1
+    输入： word1 = "makes",word2 = "coding"
+    输出： 2
     注意：
-    您可以假设word1 不等于 word2，而word1和word2都在列表中。
+    您可以假设word1 不等于 word2,而word1和word2都在列表中.
 
 #### A
     ```php
@@ -36,4 +36,13 @@ toc: true
                 }
             }
         }
+        
+        $a = new Solution();
+        $words = array("practice", "makes", "perfect", "coding", "makes");
+        $word1 = "coding";
+        $word2 = "practice";
+        echo $a->shortestDistance($words, $word1, $word2);
+        $word1 = "makes";
+        $word2 = "coding";
+        echo $a->shortestDistance($words, $word1, $word2);
     ```

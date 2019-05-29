@@ -41,24 +41,36 @@ toc: true
          * }
          */
         class Solution {
+
             /**
-             * @param TreeNode $root
-             * @return String[]
-             */
-            function binaryTreePaths($root, $path = "") {
-                if (!empty($root->val)) {
-                    if (empty($path)) {
-                        $path = $val;
-                    } else {
-                        $path .= "->".$root->val;
-                    }
-                    $result[] = $this->binaryTreePaths($root->left, $path);
-                    $result[] = $this->binaryTreePaths($root->right, $path);
+            * @param TreeNode $root
+            * @return String[]
+            */
+            function binaryTreePaths($root) {
+                $this->resArr = array();
+
+                if (empty($root)) {
+                    return $res;
                 } else {
-                    return $path;
+                    $temp = "";
+                    $this->helper($this->resArr, $temp, $root);
+                    return $this->resArr;
                 }
-                
-                return $result;
+            }
+
+            function helper($res, $temp, $root) {
+                if (empty($root)) {
+                    return;
+                } 
+                $temp .= $root->val;
+
+                if (empty($root->left) && empty($root->right)) {
+                    $this->resArr[] = $temp;
+                    return;
+                } else {
+                    $this->helper($this->resArr, $temp."->", $root->left);
+                    $this->helper($this->resArr, $temp."->", $root->right);
+                }
             }
         }
     ```

@@ -30,7 +30,6 @@ toc: true
 
 #### A
     ```php
-        http://leetcode.liangjiateng.cn/leetcode/algorithm
         /**
          *  思路：
          *  用dp[i][j]来表示在第 i 个房子,涂第j种颜色的最小开销.

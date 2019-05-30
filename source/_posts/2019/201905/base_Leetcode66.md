@@ -5,8 +5,8 @@ tags: Leetcode
 toc: true
 ---
 
-### 移动零
-    Leetcode学习-283
+### 单词规律
+    Leetcode学习-290
 
 <!-- more -->
 

@@ -24,7 +24,6 @@ toc: true
 
 #### A
     ```php
-        http://leetcode.liangjiateng.cn/leetcode/algorithm
         class Solution {
             function canAttendMeetings($intervals) {
                 if (!empty($intervals)) {

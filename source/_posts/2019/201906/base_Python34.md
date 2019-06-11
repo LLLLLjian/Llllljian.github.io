@@ -24,7 +24,7 @@ toc: true
         from bs4 import BeautifulSoup
         import json
         #~~~~~~~~~~~~以下是无需修改的参数~~~~~~~~~~~~~~~~·
-        requests.packages.urllib3.disable_warnings() #为了避免弹出一万个warning，which is caused by 非验证的get请求
+        requests.packages.urllib3.disable_warnings() #为了避免弹出一万个warning,which is caused by 非验证的get请求
 
         leetcode_url = 'https://leetcode-cn.com/'
 
@@ -33,7 +33,7 @@ toc: true
         submissions_url = 'submissions/'
         submissions_url = leetcode_url + submissions_url
 
-        with open("config.json", "r") as f: #读取用户名，密码，本地存储目录
+        with open("config.json", "r") as f: #读取用户名,密码,本地存储目录
             temp = json.loads(f.read())   
             USERNAME = temp['username']
             PASSWORD = temp['password']
@@ -42,11 +42,11 @@ toc: true
         #~~~~~~~~~~~~以上是无需修改的参数~~~~~~~~~~~~~~~~·
 
         #~~~~~~~~~~~~以下是可以修改的参数~~~~~~~~~~~~~~~~·
-        START_PAGE = 0  # 从哪一页submission开始爬起，0是最新的一页
-        sleep_time = 5  # in second，登录失败时的休眠时间
+        START_PAGE = 0  # 从哪一页submission开始爬起,0是最新的一页
+        sleep_time = 5  # in second,登录失败时的休眠时间
         #~~~~~~~~~~~~以上是可以修改的参数~~~~~~~~~~~~~~~~·
 
-        def login(email, password): # 本函数copy自https://gist.github.com/fyears/487fc702ba814f0da367a17a2379e8ba，感谢@fyears
+        def login(email, password): # 本函数copy自https://gist.github.com/fyears/487fc702ba814f0da367a17a2379e8ba,感谢@fyears
             client = requests.session()
             client.encoding = "utf-8"
 
@@ -100,17 +100,17 @@ toc: true
                     Lang = submission['lang']
 
                     if Status != "Accepted":
-                        print (Title + " 不接受，继续下一次提交")
+                        print (Title + " 不接受,继续下一次提交")
                         continue
 
-                    if t - submission['timestamp'] > TIME_CONTROL: #时间管理，本行代表只记录最近的TIME_CONTROL天内的提交记录
+                    if t - submission['timestamp'] > TIME_CONTROL: #时间管理,本行代表只记录最近的TIME_CONTROL天内的提交记录
                         return
 
                     try:
                         Pid = GetProblemId(Title)
                         
                         if Pid == 0 or Title in invalidset:
-                            print (Title + "失败，没有找到对应题号")
+                            print (Title + "失败,没有找到对应题号")
                             if Title not in invalidset: #第一次没找到
                                 with open("./Log.txt", "a") as log:
                                     log.write("Unknown PID happened for ", Title)

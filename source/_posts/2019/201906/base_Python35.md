@@ -23,10 +23,29 @@ toc: true
             
             html = json.loads(h.text)
             for stat_status_pairs in enumerate((html["stat_status_pairs"])):
-                Pid = stat_status_pairs[1]['stat']['frontend_question_id']
-                Title = stat_status_pairs[1]['stat']['question__title_slug']
+                queInfos = stat_status_pairs[1]
+                Pid = queInfos['stat']['frontend_question_id']
+                Title = queInfos['stat']['question__title_slug']
                 newpath = OUTPUT_DIR + '{:0=4}'.format(Pid) + "." + Title #存放的文件夹名
                 if not os.path.exists(newpath):
                     os.makedirs(newpath)
+
+                # 问题详情
+                filename = '{:0=4}'.format(Pid) + "-" + "EN.md" 
+                totalpath = os.path.join(newpath, filename) #把文件夹和文件组合成新的地址
+                if os.path.exists(totalpath):
+                    # 跳过本地问题详情
+                    print (filename + "存在！跳过本题") 
+                    continue
+
+                with open(totalpath, "w") as f: #开始写到本地
+                    queInfo = ""
+                    for key, value in queInfos.items():
+                        if type(value).__name__ == "dict":
+                            for key1, value1 in value.items():
+                                queInfo += str(key) + "." +str(key1) + ":" + str(value1) + "\n"
+                        else:
+                            queInfo += str(key) + ":" + str(value) + "\n"
+                    f.write(queInfo)
     ```
 

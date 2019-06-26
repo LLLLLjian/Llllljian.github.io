@@ -60,19 +60,20 @@ toc: true
                     14 => 'e',
                     15 => 'f'
                 );
-                
+
                 if ($num == 0) {
-                    return 0;
+                    return "0";
                 } else {
                     $resArr = array();
                     if ($num < 0) {
                         $num += pow(2, 32);
                     }
-                    while ($num > 1) {
+                    
+                    while ($num >= 1) {
                         $resArr[] = $hexArr[$num%16];
                         $num /= 16;
                     }
-                    var_dump($resArr);
+                    return strrev(implode($resArr));
                 }
             }
         }

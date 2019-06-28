@@ -11,65 +11,46 @@ toc: true
 <!-- more -->
 
 #### Q
-    写一个程序，输出从 1 到 n 数字的字符串表示。
+    给定一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。要求算法时间复杂度必须是O(n)。
 
-    1. 如果 n 是3的倍数，输出“Fizz”；
+    示例 1:
 
-    2. 如果 n 是5的倍数，输出“Buzz”；
+    输入: [3, 2, 1]
 
-    3.如果 n 同时是3和5的倍数，输出 “FizzBuzz”。
+    输出: 1
 
-    示例：
+    解释: 第三大的数是 1.
+    示例 2:
 
-    n = 15,
+    输入: [1, 2]
 
-    返回:
-    [
-        "1",
-        "2",
-        "Fizz",
-        "4",
-        "Buzz",
-        "Fizz",
-        "7",
-        "8",
-        "Fizz",
-        "Buzz",
-        "11",
-        "Fizz",
-        "13",
-        "14",
-        "FizzBuzz"
-    ]
+    输出: 2
+
+    解释: 第三大的数不存在, 所以返回最大的数 2 .
+    示例 3:
+
+    输入: [2, 2, 3, 1]
+
+    输出: 1
+
+    解释: 注意，要求返回第三大的数，是指第三大且唯一出现的数。
+    存在两个值为2的数，它们都排第二。
 
 #### A
     ```php
-        if (count($nums) < 3) {
-            return max($nums);
-        }
-
-        $max1 = $max2 = $max3 = min($nums);
-        for($i=0;$i<count($nums);$i++) {
-            if ($nums[$i] > $max1) {
-                $max3 = $max2;
-                $max2 = $max1;
-                $max1 = $nums[$i];
-                continue;
-            }
-
-            if (($nums[$i] != $max1) && ($nums[$i] > $max2)) {
-                $max3 = $max2;
-                $max2 = $nums[$i];
-                continue;
-            }
-
-            if (($nums[$i] != $max1) && ($nums[$i] != $max2) && ($nums[$i] > $max3)) {
-                $max3 = $nums[$i];
-                continue;
-            }
-
-            if (($max1 == min($nums)) || ($max2 == min($nums)) || ($max3 == min($nums))) {
-                return max($max1, $max2, $max3);
+        class Solution {
+            /**
+            * @param Integer[] $nums
+            * @return Integer
+            */
+            function thirdMax($nums) {
+                $nums = array_unique($nums);
+                rsort($nums);
+                if (count($nums) >= 3) {
+                    return $nums[2];
+                } else {
+                    return $nums[0];
+                }
             }
         }
     ```

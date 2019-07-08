@@ -340,7 +340,7 @@ toc: true
                 # 打开文本文件
                 file = open(queList_path,'r')
 
-                # 遍历文本文件的每一行，strip可以移除字符串头尾指定的字符（默认为空格或换行符）或字符序列
+                # 遍历文本文件的每一行,strip可以移除字符串头尾指定的字符（默认为空格或换行符）或字符序列
                 for line in file.readlines():
                     line = line.strip()
                     k = line.split(' ')[0]
@@ -360,7 +360,7 @@ toc: true
                 # 先创建并打开一个文本文件
                 file = open(queList_path, 'w') 
 
-                # 遍历字典的元素，将每项元素的key和value分拆组成字符串，注意添加分隔符和换行符
+                # 遍历字典的元素,将每项元素的key和value分拆组成字符串,注意添加分隔符和换行符
                 for k,v in QueList.items():
                     file.write(str(k)+' '+str(v)+'\n')
 

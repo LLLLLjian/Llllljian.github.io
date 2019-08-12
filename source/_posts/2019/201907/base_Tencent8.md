@@ -4,9 +4,7 @@ date: 2019-07-09
 tags: 
     - Tencent
     - Linux
-    - Wechat
     - ThinkPHP
-    - Mongo
 toc: true
 ---
 

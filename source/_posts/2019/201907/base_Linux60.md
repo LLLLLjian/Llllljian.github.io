@@ -11,6 +11,7 @@ toc: true
 <!-- more -->
 
 #### 展示文件夹下文件详情
+- linux命令
     ```bash
         [llllljian@llllljian-cloud-tencent ~ 17:56:37 #2]$ ls -l --time-style=+'%Y-%m-%d %H:%M:%S' /var/nginx/html/tp5/
         total 144
@@ -33,17 +34,20 @@ toc: true
     ```
 
 #### 查看今天的错误日志
+- linux命令
     ```bash
         [llllljian@llllljian-cloud-tencent ~ 18:04:08 #17]$ sudo tail -1 /var/log/nginx/access.log | grep `date +%d/%b/%Y`
         160.119.129.62 - - [26/Jul/2019:17:09:42 +0800] "GET / HTTP/1.1" 200 612 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
     ```
 
 #### 查看进程
+- linux命令
     ```bash
         ps x -o pid,user,pcpu,pmem,vsz,rss,stat,start,time,cmd --sort=-pcpu,-pmem,pid
     ```
 
 #### 查看系统平均负载
+- linux命令
     ```bash
         cat /proc/loadavg
     ```

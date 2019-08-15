@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### INNER JOIN与 LEFT JOIN之间的区别
-    关于INNER JOIN与 LEFT JOIN之间的区别，以前以为自己搞懂了, 这次做项目才发现自己不是很清楚, 所以抓紧记录一下
+    关于INNER JOIN与 LEFT JOIN之间的区别,以前以为自己搞懂了, 这次做项目才发现自己不是很清楚, 所以抓紧记录一下
 
 <!-- more -->
 

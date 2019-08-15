@@ -13,12 +13,12 @@ toc: true
 ### 解决方法
 - 方法1
     ```javascript
-        <!-- 为下拉框添加样式，可以禁用该下拉框 -->
+        <!-- 为下拉框添加样式,可以禁用该下拉框 -->
         <select name="name" id="select" class="select" style="pointer-events: none;"></select>
     ```
 - 方法2
     ```javascript
-        <!-- 为下拉框添加onfocus和onchange方法，可以禁用该下拉框 -->
+        <!-- 为下拉框添加onfocus和onchange方法,可以禁用该下拉框 -->
         <select name="name" id="select" class="select" onfocus="this.defaultIndex=this.selectedIndex;"  onchange="this.selectedIndex=this.defaultIndex;">
     ```
 - 方法3

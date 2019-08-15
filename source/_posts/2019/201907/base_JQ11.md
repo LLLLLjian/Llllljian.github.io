@@ -44,7 +44,7 @@ toc: true
         </select>
     ```
     ```javascript
-        //为Select添加事件，当选择其中一项时触发
+        //为Select添加事件,当选择其中一项时触发
         $("#select_id").change(function(){
             //code...
         }); 

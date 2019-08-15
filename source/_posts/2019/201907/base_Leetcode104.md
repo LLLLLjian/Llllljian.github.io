@@ -1,6 +1,6 @@
 ---
 title: Leetcode_基础 (104)
-date: 2019-07-16
+date: 2019-07-16 12:00:00
 tags: Leetcode
 toc: true
 ---
@@ -11,50 +11,37 @@ toc: true
 <!-- more -->
 
 #### Q
-    给定一个密钥字符串S，只包含字母，数字以及 '-'（破折号）。N 个 '-' 将字符串分成了 N+1 组。给定一个数字 K，重新格式化字符串，除了第一个分组以外，每个分组要包含 K 个字符，第一个分组至少要包含 1 个字符。两个分组之间用 '-'（破折号）隔开，并且将所有的小写字母转换为大写字母。
+    给定一个二进制数组, 计算其中最大连续1的个数.
 
-    给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
+    示例 1:
 
-    示例 1：
+    输入: [1,1,0,1,1,1]
+    输出: 3
+    解释: 开头的两位和最后的三位都是连续1,所以最大连续1的个数是 3.
+    注意：
 
-    输入：S = "5F3Z-2e-9-w", K = 4
-
-    输出："5F3Z-2E9W"
-
-    解释：字符串 S 被分成了两个部分，每部分 4 个字符；
-         注意，两个额外的破折号需要删掉。
-    示例 2：
-
-    输入：S = "2-5g-3-J", K = 2
-
-    输出："2-5G-3J"
-
-    解释：字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
-     
-
-    提示:
-
-    S 的长度不超过 12,000，K 为正整数
-    S 只包含字母数字（a-z，A-Z，0-9）以及破折号'-'
-    S 非空
+    输入的数组只包含 0 和1.
+    输入数组的长度是正整数,且不超过 10,000
 
 #### A
     ```php
         class Solution {
             /**
-            * @param String $S
-            * @param Integer $K
-            * @return String
+            * @param Integer[] $nums
+            * @return Integer
             */
-            function licenseKeyFormatting($S, $K) {
-                $tempStr = strrev(str_replace("-", "", $S));
-                $tempArr = str_split($tempStr, $K);
-                $tempArr = array_reverse($tempArr);
-                $resStr = "";
-                foreach ($tempArr as $value) {
-                    $resStr .= strtoupper(strrev($value))."-";
+            function findMaxConsecutiveOnes($nums) {
+                $j = 0;
+                $temp = 0;
+                for ($i=0;$i<count($nums);$i++) {
+                    if ($nums[$i] == 1) {
+                        $j += 1;
+                    } else {
+                        $temp = max($temp, $j);
+                        $j = 0;
+                    }
                 }
-                return trim($resStr, "-");
+                return max($temp, $j);
             }
         }
     ```

@@ -35,14 +35,14 @@ toc: true
     * 目录使用小写+下划线；
     * 类库、函数文件统一以 .php 为后缀；
     * 类的文件名均以命名空间定义,并且命名空间的路径和类库文件所在路径一致；
-    * 类文件采用驼峰法命名（首字母大写）,其它文件采用小写+下划线命名；
-    * 类名和类文件名保持一致,统一采用驼峰法命名（首字母大写）；
+    * 类文件采用驼峰法命名(首字母大写),其它文件采用小写+下划线命名；
+    * 类名和类文件名保持一致,统一采用驼峰法命名(首字母大写)；
 - 函数和类、属性命名
-    * 类的命名采用驼峰法（首字母大写）,例如 User 、 UserType ,默认不需要添加后缀,例如
+    * 类的命名采用驼峰法(首字母大写),例如 User 、 UserType ,默认不需要添加后缀,例如
     * UserController 应该直接命名为 User ；
-    * 函数的命名使用小写字母和下划线（小写字母开头）的方式,例如 get_client_ip ；
-    * 方法的命名使用驼峰法（首字母小写）,例如 getUserName ；
-    * 属性的命名使用驼峰法（首字母小写）,例如 tableName 、 instance ；
+    * 函数的命名使用小写字母和下划线(小写字母开头)的方式,例如 get_client_ip ；
+    * 方法的命名使用驼峰法(首字母小写),例如 getUserName ；
+    * 属性的命名使用驼峰法(首字母小写),例如 tableName 、 instance ；
     * 以双下划线“__”打头的函数或方法作为魔术方法,例如 __call 和 __autoload ；
 - 常量和配置
     * 常量以大写字母和下划线命名,例如 APP_PATH 和 THINK_PATH ；
@@ -53,8 +53,8 @@ toc: true
 
 #### 目录结构
     project 应用部署目录 
-    ├─application 应用目录（可设置）
-    │ ├─common 公共模块目录（可更改）
+    ├─application 应用目录(可设置)
+    │ ├─common 公共模块目录(可更改)
     │ ├─index 模块目录(可更改)
     │ │ ├─config.php 模块配置文件
     │ │ ├─common.php 模块函数文件
@@ -63,19 +63,19 @@ toc: true
     │ │ ├─view 视图目录
     │ │ └─ ... 更多类库目录
     │ ├─command.php 命令行工具配置文件
-    │ ├─common.php 应用公共（函数）文件
-    │ ├─config.php 应用（公共）配置文件
+    │ ├─common.php 应用公共(函数)文件
+    │ ├─config.php 应用(公共)配置文件
     │ ├─database.php 数据库配置文件
     │ ├─tags.php 应用行为扩展定义文件
     │ └─route.php 路由配置文件 
-    ├─extend 扩展类库目录（可定义） 
-    ├─public WEB 部署目录（对外访问目录）
+    ├─extend 扩展类库目录(可定义) 
+    ├─public WEB 部署目录(对外访问目录)
     │ ├─static 静态资源存放目录(css,js,image)
     │ ├─index.php 应用入口文件
     │ ├─router.php 快速测试文件
     │ └─.htaccess 用于 apache 的重写 
-    ├─runtime 应用的运行时目录（可写,可设置） 
-    ├─vendor 第三方类库目录（Composer） 
+    ├─runtime 应用的运行时目录(可写,可设置) 
+    ├─vendor 第三方类库目录(Composer) 
     ├─thinkphp 框架系统目录
     │ ├─lang 语言包目录
     │ ├─library 框架核心类库目录
@@ -88,11 +88,11 @@ toc: true
     │ ├─composer.json composer 定义文件
     │ ├─console.php 控制台入口文件
     │ ├─convention.php 惯例配置文件
-    │ ├─helper.php 助手函数文件（可选）
+    │ ├─helper.php 助手函数文件(可选)
     │ ├─LICENSE.txt 授权说明文件
     │ ├─phpunit.xml 单元测试配置文件
     │ ├─README.md README 文件
     │ └─start.php 框架引导文件 
-    ├─build.php 自动生成定义文件（参考） 
+    ├─build.php 自动生成定义文件(参考) 
     ├─composer.json composer 定义文件 
     ├─LICENSE.txt 授权说明文件

@@ -20,7 +20,7 @@ toc: true
 #### 自定义函数语法
 - eg
     ```python
-        def 函数名（参数列表）:
+        def 函数名(参数列表):
             函数体
     ```
 
@@ -177,7 +177,7 @@ toc: true
                 i_count = 2  # 局部作用域
     ```
 - 注意
-    * Python 中只有模块（module）,类（class）以及函数（def、lambda）才会引入新的作用域,其它的代码块（如 if/elif/else/、try/except、for/while等）是不会引入新的作用域的,也就是说这些语句内定义的变量,外部也可以访问
+    * Python 中只有模块(module),类(class)以及函数(def、lambda)才会引入新的作用域,其它的代码块(如 if/elif/else/、try/except、for/while等)是不会引入新的作用域的,也就是说这些语句内定义的变量,外部也可以访问
     * eg
         ```python
             if True:

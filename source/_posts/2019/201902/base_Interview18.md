@@ -28,9 +28,9 @@ toc: true
 - Q
     * Mysql的datetime timestamp的区别
 - A
-    * datetime的默认值为null,timestamp的默认值不为null,且为系统当前时间（current_timestatmp）.如果不做特殊处理,且update没有指定该列更新,则默认更新为当前时间.
+    * datetime的默认值为null,timestamp的默认值不为null,且为系统当前时间(current_timestatmp).如果不做特殊处理,且update没有指定该列更新,则默认更新为当前时间.
     * datetime占用8个字节,timestamp占用4个字节.timestamp利用率更高.
-    * 二者存储方式不一样,对于timestamp,它把客户端插入的时间从当前时区转化为世界标准时间（UTC）进行存储,查询时,逆向返回.但对于datetime,基本上存什么是什么.
+    * 二者存储方式不一样,对于timestamp,它把客户端插入的时间从当前时区转化为世界标准时间(UTC)进行存储,查询时,逆向返回.但对于datetime,基本上存什么是什么.
     * 二者范围不一样.timestamp范围：‘1970-01-01 00:00:01.000000’ 到 ‘2038-01-19 03:14:07.999999’； datetime范围：’1000-01-01 00:00:00.000000’ 到 ‘9999-12-31 23:59:59.999999’.原因是,timestamp占用4字节,能表示最大的时间毫秒为2的31次方减1,也就是2147483647,换成时间刚好是2038-01-19 03:14:07.999999.
 
 #### MySQL得到百分数

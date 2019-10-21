@@ -266,7 +266,7 @@ toc: true
     当调用 yii\db\ActiveRecord::save() 时,默认情况下会自动调用 yii\db\ActiveRecord::validate(). 
     只有当验证通过时,它才会真正地保存数据; 否则将简单地返回false
     可以检查 yii\db\ActiveRecord::errors 属性来获取验证过程的错误消息
-    如果你确定你的数据不需要验证(比如说数据来自可信的场景）, 你可以调用 save(false) 来跳过验证过程.
+    如果你确定你的数据不需要验证(比如说数据来自可信的场景), 你可以调用 save(false) 来跳过验证过程.
 - rules 验证规则
     * 位置
         ```php
@@ -408,7 +408,7 @@ toc: true
 - 声明关联关系
     ```php
         // 对应关系有两种 hasOne[一对一] hasMany[一对多]
-        // 每个关联方法必须这样命名：getXyz.然后通过 xyz(首字母小写）调用这个关联名[大小写敏感]
+        // 每个关联方法必须这样命名：getXyz.然后通过 xyz(首字母小写)调用这个关联名[大小写敏感]
         class Customer extends ActiveRecord
         {
             // ...

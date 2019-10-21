@@ -20,9 +20,9 @@ toc: true
 
 ### button标签的3种tpye
     请始终为按钮规定type属性
-    Internet Explorer的默认类型是 “button”,而其他浏览器中（包括 W3C 规范）的默认值是 “submit”.
+    Internet Explorer的默认类型是 “button”,而其他浏览器中(包括 W3C 规范)的默认值是 “submit”.
 - 功能描述
-    <table><thead><tr><th align="right">值</th><th align="right">描述</th></tr></thead><tbody><tr><td align="right">submit</td><td align="right">该按钮是提交按钮（除了 Internet Explorer,该值是其他浏览器的默认值）.</td></tr><tr><td align="right">button</td><td align="right">该按钮是可点击的按钮（Internet Explorer 的默认值）.</td></tr><tr><td align="right">reset</td><td align="right">该按钮是重置按钮（清除表单数据）.</td></tr></tbody></table>
+    <table><thead><tr><th align="right">值</th><th align="right">描述</th></tr></thead><tbody><tr><td align="right">submit</td><td align="right">该按钮是提交按钮(除了 Internet Explorer,该值是其他浏览器的默认值).</td></tr><tr><td align="right">button</td><td align="right">该按钮是可点击的按钮(Internet Explorer 的默认值).</td></tr><tr><td align="right">reset</td><td align="right">该按钮是重置按钮(清除表单数据).</td></tr></tbody></table>
 
 ### 注意事项
 - $('#customBtn').val()和$('#customBtn').attr('value')在不同浏览器下的值

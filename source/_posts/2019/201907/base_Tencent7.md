@@ -27,15 +27,15 @@ toc: true
         return [
             // 定义demo模块的自动生成
             'demo'   => [
-                // 表示生成文件（不定义默认会生成 config.php 文件）
+                // 表示生成文件(不定义默认会生成 config.php 文件)
                 '__file__'   => ['tags.php', 'user.php', 'hello.php'],
-                // 表示生成目录（支持多级目录）
+                // 表示生成目录(支持多级目录)
                 '__dir__'    => ['config', 'controller', 'model', 'view'],
                 // 生成controller类
                 'controller' => ['Index', 'Test', 'UserType'],
                 // 生成model类
                 'model'      => [],
-                // 生成html文件（支持子目录）
+                // 生成html文件(支持子目录)
                 'view'       => ['index/index'],
             ],    
             

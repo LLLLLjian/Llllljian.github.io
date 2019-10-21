@@ -56,6 +56,6 @@ toc: true
             pip3 -V
         ```
 - Windows
-    * 首先,根据你的Windows版本（64位还是32位）从Python的官方网站下载Python 3.7对应的64位安装程序或32位安装程序,然后,运行下载的EXE安装包
+    * 首先,根据你的Windows版本(64位还是32位)从Python的官方网站下载Python 3.7对应的64位安装程序或32位安装程序,然后,运行下载的EXE安装包
     * ![Windows_python安装](/img/20181206_1.png)
 

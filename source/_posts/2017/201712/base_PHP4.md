@@ -50,9 +50,9 @@ toc: true
     ucwords($str)   //将字符串中每个单词的首字母转换为大写
     strtolower($str)    //将字符串转化为小写
     strtoupper($str)    //将字符串转化为大写
-    trim($str [,$charlist]) //去除字符串首尾处的空白字符(或者其他字符）
-    ltrim($str [,$charlist])    //去除字符串首段的空白字符(或者其他字符）
-    rtrim($str [,$charlist])    //去除字符串末端的空白字符(或者其他字符）
+    trim($str [,$charlist]) //去除字符串首尾处的空白字符(或者其他字符)
+    ltrim($str [,$charlist])    //去除字符串首段的空白字符(或者其他字符)
+    rtrim($str [,$charlist])    //去除字符串末端的空白字符(或者其他字符)
     md5_file($file) //计算指定文件的MD5散列值
     md5($str)   //计算字符串的MD5散列值
     money_format($format, $num) //将数字格式化为货币形式
@@ -73,15 +73,15 @@ toc: true
     str_repeat($str, $num)  //重复一个字符串
     str_shuffle($str)   //随机打乱一个字符串
     str_word_count($str [,$format [,$charlist]])    //返回字符串中单词的使用情况
-    strcasecmp($str1, $str2)    //二进制安全比较字符串(不区分大小写）
+    strcasecmp($str1, $str2)    //二进制安全比较字符串(不区分大小写)
         如果str1小于str2,返回负数；如果str1大于str2,返回正数；二者相等则返回0.
     strcmp($str1, $str2)    //二进制安全字符串比较
     strcoll($str1, $str1)   //基于区域设置的字符串比较(区分大小写,非二进制安全)
     strcspn($str1, $str1 [,$start [,$len]])   //获取不匹配遮罩的起始子字符串的长度
     strip_tags($str)    //从字符串中去除HTML和PHP标记
     strpos($haystack, $needle [,$offset])   //查找字符串首次出现的位置
-    stripos($haystack, $needle [,$offset])    //查找字符串首次出现的位置(不区分大小写）
-    strripos($haystack, $needle [,$offset])   //计算指定字符串在目标字符串中最后一次出现的位置(不区分大小写）
+    stripos($haystack, $needle [,$offset])    //查找字符串首次出现的位置(不区分大小写)
+    strripos($haystack, $needle [,$offset])   //计算指定字符串在目标字符串中最后一次出现的位置(不区分大小写)
     strrpos($haystack, $needle [,$offset])   //计算指定字符串在目标字符串中最后一次出现的位置
     strlen($str)    //获取字符串长度
     strpbrk($haystack, $str)    //在字符串中查找一组字符的任何一个字符
@@ -92,7 +92,7 @@ toc: true
     stristr($haystack, $needle)   //查找字符串的首次出现(不区分大小写)
     strrchr($haystack, $needle) //查找指定字符在字符串中的最后一次出现
     strtok($str, $token)    //标记分割字符串
-    substr_compare($main_str, $str, $offset [,$len) //二进制安全比较字符串(从偏移位置比较指定长度）
+    substr_compare($main_str, $str, $offset [,$len) //二进制安全比较字符串(从偏移位置比较指定长度)
     substr_replace$str, $replace, $start [,$len]    //替换字符串的子串
     strtr($str, $from, $to) //转换指定字符
     substr($str, $start [,$len])    //返回字符串的子串
@@ -281,8 +281,8 @@ toc: true
 
     //栈：后进先出
     入栈和出栈会重新分配索引下标
-    array_push        将一个或多个单元压入数组的末尾(入栈）
-    array_pop        将数组最后一个单元弹出(出栈）        使用此函数后会重置(reset())array 指针.
+    array_push        将一个或多个单元压入数组的末尾(入栈)
+    array_pop        将数组最后一个单元弹出(出栈)        使用此函数后会重置(reset())array 指针.
 
     //队列：先进先出
     队列函数会重新分配索引下标

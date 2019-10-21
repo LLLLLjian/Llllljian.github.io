@@ -40,8 +40,8 @@ toc: true
 
 | 例子 | 名称 | 结果 | 
 |:-----|:-----|:-----|
-| \$a << \$b   | Shift left(左移）  | 将 $a 中的位向左移动 $b 次(每一次移动都表示"乘以 2"). |
-| \$a \>\> \$b | Shift right(右移） | 将 $a 中的位向右移动 $b 次(每一次移动都表示"除以 2"). |
+| \$a << \$b   | Shift left(左移)  | 将 $a 中的位向左移动 $b 次(每一次移动都表示"乘以 2"). |
+| \$a \>\> \$b | Shift right(右移) | 将 $a 中的位向右移动 $b 次(每一次移动都表示"除以 2"). |
 
 - 比较运算符
 
@@ -72,12 +72,12 @@ toc: true
 
 - 逻辑运算符
     ```php
-        $a and $b And(逻辑与） TRUE,如果 $a 和 $b 都为 TRUE. 
-        $a or $b Or(逻辑或） TRUE,如果 $a 或 $b 任一为 TRUE. 
-        $a xor $b Xor(逻辑异或） TRUE,如果 $a 或 $b 任一为 TRUE,但不同时是. 
-        ! $a Not(逻辑非） TRUE,如果 $a 不为 TRUE. 
-        $a && $b And(逻辑与） TRUE,如果 $a 和 $b 都为 TRUE. 
-        $a || $b Or(逻辑或） TRUE,如果 $a 或 $b 任一为 TRUE. 
+        $a and $b And(逻辑与) TRUE,如果 $a 和 $b 都为 TRUE. 
+        $a or $b Or(逻辑或) TRUE,如果 $a 或 $b 任一为 TRUE. 
+        $a xor $b Xor(逻辑异或) TRUE,如果 $a 或 $b 任一为 TRUE,但不同时是. 
+        ! $a Not(逻辑非) TRUE,如果 $a 不为 TRUE. 
+        $a && $b And(逻辑与) TRUE,如果 $a 和 $b 都为 TRUE. 
+        $a || $b Or(逻辑或) TRUE,如果 $a 或 $b 任一为 TRUE. 
     ```
 
 - 字符串运算符

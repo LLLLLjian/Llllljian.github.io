@@ -15,7 +15,7 @@ toc: true
     * 按顺序执行应用主体中behaviors()列出的过滤器.
     * 按顺序执行模块中behaviors()列出的过滤器.
     * 按顺序执行控制器中behaviors()列出的过滤器.
-    * 如果任意过滤器终止动作执行, 后面的过滤器(包括预过滤和后过滤）不再执行.
+    * 如果任意过滤器终止动作执行, 后面的过滤器(包括预过滤和后过滤)不再执行.
 - 成功通过预过滤后执行动作.
 - 后过滤
     * 倒序执行控制器中behaviors()列出的过滤器.
@@ -155,7 +155,7 @@ toc: true
 #### 核心过滤器
 - AccessControl
     ```php
-        //允许所有访客(还未经认证的用户）执行 login 和 signup 动作. 
+        //允许所有访客(还未经认证的用户)执行 login 和 signup 动作. 
         //roles 选项包含的问号 ? 是一个特殊的标识,代表”访客用户”.
         //允许已认证用户执行 logout 动作.@是另一个特殊标识, 代表”已认证用户”.
         use yii\web\Controller;
@@ -202,7 +202,7 @@ toc: true
     ```
 - ContentNegotiator
     ```php
-        //配置ContentNegotiator支持JSON和XML 响应格式和英语(美国）和德语
+        //配置ContentNegotiator支持JSON和XML 响应格式和英语(美国)和德语
         use yii\filters\ContentNegotiator;
         use yii\web\Response;
 

@@ -29,12 +29,12 @@ toc: true
         ```
         * 如果在action map找到操作ID, 会创建一个独立操作,如果操作ID对应操作方法,会创建一个内联操作
         * 否则会抛出yii\base\InvalidRouteException异常
-    * 控制器按顺序调用应用主体、模块(如果控制器属于模块）、 控制器的 beforeAction() 方法
+    * 控制器按顺序调用应用主体、模块(如果控制器属于模块)、 控制器的 beforeAction() 方法
         * 如果任意一个调用返回false,后面未调用的beforeAction()会跳过并且操作执行会被取消； action execution will be cancelled.
         * 默认情况下每个 beforeAction() 方法会触发一个 beforeAction 事件,在事件中你可以追加事件处理操作
     * 控制器执行操作
         * 请求数据解析和填入到操作参数
-    * 控制器按顺序调用控制器、模块(如果控制器属于模块）、应用主体的 afterAction() 方法
+    * 控制器按顺序调用控制器、模块(如果控制器属于模块)、应用主体的 afterAction() 方法
         * 默认情况下每个 afterAction() 方法会触发一个 afterAction 事件, 在事件中你可以追加事件处理操作、
     * 应用主体获取操作结果并赋值给响应.
 

@@ -6,13 +6,13 @@ toc: true
 ---
 
 ### 关于Yii
-- Yii 是一个高性能,基于组件的 PHP 框架,用于快速开发现代 Web 应用程序. 名字 Yii (读作 易）在中文里有“极致简单与不断演变”两重含义, 也可看作 Yes It Is! 的缩写.
+- Yii 是一个高性能,基于组件的 PHP 框架,用于快速开发现代 Web 应用程序. 名字 Yii (读作 易)在中文里有“极致简单与不断演变”两重含义, 也可看作 Yes It Is! 的缩写.
 
 ### Yii特点
 - 最适合做什么
-    * Yii 是一个通用的 Web 编程框架,即可以用于开发各种用 PHP 构建的 Web 应用. 因为基于组件的框架结构和设计精巧的缓存支持,它特别适合开发大型应用, 如门户网站、社区、内容管理系统(CMS）、 电子商务项目和 RESTful Web 服务等.
+    * Yii 是一个通用的 Web 编程框架,即可以用于开发各种用 PHP 构建的 Web 应用. 因为基于组件的框架结构和设计精巧的缓存支持,它特别适合开发大型应用, 如门户网站、社区、内容管理系统(CMS)、 电子商务项目和 RESTful Web 服务等.
 - 与其他框架相比
-    * 实现了 MVC(Model-View-Controller）设计模式并基于该模式组织代码.
+    * 实现了 MVC(Model-View-Controller)设计模式并基于该模式组织代码.
     * 代码简洁优雅
     * 是一个全栈框架,提供了大量久经考验,开箱即用的特性： 对关系型和 NoSQL 数据库都提供了查询生成器和 ActiveRecord；RESTful API 的开发支持；多层缓存支持,等等
     * 非常易于扩展
@@ -26,7 +26,7 @@ toc: true
     * 通过归档文件安装
         * 从 yiiframework.com 下载归档文件.
         * 将下载的文件解压缩到 Web 访问的文件夹中.
-        * 修改 config/web.php 文件,给 cookieValidationKey 配置项 添加一个密钥(若你通过 Composer 安装,则此步骤会自动完成）：
+        * 修改 config/web.php 文件,给 cookieValidationKey 配置项 添加一个密钥(若你通过 Composer 安装,则此步骤会自动完成)：
     * 通过 Composer 安装
         * 先安装Composer(如果已经安装请忽略) 
             ```php 

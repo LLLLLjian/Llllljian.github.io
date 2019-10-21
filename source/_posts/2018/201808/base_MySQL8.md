@@ -19,8 +19,8 @@ toc: true
     * 混合类型的复制.默认采用基于语句的复制,一旦发现基于语句无法精确复制时,就会采用基于行的复制.
 - 复制的工作过程
     * 在每个事务更新数据完成之前,master在二进制日志记录这些改变.写入二进制日志完成后,master通知存储引擎提交事务.
-    * Slave将master的binary log复制到其中继日志.首先slave开始一个工作线程(I/O）,I/O线程在master上打开一个普通的连接,然后开始binlog dump process.binlog dump process从master的二进制日志中读取事件,如果已经跟上master,它会睡眠并等待master产生新的事件,I/O线程将这些事件写入中继日志.
-    * Sql slave thread(sql从线程）处理该过程的最后一步,sql线程从中继日志读取事件,并重放其中的事件而更新slave数据,使其与master中的数据一致,只要该线程与I/O线程保持一致,中继日志通常会位于os缓存中,所以中继日志的开销很小.
+    * Slave将master的binary log复制到其中继日志.首先slave开始一个工作线程(I/O),I/O线程在master上打开一个普通的连接,然后开始binlog dump process.binlog dump process从master的二进制日志中读取事件,如果已经跟上master,它会睡眠并等待master产生新的事件,I/O线程将这些事件写入中继日志.
+    * Sql slave thread(sql从线程)处理该过程的最后一步,sql线程从中继日志读取事件,并重放其中的事件而更新slave数据,使其与master中的数据一致,只要该线程与I/O线程保持一致,中继日志通常会位于os缓存中,所以中继日志的开销很小.
 - 场景描述
     * 主数据库服务器: 127.0.0.1:4095
     * 从数据库服务器: 127.0.0.1:4096

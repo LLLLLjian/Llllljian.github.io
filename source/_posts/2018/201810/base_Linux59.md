@@ -22,7 +22,7 @@ toc: true
 - 格式
     * su -l USERNAME(-l为login,即登陆的简写)
     * su USERNAME
-        * 如果不指定USERNAME（用户名）,默认即为root,所以切换到root的身份的命令即为：su -root或su -,su root 或su
+        * 如果不指定USERNAME(用户名),默认即为root,所以切换到root的身份的命令即为：su -root或su -,su root 或su
     * 差异
         * su -,su -l或su --login 命令改变身份时,也同时变更工作目录,以及HOME,SHELL,USER,LOGNAME.此外,也会变更PATH变量.用su -命令则默认转换成成root用户了.
         * 不带参数的“su命令”不会改变当前工作目录以及HOME,SHELL,USER,LOGNAME.只是拥有了root的权限而已

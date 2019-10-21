@@ -37,17 +37,17 @@ toc: true
         * 不做任何干扰操作,直接返回OOM异常
 - maxmemory-samples 3
     * 清理时,每次取出来多少个数据进行比对[个人理解] 
-    * 清理时会根据用户配置的maxmemory-policy来做适当的清理(一般是LRU或TTL）,这里的LRU或TTL策略并不是针对redis的所有key,而是以配置文件中的maxmemory-samples个key作为样本池进行抽样清理
+    * 清理时会根据用户配置的maxmemory-policy来做适当的清理(一般是LRU或TTL),这里的LRU或TTL策略并不是针对redis的所有key,而是以配置文件中的maxmemory-samples个key作为样本池进行抽样清理
 
 #### 回收过程
-- 客户端执行一条新命令,导致数据库需要增加数据(比如set key value）
+- 客户端执行一条新命令,导致数据库需要增加数据(比如set key value)
 - Redis会检查内存使用,如果内存使用超过maxmemory,就会按照置换策略删除一些key
 - 新的命令执行成功
 
 #### 回收原理
 - 概述
     * 当mem_used内存已经超过maxmemory的设定,对于所有的读写请求,都会触发redis.c/freeMemoryIfNeeded(void)函数以清理超出的内存.注意这个清理过程是阻塞的,直到清理出足够的内存空间.所以如果在达到maxmemory并且调用方还在不断写入的情况下,可能会反复触发主动清理策略,导致请求会有一定的延迟.
-    * 清理时会根据用户配置的maxmemory-policy来做适当的清理(一般是LRU或TTL）,这里的LRU或TTL策略并不是针对redis的所有key,而是以配置文件中的maxmemory-samples个key作为样本池进行抽样清理
+    * 清理时会根据用户配置的maxmemory-policy来做适当的清理(一般是LRU或TTL),这里的LRU或TTL策略并不是针对redis的所有key,而是以配置文件中的maxmemory-samples个key作为样本池进行抽样清理
 - TTL数据淘汰机制
     * 从过期时间的表中随机挑选maxmemory-samples个键值对,取出其中ttl最大的键值对淘汰.
 - LRU数据淘汰机制

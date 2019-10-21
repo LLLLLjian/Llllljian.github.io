@@ -59,13 +59,13 @@ toc: true
     * INCR key
         * 将key中储存的数字值增一.
     * INCRBY key increment
-        * 将key所储存的值加上给定的增量值(increment） .
+        * 将key所储存的值加上给定的增量值(increment) .
     * INCRBYFLOAT key increment
-        * 将key所储存的值加上给定的浮点增量值(increment） .
+        * 将key所储存的值加上给定的浮点增量值(increment) .
     * DECR key
         * 将key中储存的数字值减一.
     * DECRBY key decrement
-        * key所储存的值减去给定的减量值(decrement） .
+        * key所储存的值减去给定的减量值(decrement) .
     * APPEND key value
         * 如果key已经存在并且是一个字符串,APPEND命令将指定的value追加到该key原来值(value)的末尾
 - eg
@@ -123,7 +123,7 @@ toc: true
 - Hash
     * Redis hash是一个键值(key=>value)对集合
     * Redis hash是一个string类型的field和value的映射表,hash特别适合用于存储对象
-    * Redis中每个hash可以存储2^32 - 1键值对(40多亿）
+    * Redis中每个hash可以存储2^32 - 1键值对(40多亿)
 - 使用
     * 用户要存储其全名、姓氏、年龄
 - 命令
@@ -185,7 +185,7 @@ toc: true
 
 #### 列表
 - List
-    * Redis list是简单的字符串列表,按照插入顺序排序.你可以添加一个元素到列表的头部(左边）或者尾部(右边）
+    * Redis list是简单的字符串列表,按照插入顺序排序.你可以添加一个元素到列表的头部(左边)或者尾部(右边)
     * 一个list最多可以包含2^32 - 1个元素 (4294967295, 每个列表超过40亿个元素)
 - 使用
     * 实现一个消息队列

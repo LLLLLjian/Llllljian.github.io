@@ -12,7 +12,7 @@ toc: true
 
 #### 作用及用法
     可以减少代码的重复 
-    include(_once)（"文件的路径"）与require(_once)（"文件的路径"）      
+    include(_once)("文件的路径")与require(_once)("文件的路径")      
 
 #### 理解
     就是用包含进来的文件中的内容代替 include(_once),require(_once)那一行  
@@ -25,7 +25,7 @@ toc: true
 
 #### 区别    
 - include是包含的意思,找不到文件时,会报warning的错误,然后程序继续往下执行    
-- require是必须的意思,找不到文件时,会报fatal error （致命错误）,程序停止往下执行
+- require是必须的意思,找不到文件时,会报fatal error (致命错误),程序停止往下执行
 - 加once后,系统会进行判断,如果已经包含,则不会再包含第二次
 - eg
     ```php
@@ -37,10 +37,10 @@ toc: true
         b.php
         <?php
             $a=5; 
-            require_once（"a.php"）; 
+            require_once("a.php"); 
             echo $a;
             
-            require_once（"a.php"）; 
+            require_once("a.php"); 
             echo $a;
         ?>
     ```

@@ -24,18 +24,18 @@ toc: true
     show engines查看支持表类型配置.常见包括:MyISAM/Innodb/Memory/Merge/NDB
     其中,MyISAM和Innodb是最常用的两个表类型,各有优势,我们可以根据需求情况选择适合自己的表类型.
     * \[MyISAM]
-    1）每个数据库存储包括3个文件：.frm(表定义)、MYD(数据文件)、MYI(索引文件)
-    2）数据文件或索引文件可以指向多个磁盘
-    3）Linux的默认引擎,win默认InnoDB
-    4）面向非事务类型,避免事务型额外的开销
-    5）适用于select、insert密集的表
-    6）MyISAM默认锁的调度机制是写优先,可以通过LOW_PRIORITY_UPDATES设置
-    7）MyISAM类型的数据文件可以在不同操作系统中COPY,这点很重要,布署的时候方便点.
+    1)每个数据库存储包括3个文件：.frm(表定义)、MYD(数据文件)、MYI(索引文件)
+    2)数据文件或索引文件可以指向多个磁盘
+    3)Linux的默认引擎,win默认InnoDB
+    4)面向非事务类型,避免事务型额外的开销
+    5)适用于select、insert密集的表
+    6)MyISAM默认锁的调度机制是写优先,可以通过LOW_PRIORITY_UPDATES设置
+    7)MyISAM类型的数据文件可以在不同操作系统中COPY,这点很重要,布署的时候方便点.
     * \[Innodb]
-    1）用于事务应用程序
-    2）适用于update、delete密集的操作.执行select count(*) from table时,InnoDB要扫描一遍整个表来计算有多少行,但是MyISAM只要简单的读出保存好的行数即可.注意的是,当count(*)语句包含 where条件时,两种表的操作是一样的.DELETE FROM table时,InnoDB不会重新建立表,而是一行一行的删除.
-    3）引入行级锁和外键的约束
-    4）InnoDB不支持FULLTEXT类型的索引
+    1)用于事务应用程序
+    2)适用于update、delete密集的操作.执行select count(*) from table时,InnoDB要扫描一遍整个表来计算有多少行,但是MyISAM只要简单的读出保存好的行数即可.注意的是,当count(*)语句包含 where条件时,两种表的操作是一样的.DELETE FROM table时,InnoDB不会重新建立表,而是一行一行的删除.
+    3)引入行级锁和外键的约束
+    4)InnoDB不支持FULLTEXT类型的索引
 
 
 #### 问题3

@@ -58,7 +58,7 @@ toc: true
     * possible_keys
         * 列指出MySQL能使用哪个索引在该表中找到行
     * key
-        * 显示MySQL实际决定使用的键(索引）.如果没有选择索引,键是NULL
+        * 显示MySQL实际决定使用的键(索引).如果没有选择索引,键是NULL
     * key_len
         * 显示MySQL决定使用的键长度.如果键是NULL,则长度为NULL.使用的索引的长度.在不损失精确性的情况下,长度越短越好
     * ref

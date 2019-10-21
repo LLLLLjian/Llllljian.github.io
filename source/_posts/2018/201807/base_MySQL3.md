@@ -263,7 +263,7 @@ toc: true
     ```
 
 #### 修改默认储存引擎
-- linux下为/etc/my.cnf）,在mysqld后面增加default-storage-engine=INNODB即可.
+- linux下为/etc/my.cnf),在mysqld后面增加default-storage-engine=INNODB即可.
 
 #### MyISAM
     支持表级锁,不支持行级锁,不支持事务,不支持外检约束,支持全文索引,表空间文件相对小.
@@ -277,5 +277,5 @@ toc: true
 - 提供行级锁
 
 #### 搜索引擎的选择
-- 如果要提供提交、回滚、崩溃恢复能力的事物安全(ACID兼容）能力,并要求实现并发控制,InnoDB是一个好的选择
+- 如果要提供提交、回滚、崩溃恢复能力的事物安全(ACID兼容)能力,并要求实现并发控制,InnoDB是一个好的选择
 - 如果数据表主要用来插入和查询记录,则MyISAM引擎能提供较高的处理效率

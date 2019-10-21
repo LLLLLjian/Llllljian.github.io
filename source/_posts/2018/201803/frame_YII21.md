@@ -17,7 +17,7 @@ toc: true
         // 创建一个 DB 查询来获得所有 status 为 1 的文章
         $query = Article::find()->where(['status' => 1]);
 
-        // 得到文章的总数(但是还没有从数据库取数据）
+        // 得到文章的总数(但是还没有从数据库取数据)
         $count = $query->count();
 
         // 使用总数来创建一个分页对象

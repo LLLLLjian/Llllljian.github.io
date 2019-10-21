@@ -93,7 +93,7 @@ toc: true
         -rwxrw-rw- 1 llllljian llllljian  0 4月  13 14:38 3_1.txt
         -rwxrwxr-x 1 root      root      25 4月  13 16:06 3.txt
     ```
-- 列出当前目录下的所有文件(包括隐藏文件）的绝对路径, 对目录不做递归
+- 列出当前目录下的所有文件(包括隐藏文件)的绝对路径, 对目录不做递归
     ```bash
         find $PWD -maxdepth 1 | xargs ls -ld
         drwxrwxrwx 3 root      root      4096 4月  13 16:46 /home/0413test

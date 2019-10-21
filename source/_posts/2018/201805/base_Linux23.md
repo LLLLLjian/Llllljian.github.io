@@ -19,14 +19,14 @@ toc: true
 ```
 
 #### whereis
-- 查找二进制(命令）、源文件、man文件.与which不同的是这条命令可以是通过文件索引数据库而非PATH来查找的,所以查找的面比which要广
+- 查找二进制(命令)、源文件、man文件.与which不同的是这条命令可以是通过文件索引数据库而非PATH来查找的,所以查找的面比which要广
 ```bash
     whereis ls
     ls: /usr/bin/ls /usr/share/man/man1p/ls.1p.gz /usr/share/man/man1/ls.1.gz
 ```
 
 #### locate
-- 通过数据库查找文件,但是这个命令的适用范围就比whereis大多了.这个命令可以找到任意你指定要找的文件,并且可以只输入部分文件名(前面两个命令是要输入完整文件名的）.同时locte还可以通过-r选项使用正则表达式,功能十分强大
+- 通过数据库查找文件,但是这个命令的适用范围就比whereis大多了.这个命令可以找到任意你指定要找的文件,并且可以只输入部分文件名(前面两个命令是要输入完整文件名的).同时locte还可以通过-r选项使用正则表达式,功能十分强大
 ```bash
     locate ls | head -n 5
     /data/0.22/apache2.2.17/include/apr_pools.h

@@ -108,7 +108,7 @@ toc: true
     * User-Agent
         * 简称UA,它是一个特殊的字符串头,可以使服务器识别客户使用的操作系统及版本、浏览器及版本等信息.在做爬虫时加上此信息,可以伪装为浏览器；如果不加,很可能会被识别出为爬虫.
     * Content-Type
-        * 也叫互联网媒体类型（Internet Media Type)或者MIME类型,在HTTP协议消息头中,它用来表示具体请求中的媒体类型信息
+        * 也叫互联网媒体类型(Internet Media Type)或者MIME类型,在HTTP协议消息头中,它用来表示具体请求中的媒体类型信息
 
 #### redis中list和set的区别
 - list

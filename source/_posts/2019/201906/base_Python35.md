@@ -340,7 +340,7 @@ toc: true
                 # 打开文本文件
                 file = open(queList_path,'r')
 
-                # 遍历文本文件的每一行,strip可以移除字符串头尾指定的字符（默认为空格或换行符）或字符序列
+                # 遍历文本文件的每一行,strip可以移除字符串头尾指定的字符(默认为空格或换行符)或字符序列
                 for line in file.readlines():
                     line = line.strip()
                     k = line.split(' ')[0]

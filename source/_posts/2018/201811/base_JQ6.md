@@ -23,7 +23,7 @@ toc: true
 #### 添加cookie
 - 添加一个"会话cookie"
     ```javascript
-        // 这里没有指明 cookie有效时间,所创建的cookie有效期默认到用户关闭浏览器为止,所以被称为 “会话cookie（session cookie）”.
+        // 这里没有指明 cookie有效时间,所创建的cookie有效期默认到用户关闭浏览器为止,所以被称为 “会话cookie(session cookie)”.
         $.cookie('the_cookie', 'the_value');
     ```
 - 创建一个cookie并设置有效时间为7天
@@ -33,7 +33,7 @@ toc: true
     ```
 - 创建一个cookie并设置cookie的有效路径
     ```javascript
-        // 在默认情况下,只有设置 cookie的网页才能读取该 cookie.如果想让一个页面读取另一个页面设置的cookie,必须设置cookie的路径.cookie的路径用于设置能够读取 cookie的顶级目录.将这个路径设置为网站的根目录,可以让所有网页都能互相读取 cookie （一般不要这样设置,防止出现冲突）.
+        // 在默认情况下,只有设置 cookie的网页才能读取该 cookie.如果想让一个页面读取另一个页面设置的cookie,必须设置cookie的路径.cookie的路径用于设置能够读取 cookie的顶级目录.将这个路径设置为网站的根目录,可以让所有网页都能互相读取 cookie (一般不要这样设置,防止出现冲突).
         $.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
     ```
 

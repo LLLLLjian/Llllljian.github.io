@@ -14,10 +14,10 @@ toc: true
 - Q
     * Autoload原理简单概述
 - A
-    * 1.检查执行器全局变量函数指针autoload_func是否为NULL。
-    * 2.如果autoload_func==NULL, 则查找系统中是否定义有__autoload()函数，如果没有，则报告错误并退出。
-    * 3.如果定义了__autoload()函数，则执行__autoload()尝试加载类，并返回加载结果。
-    * 4.如果autoload_func不为NULL，则直接执行autoload_func指针指向的函数用来加载类。
+    * 1.检查执行器全局变量函数指针autoload_func是否为NULL.
+    * 2.如果autoload_func==NULL, 则查找系统中是否定义有__autoload()函数,如果没有,则报告错误并退出.
+    * 3.如果定义了__autoload()函数,则执行__autoload()尝试加载类,并返回加载结果.
+    * 4.如果autoload_func不为NULL,则直接执行autoload_func指针指向的函数用来加载类.
 
 #### 问题2
 - Q

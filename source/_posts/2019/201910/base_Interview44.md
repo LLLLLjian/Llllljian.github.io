@@ -93,9 +93,36 @@ toc: true
             $result = array_keys($result);
             return $result;
         }
+        function f2_1($n)
+        {
+            for ($i = 0; $i < $n; $i ++) {
+                if ($i == 0) {
+                    $array[$n - 1] = $n;
+                } else {
+                    // 将新的牌插入到最上面
+                    $array[$n - $i - 1] = $n - $i;
+                    // 记录最后一张牌的值
+                    $last = $array[$n - 1];
+                    // 新牌后面所有的牌向后移动一位
+                    for ($j = $n - 1; $j > $n - $i ; $j --) {
+                        $array[$j] = $array[$j - 1];
+                    }
+                    // 将原来的最后一张牌放到新牌的后面
+                    $array[$n - $i] = $last;
+                }
+            }
+            ksort($array);
+            return $array;
+        }
         var_dump(f2(1));
         var_dump(f2(2));
         var_dump(f2(3));
         var_dump(f2(4));
         var_dump(f2(5));
+
+        var_dump(f2_1(1));
+        var_dump(f2_1(2));
+        var_dump(f2_1(3));
+        var_dump(f2_1(4));
+        var_dump(f2_1(5));
     ```

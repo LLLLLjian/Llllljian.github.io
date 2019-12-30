@@ -81,6 +81,9 @@ deploy:
   ##repository: https://github.com/Llllljian/Llllljian.github.io.git
   repo: ssh://git@github.com/Llllljian/Llllljian.github.io
   branch: master
+search:
+  path: search.xml
+  field: post
 
 jsonContent:
     meta: false

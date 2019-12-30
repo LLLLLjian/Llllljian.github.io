@@ -76,7 +76,90 @@ toc: true
 - 读取超大文件
 - 百万级别的访问量
 
-#### Generator类
-
 #### Iterator接口
+    会发现当对象被foreach的时候，内部的valid,current,key方法会依次被调用，其返回值便是foreach语句的key和value。循环的终止条件则根据valid方法的返回而定。如果返回的是true则继续循环，如果是false则终止整个循环，结束遍历。当一次循环体结束之后，将调用next进行下一次的循环直到valid返回false。而rewind方法则是在整个循环开始前被调用，这样保证了多次遍历得到的结果都是一致的
+- 源码
+    ```php
+        Iterator extends Traversable {
+            /* Methods */
+            abstract public mixed current ( void )   //返回当前位置的元素
+            abstract public scalar key ( void )      //返回当前元素对应的key
+            abstract public void next ( void )       //移到指向下一个元素的位置
+            abstract public void rewind ( void )     //倒回到指向第一个元素的位置
+            abstract public boolean valid ( void )   //判断当前位置是否有效
+        }
+    ```
+- eg
+    ```php
+        class Number implements Iterator{  
+            protected $i = 1;
+            protected $key;
+            protected $val;
+            protected $count; 
+            public function __construct(int $count){
+                $this->count = $count;
+                echo "第{$this->i}步:对象初始化.\n";
+                $this->i++;
+            }
+            public function rewind(){
+                $this->key = 0;
+                $this->val = 0;
+                echo "第{$this->i}步:rewind()被调用.\n";
+                $this->i++;
+            }
+            public function next(){
+                $this->key += 1;
+                $this->val += 2;
+                echo "第{$this->i}步:next()被调用.\n";
+                $this->i++;
+            }
+            public function current(){
+                echo "第{$this->i}步:current()被调用.\n";
+                $this->i++;
+                return $this->val;
+            }
+            public function key(){
+                echo "第{$this->i}步:key()被调用.\n";
+                $this->i++;
+                return $this->key;
+            }
+            public function valid(){
+                echo "第{$this->i}步:valid()被调用.\n";
+                $this->i++;
+                return $this->key < $this->count;
+            }
+        }
+
+        $number = new Number(5);
+        echo "start...\n";
+        foreach ($number as $key => $value){
+            echo "{$key} - {$value}\n";
+        }
+        echo "...end...\n";
+    ```
+
+#### Generator类
+- 源码
+    ```php
+        Generator implements Iterator {
+            /* 方法 */
+            // 返回当前产生的值
+            public current ( void ) : mixed
+            // 返回当前产生的键
+            public key ( void ) : mixed
+            // 生成器继续执行
+            public next ( void ) : void
+            // 重置迭代器
+            public rewind ( void ) : void
+            // 向生成器中传入一个值
+            public send ( mixed $value ) : mixed
+            // 向生成器中抛入一个异常
+            public throw ( Exception $exception ) : void
+            // 检查迭代器是否被关闭
+            public valid ( void ) : bool
+            // 序列化回调
+            public __wakeup ( void ) : void
+        }
+    ```
+
 

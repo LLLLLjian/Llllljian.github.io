@@ -22,13 +22,13 @@
 		<nav class="header-smart-menu">
     		<% for (var i in theme.smart_menu){ %>
     			<% if(theme.smart_menu[i]){ %>
-    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
+    			<a q-on="click: openSlider(e, '<%-i%>')" target="_parent" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
     			<% } %>
             <%}%>
 		</nav>
 		<nav class="header-smart-menu">
 			<a href="/archives">共<%= site.posts.length %>篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><%= site.tags.length %>个标签</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)"><%= site.tags.length %>个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">

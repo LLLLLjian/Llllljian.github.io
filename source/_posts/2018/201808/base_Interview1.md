@@ -71,7 +71,7 @@ toc: true
     * Referrer Policy:no-referrer-when-downgrade
         * referrer策略
 - Response Headers
-    * 相应头
+    * 响应头
     * accept-ranges:bytes
         * 表明服务器是否支持指定范围请求及哪种类型的分段请求
     * age:0

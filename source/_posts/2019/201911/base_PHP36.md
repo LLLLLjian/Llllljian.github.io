@@ -21,7 +21,7 @@ toc: true
              * 直接输出显示结果信息$msg并结束程序
              * $msg 要输出的信息
              * $headers header头字符串或各行数组
-             * $is_error代表是否发现技术故障（1为是，0为否）
+             * $is_error代表是否发现技术故障(1为是, 0为否)
              */
             public static function result_exit_raw($msg = '', $headers = '', $is_error = 0)
             {
@@ -49,7 +49,7 @@ toc: true
              * $data为除resource之外类型的数据
              * $json_options为json_encode选项
              * $json_error_code为json报错时的返回码
-             * $is_error代表是否发现技术故障（1为是，0为否）
+             * $is_error代表是否发现技术故障(1为是, 0为否)
              */
             public static function result_exit_json($code = 0, $msg = '', $data = '', $json_options = '', $json_error_code = '', $is_error = 0)
             {
@@ -58,7 +58,7 @@ toc: true
                 $temp_encode = ($json_options === '') ? json_encode($temp) : json_encode($temp, $json_options);
                 if ($temp_encode === false) {
                     $json_error_code = ($json_error_code === '') ? -100 : intval($json_error_code);
-                    $result = json_encode(array('code' => $json_error_code, 'msg' => '技术故障：json编码失败，' . json_last_error_msg(), 'data' => ''));
+                    $result = json_encode(array('code' => $json_error_code, 'msg' => '技术故障：json编码失败, ' . json_last_error_msg(), 'data' => ''));
                     $is_error = 1;
                 } else {
                     $result = $temp_encode;
@@ -75,8 +75,8 @@ toc: true
              * code 返回码
              * msg 提示消息
              * data 除resource之外类型的数据
-             * $xml_encoding为xml编码格式，默认utf-8
-             * $is_error代表是否发现技术故障（1为是，0为否）
+             * $xml_encoding为xml编码格式, 默认utf-8
+             * $is_error代表是否发现技术故障(1为是, 0为否)
              */ 
             public static function result_exit_xml($code = 0, $msg = '', $data = '', $xml_encoding = '', $is_error = 0)
             {
@@ -89,7 +89,7 @@ toc: true
                 exit;
             }
 
-            //数据$data转为完整的XML码，XML数据编码为$encoding（默认utf-8），XML根节点名$root
+            //数据$data转为完整的XML码, XML数据编码为$encoding(默认utf-8), XML根节点名$root
             public static function xml_encode($data, $encoding = '', $root = 'root')
             {
                 $xml = '<?xml version="1.0" encoding="' . ($encoding ? $encoding : 'utf-8') . '"?>';
@@ -114,17 +114,17 @@ toc: true
                 return $xml;
             }
 
-            /* 输出接口返回结果并结束程序【待弃用，目前用这个方法的要换成之后定义的专门格式的方法】
-             * string	$format 输出格式：raw/json/xml（默认raw代表仅直接原生输出显示$msg；json代表json数组array('code' => 返回码, 'msg' => '返回消息', 'data' => 返回数据）；xml代表xml格式（根目录标签 为root），标签同json数组下标
-             * int	$is_error 是否发现技术故障，1是，0否
-             * mixed	$msg 返回消息（json/xml仅限字符串，raw格式不限）
-             * mixed	$data 返回resource类型之外任何类型的数据；对于json格式，所有字符串的编码必须是UTF-8；仅json/xml格式用
-             * int	$code 返回码（输出格式不是raw时有效），仅json/xml格式用
-             * array $options 其它选项设置数组，支持的数组下标：
-             *	(string/array) headers header头字符串或各行数组，仅raw格式用
-             *	(int) json_options json_encode的常量选项，例如JSON_UNESCAPED_UNICODE等等，仅json格式用
-             *	(int) json_error_code	json_encode报错时的返回码，仅json格式用
-             *	(string) xml_encoding xml编码，默认utf-8，仅xml格式用
+            /* 输出接口返回结果并结束程序【待弃用, 目前用这个方法的要换成之后定义的专门格式的方法】
+             * string	$format 输出格式：raw/json/xml(默认raw代表仅直接原生输出显示$msg；json代表json数组array('code' => 返回码, 'msg' => '返回消息', 'data' => 返回数据)；xml代表xml格式(根目录标签 为root), 标签同json数组下标
+             * int	$is_error 是否发现技术故障, 1是, 0否
+             * mixed	$msg 返回消息(json/xml仅限字符串, raw格式不限)
+             * mixed	$data 返回resource类型之外任何类型的数据；对于json格式, 所有字符串的编码必须是UTF-8；仅json/xml格式用
+             * int	$code 返回码(输出格式不是raw时有效), 仅json/xml格式用
+             * array $options 其它选项设置数组, 支持的数组下标：
+             *	(string/array) headers header头字符串或各行数组, 仅raw格式用
+             *	(int) json_options json_encode的常量选项, 例如JSON_UNESCAPED_UNICODE等等, 仅json格式用
+             *	(int) json_error_code	json_encode报错时的返回码, 仅json格式用
+             *	(string) xml_encoding xml编码, 默认utf-8, 仅xml格式用
              */
             public static function result_exit($format = 'raw', $is_error = 0, $msg = '', $data = '', $code = 0, $options = array())
             {
@@ -143,7 +143,7 @@ toc: true
                 }
             }
 
-            //获取全部输入参数的过滤掉特殊字符（预防SQL注入）的数值，$method为输入参数请求方式get/post/cookie/request
+            //获取全部输入参数的过滤掉特殊字符(预防SQL注入)的数值, $method为输入参数请求方式get/post/cookie/request
             public static function get_req_value_all($method = 'all')	
             {
                 $result = array();
@@ -191,7 +191,7 @@ toc: true
                 return $result;
             }
 
-	        //获取输入参数名为$value_name的过滤掉特殊字符（预防SQL注入）的数值，$value_name为输入参数名，$method为输入参数请求方式get/post/cookie/request，$default为输入参数不存在时的默认返回值
+	        //获取输入参数名为$value_name的过滤掉特殊字符(预防SQL注入)的数值, $value_name为输入参数名, $method为输入参数请求方式get/post/cookie/request, $default为输入参数不存在时的默认返回值
             public static function get_req_value($var_name, $method = 'all', $default = '')
             {
                 switch ($method) {
@@ -241,7 +241,7 @@ toc: true
                 return $result;
             }
 
-            //过滤请求参数$input，返回过滤结果
+            //过滤请求参数$input, 返回过滤结果
             public static function filter_req_value($input)
             {
                 if (is_array($input)) {
@@ -272,7 +272,7 @@ toc: true
                 return $result;
             }
 
-            //调试模式输出显示变量值$message，当URL参数$debug_var_name等于$debug_var_value或者$debug_var_value为空字符串时，输出显示$message，如果此时URL还含有名为$exit_var_name的参数，则程序中断
+            //调试模式输出显示变量值$message, 当URL参数$debug_var_name等于$debug_var_value或者$debug_var_value为空字符串时, 输出显示$message, 如果此时URL还含有名为$exit_var_name的参数, 则程序中断
             public static function debug_echo($message, $debug_var_name = 'debug_echo', $debug_var_value = '', $exit_var_name = 'debug_echo_exit')
             {
                 $var = self::get_req_value($debug_var_name, 'request', null);
@@ -372,7 +372,7 @@ toc: true
                 return (is_string($string) && preg_match('/[^,:{}\\[\\]0-9.\-+Eaeflnr-u \n\r\t]/', $string)) ? true : false;
             }
 
-            //将XML格式字符串$str解析为数组格式，失败则返回false
+            //将XML格式字符串$str解析为数组格式, 失败则返回false
             public static function xml_decode($xml_str)
             {
                 $xml_parser = xml_parser_create(); 

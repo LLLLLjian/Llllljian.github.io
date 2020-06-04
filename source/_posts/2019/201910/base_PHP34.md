@@ -77,7 +77,7 @@ toc: true
 - 百万级别的访问量
 
 #### Iterator接口
-    会发现当对象被foreach的时候，内部的valid,current,key方法会依次被调用，其返回值便是foreach语句的key和value。循环的终止条件则根据valid方法的返回而定。如果返回的是true则继续循环，如果是false则终止整个循环，结束遍历。当一次循环体结束之后，将调用next进行下一次的循环直到valid返回false。而rewind方法则是在整个循环开始前被调用，这样保证了多次遍历得到的结果都是一致的
+    会发现当对象被foreach的时候, 内部的valid,current,key方法会依次被调用, 其返回值便是foreach语句的key和value.循环的终止条件则根据valid方法的返回而定.如果返回的是true则继续循环, 如果是false则终止整个循环, 结束遍历.当一次循环体结束之后, 将调用next进行下一次的循环直到valid返回false.而rewind方法则是在整个循环开始前被调用, 这样保证了多次遍历得到的结果都是一致的
 - 源码
     ```php
         Iterator extends Traversable {

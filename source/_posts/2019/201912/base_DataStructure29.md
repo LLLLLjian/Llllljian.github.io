@@ -67,7 +67,7 @@ toc: true
     * 当a, b均为偶数时, getGreatestCommonDivisor(a, b) = 2 * getGreatestCommonDivisor(a/2, b/2) = 2 * getGreatestCommonDivisor(a>>1, b>>1)
     * 当a为偶数, b为奇数时, getGreatestCommonDivisor(a, b) = getGreatestCommonDivisor(a/2, b) = getGreatestCommonDivisor(a>>1, b)
     * 当b为偶数, a为奇数时, getGreatestCommonDivisor(a, b) = getGreatestCommonDivisor(a, b/2) = getGreatestCommonDivisor(a, b>>1)
-    * 当a, b均为奇数时， getGreatestCommonDivisor(a, b) = getGreatestCommonDivisor(b, a-b), 此时a-b必为偶数, 然后又可以进行移位运算了
+    * 当a, b均为奇数时,  getGreatestCommonDivisor(a, b) = getGreatestCommonDivisor(b, a-b), 此时a-b必为偶数, 然后又可以进行移位运算了
     ```php
         function getGreatestCommonDivisorV4($a, $b)
         {

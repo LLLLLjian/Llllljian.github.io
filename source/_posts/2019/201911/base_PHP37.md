@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### 什么是mpdf
-    mPDF是一个PHP类库，它由UTF-8编码的HTML生成PDF文件。它基于FPDF和HTML2FPDF ，再此基础上添加了许多功能。同时对css支持能力得到了大的提升，支持css样式的引入
+    mPDF是一个PHP类库, 它由UTF-8编码的HTML生成PDF文件.它基于FPDF和HTML2FPDF , 再此基础上添加了许多功能.同时对css支持能力得到了大的提升, 支持css样式的引入
 
 #### 安装
 - 通过官方composer下载类库包
@@ -26,7 +26,7 @@ toc: true
         // $format 纸张的大小, 默认A4竖版, 可以设置为A4-L变成横板
         // $default_font_size 字体大小
         // $default_font 字体样式
-        // 后四个参数分别是margin-left，margin-right，margin-top，margin-bottom。它们是指每一页的内容距离页面边界的距离，我们可以通过调节它们，空出页眉、页脚以及一些有边框的背景图片
+        // 后四个参数分别是margin-left, margin-right, margin-top, margin-bottom.它们是指每一页的内容距离页面边界的距离, 我们可以通过调节它们, 空出页眉、页脚以及一些有边框的背景图片
         // $orientation 纸张排版 P是竖版 L是横板
         $mpdf = new \mPDF('zh-CN', 'A4', '', '', 20, 20, 20, 20);
 
@@ -60,14 +60,14 @@ toc: true
         $mpdf->WriteHTML("testpdf");
         
         //文字水印
-        $mpdf->SetWatermarkText('这个是测试的水印',0.1);//参数一是文字，参数二是透明度
+        $mpdf->SetWatermarkText('这个是测试的水印',0.1);//参数一是文字, 参数二是透明度
         $mpdf->showWatermarkText = true;
 
         // 输出PDF
         // $type='I'；在线预览模式
         // $type='D'；下载模式
         // $type='f'；生成后保存到服务器
-        // $type='s'；返回字符串，此模式下$filename会被忽视
+        // $type='s'；返回字符串, 此模式下$filename会被忽视
         $pdf = $mpdf->Output("test.pdf", "F");
     ```
 - demo2
@@ -85,7 +85,7 @@ toc: true
             $tplId = $mpdf->ImportPage($pageNo);
             $mpdf->UseTemplate($tplId);
 
-            $mpdf->SetWatermarkText('这个是测试的水印', 0.1);//参数一是文字，参数二是透明度
+            $mpdf->SetWatermarkText('这个是测试的水印', 0.1);//参数一是文字, 参数二是透明度
             $mpdf->showWatermarkText = true;
             
             $mpdf->SetFont('Arial','B','12');

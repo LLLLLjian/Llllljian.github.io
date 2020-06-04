@@ -48,7 +48,7 @@ toc: true
     * ![可重复读](/img/20190924_3.png)
 - SERIALIZABLE(可串行化)
     * 最高的隔离级别,完全服从ACID的隔离级别.所有的事务依次逐个执行,这样事务之间就完全不可能产生干扰,也就是说,该级别可以防止脏读、不可重复读以及幻读
-    * InnoDB 存储引擎在 REPEATABLE-READ（可重读）事务隔离级别下使用的是Next-Key Lock 锁算法,因此可以避免幻读的产生,这与其他数据库系统(如 SQL Server)是不同的.所以说InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可重读） 已经可以完全保证事务的隔离性要求,即达到了 SQL标准的SERIALIZABLE(可串行化)隔离级别.
+    * InnoDB 存储引擎在 REPEATABLE-READ(可重读)事务隔离级别下使用的是Next-Key Lock 锁算法,因此可以避免幻读的产生,这与其他数据库系统(如 SQL Server)是不同的.所以说InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ(可重读) 已经可以完全保证事务的隔离性要求,即达到了 SQL标准的SERIALIZABLE(可串行化)隔离级别.
 
 
 

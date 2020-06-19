@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 用队列实现栈
-    Leetcode学习-219
+    Leetcode学习-225
 
 <!-- more -->
 

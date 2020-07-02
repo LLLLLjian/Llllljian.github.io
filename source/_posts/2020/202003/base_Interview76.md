@@ -117,7 +117,7 @@ A3 : 一个队列, 压入 - O(n), 弹出 - O(1)zz
                 // 让每一个新元素从 q2 入队,同时把这个元素作为栈顶元素保存
                 array_push($this->query2, $x);
 
-                // 当 q1 非空（也就是栈非空）,我们让 q1 中所有的元素全部出队,再将出队的元素从 q2 入队
+                // 当 q1 非空(也就是栈非空),我们让 q1 中所有的元素全部出队,再将出队的元素从 q2 入队
                 while (!empty($this->query1)) {
                     array_push($this->query2, array_shift($this->query1));
                 }

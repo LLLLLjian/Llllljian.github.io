@@ -16,25 +16,32 @@ toc: true
     ```php
         function bubbleSort($arr)
         {
-            if (!empty($arr) && is_array($arr)) {
-                $count = count($arr);
+            // 记录最后一次交换的位置
+            $laseExchageIndex = 0;
+            // 无序数组的边界, 每次比较只需要比到这里就可以了
+            $sortBorder = count($arr)-1;
+            for ($i=0;$i<$sortBorder;$i++) {
+                // 有序标记, 每一轮都是true
+                $isSort = true;
+                for ($j=0;$j<count($arr)-$i-1;$j++) {
+                    if ($arr[$j] > $arr[$j+1]) {
+                        $temp = $arr[$j+1];
+                        $arr[$j+1] = $arr[$j];
+                        $arr[$j] = $temp;
 
-                for ($i=0;$i<$count;$i++) {
-                    // 默认没有冒泡
-                    $tempFlag = false;
-                    for ($j=0;(($j<$count-$i-1)&&!$tempFlag);$j++) {
-                        if ($arr[$j] > $arr[$j+1]) {
-                            $tempStr = $arr[$j+1];
-                            $arr[$j+1] = $arr[$j];
-                            $arr[$j] = $tempStr;
-                            $tempFlag = true;
-                        }
+                        // 因为有元素进行交换, 所以不是有序的
+                        $isSort = false;
+                        // 更新为最后一次交换元素的位置
+                        $laseExchageIndex = $j;
                     }
                 }
-                return $arr;
-            } else {
-                return false;
+                $sortBorder = $laseExchageIndex;
+                if ($isSort) {
+                    break;
+                }
             }
+
+            return $arr;
         }
     ```
 - 时间复杂度分析

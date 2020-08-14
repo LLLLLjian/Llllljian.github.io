@@ -45,6 +45,37 @@ toc: true
             if (p.val != q.val) return false; // 值不相等
             return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
         }
+
+        /**
+         * Definition for a binary tree node.
+         * class TreeNode {
+         *     public $val = null;
+         *     public $left = null;
+         *     public $right = null;
+         *     function __construct($value) { $this->val = $value; }
+         * }
+         */
+        class Solution 
+        {
+            /**
+             * @param TreeNode $p
+             * @param TreeNode $q
+             * @return Boolean
+             */
+            function isSameTree($p, $q) 
+            {
+                if (empty($q) && empty($p)) { 
+                    return true; 
+                }
+                if (empty($q) || empty($p)) { 
+                    return false; 
+                }
+                if ($q->val != $p->val) {
+                    return false;
+                }
+                return $this->isSameTree($p->left, $q->left) && $this->isSameTree($p->right, $q->right);
+            }
+        }
     ```
 - leetcode101
     * 对称二叉树

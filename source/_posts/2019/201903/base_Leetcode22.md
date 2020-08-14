@@ -68,6 +68,20 @@ toc: true
                 }
                 return false;
             }
+
+            function isSameTree1($p, $q)
+            {
+                if (empty($q) && empty($p)) { 
+                    return true; 
+                }
+                if (empty($q) || empty($p)) { 
+                    return false; 
+                }
+                if ($q->val != $p->val) {
+                    return false;
+                }
+                return $this->isSameTree($p->left, $q->left) && $this->isSameTree($p->right, $q->right);
+            }
         }
 
         $a = new Solution();

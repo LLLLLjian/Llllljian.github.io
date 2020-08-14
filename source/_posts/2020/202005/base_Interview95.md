@@ -48,4 +48,27 @@ toc: true
 > 每一个页面一个独立的 set 集合来存储所有当天访问过此页面的用户 ID.当一个请求过来时,我们使用 sadd 将用户 ID 塞进去就可以了.通过 scard 可以取出这个集合的大小,这个数字就是这个页面的用户访问量数据.但是,页面访问量非常大,每天有几千万的用户访问量,需要一个很大的 set 集合来做统计,这就非常浪费空间.如果不止一个页面需要统计,那所需要的存储空间是非常巨大的.仅仅为这样一个统计功能去耗费大量的空间,是不划算的.同时,我们也考虑到实际的业务需求对用户访问量这个数字并不需要特别的精确,只需要算出一个大概即可
 
 #### 使用HyperLogLog
+> HyperLogLog 是用来做基数统计的算法, HyperLogLog 的优点是, 在输入元素的数量或者体积非常非常大时,  计算基数所需的空间总是固定的、并且是很小的
+- 使用
+    * HyperLogLog 提供了两个指令 PFADD 和 PFCOUNT, 字面意思就是一个是增加, 另一个是获取计数.PFADD 和 set 集合的 SADD 的用法是一样的, 来一个用户 ID, 就将用户 ID 塞进去就是, PFCOUNT 和 SCARD 的用法是一致的, 直接获取计数值
+    ```bash
+        > PFADD codehole user1
+        (interger) 1
+        > PFCOUNT codehole
+        (integer) 1
+        > PFADD codehole user2
+        (integer) 1
+        > PFCOUNT codehole
+        (integer) 2
+        > PFADD codehole user3
+        (integer) 1
+        > PFCOUNT codehole
+        (integer) 3
+        > PFADD codehole user4 user 5
+        (integer) 1
+        > PFCOUNT codehole
+        (integer) 5
+    ```
+- 局限性
+    * 它也有局限性, 就是只能统计基数数量, 而没办法去知道具体的内容是什么.它和bitmap相比, 属于两种特定统计情况, 简单来说, HyperLogLog 去重比 bitmap 方便很多
 

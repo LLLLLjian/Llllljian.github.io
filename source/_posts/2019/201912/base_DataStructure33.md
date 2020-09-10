@@ -69,22 +69,22 @@ toc: true
             $top = 0;
 
             for ($i=0;$i<$numLen;$i++) {
-                $c = $numStr[$i];;
+                $c = $numStr[$i];
 
                 while (($top > 0) && ($resArr[$top-1] > $c) && ($k > 0)) {
                     $top -= 1;
                     $k -= 1;
+                    unset($resArr[$top]);
                 }
 
                 $resArr[$top++] = $c;
             }
-            $resStr = ltrim(implode("", $resArr), "0");
-            
-            if ($resStr == $num) {
-                $resStr = substr($resStr, 0, $numLen-1);
+            $resStr = implode($resArr);
+            $resStr = ltrim(substr($resStr, 0, count($resArr) - $k), 0);
+            if (empty($resStr)) {
+                return "0";
             }
             return $resStr;
         }
     ```
-
 

@@ -87,11 +87,10 @@ toc: true
         {
             $number = count($monkeys);
             $num = 1;
-            if(count($monkeys) == 1){
+            if (count($monkeys) == 1) {
                 echo $monkeys[0]."成为猴王了";
                 return;
-            }
-            else{
+            } else {
                 while($num++ < $m){
                     $current++ ;
                     $current = $current%$number;

@@ -20,7 +20,7 @@ toc: true
                4   5
     序列化为 "[1,2,3,null,null,4,5]"
 - 解题思路
-    * 层序遍历， null也要遍历出来
+    * 层序遍历,  null也要遍历出来
     ```php
         /**
          * Definition for a binary tree node.
@@ -79,7 +79,7 @@ toc: true
                 // 数组下标
                 $cur = 1;
                 while (!$queue->isEmpty()) {
-                    // 由于空节点也添加进了数组，所以数组内连续三个节点的顺序肯定是 父节点->左子节点-> 右子节点
+                    // 由于空节点也添加进了数组, 所以数组内连续三个节点的顺序肯定是 父节点->左子节点-> 右子节点
                     $curNode = $queue->dequeue();
                     if ($arr[$cur] !== 'null') {
                         $curNode->left = new TreeNode($arr[$cur]);

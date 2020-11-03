@@ -27,8 +27,8 @@ toc: true
     * 把同一类方法封装到类中
     * 将数据封装到对象中
 2. CBV
-    * 基于反射实现根据请求方式不同，执行不同的方法
-    * 原理：url-->view方法-->dispatch方法（反射执行其它方法：GET/POST/PUT/DELETE等等）
+    * 基于反射实现根据请求方式不同, 执行不同的方法
+    * 原理：url-->view方法-->dispatch方法(反射执行其它方法：GET/POST/PUT/DELETE等等)
 
 #### 简单实例
 > 创建一个项目和一个app(我这里命名为api)
@@ -80,7 +80,7 @@ toc: true
         def md5(user):
             import hashlib
             import time
-            # 当前时间，相当于生成一个随机的字符串
+            # 当前时间, 相当于生成一个随机的字符串
             ctime = str(time.time())
             m = hashlib.md5(bytes(user, encoding='utf-8'))
             m.update(bytes(ctime, encoding='utf-8'))
@@ -100,10 +100,10 @@ toc: true
                     if not obj:
                         ret['code'] = 1001
                         ret['msg'] = '用户名或密码错误'
-                        return JsonResponse(ret)  # 没有该语句，永远不会返回用户名密码错误
+                        return JsonResponse(ret)  # 没有该语句, 永远不会返回用户名密码错误
                     # 为用户创建token
                     token = md5(user)
-                    # 存在就更新，不存在就创建
+                    # 存在就更新, 不存在就创建
                     models.UserToken.objects.update_or_create(user=obj, defaults={'token': token})
                     ret['token'] = token
                 except(Exception):
@@ -137,14 +137,14 @@ toc: true
                                             "only accepts arguments that are already "
                                             "attributes of the class." % (cls.__name__, key))
 
-                    def view(request, *args, **kwargs):  # 作用：增加属性， 调用dispatch方法 
-                        self = cls(**initkwargs)  # 创建一个 cls 的实例对象， cls 是调用这个方法的 类（Demo）
+                    def view(request, *args, **kwargs):  # 作用：增加属性,  调用dispatch方法 
+                        self = cls(**initkwargs)  # 创建一个 cls 的实例对象,  cls 是调用这个方法的 类(Demo)
                         if hasattr(self, 'get') and not hasattr(self, 'head'):
                             self.head = self.get
-                        self.request = request  # 为对象增加 request， args， kwargs 三个属性
+                        self.request = request  # 为对象增加 request,  args,  kwargs 三个属性
                         self.args = args
                         self.kwargs = kwargs
-                        return self.dispatch(request, *args, **kwargs)  # 找到指定的请求方法， 并调用它
+                        return self.dispatch(request, *args, **kwargs)  # 找到指定的请求方法,  并调用它
                     view.view_class = cls
                     view.view_initkwargs = initkwargs
 
@@ -158,7 +158,7 @@ toc: true
 
                 def dispatch(self, request, *args, **kwargs):
                     # Try to dispatch to the right method; if a method doesn't exist,
-                    if request.method.lower() in self.http_method_names:  # 判断请求的方法类视图是否拥有， http_method_names=['get', 'post']
+                    if request.method.lower() in self.http_method_names:  # 判断请求的方法类视图是否拥有,  http_method_names=['get', 'post']
                         handler = getattr(self, request.method.lower(), self.http_method_not_allowed)  # 如果存在 取出该方法
                     else:
                         handler = self.http_method_not_allowed
@@ -171,20 +171,20 @@ toc: true
                 """
                 Main entry point for a request-response process.
                 """
-                def view(request, *args, **kwargs):  # 作用：增加属性， 调用dispatch方法 
-                    self = cls(**initkwargs)  # 创建一个 cls 的实例对象， cls 是调用这个方法的 类（Demo）
+                def view(request, *args, **kwargs):  # 作用：增加属性,  调用dispatch方法 
+                    self = cls(**initkwargs)  # 创建一个 cls 的实例对象,  cls 是调用这个方法的 类(Demo)
                     if hasattr(self, 'get') and not hasattr(self, 'head'):
                         self.head = self.get
-                    self.request = request  # 为对象增加 request， args， kwargs 三个属性
+                    self.request = request  # 为对象增加 request,  args,  kwargs 三个属性
                     self.args = args
                     self.kwargs = kwargs
-                    return self.dispatch(request, *args, **kwargs)  # 找到指定的请求方法， 并调用它
+                    return self.dispatch(request, *args, **kwargs)  # 找到指定的请求方法,  并调用它
 
                 return view
 
             def dispatch(self, request, *args, **kwargs):
                 # Try to dispatch to the right method; if a method doesn't exist,
-                if request.method.lower() in self.http_method_names:  # 判断请求的方法类视图是否拥有， http_method_names=['get', 'post']
+                if request.method.lower() in self.http_method_names:  # 判断请求的方法类视图是否拥有,  http_method_names=['get', 'post']
                     handler = getattr(self, request.method.lower(), self.http_method_not_allowed)  # 如果存在 取出该方法
                 else:
                     handler = self.http_method_not_allowed

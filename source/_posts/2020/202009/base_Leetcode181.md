@@ -12,10 +12,10 @@ toc: true
 
 #### 路径总和II
 - 问题描述
-    > 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。
-    说明: 叶子节点是指没有子节点的节点。
+    > 给定一个二叉树和一个目标和, 找到所有从根节点到叶子节点路径总和等于给定目标和的路径.
+    说明: 叶子节点是指没有子节点的节点.
     示例:
-    给定如下二叉树，以及目标和 sum = 22，
+    给定如下二叉树, 以及目标和 sum = 22, 
               5
              / \
             4   8
@@ -56,21 +56,21 @@ toc: true
                     if (empty($root)) {
                         return;
                     }
-                    // 因为list是引用传递，为了防止递归的时候分支污染，我们要在每个路径中都要新建一个subList
+                    // 因为list是引用传递, 为了防止递归的时候分支污染, 我们要在每个路径中都要新建一个subList
                     $subList = $list;
                     // 把当前节点值加入到subList中
                     array_push($subList, $root->val);
-                    // 如果到达叶子节点，就不能往下走了，直接return
+                    // 如果到达叶子节点, 就不能往下走了, 直接return
                     if (empty($root->left) && empty($root->right)) {
-                        // 如果到达叶子节点，并且sum等于叶子节点的值，说明我们找到了一组， 要把它放到result中
+                        // 如果到达叶子节点, 并且sum等于叶子节点的值, 说明我们找到了一组,  要把它放到result中
                         if ($sum == $root->val) {
                             array_push($result, $subList);
-                            // 到叶子节点之后直接返回，因为在往下就走不动了
+                            // 到叶子节点之后直接返回, 因为在往下就走不动了
                             return;
                         }
                     }
 
-                    // 如果没到达叶子节点，就继续从他的左右两个子节点往下找，注意到下一步的时候，sum值要减去当前节点的值
+                    // 如果没到达叶子节点, 就继续从他的左右两个子节点往下找, 注意到下一步的时候, sum值要减去当前节点的值
                     $this->dfs($root->left, $sum - $root->val, $subList, $result);
                     $this->dfs($root->right, $sum - $root->val, $subList, $result);
                 }
@@ -109,23 +109,23 @@ toc: true
                     }
                     // 把当前节点值加入到list中
                     array_push($list, $root->val);
-                    // 如果到达叶子节点，就不能往下走了，直接return
+                    // 如果到达叶子节点, 就不能往下走了, 直接return
                     if (empty($root->left) && empty($root->right)) {
-                        // 如果到达叶子节点，并且sum等于叶子节点的值，说明我们找到了一组， 要把它放到result中
+                        // 如果到达叶子节点, 并且sum等于叶子节点的值, 说明我们找到了一组,  要把它放到result中
                         if ($sum == $root->val) {
                             array_push($result, $list);
                         }
-                        // 注意别忘了把最后加入的结点值给移除掉，因为下一步直接return了，不会再走最后一行的remove了，所以这里在rerurn之前提前把最后一个结点的值给remove掉。
+                        // 注意别忘了把最后加入的结点值给移除掉, 因为下一步直接return了, 不会再走最后一行的remove了, 所以这里在rerurn之前提前把最后一个结点的值给remove掉.
                         array_pop($list);
-                        // 到叶子节点之后直接返回，因为在往下就走不动了
+                        // 到叶子节点之后直接返回, 因为在往下就走不动了
                         return;
                     }
 
-                    // 如果没到达叶子节点，就继续从他的左右两个子节点往下找，注意到下一步的时候，sum值要减去当前节点的值
+                    // 如果没到达叶子节点, 就继续从他的左右两个子节点往下找, 注意到下一步的时候, sum值要减去当前节点的值
                     $this->dfs($root->left, $sum-$root->val, $list, $result);
                     $this->dfs($root->right, $sum-$root->val, $list, $result);
 
-                    // 我们要理解递归的本质，当递归往下传递的时候他最后还是会往回走，我们把这个值使用完之后还要把它给移除，这就是回溯
+                    // 我们要理解递归的本质, 当递归往下传递的时候他最后还是会往回走, 我们把这个值使用完之后还要把它给移除, 这就是回溯
                     array_pop($list);
                 }
             }
@@ -166,23 +166,23 @@ toc: true
                     array_push($list, $root->val);
                     // 没往下走一步就要计算走过的路径和
                     $total += $root->val;
-                    // 如果到达叶子节点，就不能往下走了，直接return
+                    // 如果到达叶子节点, 就不能往下走了, 直接return
                     if (empty($root->left) && empty($root->right)) {
-                        // 如果到达叶子节点，并且sum等于total的值，说明我们找到了一组， 要把它放到result中
+                        // 如果到达叶子节点, 并且sum等于total的值, 说明我们找到了一组,  要把它放到result中
                         if ($sum == $total) {
                             array_push($result, $list);
                         }
-                        // 注意别忘了把最后加入的结点值给移除掉，因为下一步直接return了，不会再走最后一行的remove了，所以这里在rerurn之前提前把最后一个结点的值给remove掉。
+                        // 注意别忘了把最后加入的结点值给移除掉, 因为下一步直接return了, 不会再走最后一行的remove了, 所以这里在rerurn之前提前把最后一个结点的值给remove掉.
                         array_pop($list);
-                        // 到叶子节点之后直接返回，因为在往下就走不动了
+                        // 到叶子节点之后直接返回, 因为在往下就走不动了
                         return;
                     }
 
-                    // 如果没到达叶子节点，就继续从他的左右两个子节点往下找，注意到下一步的时候，sum值要减去当前节点的值
+                    // 如果没到达叶子节点, 就继续从他的左右两个子节点往下找, 注意到下一步的时候, sum值要减去当前节点的值
                     $this->dfs($root->left, $sum, $total, $list, $result);
                     $this->dfs($root->right, $sum, $total, $list, $result);
 
-                    // 我们要理解递归的本质，当递归往下传递的时候他最后还是会往回走，我们把这个值使用完之后还要把它给移除，这就是回溯
+                    // 我们要理解递归的本质, 当递归往下传递的时候他最后还是会往回走, 我们把这个值使用完之后还要把它给移除, 这就是回溯
                     array_pop($list);
                 }
             }

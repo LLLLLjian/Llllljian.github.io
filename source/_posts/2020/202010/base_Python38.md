@@ -22,17 +22,17 @@ toc: true
         SyntaxError: invalid syntax
     ```
 - 异常
-    * 即便 Python 程序的语法是正确的，在运行它的时候，也有可能发生错误。运行期检测到的错误被称为异常
+    * 即便 Python 程序的语法是正确的, 在运行它的时候, 也有可能发生错误.运行期检测到的错误被称为异常
     ```python
-        >>> 10 * (1/0)             # 0 不能作为除数，触发异常
+        >>> 10 * (1/0)             # 0 不能作为除数, 触发异常
         Traceback (most recent call last):
         File "<stdin>", line 1, in ?
         ZeroDivisionError: division by zero
-        >>> 4 + spam*3             # spam 未定义，触发异常
+        >>> 4 + spam*3             # spam 未定义, 触发异常
         Traceback (most recent call last):
         File "<stdin>", line 1, in ?
         NameError: name 'spam' is not defined
-        >>> '2' + 2               # int 不能与 str 相加，触发异常
+        >>> '2' + 2               # int 不能与 str 相加, 触发异常
         Traceback (most recent call last):
         File "<stdin>", line 1, in <module>
         TypeError: can only concatenate str (not "int") to str
@@ -52,7 +52,7 @@ toc: true
             except FileNotFoundError as fnf_error:
                 print(fnf_error)
         finally:
-            print('这句话，无论异常是否发生都会执行。')
+            print('这句话, 无论异常是否发生都会执行.')
     ```
 > Python 使用 raise 语句抛出一个指定的异常
 
@@ -78,7 +78,7 @@ toc: true
         except Exception as e:
             ...
         log('Reason:', e)       # Important!
-        # 这个将会捕获除了 SystemExit 、 KeyboardInterrupt 和 GeneratorExit 之外的所有异常。 如果你还想捕获这三个异常，将 Exception 改成 BaseException 即可
+        # 这个将会捕获除了 SystemExit 、 KeyboardInterrupt 和 GeneratorExit 之外的所有异常. 如果你还想捕获这三个异常, 将 Exception 改成 BaseException 即可
     ```
 
 #### Python3 内置异常类型的结构

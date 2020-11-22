@@ -16,7 +16,7 @@
 <meta property="og:description" content="重新开始学Python之前学都是业务的, 现在要用到工作中了！！！">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-10-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-23T08:36:06.488Z">
+<meta property="article:modified_time" content="2020-11-03T12:32:49.668Z">
 <meta property="article:author" content="Llllljian">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -78,8 +78,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共729篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">30个标签</a>	
+			<a href="/archives">共734篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -177,7 +177,7 @@
 <a id="more"></a>
 
 <h4 id="第一个Python3-x程序"><a href="#第一个Python3-x程序" class="headerlink" title="第一个Python3.x程序"></a>第一个Python3.x程序</h4><ul>
-<li>Hello World  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cat helloWorld.py</span><br><span class="line"><span class="meta">#!/usr/bin/python3 是告诉操作系统执行这个脚本的时候，调用 /usr/bin 下的 python3 解释器；</span></span><br><span class="line"><span class="meta">#!/usr/bin/env python3 这种用法是为了防止操作系统用户没有将 python3 装在默认的 /usr/bin 路径里。当系统看到这一行的时候，首先会到 env 设置里查找 python3 的安装路径，再调用对应路径下的解释器程序完成操作。</span></span><br><span class="line"><span class="meta">#!/usr/bin/python3 相当于写死了 python3 路径;</span></span><br><span class="line"><span class="meta">#!/usr/bin/env python3 会去环境设置寻找 python3 目录，推荐这种写法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line">$ python3 helloWorld.py</span><br><span class="line">Hello, World!</span><br></pre></td></tr></table></figure>
+<li>Hello World  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cat helloWorld.py</span><br><span class="line"><span class="meta">#!/usr/bin/python3 是告诉操作系统执行这个脚本的时候, 调用 /usr/bin 下的 python3 解释器；</span></span><br><span class="line"><span class="meta">#!/usr/bin/env python3 这种用法是为了防止操作系统用户没有将 python3 装在默认的 /usr/bin 路径里.当系统看到这一行的时候, 首先会到 env 设置里查找 python3 的安装路径, 再调用对应路径下的解释器程序完成操作.</span></span><br><span class="line"><span class="meta">#!/usr/bin/python3 相当于写死了 python3 路径;</span></span><br><span class="line"><span class="meta">#!/usr/bin/env python3 会去环境设置寻找 python3 目录, 推荐这种写法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line">$ python3 helloWorld.py</span><br><span class="line">Hello, World!</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -188,7 +188,7 @@
 </li>
 <li>标识符<ul>
 <li>第一个字符必须是字母表中字母或下划线 _ </li>
-<li>标识符的其他的部分由字母、数字和下划线组成。</li>
+<li>标识符的其他的部分由字母、数字和下划线组成.</li>
 <li>标识符对大小写敏感</li>
 </ul>
 </li>
@@ -199,36 +199,36 @@
 </ul>
 </li>
 <li>行与缩进<ul>
-<li>python最具特色的就是使用缩进来表示代码块，不需要使用大括号 {} </li>
-<li>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数</li>
+<li>python最具特色的就是使用缩进来表示代码块, 不需要使用大括号 {} </li>
+<li>缩进的空格数是可变的, 但是同一个代码块的语句必须包含相同的缩进空格数</li>
 </ul>
 </li>
 <li>多行语句<ul>
-<li>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠()来实现多行语句</li>
+<li>Python 通常是一行写完一条语句, 但如果语句很长, 我们可以使用反斜杠()来实现多行语句</li>
 </ul>
 </li>
 <li>数字(Number)类型<ul>
-<li>int (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。</li>
-<li>bool (布尔), 如 True。</li>
+<li>int (整数), 如 1, 只有一种整数类型 int, 表示为长整型, 没有 python2 中的 Long.</li>
+<li>bool (布尔), 如 True.</li>
 <li>float (浮点数), 如 1.23、3E-2</li>
 <li>complex (复数), 如 1 + 2j、 1.1 + 2.2j</li>
 </ul>
 </li>
 <li>字符串(String)<ul>
-<li>python中单引号和双引号使用完全相同。</li>
-<li>使用三引号(‘’’或”””)可以指定一个多行字符串。</li>
+<li>python中单引号和双引号使用完全相同.</li>
+<li>使用三引号(‘’’或”””)可以指定一个多行字符串.</li>
 <li>转义符 ‘&#39;</li>
-<li>反斜杠可以用来转义，使用r可以让反斜杠不发生转义。。 如 r”this is a line with \n” 则\n会显示，并不是换行。</li>
-<li>按字面意义级联字符串，如”this “ “is “ “string”会被自动转换为this is string。</li>
-<li>字符串可以用 + 运算符连接在一起，用 * 运算符重复。</li>
-<li>Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</li>
-<li>Python中的字符串不能改变。</li>
-<li>Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</li>
+<li>反斜杠可以用来转义, 使用r可以让反斜杠不发生转义.. 如 r”this is a line with \n” 则\n会显示, 并不是换行.</li>
+<li>按字面意义级联字符串, 如”this “ “is “ “string”会被自动转换为this is string.</li>
+<li>字符串可以用 + 运算符连接在一起, 用 * 运算符重复.</li>
+<li>Python 中的字符串有两种索引方式, 从左往右以 0 开始, 从右往左以 -1 开始.</li>
+<li>Python中的字符串不能改变.</li>
+<li>Python 没有单独的字符类型, 一个字符就是长度为 1 的字符串.</li>
 <li>字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</li>
 </ul>
 </li>
 <li>Print 输出<ul>
-<li>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=””：</li>
+<li>print 默认输出是换行的, 如果要实现不换行需要在变量末尾加上 end=””：</li>
 </ul>
 </li>
 </ul>
@@ -489,11 +489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,11 +541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,6 +578,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,7 +16,7 @@
 <meta property="og:description" content="快来跟我一起学Django快来跟我一起学Django！！！">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-11-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-03T06:44:30.441Z">
+<meta property="article:modified_time" content="2020-11-03T12:33:22.826Z">
 <meta property="article:author" content="Llllljian">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Django">
@@ -79,8 +79,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共729篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">30个标签</a>	
+			<a href="/archives">共734篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -179,14 +179,14 @@
 
 <h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4><h5 id="什么是模型"><a href="#什么是模型" class="headerlink" title="什么是模型"></a>什么是模型</h5><ul>
 <li>ORM<ul>
-<li>Object Relation Mapping，对象-关系-模型</li>
+<li>Object Relation Mapping, 对象-关系-模型</li>
 </ul>
 </li>
 <li>本质<ul>
-<li>类是对内存运行时的数据类型的抽象概念，规定了某一类对象有哪些属性和方法</li>
-<li>对象是对内存运行时的具体数据的具体实现，根据类为模板来实例化，有具体的内存结构</li>
-<li>表是对外存永久存储时的数据类型的抽象概念，规定了某一类数据有哪些字段（由哪些信息项组成）</li>
-<li>记录是对外存永久存储时的具体数据的具体实现，在某表中填写一行数据，表示一个具体的数据组合</li>
+<li>类是对内存运行时的数据类型的抽象概念, 规定了某一类对象有哪些属性和方法</li>
+<li>对象是对内存运行时的具体数据的具体实现, 根据类为模板来实例化, 有具体的内存结构</li>
+<li>表是对外存永久存储时的数据类型的抽象概念, 规定了某一类数据有哪些字段(由哪些信息项组成)</li>
+<li>记录是对外存永久存储时的具体数据的具体实现, 在某表中填写一行数据, 表示一个具体的数据组合</li>
 </ul>
 </li>
 </ul>
@@ -195,7 +195,7 @@
 <li>如何使用Model<ul>
 <li>先类后表<ul>
 <li>使用backend来自动创建表</li>
-<li>表的属性，编程属性直接在类中体现，更容易地编程 ， 一套逻辑</li>
+<li>表的属性, 编程属性直接在类中体现, 更容易地编程 ,  一套逻辑</li>
 </ul>
 </li>
 <li>基本操作流程<ol>
@@ -209,24 +209,107 @@
 </li>
 </ol>
 <h5 id="字段-Field"><a href="#字段-Field" class="headerlink" title="字段 Field"></a>字段 Field</h5><blockquote>
-<p>表的字段，由Model类的属性来生成. 每个Model类属性有两个重要的 关注点： 类型和选项.<br>类型规定了：表字段的类型, 对应的默认的html form widget， 这点可以猜想model是可以直接创建form的form表单项的基本验证方式<br>选项，是类型的进一步设置，每个field都可以设置多个选项，比如CharField的max_length</p>
+<p>表的字段, 由Model类的属性来生成. 每个Model类属性有两个重要的 关注点： 类型和选项.<br>类型规定了：表字段的类型, 对应的默认的html form widget,  这点可以猜想model是可以直接创建form的form表单项的基本验证方式<br>选项, 是类型的进一步设置, 每个field都可以设置多个选项, 比如CharField的max_length</p>
 </blockquote>
 <ol>
-<li>常用的选项 <table><thead><tr><th>option名字</th><th>值</th><th>说明</th><th></th></tr></thead><tbody><tr><td>null</td><td>False, True</td><td>默认为假，数据库字段是否可以为null</td><td></td></tr><tr><td>blank</td><td>False,True</td><td>null is purely database-related, whereas blank is validation-related.</td><td></td></tr><tr><td>choice</td><td>二元组的序列</td><td>可选项</td><td></td></tr><tr><td>default</td><td>a value or a callable object</td><td>默认值，如果为函数的话，则每次创建时调用</td><td></td></tr><tr><td>help_text</td><td>text</td><td>form表单项中的帮助</td><td></td></tr><tr><td>primary_key</td><td>False, True</td><td>如果model中没有设置主键，则可自动添加一个IntegerField的主键</td><td></td></tr><tr><td>unique</td><td>True、False</td><td>唯一性约束</td><td></td></tr><tr><td>db_column</td><td>text</td><td>字段名称，如果没有的话，则使用属性名</td><td></td></tr><tr><td>db_index</td><td>False、True</td><td>是否设置该列为索引</td><td></td></tr></tbody></table>
+<li>常用的选项 <table><thead><tr><th>option名字</th><th>值</th><th>说明</th><th></th></tr></thead><tbody><tr><td>null</td><td>False, True</td><td>默认为假, 数据库字段是否可以为null</td><td></td></tr><tr><td>blank</td><td>False,True</td><td>null is purely database-related, whereas blank is validation-related.</td><td></td></tr><tr><td>choice</td><td>二元组的序列</td><td>可选项</td><td></td></tr><tr><td>default</td><td>a value or a callable object</td><td>默认值, 如果为函数的话, 则每次创建时调用</td><td></td></tr><tr><td>help_text</td><td>text</td><td>form表单项中的帮助</td><td></td></tr><tr><td>primary_key</td><td>False, True</td><td>如果model中没有设置主键, 则可自动添加一个IntegerField的主键</td><td></td></tr><tr><td>unique</td><td>True、False</td><td>唯一性约束</td><td></td></tr><tr><td>db_column</td><td>text</td><td>字段名称, 如果没有的话, 则使用属性名</td><td></td></tr><tr><td>db_index</td><td>False、True</td><td>是否设置该列为索引</td><td></td></tr></tbody></table>
  * choices实例
      <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    FRESHMAN = <span class="string">&#x27;FR&#x27;</span></span><br><span class="line">    SOPHOMORE = <span class="string">&#x27;SO&#x27;</span></span><br><span class="line">    JUNIOR = <span class="string">&#x27;JR&#x27;</span></span><br><span class="line">    SENIOR = <span class="string">&#x27;SR&#x27;</span></span><br><span class="line">    GRADUATE = <span class="string">&#x27;GR&#x27;</span></span><br><span class="line">    YEAR_IN_SCHOOL_CHOICES = [</span><br><span class="line">        (FRESHMAN, <span class="string">&#x27;Freshman&#x27;</span>),</span><br><span class="line">        (SOPHOMORE, <span class="string">&#x27;Sophomore&#x27;</span>),</span><br><span class="line">        (JUNIOR, <span class="string">&#x27;Junior&#x27;</span>),</span><br><span class="line">        (SENIOR, <span class="string">&#x27;Senior&#x27;</span>),</span><br><span class="line">        (GRADUATE, <span class="string">&#x27;Graduate&#x27;</span>),</span><br><span class="line">    ]</span><br><span class="line">    year_in_school = models.CharField(</span><br><span class="line">        max_length=<span class="number">2</span>,</span><br><span class="line">        choices=YEAR_IN_SCHOOL_CHOICES,</span><br><span class="line">        default=FRESHMAN,</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_upperclass</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.year_in_school <span class="keyword">in</span> &#123;self.JUNIOR, self.SENIOR&#125;</span><br></pre></td></tr></table></figure></li>
 <li>字段类型<blockquote>
-<p>按照数据类型大体分为：布尔、整数、浮点数、时间、文本等类型，每种类型又设置了多个小类用于特性化。同时又参考form设置了具有语意的类型，比如MailField</p>
+<p>按照数据类型大体分为：布尔、整数、浮点数、时间、文本等类型, 每种类型又设置了多个小类用于特性化.同时又参考form设置了具有语意的类型, 比如MailField</p>
 </blockquote>
 <ul>
 <li>布尔<ul>
 <li>class BooleanField(**options)</li>
-<li>class NullBooleanField(**options) null=True<br>整数<br>BigIntegerField<br>class IntegerField(**options)<br>class PositiveIntegerField(**options)<br>class PositiveSmallIntegerField(**options)<br>class SmallIntegerField(**options)<br>浮点数<br>class DecimalField(max_digits=None, decimal_places=None, **options)<br>class FloatField(**options)<br>日期时间<br>class DateField(auto_now=False, auto_now_add=False, **options)<br>auto_now 只要调用save方法，就会改变<br>auto_now_add 当新增的时候会设置<br>class DateTimeField(auto_now=False, auto_now_add=False, **options)<br>class TimeField(auto_now=False, auto_now_add=False, **options)<br>class DurationField(**options)<br>文本<br>class CharField(max_length=None, **options)<br>class TextField(**options)<br>class EmailField(max_length=254, **options)<br>class URLField(max_length=200, **options)<br>class SlugField(max_length=50, **options)<br>文件类型<br>class FileField(upload_to=None, max_length=100, **options) 用于上传的文件表示<br>class FilePathField(path=None, match=None, recursive=False, max_length=100, **options)<br>class ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, **options)<br>其他<br>class AutoField(**options)<br>class BigAutoField(**options)<br>class BinaryField(max_length=None, **options)<br>class GenericIPAddressField(protocol=’both’, unpack_ipv4=False, **options)<br>class UUIDField(**options)</li>
+<li>class NullBooleanField(**options) null=True</li>
+</ul>
+</li>
+<li>整数<ul>
+<li>class BigIntegerField</li>
+<li>class IntegerField(**options)</li>
+<li>class PositiveIntegerField(**options)</li>
+<li>class PositiveSmallIntegerField(**options)</li>
+<li>class SmallIntegerField(**options)</li>
+</ul>
+</li>
+<li>浮点数<ul>
+<li>class DecimalField(max_digits=None, decimal_places=None, **options)</li>
+<li>class FloatField(**options)</li>
+</ul>
+</li>
+<li>日期时间<ul>
+<li>class DateField(auto_now=False, auto_now_add=False, **options)<ul>
+<li>auto_now 只要调用save方法, 就会改变</li>
+<li>auto_now_add 当新增的时候会设置</li>
+</ul>
+</li>
+<li>class DateTimeField(auto_now=False, auto_now_add=False, **options)</li>
+<li>class TimeField(auto_now=False, auto_now_add=False, **options)</li>
+<li>class DurationField(**options)</li>
+</ul>
+</li>
+<li>文本<ul>
+<li>class CharField(max_length=None, **options)</li>
+<li>class TextField(**options)</li>
+<li>class EmailField(max_length=254, **options)</li>
+<li>class URLField(max_length=200, **options)</li>
+<li>class SlugField(max_length=50, **options)</li>
+</ul>
+</li>
+<li>文件类型<ul>
+<li>class FileField(upload_to=None, max_length=100, **options) 用于上传的文件表示</li>
+<li>class FilePathField(path=None, match=None, recursive=False, max_length=100, **options)</li>
+<li>class ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, **options)</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>class AutoField(**options)</li>
+<li>class BigAutoField(**options)</li>
+<li>class BinaryField(max_length=None, **options)</li>
+<li>class GenericIPAddressField(protocol=’both’, unpack_ipv4=False, **options)</li>
+<li>class UUIDField(**options)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
+<h5 id="Meta-模型的元数据"><a href="#Meta-模型的元数据" class="headerlink" title="Meta 模型的元数据"></a>Meta 模型的元数据</h5><blockquote>
+<p>meta 元的意思, 指的是基础性的描述信息</p>
+</blockquote>
+<ol>
+<li>db_table 设置的表的名字</li>
+<li>db_tablespace 选用的表空间的名字</li>
+<li>indexes = [] 索引</li>
+<li>index_together=[()] 联合索引</li>
+<li>unique_together=[()] 联合唯一索引</li>
+<li>ordering=[] 默认的排序方式, 对选择结果的排序</li>
+<li>verbose_name 更容易读的名字</li>
+<li>verbose_name_plural 更容易读的名字的复数</li>
+</ol>
+<h5 id="关联类型"><a href="#关联类型" class="headerlink" title="关联类型"></a>关联类型</h5><ol>
+<li>ForeignKey many-to-one 多对一、一对多,  最基本的外键约束 , 比如学生与班级, 一个学生只能属于一个班级, 而一个班级可以有多个学生</li>
+<li>ManyToManyField many-to-many 多对多,  学生和社团的关联关系, 一个学生可以参加多个社团, 每个社团也可以有多个学生</li>
+<li>OneToOneField one-to-one 一对一, 比如学生基本信息和籍贯信息, 可以把籍贯信息看作学生基本信息的补充</li>
+<li>on_delete参数说明<ul>
+<li>on_delete=None,               # 删除关联表中的数据时,当前表与其关联的field的行为</li>
+<li>on_delete=models.CASCADE,     # 删除关联数据,与之关联也删除</li>
+<li>on_delete=models.DO_NOTHING,  # 删除关联数据,什么也不做</li>
+<li>on_delete=models.PROTECT,     # 删除关联数据,引发错误ProtectedError</li>
+<li>on_delete=models.SET_NULL,    # 删除关联数据,与之关联的值设置为null(前提FK字段需要设置为可空,一对一同理)models.ForeignKey(‘关联表’, on_delete=models.SET_NULL, blank=True, null=True)</li>
+<li>on_delete=models.SET_DEFAULT, # 删除关联数据,与之关联的值设置为默认值(前提FK字段需要设置默认值,一对一同理)models.ForeignKey(‘关联表’, on_delete=models.SET_DEFAULT, default=’默认值’)</li>
+<li>on_delete=models.SET,         # 删除关联数据,<br>  a. 与之关联的值设置为指定值,设置：models.SET(值)<br>  b. 与之关联的值设置为可执行对象的返回值,设置：models.SET(可执行对象)</li>
+</ul>
+</li>
+<li>实例 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SchoolClass</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">    director = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">&#x27;t_class&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Team</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">    started_at = models.DateField(null=<span class="literal">True</span>)</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">&#x27;t_team&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    SEX = ((<span class="number">1</span>, <span class="string">&#x27;BOY&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;GIRL&#x27;</span>))</span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    sex = models.IntegerField(choices=SEX, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line">    class_in  = models.ForeignKey(SchoolClass, on_delete=models.DO_NOTHING)</span><br><span class="line">    teams  = models.ManyToManyField(Team)</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">&#x27;t_student&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentHome</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    address = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">    student = models.OneToOneField(Student, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">&#x27;t_student_home&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h5 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h5><ul>
+<li>基本操作  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 增</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.create(c1=&#x27;xx&#x27;, c2=&#x27;oo&#x27;)  增加一条数据, 可以接受字典类型数据 **kwargs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># obj = models.Tb1(c1=&#x27;xx&#x27;, c2=&#x27;oo&#x27;)</span></span><br><span class="line"><span class="comment"># obj.save()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.get(id=123)         # 获取单条数据, 不存在则报错(不建议)</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.all()               # 获取全部</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name=&#x27;seven&#x27;) # 获取指定条件的数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name=&#x27;seven&#x27;).delete() # 删除指定条件的数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 改</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name=&#x27;seven&#x27;).update(gender=&#x27;0&#x27;)  # 将指定条件的数据更新, 均支持 **kwargs</span></span><br><span class="line"><span class="comment"># obj = models.Tb1.objects.get(id=1)</span></span><br><span class="line"><span class="comment"># obj.c1 = &#x27;111&#x27;</span></span><br><span class="line"><span class="comment"># obj.save()                                                 # 修改单条数据</span></span><br></pre></td></tr></table></figure></li>
+<li>进阶操作  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取个数</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name=&#x27;seven&#x27;).count()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 大于, 小于</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__gt=1)              # 获取id大于1的值</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__gte=1)              # 获取id大于等于1的值</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__lt=10)             # 获取id小于10的值</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__lte=10)             # 获取id小于10的值</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__lt=10, id__gt=1)   # 获取id大于1 且 小于10的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># in</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__in=[11, 22, 33])   # 获取id等于11、22、33的数据</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.exclude(id__in=[11, 22, 33])  # not in</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># isnull</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__isnull=True)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># contains</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name__contains=&quot;ven&quot;)</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name__icontains=&quot;ven&quot;) # icontains大小写不敏感</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.exclude(name__icontains=&quot;ven&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># range</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(id__range=[1, 2])   # 范围bettwen and</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他类似</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># startswith, istartswith, endswith, iendswith,</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># order by</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name=&#x27;seven&#x27;).order_by(&#x27;id&#x27;)    # asc</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(name=&#x27;seven&#x27;).order_by(&#x27;-id&#x27;)   # desc</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># group by</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># from django.db.models import Count, Min, Max, Sum</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.filter(c1=1).values(&#x27;id&#x27;).annotate(c=Count(&#x27;num&#x27;))</span></span><br><span class="line"><span class="comment"># SELECT &quot;app01_tb1&quot;.&quot;id&quot;, COUNT(&quot;app01_tb1&quot;.&quot;num&quot;) AS &quot;c&quot; FROM &quot;app01_tb1&quot; WHERE &quot;app01_tb1&quot;.&quot;c1&quot; = 1 GROUP BY &quot;app01_tb1&quot;.&quot;id&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># limit 、offset</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># models.Tb1.objects.all()[10:20]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># regex正则匹配, iregex 不区分大小写</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entry.objects.get(title__regex=r&#x27;^(An?|The) +&#x27;)</span></span><br><span class="line"><span class="comment"># Entry.objects.get(title__iregex=r&#x27;^(an?|the) +&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># date</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__date=datetime.date(2005, 1, 1))</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__date__gt=datetime.date(2005, 1, 1))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># year</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__year=2005)</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__year__gte=2005)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># month</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__month=12)</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__month__gte=6)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># day</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__day=3)</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__day__gte=3)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># week_day</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__week_day=2)</span></span><br><span class="line"><span class="comment"># Entry.objects.filter(pub_date__week_day__gte=2)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># hour</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Event.objects.filter(timestamp__hour=23)</span></span><br><span class="line"><span class="comment"># Event.objects.filter(time__hour=5)</span></span><br><span class="line"><span class="comment"># Event.objects.filter(timestamp__hour__gte=12)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># minute</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Event.objects.filter(timestamp__minute=29)</span></span><br><span class="line"><span class="comment"># Event.objects.filter(time__minute=46)</span></span><br><span class="line"><span class="comment"># Event.objects.filter(timestamp__minute__gte=29)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># second</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Event.objects.filter(timestamp__second=31)</span></span><br><span class="line"><span class="comment"># Event.objects.filter(time__second=2)</span></span><br><span class="line"><span class="comment"># Event.objects.filter(timestamp__second__gte=31)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
       
 
@@ -314,6 +397,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/202011/base_Python46/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python_基础 (46)
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/202010/base_Python44/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Python_基础 (44)</div>
@@ -343,7 +435,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E6%9D%A5%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E5%AD%A6Django"><span class="toc-number">1.</span> <span class="toc-text">快来跟我一起学Django</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么是模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%B7%E6%AD%A5"><span class="toc-number">1.1.2.</span> <span class="toc-text">起步</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5-Field"><span class="toc-number">1.1.3.</span> <span class="toc-text">字段 Field</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E6%9D%A5%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E5%AD%A6Django"><span class="toc-number">1.</span> <span class="toc-text">快来跟我一起学Django</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么是模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%B7%E6%AD%A5"><span class="toc-number">1.1.2.</span> <span class="toc-text">起步</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5-Field"><span class="toc-number">1.1.3.</span> <span class="toc-text">字段 Field</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Meta-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.4.</span> <span class="toc-text">Meta 模型的元数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.5.</span> <span class="toc-text">关联类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.6.</span> <span class="toc-text">操作</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -479,11 +571,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +623,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,6 +660,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/img/20201026_3.png">
 <meta property="og:image" content="http://yoursite.com/img/20201026_4.png">
 <meta property="article:published_time" content="2020-10-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-26T07:02:55.470Z">
+<meta property="article:modified_time" content="2020-11-03T12:33:22.826Z">
 <meta property="article:author" content="Llllljian">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Django">
@@ -84,8 +84,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共729篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">30个标签</a>	
+			<a href="/archives">共734篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -184,7 +184,7 @@
 
 <h4 id="Django简介"><a href="#Django简介" class="headerlink" title="Django简介"></a>Django简介</h4><ul>
 <li>基本介绍<blockquote>
-<p>Django 是一个由 Python 编写的一个开放源代码的 Web 应用框架。使用 Django，只要很少的代码，Python 的程序开发人员就可以轻松地完成一个正式网站所需要的大部分内容，并进一步开发出全功能的 Web服务. Django 本身基于 MVC 模型，即 Model（模型）+ View（视图）+ Controller（控制器）设计模式，MVC 模式使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能</p>
+<p>Django 是一个由 Python 编写的一个开放源代码的 Web 应用框架.使用 Django, 只要很少的代码, Python 的程序开发人员就可以轻松地完成一个正式网站所需要的大部分内容, 并进一步开发出全功能的 Web服务. Django 本身基于 MVC 模型, 即 Model(模型)+ View(视图)+ Controller(控制器)设计模式, MVC 模式使后续对程序的修改和扩展简化, 并且使程序某一部分的重复利用成为可能</p>
 </blockquote>
 <ul>
 <li>MVC 优势：<ul>
@@ -204,20 +204,20 @@
 </ul>
 </li>
 <li>MVC<ul>
-<li>模型（M）- 编写程序应有的功能，负责业务对象与数据库的映射(ORM)</li>
-<li>视图（V）- 图形界面，负责与用户的交互(页面)</li>
-<li>控制器（C）- 负责转发请求，对请求进行处理<br><img src="/img/20201026_1.png" alt="MVC"></li>
+<li>模型(M)- 编写程序应有的功能, 负责业务对象与数据库的映射(ORM)</li>
+<li>视图(V)- 图形界面, 负责与用户的交互(页面)</li>
+<li>控制器(C)- 负责转发请求, 对请求进行处理<br><img src="/img/20201026_1.png" alt="MVC"></li>
 </ul>
 </li>
 <li>MTC<ul>
-<li>M 表示模型（Model）：编写程序应有的功能，负责业务对象与数据库的映射(ORM)</li>
+<li>M 表示模型(Model)：编写程序应有的功能, 负责业务对象与数据库的映射(ORM)</li>
 <li>T 表示模板 (Template)：负责如何把页面(html)展示给用户</li>
-<li>V 表示视图（View）：负责业务逻辑，并在适当时候调用 Model和 Template<br><img src="/img/20201026_2.png" alt="MTC"></li>
+<li>V 表示视图(View)：负责业务逻辑, 并在适当时候调用 Model和 Template<br><img src="/img/20201026_2.png" alt="MTC"></li>
 <li>解析：<ul>
-<li>用户通过浏览器向我们的服务器发起一个请求(request)，这个请求会去访问视图函数：</li>
-<li>a.如果不涉及到数据调用，那么这个时候视图函数直接返回一个模板也就是一个网页给用户。</li>
-<li>b.如果涉及到数据调用，那么视图函数调用模型，模型去数据库查找数据，然后逐级返回。</li>
-<li>视图函数把返回的数据填充到模板中空格中，最后返回网页给用户。</li>
+<li>用户通过浏览器向我们的服务器发起一个请求(request), 这个请求会去访问视图函数：</li>
+<li>a.如果不涉及到数据调用, 那么这个时候视图函数直接返回一个模板也就是一个网页给用户.</li>
+<li>b.如果涉及到数据调用, 那么视图函数调用模型, 模型去数据库查找数据, 然后逐级返回.</li>
+<li>视图函数把返回的数据填充到模板中空格中, 最后返回网页给用户.</li>
 </ul>
 </li>
 </ul>
@@ -236,33 +236,33 @@
 </li>
 <li>创建第一个项目  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">django-admin.py startproject testLocalHost</span><br><span class="line"></span><br><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">|____testLocalHost</span><br><span class="line">| |______init__.py</span><br><span class="line">| |____settings.py</span><br><span class="line">| |____urls.py</span><br><span class="line">| |____wsgi.py</span><br><span class="line">|____db.sqlite3</span><br><span class="line">|____manage.py</span><br></pre></td></tr></table></figure></li>
 <li>目录说明<ul>
-<li>HelloWorld: 项目的容器。</li>
-<li>manage.py: 一个实用的命令行工具，可让你以各种方式与该 Django 项目进行交互。</li>
-<li>HelloWorld/<strong>init</strong>.py: 一个空文件，告诉 Python 该目录是一个 Python 包。</li>
-<li>HelloWorld/asgi.py: 一个 ASGI 兼容的 Web 服务器的入口，以便运行你的项目。</li>
-<li>HelloWorld/settings.py: 该 Django 项目的设置/配置。</li>
-<li>HelloWorld/urls.py: 该 Django 项目的 URL 声明; 一份由 Django 驱动的网站”目录”。</li>
-<li>HelloWorld/wsgi.py: 一个 WSGI 兼容的 Web 服务器的入口，以便运行你的项目。</li>
+<li>HelloWorld: 项目的容器.</li>
+<li>manage.py: 一个实用的命令行工具, 可让你以各种方式与该 Django 项目进行交互.</li>
+<li>HelloWorld/<strong>init</strong>.py: 一个空文件, 告诉 Python 该目录是一个 Python 包.</li>
+<li>HelloWorld/asgi.py: 一个 ASGI 兼容的 Web 服务器的入口, 以便运行你的项目.</li>
+<li>HelloWorld/settings.py: 该 Django 项目的设置/配置.</li>
+<li>HelloWorld/urls.py: 该 Django 项目的 URL 声明; 一份由 Django 驱动的网站”目录”.</li>
+<li>HelloWorld/wsgi.py: 一个 WSGI 兼容的 Web 服务器的入口, 以便运行你的项目.</li>
 </ul>
 </li>
 <li>组织架构<br>  <img src="/img/20201026_3.png" alt="组织架构"></li>
-<li>常用命令  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">django-admin.py startproject sitename  (创建一个名为sitename的Django程序)</span><br><span class="line">python manage.py runserver ip:port  (启动服务器，默认ip和端口为http://127.0.0.1:8000/)</span><br><span class="line">python manage.py startapp appname  (新建 app)</span><br><span class="line">python manage.py syncdb  (同步数据库命令，Django 1.7及以上版本需要用以下的命令）</span><br><span class="line">python manage.py makemigrations  (显示并记录所有数据的改动)</span><br><span class="line">python manage.py migrate  (将改动更新到数据库)</span><br><span class="line">python manage.py createsuperuser  (创建超级管理员)</span><br><span class="line">python manage.py dbshell  (数据库命令行)</span><br><span class="line">python manage.py  (查看命令列表)</span><br></pre></td></tr></table></figure></li>
+<li>常用命令  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">django-admin.py startproject sitename  (创建一个名为sitename的Django程序)</span><br><span class="line">python manage.py runserver ip:port  (启动服务器, 默认ip和端口为http://127.0.0.1:8000/)</span><br><span class="line">python manage.py startapp appname  (新建 app)</span><br><span class="line">python manage.py syncdb  (同步数据库命令, Django 1.7及以上版本需要用以下的命令)</span><br><span class="line">python manage.py makemigrations  (显示并记录所有数据的改动)</span><br><span class="line">python manage.py migrate  (将改动更新到数据库)</span><br><span class="line">python manage.py createsuperuser  (创建超级管理员)</span><br><span class="line">python manage.py dbshell  (数据库命令行)</span><br><span class="line">python manage.py  (查看命令列表)</span><br></pre></td></tr></table></figure></li>
 <li>生命周期<br>  <img src="/img/20201026_4.png" alt="生命周期"></li>
 <li>请求步骤：<ol>
 <li>用户通过浏览器请求一个页面</li>
-<li>请求到达Request Middlewares，中间件对request做一些预处理或者直接response请求</li>
+<li>请求到达Request Middlewares, 中间件对request做一些预处理或者直接response请求</li>
 <li>URLConf通过urls.py文件和请求的URL找到相应的View</li>
-<li>View Middlewares被访问，它同样可以对request做一些处理或者直接返回response </li>
+<li>View Middlewares被访问, 它同样可以对request做一些处理或者直接返回response </li>
 <li>调用View中的函数</li>
 <li>View中的方法可以选择性的通过Models访问底层的数据</li>
 <li>所有的Model-to-DB的交互都是通过manager完成的</li>
-<li>如果需要，Views可以使用一个特殊的Context</li>
+<li>如果需要, Views可以使用一个特殊的Context</li>
 <li>Context被传给Template用来生成页面<ul>
 <li>Template使用Filters和Tags去渲染输出</li>
 <li>输出被返回到View</li>
 <li>HTTPResponse被发送到Response Middlewares</li>
 <li>任何Response Middlewares都可以丰富response或者返回一个完全不同的response </li>
-<li>Response返回到浏览器，呈现给用户</li>
+<li>Response返回到浏览器, 呈现给用户</li>
 </ul>
 </li>
 </ol>
@@ -529,11 +529,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,11 +581,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,6 +618,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

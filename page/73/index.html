@@ -73,8 +73,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共729篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">30个标签</a>	
+			<a href="/archives">共734篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -149,6 +149,424 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-2017/201712/base_PHP5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/base_PHP5/">PHP_基础 (5)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/base_PHP5/" class="archive-article-date">
+  	<time datetime="2017-12-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="性能优化建议"><a href="#性能优化建议" class="headerlink" title="性能优化建议"></a>性能优化建议</h3><ul>
+<li>在includes和requires中使用绝对路径,这样在分析路径花的时间更少;</li>
+<li>在循环里别用函数,例如For($x=0; $x &lt; count($array); $x), count()函数在外面先计算;</li>
+<li>使用error_reporting(0)函数来预防潜在的敏感信息显示给用户.理想的错误报告应该被完全禁用在php.ini文件里.可是如果你在用一个共享的虚拟主机,php.ini你不能修改,那么你最好添加error_reporting(0)函数,放在每个脚本文件的第一行(或用require_once()来加载)这能有效的保护敏感的SQL查询和路径在出错时不被显示;</li>
+<li>禁止过多的循环套循环,嵌套过多的循环会拉低执行效率</li>
+<li>禁止在循环内部执行相关的查询语句,除非万不得以,不然千万不可这么操作</li>
+<li>尽量使用单引号联接字符串</li>
+<li>尽可能的减少变量复制操作.例如：$description = $_POST[‘description’];</li>
+<li>当if/else过多时,尽可能的使用switch/case 代替 if/else.能够使代码更加简明</li>
+<li>开启缓存机制有助于提升性能,同时降低MySQL负载</li>
+<li>开启gzip压缩</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/201712/base_PHP5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/base_PHP5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/base_PHP4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/base_PHP4/">PHP_基础 (4)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/base_PHP4/" class="archive-article-date">
+  	<time datetime="2017-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h2><h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><pre><code>header(&#39;Loacation: url&#39;)
+header()执行完毕后,后面的代码也会继续执行,故需在该语句后加die结束
+无法给出提示,直接跳转</code></pre>
+<h3 id="JS方法"><a href="#JS方法" class="headerlink" title="JS方法"></a>JS方法</h3><pre><code>location.href = url</code></pre>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre><code>&lt;meta http-equiv=&quot;Refresh&quot; content=&quot;表示时间的数值; url=要跳转的URI&quot;&gt; </code></pre>
+        
+          <a class="article-more-a" href="/2017/201712/base_PHP4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/base_PHP4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/base_PHP3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/base_PHP3/">PHP_基础 (3)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/base_PHP3/" class="archive-article-date">
+  	<time datetime="2017-12-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h2><pre><code># 成员：
+类成员：类常量、静态属性、静态方法
+对象成员：非静态属性、非静态方法
+# 除此外,类不能包含任何其他东西！！！
+
+# 类名、方法名、属性名均不区分大小写
+# $this代表本对象,self代表本类,parent代表父类
+# 类和函数均可被事先编译(仅作为最外层时)
+# 类的定义必须在单一的PHP区块内,不能被多个PHP标签分割</code></pre>
+        
+          <a class="article-more-a" href="/2017/201712/base_PHP3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/base_PHP3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/base_PHP2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/base_PHP2/">PHP_基础 (2)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/base_PHP2/" class="archive-article-date">
+  	<time datetime="2017-12-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
+<li><p>常量定义<br>  define(常量名, 常量值, [区分大小写参数])        //true表示不区分/false表示区分大小写<br>  const 常量名 = 常量值    // 新,建议<br>  常量名可以使用特殊字符<br>  constant($name)     // 获取常量名  // 例：echo constant(‘-_-‘);</p>
+</li>
+<li><p>常量相关函数<br>  defined<br>  get_defined_constants</p>
+</li>
+<li><p>预定义常量或魔术常量<br>  _<em>FILE_</em>             所在文件的绝对路径<br>  _<em>LINE_</em>             文件中的当前行号<br>  _<em>DIR_</em>              文件所在目录<br>  _<em>FUNCTION_</em>         函数名称<br>  _<em>CLASS_</em>            类的名称<br>  _<em>METHOD_</em>           类的方法名<br>  _<em>NAMESPACE_</em>        当前命名空间的名称 </p>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/201712/base_PHP2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/base_PHP2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2017/201712/base_PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/201712/base_PHP/">PHP_基础 (1)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/201712/base_PHP/" class="archive-article-date">
+  	<time datetime="2017-12-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>PHP：Hypertext Preprocessor：超文本预处理器：开源通用脚本语言</li>
+</ul>
+<h2 id="语言参考"><a href="#语言参考" class="headerlink" title="语言参考"></a>语言参考</h2><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ul>
+<li><p>Boolean 布尔型<br>  <strong>语法</strong> ： 使用关键字 TRUE 或 FALSE.两个都不区分大小写.<br>  <strong>判断</strong> ： is_bool<br>  <strong>转化</strong> ： 强制转化 (bool)  转化 boolval()</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 以下值为false,其余的都是true</span></span><br><span class="line"><span class="comment">*  布尔值 FALSE 本身  </span></span><br><span class="line"><span class="comment">*  整型值 0(零)  </span></span><br><span class="line"><span class="comment">*  浮点型值 0.0(零)  </span></span><br><span class="line"><span class="comment">*  空字符串,以及字符串 &quot;0&quot;  </span></span><br><span class="line"><span class="comment">*  不包括任何元素的数组  </span></span><br><span class="line"><span class="comment">*  不包括任何成员变量的对象(仅 PHP 4.0 适用)  </span></span><br><span class="line"><span class="comment">*  特殊类型 NULL(包括尚未赋值的变量)  </span></span><br><span class="line"><span class="comment">*  从空标记生成的 SimpleXML 对象 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="string">&quot;&quot;</span>);        <span class="comment">// bool(false)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="number">1</span>);         <span class="comment">// bool(true)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="number">-2</span>);        <span class="comment">// bool(true)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="string">&quot;foo&quot;</span>);     <span class="comment">// bool(true)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="number">2.3e5</span>);     <span class="comment">// bool(true)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="keyword">array</span>(<span class="number">12</span>)); <span class="comment">// bool(true)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="keyword">array</span>());   <span class="comment">// bool(false)</span></span><br><span class="line">var_dump((<span class="keyword">bool</span>) <span class="string">&quot;false&quot;</span>);   <span class="comment">// bool(true)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/201712/base_PHP/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/201712/base_PHP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-2017/201712/frame_YAF4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -557,313 +975,9 @@
 
 
   
-    <article id="post-2017/201712/plugIn_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/plugIn_JS/">JS_插件(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/plugIn_JS/" class="archive-article-date">
-  	<time datetime="2017-12-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用过的前端插件"><a href="#使用过的前端插件" class="headerlink" title="使用过的前端插件"></a>使用过的前端插件</h2><pre><code>下边写的都是一些自己使用过的插件,只是简单的写了一个例子,具体的还是要再看文档.</code></pre>
-        
-          <a class="article-more-a" href="/2017/201712/plugIn_JS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/plugIn_JS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/timeStamp_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/timeStamp_JS/">JS_时间相关</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/timeStamp_JS/" class="archive-article-date">
-  	<time datetime="2017-12-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="页面上需要JS操作时间相关"><a href="#页面上需要JS操作时间相关" class="headerlink" title="页面上需要JS操作时间相关"></a>页面上需要JS操作时间相关</h1><h2 id="计算两个日期之间的天数"><a href="#计算两个日期之间的天数" class="headerlink" title="计算两个日期之间的天数"></a>计算两个日期之间的天数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">daysBetween</span>(<span class="params">DateOne,DateTwo</span>)  </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="keyword">var</span> OneMonth = DateOne.substring(<span class="number">5</span>,DateOne.lastIndexOf (<span class="string">&#x27;-&#x27;</span>));  </span><br><span class="line">    <span class="keyword">var</span> OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf (<span class="string">&#x27;-&#x27;</span>)+<span class="number">1</span>);  </span><br><span class="line">    <span class="keyword">var</span> OneYear = DateOne.substring(<span class="number">0</span>,DateOne.indexOf (<span class="string">&#x27;-&#x27;</span>));  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">var</span> TwoMonth = DateTwo.substring(<span class="number">5</span>,DateTwo.lastIndexOf (<span class="string">&#x27;-&#x27;</span>));  </span><br><span class="line">    <span class="keyword">var</span> TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf (<span class="string">&#x27;-&#x27;</span>)+<span class="number">1</span>);  </span><br><span class="line">    <span class="keyword">var</span> TwoYear = DateTwo.substring(<span class="number">0</span>,DateTwo.indexOf (<span class="string">&#x27;-&#x27;</span>));  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">var</span> cha=((<span class="built_in">Date</span>.parse(OneMonth+<span class="string">&#x27;/&#x27;</span>+OneDay+<span class="string">&#x27;/&#x27;</span>+OneYear)- <span class="built_in">Date</span>.parse(TwoMonth+<span class="string">&#x27;/&#x27;</span>+TwoDay+<span class="string">&#x27;/&#x27;</span>+TwoYear))/<span class="number">86400000</span>);   </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(cha);  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/201712/timeStamp_JS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/timeStamp_JS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/function_PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/function_PHP/">PHP_封装函数</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/function_PHP/" class="archive-article-date">
-  	<time datetime="2017-12-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="PHP封装函数"><a href="#PHP封装函数" class="headerlink" title="PHP封装函数"></a>PHP封装函数</h2><h3 id="数组中value去空"><a href="#数组中value去空" class="headerlink" title="数组中value去空"></a>数组中value去空</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* $param[array,要去除value值中空格的数组]</span></span><br><span class="line"><span class="comment">* $isMoreArray[bool,是否为多维数组]</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trimEmptyValue</span>(<span class="params">$param, $isMoreArray</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> ($param <span class="keyword">as</span> $aKey=&gt;$aValue) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!is_array($aValue)) &#123;</span><br><span class="line">            $param[$aKey] = trim($aValue);</span><br><span class="line">        &#125; <span class="keyword">elseif</span> ($isMoreArray) &#123;</span><br><span class="line">            <span class="keyword">foreach</span> ($aValue <span class="keyword">as</span> $bKey=&gt;$bValue) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!is_array($bValue)) &#123;</span><br><span class="line">                    $param[$aKey][$bKey] = trim($bValue);</span><br><span class="line">                &#125; <span class="keyword">elseif</span> ($isMoreArray) &#123;</span><br><span class="line">                    <span class="keyword">foreach</span> ($bValue <span class="keyword">as</span> $cKey=&gt;$cValue) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (!is_array($cValue)) &#123;</span><br><span class="line">                            $param[$aKey][$bKey] = trim($cValue);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/201712/function_PHP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/function_PHP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017/201712/batchHandle_PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/201712/batchHandle_PHP/">PHP_批量取数据</a>
-    </h1>
-  
-
-        
-        <a href="/2017/201712/batchHandle_PHP/" class="archive-article-date">
-  	<time datetime="2017-12-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="从MySQL数据库中批量取数据"><a href="#从MySQL数据库中批量取数据" class="headerlink" title="从MySQL数据库中批量取数据"></a>从MySQL数据库中批量取数据</h2><h3 id="以id为维度进行批量取数据"><a href="#以id为维度进行批量取数据" class="headerlink" title="以id为维度进行批量取数据"></a>以id为维度进行批量取数据</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">取最小id和最大id.<span class="string">&quot;SELECT MIN(id) minId, MAX(id) maxId FROM 表名&quot;</span></span><br><span class="line">$startId = $minId;</span><br><span class="line">$tempSize = <span class="number">1000</span>;</span><br><span class="line">$tempSql = <span class="string">&quot;SELECT * FROM 表名 WHERE id &gt;= ? AND id &lt; ?&quot;</span>;</span><br><span class="line"><span class="keyword">while</span> ($startId &lt;= $maxId&gt;) &#123;</span><br><span class="line">    $tempBind = [];</span><br><span class="line">    $tempBind[<span class="number">0</span>] = $startId;       </span><br><span class="line">    $tempId = $startId + $tempSize;</span><br><span class="line">    <span class="keyword">if</span> ($tempId &gt; $maxId&gt;) &#123;</span><br><span class="line">        $tempBind[<span class="number">1</span>] = $maxId + <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         $tempBind[<span class="number">1</span>] = $tempId;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//pdo绑定参数</span></span><br><span class="line">    $tempRes = $pdo-&gt;fetchAll($tempSql, $tempBind);</span><br><span class="line"></span><br><span class="line">    $startId = $tempId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/201712/batchHandle_PHP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/201712/batchHandle_PHP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/72/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="page-number current">73</span>
+      <a class="extend prev" rel="prev" href="/page/72/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="page-number current">73</span><a class="page-number" href="/page/74/">74</a><a class="extend next" rel="next" href="/page/74/">下一页 &amp;raquo;</a>
     </nav>
   
 
@@ -982,11 +1096,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,11 +1148,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,6 +1185,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,7 +16,7 @@
 <meta property="og:description" content="RESTful API设计指南学Django-rest-framework之前先看看RESTful API">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-10-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-29T08:13:52.524Z">
+<meta property="article:modified_time" content="2020-11-03T12:33:22.843Z">
 <meta property="article:author" content="Llllljian">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Django">
@@ -79,8 +79,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共729篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">30个标签</a>	
+			<a href="/archives">共734篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -178,58 +178,58 @@
 <a id="more"></a>
 
 <h3 id="RESTful-API设计指南-1"><a href="#RESTful-API设计指南-1" class="headerlink" title="RESTful API设计指南"></a>RESTful API设计指南</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
-<li>REST（英文：Representational State Transfer，简称REST）描述了一个架构样式的网络系统，比如 web 应用程序。它首次出现在 2000 年 Roy Fielding 的博士论文中，他是 HTTP 规范的主要编写者之一。在目前主流的三种Web服务交互方案中，REST相比于SOAP（Simple Object Access protocol，简单对象访问协议）以及XML-RPC更加简单明了，无论是对URL的处理还是对Payload的编码，REST都倾向于用更加简单轻量的方法设计和实现。值得注意的是REST并没有一个明确的标准，而更像是一种设计的风格</li>
-<li>定义：简单来说REST是一种系统架构设计风格（而非标准），一种分布式系统的应用层解决方案</li>
+<li>REST(英文：Representational State Transfer, 简称REST)描述了一个架构样式的网络系统, 比如 web 应用程序.它首次出现在 2000 年 Roy Fielding 的博士论文中, 他是 HTTP 规范的主要编写者之一.在目前主流的三种Web服务交互方案中, REST相比于SOAP(Simple Object Access protocol, 简单对象访问协议)以及XML-RPC更加简单明了, 无论是对URL的处理还是对Payload的编码, REST都倾向于用更加简单轻量的方法设计和实现.值得注意的是REST并没有一个明确的标准, 而更像是一种设计的风格</li>
+<li>定义：简单来说REST是一种系统架构设计风格(而非标准), 一种分布式系统的应用层解决方案</li>
 <li>目的：Client和Server端进一步解耦</li>
 </ul>
-<h4 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h4><pre><code>API与用户的通信协议，总是使用HTTPs协议</code></pre>
+<h4 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h4><pre><code>API与用户的通信协议, 总是使用HTTPs协议</code></pre>
 <h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><pre><code>1. 应该尽量将API部署在专用域名之下,(这中情况会存在跨域问题) eg : https://api.example.com
-2. 如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下。eg : https://example.org/api/</code></pre>
-<h4 id="版本（Versioning）"><a href="#版本（Versioning）" class="headerlink" title="版本（Versioning）"></a>版本（Versioning）</h4><pre><code>应该将API的版本号放入URL。eg : https://api.example.com/v1/
-另一种做法是，将版本号放在HTTP头信息中，但不如放入URL方便和直观。Github采用这种做法</code></pre>
-<h4 id="路径（Endpoint）"><a href="#路径（Endpoint）" class="headerlink" title="路径（Endpoint）"></a>路径（Endpoint）</h4><pre><code>路径又称&quot;终点&quot;（endpoint），表示API的具体网址。在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的&quot;集合&quot;（collection），所以API中的名词也应该使用复数。
-举例来说，有一个API提供动物园（zoo）的信息，还包括各种动物和雇员的信息，则它的路径应该设计成下面这样。
+2. 如果确定API很简单, 不会有进一步扩展, 可以考虑放在主域名下.eg : https://example.org/api/</code></pre>
+<h4 id="版本-Versioning"><a href="#版本-Versioning" class="headerlink" title="版本(Versioning)"></a>版本(Versioning)</h4><pre><code>应该将API的版本号放入URL.eg : https://api.example.com/v1/
+另一种做法是, 将版本号放在HTTP头信息中, 但不如放入URL方便和直观.Github采用这种做法</code></pre>
+<h4 id="路径-Endpoint"><a href="#路径-Endpoint" class="headerlink" title="路径(Endpoint)"></a>路径(Endpoint)</h4><pre><code>路径又称&quot;终点&quot;(endpoint), 表示API的具体网址.在RESTful架构中, 每个网址代表一种资源(resource), 所以网址中不能有动词, 只能有名词, 而且所用的名词往往与数据库的表格名对应.一般来说, 数据库中的表都是同种记录的&quot;集合&quot;(collection), 所以API中的名词也应该使用复数.
+举例来说, 有一个API提供动物园(zoo)的信息, 还包括各种动物和雇员的信息, 则它的路径应该设计成下面这样.
     * https://api.example.com/v1/zoos
     * https://api.example.com/v1/animals
     * https://api.example.com/v1/employees</code></pre>
-<h4 id="HTTP动词"><a href="#HTTP动词" class="headerlink" title="HTTP动词"></a>HTTP动词</h4><pre><code>对于资源的具体操作类型，由HTTP动词表示。常用的HTTP动词有下面五个（括号里是对应的SQL命令）。
-    * GET（SELECT）：从服务器取出资源（一项或多项）。
-    * POST（CREATE）：在服务器新建一个资源。
-    * PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。
-    * PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。
-    * DELETE（DELETE）：从服务器删除资源。</code></pre>
-<h4 id="过滤信息（Filtering）"><a href="#过滤信息（Filtering）" class="headerlink" title="过滤信息（Filtering）"></a>过滤信息（Filtering）</h4><pre><code>如果记录数量很多，服务器不可能都将它们返回给用户。API应该提供参数，过滤返回结果。下面是一些常见的参数。
+<h4 id="HTTP动词"><a href="#HTTP动词" class="headerlink" title="HTTP动词"></a>HTTP动词</h4><pre><code>对于资源的具体操作类型, 由HTTP动词表示.常用的HTTP动词有下面五个(括号里是对应的SQL命令).
+    * GET(SELECT)：从服务器取出资源(一项或多项).
+    * POST(CREATE)：在服务器新建一个资源.
+    * PUT(UPDATE)：在服务器更新资源(客户端提供改变后的完整资源).
+    * PATCH(UPDATE)：在服务器更新资源(客户端提供改变的属性).
+    * DELETE(DELETE)：从服务器删除资源.</code></pre>
+<h4 id="过滤信息-Filtering"><a href="#过滤信息-Filtering" class="headerlink" title="过滤信息(Filtering)"></a>过滤信息(Filtering)</h4><pre><code>如果记录数量很多, 服务器不可能都将它们返回给用户.API应该提供参数, 过滤返回结果.下面是一些常见的参数.
     * https://api.example.com/v1/zoos?limit=10：指定返回记录的数量
     * https://ap.example.com/v1/zoos?offset=10：指定返回记录的开始位置
-    * https://api.example.com/v1/zoos?page=2&amp;per_page=100：指定第几页，以及每页的记录数
-    * https://api.example.com/v1/zoos?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序
+    * https://api.example.com/v1/zoos?page=2&amp;per_page=100：指定第几页, 以及每页的记录数
+    * https://api.example.com/v1/zoos?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序, 以及排序顺序
     * https://api.example.com/v1/zoos?animal_type_id=1：指定筛选条件
-参数的设计允许存在冗余，即允许API路径和URL参数偶尔有重复。比如，GET /zoo/ID/animals 与 GET /animals?zoo_id=ID 的含义是相同的。</code></pre>
-<h4 id="状态码（Status-Codes）"><a href="#状态码（Status-Codes）" class="headerlink" title="状态码（Status Codes）"></a>状态码（Status Codes）</h4><pre><code>服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的HTTP动词）。
-    * 200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。
-    * 201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。
-    * 202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）
-    * 204 NO CONTENT - [DELETE]：用户删除数据成功。
-    * 400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。
-    * 401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。
-    * 403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。
-    * 404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。
-    * 406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。
-    * 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。
-    * 422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。
-    * 500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</code></pre>
-<h4 id="错误处理（Error-handling）"><a href="#错误处理（Error-handling）" class="headerlink" title="错误处理（Error handling）"></a>错误处理（Error handling）</h4><pre><code>如果状态码是4xx，就应该向用户返回出错信息。一般来说，返回的信息中将error作为键名，出错信息作为键值即可。
+参数的设计允许存在冗余, 即允许API路径和URL参数偶尔有重复.比如, GET /zoo/ID/animals 与 GET /animals?zoo_id=ID 的含义是相同的.</code></pre>
+<h4 id="状态码-Status-Codes"><a href="#状态码-Status-Codes" class="headerlink" title="状态码(Status Codes)"></a>状态码(Status Codes)</h4><pre><code>服务器向用户返回的状态码和提示信息, 常见的有以下一些(方括号中是该状态码对应的HTTP动词).
+    * 200 OK - [GET]：服务器成功返回用户请求的数据, 该操作是幂等的(Idempotent).
+    * 201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功.
+    * 202 Accepted - [*]：表示一个请求已经进入后台排队(异步任务)
+    * 204 NO CONTENT - [DELETE]：用户删除数据成功.
+    * 400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误, 服务器没有进行新建或修改数据的操作, 该操作是幂等的.
+    * 401 Unauthorized - [*]：表示用户没有权限(令牌、用户名、密码错误).
+    * 403 Forbidden - [*] 表示用户得到授权(与401错误相对), 但是访问是被禁止的.
+    * 404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录, 服务器没有进行操作, 该操作是幂等的.
+    * 406 Not Acceptable - [GET]：用户请求的格式不可得(比如用户请求JSON格式, 但是只有XML格式).
+    * 410 Gone -[GET]：用户请求的资源被永久删除, 且不会再得到的.
+    * 422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时, 发生一个验证错误.
+    * 500 INTERNAL SERVER ERROR - [*]：服务器发生错误, 用户将无法判断发出的请求是否成功.</code></pre>
+<h4 id="错误处理-Error-handling"><a href="#错误处理-Error-handling" class="headerlink" title="错误处理(Error handling)"></a>错误处理(Error handling)</h4><pre><code>如果状态码是4xx, 就应该向用户返回出错信息.一般来说, 返回的信息中将error作为键名, 出错信息作为键值即可.
 &#123;
     error: &quot;Invalid API key&quot;
 &#125;</code></pre>
-<h4 id="返回结果"><a href="#返回结果" class="headerlink" title="返回结果"></a>返回结果</h4><pre><code>针对不同操作，服务器向用户返回的结果应该符合以下规范。
-    * GET /collection：返回资源对象的列表（数组）
+<h4 id="返回结果"><a href="#返回结果" class="headerlink" title="返回结果"></a>返回结果</h4><pre><code>针对不同操作, 服务器向用户返回的结果应该符合以下规范.
+    * GET /collection：返回资源对象的列表(数组)
     * GET /collection/resource：返回单个资源对象
     * POST /collection：返回新生成的资源对象
     * PUT /collection/resource：返回完整的资源对象
     * PATCH /collection/resource：返回完整的资源对象
     * DELETE /collection/resource：返回一个空文档</code></pre>
-<h4 id="Hypermedia-API"><a href="#Hypermedia-API" class="headerlink" title="Hypermedia API"></a>Hypermedia API</h4><pre><code>RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么</code></pre>
+<h4 id="Hypermedia-API"><a href="#Hypermedia-API" class="headerlink" title="Hypermedia API"></a>Hypermedia API</h4><pre><code>RESTful API最好做到Hypermedia, 即返回结果中提供链接, 连向其他API方法, 使得用户不查文档, 也知道下一步应该做什么</code></pre>
 
       
 
@@ -355,7 +355,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-API%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">RESTful API设计指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-API%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-1"><span class="toc-number">2.</span> <span class="toc-text">RESTful API设计指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-number">2.3.</span> <span class="toc-text">域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%88Versioning%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">版本（Versioning）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%EF%BC%88Endpoint%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">路径（Endpoint）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E5%8A%A8%E8%AF%8D"><span class="toc-number">2.6.</span> <span class="toc-text">HTTP动词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E4%BF%A1%E6%81%AF%EF%BC%88Filtering%EF%BC%89"><span class="toc-number">2.7.</span> <span class="toc-text">过滤信息（Filtering）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%88Status-Codes%EF%BC%89"><span class="toc-number">2.8.</span> <span class="toc-text">状态码（Status Codes）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%EF%BC%88Error-handling%EF%BC%89"><span class="toc-number">2.9.</span> <span class="toc-text">错误处理（Error handling）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C"><span class="toc-number">2.10.</span> <span class="toc-text">返回结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hypermedia-API"><span class="toc-number">2.11.</span> <span class="toc-text">Hypermedia API</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-API%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">RESTful API设计指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-API%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-1"><span class="toc-number">2.</span> <span class="toc-text">RESTful API设计指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-number">2.3.</span> <span class="toc-text">域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC-Versioning"><span class="toc-number">2.4.</span> <span class="toc-text">版本(Versioning)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84-Endpoint"><span class="toc-number">2.5.</span> <span class="toc-text">路径(Endpoint)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E5%8A%A8%E8%AF%8D"><span class="toc-number">2.6.</span> <span class="toc-text">HTTP动词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E4%BF%A1%E6%81%AF-Filtering"><span class="toc-number">2.7.</span> <span class="toc-text">过滤信息(Filtering)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A0%81-Status-Codes"><span class="toc-number">2.8.</span> <span class="toc-text">状态码(Status Codes)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86-Error-handling"><span class="toc-number">2.9.</span> <span class="toc-text">错误处理(Error handling)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C"><span class="toc-number">2.10.</span> <span class="toc-text">返回结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hypermedia-API"><span class="toc-number">2.11.</span> <span class="toc-text">Hypermedia API</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -491,11 +491,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,11 +543,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,6 +580,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

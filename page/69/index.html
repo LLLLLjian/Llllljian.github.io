@@ -73,8 +73,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共734篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
+			<a href="/archives">共756篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">33个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -150,29 +150,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2018/201802/frame_YII16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII16/">PHP_Yii框架 (16)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki5/">HDwiki_源码分析 (5)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII16/" class="archive-article-date">
-  	<time datetime="2018-02-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
+        <a href="/2018/201803/openSource_HDwiki5/" class="archive-article-date">
+  	<time datetime="2018-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="活动记录"><a href="#活动记录" class="headerlink" title="活动记录"></a>活动记录</h3><pre><code>活动记录(ActiveRecord)提供了数据库与模型(MVC 中的 M,Model) 的交互</code></pre>
+        <h3 id="view"><a href="#view" class="headerlink" title="view"></a>view</h3><pre><code>MVC中的视图view 主要负责页面显示部分,所有的页面显示全部在此实现,视图对整个页面负责,它通过control的调用来显示页面和数据.
+
+视图(view)类template.class.php路径/lib/template.class.php, 视图类在每个control类的父类(base.calss.php)的构造函数中初始化,主要有以下几个部分,包括设置语言,设置风格,传递变量,显示最终页面,其中前两个在初始化时已被设置,在控制器(control)用的一般就是传递变量和显示最终页面两个部分
+
+视图(view)文件存放于 view/default/文件夹中,如果自己新添加新的模板,可以存放于不同的文件夹,例如 view/mediawiki/文件夹下,命名基本以功能为主,例如viewdoc.thm表示就是浏览词条的页面,</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII16/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki5/#more">more >></a>
         
       
 
@@ -186,7 +190,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -196,7 +200,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII16/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki5/">展开全文 >></a>
         </p>
       
 
@@ -226,29 +230,31 @@
 
 
   
-    <article id="post-2018/201802/frame_YII15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII15/">PHP_Yii框架 (15)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki4/">HDwiki_源码分析 (4)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII15/" class="archive-article-date">
-  	<time datetime="2018-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-12</time>
+        <a href="/2018/201803/openSource_HDwiki4/" class="archive-article-date">
+  	<time datetime="2018-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="查询生成器"><a href="#查询生成器" class="headerlink" title="查询生成器"></a>查询生成器</h3><pre><code>查询生成器(QueryBuilder)用于创建动态的查询语句</code></pre>
+        <h3 id="models"><a href="#models" class="headerlink" title="models"></a>models</h3><pre><code>MVC中的模型model 主要负责功能部分,绝大部分的功能在此实现,模型对整个功能负责,它能调用数据库或者缓存文件得到数据.
+
+模型(model)文件存放于 model文件夹中,命名基本以功能为主,例如doc.class.php表示就是词条相关的模型,user.class.php就是用户相关的模型</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII15/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki4/#more">more >></a>
         
       
 
@@ -262,7 +268,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -272,7 +278,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII15/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki4/">展开全文 >></a>
         </p>
       
 
@@ -302,29 +308,31 @@
 
 
   
-    <article id="post-2018/201802/frame_YII14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII14/">PHP_Yii框架 (14)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki3/">HDwiki_源码分析 (3)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII14/" class="archive-article-date">
-  	<time datetime="2018-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
+        <a href="/2018/201803/openSource_HDwiki3/" class="archive-article-date">
+  	<time datetime="2018-03-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据访问层"><a href="#数据访问层" class="headerlink" title="数据访问层"></a>数据访问层</h3><pre><code>数据访问层(DAO)提供了简单高效的SQL查询,可以用在与数据库交互的各个地方</code></pre>
+        <h3 id="control"><a href="#control" class="headerlink" title="control"></a>control</h3><pre><code>MVC中的控制器control 主要负责业务逻辑部分,所有的功能逻辑全部在此实现,控制器对整个功能负责,它调用模型(model)的方法实现它需要的功能,调用视图(view)的方法来显示数据.
+
+控制器(control)文件存放于 control/文件夹中,命名基本以功能为主,例如doc.php表示就是词条相关的控制器,user.php就是用户相关的控制</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII14/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki3/#more">more >></a>
         
       
 
@@ -338,7 +346,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -348,7 +356,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII14/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki3/">展开全文 >></a>
         </p>
       
 
@@ -378,29 +386,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII13/">PHP_Yii框架 (13)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki2/">HDwiki_源码分析 (2)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII13/" class="archive-article-date">
-  	<time datetime="2018-02-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-09</time>
+        <a href="/2018/201803/openSource_HDwiki2/" class="archive-article-date">
+  	<time datetime="2018-03-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h3><pre><code>具体的可以看文档,简单记录一下自己使用的三个和两个典型的例子</code></pre>
+        <h3 id="5-1源码分析"><a href="#5-1源码分析" class="headerlink" title="5.1源码分析"></a>5.1源码分析</h3><pre><code>最新版本是6.0 还没有看.这里主要说一下HDwiki5.1 </code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII13/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki2/#more">more >></a>
         
       
 
@@ -414,7 +422,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -424,7 +432,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII13/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki2/">展开全文 >></a>
         </p>
       
 
@@ -454,37 +462,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII12/">PHP_Yii框架 (12)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki1/">HDwiki_开源 (1)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII12/" class="archive-article-date">
-  	<time datetime="2018-02-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+        <a href="/2018/201803/openSource_HDwiki1/" class="archive-article-date">
+  	<time datetime="2018-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><ul>
-<li>Yii 内置了一个error handler错误处理器,它使错误处理更方便, Yii错误处理器做以下工作来提升错误处理效果：<ul>
-<li>所有非致命PHP错误(如,警告,提示)会转换成可获取异常；</li>
-<li>异常和致命的PHP错误会被显示, 在调试模式会显示详细的函数调用栈和源代码行数.</li>
-<li>支持使用专用的 控制器操作 来显示错误；</li>
-<li>支持不同的错误响应格式；</li>
-</ul>
-</li>
-</ul>
+        <h3 id="HDwiki"><a href="#HDwiki" class="headerlink" title="HDwiki"></a>HDwiki</h3><pre><code>HDwiki是一个开源的wiki系统,二次开发起来还是比较方便的,花时间说一说自己的理解和心得</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII12/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki1/#more">more >></a>
         
       
 
@@ -498,7 +498,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -508,7 +508,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII12/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki1/">展开全文 >></a>
         </p>
       
 
@@ -538,29 +538,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII33" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII11/">PHP_Yii框架 (11)</a>
+      <a class="article-title" href="/2018/201803/frame_YII33/">PHP_Yii框架 (33)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII11/" class="archive-article-date">
-  	<time datetime="2018-02-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-07</time>
+        <a href="/2018/201803/frame_YII33/" class="archive-article-date">
+  	<time datetime="2018-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><pre><code>在纯 PHP 中,可以分别使用全局变量 $_SESSION 和 $_COOKIE 来访问,Yii 将 session 和 cookie 封装成对象并增加一些功能, 可通过面向对象方式访问它们</code></pre>
+        <h3 id="yii使用小技巧"><a href="#yii使用小技巧" class="headerlink" title="yii使用小技巧"></a>yii使用小技巧</h3><pre><code>写一些yii使用的小技巧</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII11/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII33/#more">more >></a>
         
       
 
@@ -584,7 +584,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII11/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII33/">展开全文 >></a>
         </p>
       
 
@@ -614,29 +614,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII32" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII10/">PHP_Yii框架 (10)</a>
+      <a class="article-title" href="/2018/201803/frame_YII32/">PHP_Yii框架 (32)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII10/" class="archive-article-date">
-  	<time datetime="2018-02-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
+        <a href="/2018/201803/frame_YII32/" class="archive-article-date">
+  	<time datetime="2018-03-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><pre><code>一个应用的请求是用 yii\web\Request 对象来表示的,该对象提供了诸如 请求参数(通常是GET参数或者POST参数)、HTTP头、cookies等信息</code></pre>
+        <h3 id="关于无限分类"><a href="#关于无限分类" class="headerlink" title="关于无限分类"></a>关于无限分类</h3><pre><code>无限分类的基础前提:需要有一个分类表,必须字段为id,name,pid</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII10/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII32/#more">more >></a>
         
       
 
@@ -660,7 +660,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII10/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII32/">展开全文 >></a>
         </p>
       
 
@@ -690,44 +690,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII31" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII9/">PHP_Yii框架 (9)</a>
+      <a class="article-title" href="/2018/201803/frame_YII31/">PHP_Yii框架 (31)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII9/" class="archive-article-date">
-  	<time datetime="2018-02-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
+        <a href="/2018/201803/frame_YII31/" class="archive-article-date">
+  	<time datetime="2018-03-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="请求处理"><a href="#请求处理" class="headerlink" title="请求处理"></a>请求处理</h3><ul>
-<li>运行机制概述<ul>
-<li>用户提交指向 入口脚本 web/index.php 的请求.</li>
-<li>入口脚本会加载 配置数组 并创建一个 应用 实例用于处理该请求.</li>
-<li>应用会通过 request(请求) 应用组件 解析被请求的 路由.</li>
-<li>应用创建一个 controller(控制器) 实例具体处理请求.</li>
-<li>控制器会创建一个 action(动作) 实例并为该动作执行相关的 Filters(访问过滤器).</li>
-<li>如果任何一个过滤器验证失败,该动作会被取消.</li>
-<li>如果全部的过滤器都通过,该动作就会被执行.</li>
-<li>动作会加载一个数据模型,一般是从数据库中加载.</li>
-<li>动作会渲染一个 View(视图),并为其提供所需的数据模型.</li>
-<li>渲染得到的结果会返回给 response(响应) 应用组件.</li>
-<li>响应组件会把渲染结果发回给用户的浏览器.</li>
-</ul>
-</li>
-</ul>
+        <h3 id="Url助手类"><a href="#Url助手类" class="headerlink" title="Url助手类"></a>Url助手类</h3><pre><code>帮助我们更好的管理URL</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII9/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII31/#more">more >></a>
         
       
 
@@ -751,7 +736,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII9/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII31/">展开全文 >></a>
         </p>
       
 
@@ -781,29 +766,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII30" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII8/">PHP_Yii框架 (8)</a>
+      <a class="article-title" href="/2018/201803/frame_YII30/">PHP_Yii框架 (30)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII8/" class="archive-article-date">
-  	<time datetime="2018-02-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-03</time>
+        <a href="/2018/201803/frame_YII30/" class="archive-article-date">
+  	<time datetime="2018-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前端资源"><a href="#前端资源" class="headerlink" title="前端资源"></a>前端资源</h3><pre><code>Yii中的资源是和Web页面相关的文件,可为CSS文件,JavaScript文件,图片或视频等, 资源放在Web可访问的目录下,直接被Web服务器调用</code></pre>
+        <h3 id="Html助手类"><a href="#Html助手类" class="headerlink" title="Html助手类"></a>Html助手类</h3><pre><code>在视图页面生成相应的html代码</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII8/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII30/#more">more >></a>
         
       
 
@@ -827,7 +812,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII8/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII30/">展开全文 >></a>
         </p>
       
 
@@ -857,35 +842,29 @@
 
 
   
-    <article id="post-2018/201802/frame_YII7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII29" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII7/">PHP_Yii框架 (7)</a>
+      <a class="article-title" href="/2018/201803/frame_YII29/">PHP_Yii框架 (29)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII7/" class="archive-article-date">
-  	<time datetime="2018-02-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-02</time>
+        <a href="/2018/201803/frame_YII29/" class="archive-article-date">
+  	<time datetime="2018-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="小部件"><a href="#小部件" class="headerlink" title="小部件"></a>小部件</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
-<li>小部件是面向对象方式来重用视图代码.</li>
-<li>创建小部件时仍需要遵循MVC模式,通常逻辑代码在小部件类, 展示内容在视图中.</li>
-<li>小部件设计时应是独立的,也就是说使用一个小部件时候, 可以直接丢弃它而不需要额外的处理. </li>
-<li>但是当小部件需要外部资源如CSS, JavaScript, 图片等会比较棘手, 幸运的时候Yii提供 资源包 来解决这个问题.</li>
-<li>当一个小部件只包含视图代码,它和视图很相似, 实际上,在这种情况下,唯一的区别是小部件是可以重用类, 视图只是应用中使用的普通PHP脚本.</li>
-</ul>
+        <h3 id="数组助手类"><a href="#数组助手类" class="headerlink" title="数组助手类"></a>数组助手类</h3><pre><code>更高效地处理数组或者对象</code></pre>
         
-          <a class="article-more-a" href="/2018/201802/frame_YII7/#more">more >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII29/#more">more >></a>
         
       
 
@@ -909,7 +888,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII7/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII29/">展开全文 >></a>
         </p>
       
 
@@ -941,7 +920,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/68/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="page-number" href="/page/68/">68</a><span class="page-number current">69</span><a class="page-number" href="/page/70/">70</a><a class="page-number" href="/page/71/">71</a><span class="space">&hellip;</span><a class="page-number" href="/page/74/">74</a><a class="extend next" rel="next" href="/page/70/">下一页 &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/68/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="page-number" href="/page/68/">68</a><span class="page-number current">69</span><a class="page-number" href="/page/70/">70</a><a class="page-number" href="/page/71/">71</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/70/">下一页 &amp;raquo;</a>
     </nav>
   
 
@@ -1048,10 +1027,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JQ</a>
               </li>
              
@@ -1060,7 +1035,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,15 +1047,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,15 +1067,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,11 +1091,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,7 +1131,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
             
             <div class="clearfix"></div>

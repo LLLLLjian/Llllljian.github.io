@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Python_基础 (47) | Llllljian_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快来跟我一起学DjangoD哈哈哈 之前学的栗子都是水过地皮湿 还是学项目吧！！ python logging模块">
+  <meta name="description" content="快来跟我一起学Django哈哈哈 之前学的栗子都是水过地皮湿 还是学项目吧！！ python logging模块">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python_基础 (47)">
 <meta property="og:url" content="http://yoursite.com/2020/202011/base_Python47/index.html">
 <meta property="og:site_name" content="Llllljian_blog">
-<meta property="og:description" content="快来跟我一起学DjangoD哈哈哈 之前学的栗子都是水过地皮湿 还是学项目吧！！ python logging模块">
+<meta property="og:description" content="快来跟我一起学Django哈哈哈 之前学的栗子都是水过地皮湿 还是学项目吧！！ python logging模块">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-11-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-09T15:21:50.562Z">
+<meta property="article:modified_time" content="2020-11-21T11:42:05.283Z">
 <meta property="article:author" content="Llllljian">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Django">
@@ -79,8 +79,8 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共734篇日志</a>	
-			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">31个标签</a>	
+			<a href="/archives">共756篇日志</a>	
+			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">33个标签</a>	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="快来跟我一起学Django"><a href="#快来跟我一起学Django" class="headerlink" title="快来跟我一起学Django"></a>快来跟我一起学Django</h3><pre><code>D哈哈哈 之前学的栗子都是水过地皮湿 还是学项目吧！！
+        <h3 id="快来跟我一起学Django"><a href="#快来跟我一起学Django" class="headerlink" title="快来跟我一起学Django"></a>快来跟我一起学Django</h3><pre><code>哈哈哈 之前学的栗子都是水过地皮湿 还是学项目吧！！
 python logging模块</code></pre>
 <a id="more"></a>
 
@@ -182,9 +182,66 @@ python logging模块</code></pre>
 <p>logging模块是Python内置的标准模块，主要用于输出运行日志，可以设置输出日志的等级、日志保存路径、日志文件回滚等；相比print，具备如下优点：<br>可以通过设置不同的日志等级，在release版本中只输出重要信息，而不必显示大量的调试信息；<br>print将所有信息都输出到标准输出中，严重影响开发者从标准输出中查看其它数据；logging则可以由开发者决定将信息输出到什么地方，以及怎么输出</p>
 </blockquote>
 <h4 id="logging模块使用"><a href="#logging模块使用" class="headerlink" title="logging模块使用"></a>logging模块使用</h4><ol>
-<li>基本使用 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(level = logging.INFO,format = <span class="string">&#x27;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#x27;</span>)</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">&quot;Start print log&quot;</span>)</span><br><span class="line">logger.debug(<span class="string">&quot;Do something&quot;</span>)</span><br><span class="line">logger.warning(<span class="string">&quot;Something maybe fail.&quot;</span>)</span><br><span class="line">logger.info(<span class="string">&quot;Finish&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
+<li>基本使用 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(level = logging.INFO,format = <span class="string">&#x27;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#x27;</span>)</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">&quot;Start print log&quot;</span>)</span><br><span class="line">logger.debug(<span class="string">&quot;Do something&quot;</span>)</span><br><span class="line">logger.warning(<span class="string">&quot;Something maybe fail.&quot;</span>)</span><br><span class="line">logger.info(<span class="string">&quot;Finish&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行输出</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:24:53,699 - __main__ - INFO - Start print log</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:24:53,699 - __main__ - WARNING - Something maybe fail.</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:24:53,699 - __main__ - INFO - Finish</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将日志等级设置为DEBUG</span></span><br><span class="line"><span class="comment"># logging.basicConfig(level=logging.DEBUG, format=&#x27;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#x27;)</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:28:02,273 - __main__ - INFO - Start print log</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:28:02,274 - __main__ - DEBUG - Do something</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:28:02,274 - __main__ - WARNING - Something maybe fail.</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:28:02,274 - __main__ - INFO - Finish</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将日志具体到行</span></span><br><span class="line"><span class="comment"># logging.basicConfig(level=logging.INFO, format=&#x27;%(asctime)s %(filename)s [line:%(lineno)d] %(levelname)s %(message)s&#x27;)</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:35:27,658 20201109_1.py [line:7] INFO Start print log</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:35:27,658 20201109_1.py [line:9] WARNING Something maybe fail.</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:35:27,658 20201109_1.py [line:10] INFO Finish</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>logging.basicConfig函数各参数<ul>
+<li>filename：指定日志文件名</li>
+<li>filemode：和file函数意义相同，指定日志文件的打开模式，’w’或者’a’；</li>
+<li>format：指定输出的格式和内容，format可以输出很多有用的信息，<ul>
+<li>%(levelno)s：打印日志级别的数值</li>
+<li>%(levelname)s：打印日志级别的名称</li>
+<li>%(pathname)s：打印当前执行程序的路径，其实就是sys.argv[0]</li>
+<li>%(filename)s：打印当前执行程序名</li>
+<li>%(funcName)s：打印日志的当前函数</li>
+<li>%(lineno)d：打印日志的当前行号</li>
+<li>%(asctime)s：打印日志的时间</li>
+<li>%(thread)d：打印线程ID</li>
+<li>%(threadName)s：打印线程名称</li>
+<li>%(process)d：打印进程ID</li>
+<li>%(message)s：打印日志信息</li>
+</ul>
+</li>
+<li>datefmt：指定时间格式，同time.strftime()；</li>
+<li>level：设置日志级别，默认为logging.WARNNING；</li>
+<li>stream：指定将日志的输出流，可以指定输出到sys.stderr，sys.stdout或者文件，默认输出到sys.stderr，当stream和filename同时指定时，stream被忽略；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>将日志写入到文件<ul>
+<li>将日志写入到文件  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level = logging.INFO)</span><br><span class="line">handler = logging.FileHandler(<span class="string">&quot;log.txt&quot;</span>)</span><br><span class="line">handler.setLevel(logging.INFO)</span><br><span class="line">formatter = logging.Formatter(<span class="string">&#x27;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#x27;</span>)</span><br><span class="line">handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">&quot;Start print log&quot;</span>)</span><br><span class="line">logger.debug(<span class="string">&quot;Do something&quot;</span>)</span><br><span class="line">logger.warning(<span class="string">&quot;Something maybe fail.&quot;</span>)</span><br><span class="line">logger.info(<span class="string">&quot;Finish&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># log.txt文件中的内容</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:37:54,777 - __main__ - INFO - Start print log</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:37:54,777 - __main__ - WARNING - Something maybe fail.</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:37:54,777 - __main__ - INFO - Finish</span></span><br></pre></td></tr></table></figure></li>
+<li>将日志同时输出到屏幕和日志文件  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level = logging.INFO)</span><br><span class="line">handler = logging.FileHandler(<span class="string">&quot;log.txt&quot;</span>)</span><br><span class="line">handler.setLevel(logging.INFO)</span><br><span class="line">formatter = logging.Formatter(<span class="string">&#x27;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#x27;</span>)</span><br><span class="line">handler.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">console = logging.StreamHandler()</span><br><span class="line">console.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">logger.addHandler(handler)</span><br><span class="line">logger.addHandler(console)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">&quot;Start print log&quot;</span>)</span><br><span class="line">logger.debug(<span class="string">&quot;Do something&quot;</span>)</span><br><span class="line">logger.warning(<span class="string">&quot;Something maybe fail.&quot;</span>)</span><br><span class="line">logger.info(<span class="string">&quot;Finish&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制台中</span></span><br><span class="line"><span class="comment"># Start print log</span></span><br><span class="line"><span class="comment"># Something maybe fail.</span></span><br><span class="line"><span class="comment"># Finish</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件中</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:39:53,563 - __main__ - INFO - Start print log</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:39:53,563 - __main__ - WARNING - Something maybe fail.</span></span><br><span class="line"><span class="comment"># 2020-11-09 23:39:53,563 - __main__ - INFO - Finish</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li>logging中包含的handler<ul>
+<li>StreamHandler：logging.StreamHandler；日志输出到流，可以是sys.stderr，sys.stdout或者文件</li>
+<li>FileHandler：logging.FileHandler；日志输出到文件</li>
+<li>BaseRotatingHandler：logging.handlers.BaseRotatingHandler；基本的日志回滚方式</li>
+<li>RotatingHandler：logging.handlers.RotatingHandler；日志回滚方式，支持日志文件最大数量和日志文件回滚</li>
+<li>TimeRotatingHandler：logging.handlers.TimeRotatingHandler；日志回滚方式，在一定时间区域内回滚日志文件</li>
+<li>SocketHandler：logging.handlers.SocketHandler；远程输出日志到TCP/IP sockets</li>
+<li>DatagramHandler：logging.handlers.DatagramHandler；远程输出日志到UDP sockets</li>
+<li>SMTPHandler：logging.handlers.SMTPHandler；远程输出日志到邮件地址</li>
+<li>SysLogHandler：logging.handlers.SysLogHandler；日志输出到syslog</li>
+<li>NTEventLogHandler：logging.handlers.NTEventLogHandler；远程输出日志到Windows NT/2000/XP的事件日志</li>
+<li>MemoryHandler：logging.handlers.MemoryHandler；日志输出到内存中的指定buffer</li>
+<li>HTTPHandler：logging.handlers.HTTPHandler；通过”GET”或者”POST”远程输出到HTTP服务器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设置消息的等级<ul>
+<li>可以设置不同的日志等级，用于控制日志的输出，</li>
+<li>日志等级：使用范围<ul>
+<li>FATAL：致命错误</li>
+<li>CRITICAL：特别糟糕的事情，如内存耗尽、磁盘空间为空，一般很少使用</li>
+<li>ERROR：发生错误时，如IO操作失败或者连接问题</li>
+<li>WARNING：发生很重要的事件，但是并不是错误时，如用户登录密码错误</li>
+<li>INFO：处理请求或者状态变化等日常事务</li>
+<li>DEBUG：调试过程中使用DEBUG等级，如算法中每个循环的中间状态</li>
+</ul>
+</li>
+</ul>
 </li>
 </ol>
 
@@ -273,6 +330,15 @@ python logging模块</code></pre>
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/202011/base_Python48/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python_基础 (48)
+        
+      </div>
+    </a>
   
   
     <a href="/2020/202011/base_Docker02/" id="article-nav-older" class="article-nav-link-wrap">
@@ -427,10 +493,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JQ</a>
               </li>
              
@@ -439,7 +501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,15 +513,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,15 +533,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,11 +557,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,7 +597,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
             
             <div class="clearfix"></div>

@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### 学习笔记
-1. Docker 以 ubuntu15.10 镜像创建一个新容器，然后在容器里执行 bin/echo "Hello world"，然后输出结果
+1. Docker 以 ubuntu15.10 镜像创建一个新容器,然后在容器里执行 bin/echo "Hello world",然后输出结果
     ```bash
         docker run ubuntu:15.10 /bin/echo "Hello world"
     ```

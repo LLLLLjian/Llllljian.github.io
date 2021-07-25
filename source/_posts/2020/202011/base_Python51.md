@@ -43,7 +43,7 @@ toc: true
     ```python
         # 添加商家
         >>> from blog.models import Store
-        >>> Store.objects.create(s_name="商家A", s_detail="物美价廉，抄底折扣。。。。")
+        >>> Store.objects.create(s_name="商家A", s_detail="物美价廉,抄底折扣....")
         <Store: Store object (1)>
         >>> >>> Store(s_name="商家B", s_detail="大促销").save()
 
@@ -67,11 +67,11 @@ toc: true
 
         # 创建商家D添加指定分类
         store = Store.objects.create(s_name="商家D")
-        category = Category.objects.filter(c_name__in=["电脑整机","文具耗材"])#单个改成get，全部改成all
+        category = Category.objects.filter(c_name__in=["电脑整机","文具耗材"])#单个改成get,全部改成all
         store.sc.add(*category)#add是追加模式
         store.sc.clear()#清空此商家的商品
 
-        # 让指定商品分类添加指定的商家，反向查询
+        # 让指定商品分类添加指定的商家,反向查询
         store = Store.objects.create(s_name="商家E")
         category = Category.objects.get(c_name="电脑整机")
         category.store_set.add(store)
@@ -83,7 +83,7 @@ toc: true
 
         category.store_set.clear()# 让所有商家去除这个分类
         category.store_set.all().delete()# 是删除store_set的所有商家
-        # 只有子表才有"子表名小写_set"的写法，得到的是一个QuerySet集合，后边可以接.add(),.remove(),.update(),.delete(),.clear()
+        # 只有子表才有"子表名小写_set"的写法,得到的是一个QuerySet集合,后边可以接.add(),.remove(),.update(),.delete(),.clear()
     ```
 - GET
     ```python

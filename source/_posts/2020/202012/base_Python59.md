@@ -14,13 +14,13 @@ toc: true
 <!-- more -->
 
 #### 方法定义
-    ![request.post](/img/20201209_1.png)
+![request.post](/img/20201209_1.png)
 
 #### 源码
-    ![request.post](/img/20201209_2.png)
+![request.post](/img/20201209_2.png)
 
 #### 常用返回信息
-    ![request.post](/img/20201209_3.png)
+![request.post](/img/20201209_3.png)
 
 #### post方法简单使用
 1. 带数据的post
@@ -121,7 +121,7 @@ toc: true
         endpoint = "post"
         
         url = ''.join([host,endpoint])
-        #自定义文件名，文件类型、请求头
+        #自定义文件名,文件类型、请求头
         files = {
             'file':(
                 'test.png',

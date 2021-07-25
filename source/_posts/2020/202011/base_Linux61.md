@@ -32,7 +32,7 @@ toc: true
         # @Desc 此脚本用于获取一个指定区间且未被占用的随机端口号
 
         PORT=0
-        #判断当前端口是否被占用，没被占用返回0，反之1
+        #判断当前端口是否被占用,没被占用返回0,反之1
         function Listening
         {
         TCPListeningnum=`netstat -an | grep ":$1 " | awk '$1 == "tcp" && $NF == "LISTEN" {print $0}' | wc -l`
@@ -69,7 +69,7 @@ toc: true
 
 #### 免密登陆
 - 目标
-    * 就是为了让两个linux机器之间使用ssh不需要用户名和密码。采用了数字签名RSA或者DSA来完成这个操作
+    * 就是为了让两个linux机器之间使用ssh不需要用户名和密码.采用了数字签名RSA或者DSA来完成这个操作
 - 步骤
     1. 主机生成公钥 ssh-keygen -t rsa -P ''一路回车
     2. ssh-copy-id -i .ssh/id_rsa.pub  user_name@target_machine_ip
@@ -79,8 +79,8 @@ toc: true
             chmod 700 -R .ssh
         ```
 - 总结注意事项
-1. 文件和目录的权限千万别设置成chmod 777.这个权限太大了，不安全，数字签名也不支持。我开始图省事就这么干了
-2. 生成的rsa/dsa签名的公钥是给对方机器使用的。这个公钥内容还要拷贝到authorized_keys
+1. 文件和目录的权限千万别设置成chmod 777.这个权限太大了,不安全,数字签名也不支持.我开始图省事就这么干了
+2. 生成的rsa/dsa签名的公钥是给对方机器使用的.这个公钥内容还要拷贝到authorized_keys
 3. linux之间的访问直接 ssh 机器ip
-4. 某个机器生成自己的RSA或者DSA的数字签名，将公钥给目标机器，然后目标机器接收后设定相关权限（公钥和authorized_keys权限），这个目标机就能被生成数字签名的机器无密码访问了
+4. 某个机器生成自己的RSA或者DSA的数字签名,将公钥给目标机器,然后目标机器接收后设定相关权限(公钥和authorized_keys权限),这个目标机就能被生成数字签名的机器无密码访问了
 

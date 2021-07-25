@@ -17,7 +17,7 @@ toc: true
     * Django 确定使用根 URLconf 模块.通常, 这是 ROOT_URLCONF 设置的值, 但如果传入 HttpRequest 对象拥有 urlconf 属性(通过中间件设置), 它的值将被用来代替 ROOT_URLCONF 设置.
     * Django 加载该 Python 模块并寻找可用的 urlpatterns .它是 django.urls.path() 和(或) django.urls.re_path() 实例的序列(sequence).
     * Django 会按顺序遍历每个 URL 模式, 然后会在所请求的URL匹配到第一个模式后停止, 并与 path_info 匹配.
-    * 一旦有 URL 匹配成功, Djagno 导入并调用相关的视图, 这个视图是一个Python 函数(或基于类的视图 class-based view ).视图会获得如下参数：
+    * 一旦有 URL 匹配成功, Django 导入并调用相关的视图, 这个视图是一个Python 函数(或基于类的视图 class-based view ).视图会获得如下参数：
         * 一个 HttpRequest 实例.
         * 如果匹配的 URL 包含未命名组, 那么来自正则表达式中的匹配项将作为位置参数提供.
         * 关键字参数由路径表达式匹配的任何命名部分组成, 并由 django.urls.path() 或 django.urls.re_path() 的可选 kwargs 参数中指定的任何参数覆盖.

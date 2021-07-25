@@ -30,7 +30,7 @@ toc: true
 #### 为了这些我做的准备
 1. 蠢办法
     * 获取->验证->抛异常->返回code
-    * 很好理解，但代码很多
+    * 很好理解,但代码很多
 2. 利用form.valid
     ```python
         from django.core.exceptions import ValidationError
@@ -45,7 +45,7 @@ toc: true
                 用户名正则
                 """
                 validators=[
-                    RegexValidator(r'^[a-zA-Z]{1}[a-z0-9A-Z-_]{5,20}$', "请输入用户名！支持大小写字母、数字、-、_字符，必须以字母开头，长度6-20")
+                    RegexValidator(r'^[a-zA-Z]{1}[a-z0-9A-Z-_]{5,20}$', "请输入用户名！支持大小写字母、数字、-、_字符,必须以字母开头,长度6-20")
                 ],
                 error_messages={
                     "required": "用户名不能为空",
@@ -56,7 +56,7 @@ toc: true
                 密码正则
                 """
                 validators=[
-                    RegexValidator(r'^[a-z0-9A-Z-_]{6,}$', "请输入密码！支持大小写字母、数字、-、_字符，最少6个字符")
+                    RegexValidator(r'^[a-z0-9A-Z-_]{6,}$', "请输入密码！支持大小写字母、数字、-、_字符,最少6个字符")
                 ],
                 error_messages={
                     "required": "密码不能为空",
@@ -67,7 +67,7 @@ toc: true
                 确认密码正则
                 """
                 validators=[
-                    RegexValidator(r'^[a-z0-9A-Z-_]{6,}$', "请再次输入确认密码！支持大小写字母、数字、-、_字符，最少6个字符")
+                    RegexValidator(r'^[a-z0-9A-Z-_]{6,}$', "请再次输入确认密码！支持大小写字母、数字、-、_字符,最少6个字符")
                 ],
                 error_messages={
                     "required": "确认密码不能为空",
@@ -110,7 +110,7 @@ toc: true
             """
             username = forms.CharField(
                 validators=[
-                    RegexValidator(r'^[a-zA-Z]{1}[a-z0-9A-Z-_]{5,20}$', "请输入用户名！支持大小写字母、数字、-、_字符，必须以字母开头，长度6-20")
+                    RegexValidator(r'^[a-zA-Z]{1}[a-z0-9A-Z-_]{5,20}$', "请输入用户名！支持大小写字母、数字、-、_字符,必须以字母开头,长度6-20")
                 ],
                 error_messages={
                     "required": "用户名不能为空",
@@ -118,7 +118,7 @@ toc: true
             )
             password = forms.CharField(
                 validators=[
-                    RegexValidator(r'^[a-z0-9A-Z-_]{6,}$', "请输入密码！支持大小写字母、数字、-、_字符，最少6个字符")
+                    RegexValidator(r'^[a-z0-9A-Z-_]{6,}$', "请输入密码！支持大小写字母、数字、-、_字符,最少6个字符")
                 ],
                 error_messages={
                     "required": "密码不能为空",

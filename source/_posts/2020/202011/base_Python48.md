@@ -17,8 +17,8 @@ toc: true
 > 啊 写完接口要自己跑单元测试, 懵了懵了 好不容易复制粘贴了14个 感觉太蠢了 经同事大哥指点 准备重新看一下这块
 
 #### TestCase类的结构
-> 常见的TestCase由setUp函数、tearDown函数和test_func组成。
-这里test_func是指你编写了测试逻辑的函数，而setUp函数则是在test_func函数之前执行的函数，tearDown函数则是在test_func执行之后执行的函数
+> 常见的TestCase由setUp函数、tearDown函数和test_func组成.
+这里test_func是指你编写了测试逻辑的函数,而setUp函数则是在test_func函数之前执行的函数,tearDown函数则是在test_func执行之后执行的函数
 - demo
     ```python
         from django.test import TestCase
@@ -54,7 +54,7 @@ toc: true
             url = reverse('hello_test_case')
         ```
 - 请求的客户端
-    * Django在它的TestCase类 中已经集成了一个客户端工具，我们只需要调用TestCase的client属性就可以得到一个客户端
+    * Django在它的TestCase类 中已经集成了一个客户端工具,我们只需要调用TestCase的client属性就可以得到一个客户端
     * client = self.client
 - 发起请求
     * response = self.client.get(url)

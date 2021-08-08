@@ -22,7 +22,7 @@ toc: true
     * Pod 的调度: 这台“机器”运行在哪个服务器之上
 - Pod重要字段的含义和用法
     * NodeSelector: 是一个供用户将 Pod 与 Node 进行绑定的字段
-        ```bash
+        ```yaml
             # 这样的一个配置,意味着这个 Pod 永远只能运行在携带了“disktype: ssd”标签(Label)的节点 上;否则,它将调度失败.
             apiVersion: v1
             kind: Pod
@@ -87,7 +87,7 @@ toc: true
             0:00 ps ax
         ```
     * Lifecycle: 它定义的是 Container Lifecycle Hooks.顾名思义,Container Lifecycle Hooks 的作用,是在容器状态发生变化时触发一系列“钩子”.
-        ```bash
+        ```yaml
             apiVersion: v1
             kind: Pod
             metadata:

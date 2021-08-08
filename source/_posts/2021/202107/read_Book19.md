@@ -15,7 +15,7 @@ toc: true
 
 #### 编排其实很简单:谈谈“控制器”模型
 - 回顾nginx-deployment
-    ````bash
+    ````yaml
         # 确保携带了 app=nginx 标签的 Pod 的个数,永 远等于 spec.replicas 指定的个数,即 2 个.
         apiVersion: apps/v1
         kind: Deployment

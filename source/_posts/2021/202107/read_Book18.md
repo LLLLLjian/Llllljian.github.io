@@ -68,7 +68,7 @@ toc: true
         $ cat /projected-volume/pass
         c1oudc0w!
     ```
-    ```bash
+    ```yaml
         # 创建secret方法2
         apiVersion: v1
         kind: Secret
@@ -161,7 +161,7 @@ toc: true
 ##### 容器健康检查
 > 在 Kubernetes 中,你可以为 Pod 里的容器定义一个健康检查“探针”(Probe).这样, kubelet 就会根据这个 Probe 的返回值决定这个容器的状态,而不是直接以容器进行是否运行(来 自 Docker 返回的信息)作为依据.这种机制,是生产环境中保证应用健康存活的重要手段.
 - eg
-    ```bash
+    ```yaml
         apiVersion: v1
         kind: Pod
         metadata:

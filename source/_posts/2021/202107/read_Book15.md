@@ -38,7 +38,7 @@ toc: true
 - Kubernetes 项目如何启动一个容器化任务呢
     * 如果是自己 DIY 的话,可能需要启动两台虚拟机,分别安装两个 Nginx,然后使用 keepalived 为这两个虚拟机做一个虚拟 IP.
     * 而如果使用 Kubernetes 项目呢?你需要做的则是编写如下这样一个 YAML 文件(比如名叫 nginx-deployment.yaml)
-        ```bash
+        ```yaml
             # nginx-deployment.yaml
             # 定义了一个 Deployment 对象,它的主体部分(spec.template 部分)是一个使用 Nginx 镜像的 Pod,而这个 Pod 的副本数是 2(replicas=2)
             apiVersion: apps/v1

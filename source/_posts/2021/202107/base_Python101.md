@@ -44,7 +44,7 @@ toc: true
 - 移除job
     * func1
         ```python
-            # remove_job()是根据job的id来移除，所以要在job创建的时候指定一个id
+            # remove_job()是根据job的id来移除, 所以要在job创建的时候指定一个id
             scheduler.add_job(job_func, 'interval', minutes=2, id='job_one')
             scheduler.remove_job(job_one)
         ```
@@ -72,7 +72,7 @@ toc: true
             job.modify(minutes=5)
         ```
 - 关闭job
-    * 默认情况下调度器会等待所有正在运行的作业完成后，关闭所有的调度器和作业存储。如果你不想等待，可以将 wait 选项设置为 False。
+    * 默认情况下调度器会等待所有正在运行的作业完成后, 关闭所有的调度器和作业存储.如果你不想等待, 可以将 wait 选项设置为 False.
     * eg
         ```python
             scheduler.shutdown()

@@ -38,7 +38,7 @@ Pod 是 Kubernetes 里的原子调度单 位.这就意味着,Kubernetes 项目�
             * 一种方法是,把 WAR 包直接放在 Tomcat 镜像的 webapps 目录下,做成一个新的镜像运行起 来.可是,这时候,如果你要更新 WAR 包的内容,或者要升级 Tomcat 镜像,就要重新制作一 个新的发布镜像,非常麻烦.
             * 另一种方法是,你压根儿不管 WAR 包,永远只发布一个 Tomcat 容器.不过,这个容器的 webapps 目录,就必须声明一个 hostPath 类型的 Volume,从而把宿主机上的 WAR 包挂载进 Tomcat 容器当中运行起来.不过,这样你就必须要解决一个问题,即:如何让每一台宿主机, 都预先准备好这个存储有 WAR 包的目录呢?这样来看,你只能独立维护一套分布式存储系统了.
         * 解决方案
-            ```bash
+            ```yaml
                 apiVersion: v1
                 kind: Pod
                 metadata:

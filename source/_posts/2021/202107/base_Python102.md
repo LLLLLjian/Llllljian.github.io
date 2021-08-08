@@ -12,7 +12,7 @@ toc: true
 <!-- more -->
 
 #### 调度器事件
-> 调度器允许添加事件侦听器。部分事件会有特有的信息，比如当前运行次数等。add_listener(callback,mask)中，第一个参数是回调对象，mask是指定侦听事件类型，mask参数也可以是逻辑组合。回调对象会有一个参数就是触发的事件。
+> 调度器允许添加事件侦听器.部分事件会有特有的信息, 比如当前运行次数等.add_listener(callback,mask)中, 第一个参数是回调对象, mask是指定侦听事件类型, mask参数也可以是逻辑组合.回调对象会有一个参数就是触发的事件.
 - eg
     ```python
         def my_listener(event):
@@ -27,7 +27,7 @@ toc: true
         def my_listener1(event):
             print("events: %s is running and maybe hang out, new task can't start" % str(event.job_id))
 
-        # 当任务执行完或任务出错时，调用my_listener
+        # 当任务执行完或任务出错时, 调用my_listener
         scheduler.add_listener(
             my_listener,
             EVENT_JOB_EXECUTED | EVENT_JOB_ERROR | EVENT_JOB_SUBMITTED

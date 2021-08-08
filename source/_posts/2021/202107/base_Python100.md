@@ -13,7 +13,7 @@ toc: true
 
 #### 触发器
 - date触发器
-    * date是最基本的一种调度，作业任务只会执行一次。它表示特定的时间点触发
+    * date是最基本的一种调度, 作业任务只会执行一次.它表示特定的时间点触发
     * 参数
         * run_date (datetime 或 str): 作业的运行日期或时间
         * timezone (datetime.tzinfo 或 str): 指定时区
@@ -64,9 +64,9 @@ toc: true
             scheduler.start()
         ```
 - cron触发器
-    * 在特定时间周期性地触发，和Linux crontab格式兼容。它是功能最强大的触发器
+    * 在特定时间周期性地触发, 和Linux crontab格式兼容.它是功能最强大的触发器
     * 参数
-        * year (int 或 str): 年，4位数字
+        * year (int 或 str): 年, 4位数字
         * month (int 或 str): 月 (范围1-12)
         * day (int 或 str): 日 (范围1-31
         * week (int 或 str): 周 (范围1-53)

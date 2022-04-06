@@ -48,7 +48,7 @@ toc: true
     * 区别在于, replica set引入了对基于子集的selector查询条件, 而replication controller仅支持基于值相等的selector条件查询
 - configMap
     * ConfigMap是存储通用的配置变量的, 类似于配置文件, 使用户可以将分布式系统中用于不同模块的环境变量统一到一个对象中管理；而它与配置文件的区别在于它是存在集群的“环境”中的, 并且支持K8S集群中所有通用的操作调用方式.从数据角度来看, ConfigMap的类型只是键值组, 用于存储被Pod或者其他资源对象(如RC)访问的信息.这与secret的设计理念有异曲同工之妙, 主要区别在于ConfigMap通常不用于存储敏感信息, 而只存储简单的文本信息
-    * 创建pod时, 对configmap进行绑定, pod内的应用可以直接引用ConfigMap的配置.相当于configmap为应用/运行环境封装配置.pod使用ConfigMap, 通常用于：设置环境变量的值、设置命令行参数、创建配置文件.
+    * 创建pod时, 对configmap进行绑定, pod内的应用可以直接引用ConfigMap的配置.相当于configmap为应用/运行环境封装配置.pod使用ConfigMap, 通常用于: 设置环境变量的值、设置命令行参数、创建配置文件.
     * 创建configMap
         ```bash
             [llllljian@llllljian-virtual-machine configmap]$ ll

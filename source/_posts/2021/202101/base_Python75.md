@@ -26,7 +26,7 @@ toc: true
 4. HttpRequest.path_info
     * 获取具有 URL 扩展名的资源的附加路径信息.相对于HttpRequest.path,使用该方法便于移植.
 5. HttpRequest.method
-    * 获取该请求的方法,比如：GET/POST
+    * 获取该请求的方法,比如: GET/POST
 6. HttpRequest.encoding
     * 获取请求中表单提交数据的编码
 7. HttpRequest.content_type

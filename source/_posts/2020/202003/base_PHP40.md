@@ -26,7 +26,7 @@ toc: true
     function my_func(){ /* ... */ }
     class my_class { /* ... */ }
 
-    // 最终MY_CONST、my_func、my_class在EG(zend_constants)、EG(function_table)、EG(class_table)中的实际存储名称被修改为：com\aa\MY_CONST、com\aa\my_func、com\aa\my_class.
+    // 最终MY_CONST、my_func、my_class在EG(zend_constants)、EG(function_table)、EG(class_table)中的实际存储名称被修改为: com\aa\MY_CONST、com\aa\my_func、com\aa\my_class.
 ```
 
 

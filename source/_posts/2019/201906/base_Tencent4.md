@@ -6,7 +6,7 @@ tags:
     - Linux
     - Wechat
     - ThinkPHP
-    - Mongo
+    - MongoDB
 toc: true
 ---
 

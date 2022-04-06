@@ -179,13 +179,13 @@ toc: true
         * 第一次循环时,$var的内容为con1
         * 第二次循环时,$var的内容为con2
         * 第三次循环时,$var的内容为con3
-        * 列表生成方式： 
+        * 列表生成方式:  
             * 直接给出列表 
-            * 整数列表： 
+            * 整数列表:  
                 * {start..end}
                 * $(seq [start [step]] end) 
             * 返回列表的命令 $(COMMAND) 
-            * 使用glob,如：*.sh 
+            * 使用glob,如: *.sh 
             * 变量引用； $@, $*
     * 实例
         ```bash

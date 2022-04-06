@@ -23,14 +23,14 @@ toc: true
 
         f1  =  open("hello.txt","r")
         content = f1.read()
-        print("输出文件内容：\n",content)      #输出文件内容
+        print("输出文件内容: \n",content)      #输出文件内容
         count = len(re.findall("hello",content)) 
         #re.findall()返回的是一个列表
 
         print("re.findall()的返回值: ",re.findall("hello",content))
         print("共有{}个hello".format(count))
         [llllljian@llllljian-cloud-tencent python 18:05:07 #21]$ python3.5 fileSearch.py
-        输出文件内容：
+        输出文件内容: 
         hello world
         hello python
         hello China

@@ -69,7 +69,7 @@ toc: true
                 echo "\n";
             }
             
-            输出结果：
+            输出结果: 
             string(18) "myIterator::rewind"
             string(17) "myIterator::valid"
             string(19) "myIterator::current"
@@ -133,7 +133,7 @@ toc: true
                 }
             }
             
-            对该类测试使用：
+            对该类测试使用: 
             $obj = new obj;
             var_dump(isset($obj["two"]));
             var_dump($obj["two"]);

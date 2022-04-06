@@ -49,14 +49,14 @@ toc: true
     * timeout 300
         * 当客户端闲置多长时间后关闭连接,如果指定为0,表示关闭该功能
     * loglevel verbose
-        * 指定日志记录级别,Redis总共支持四个级别：debug、verbose、notice、warning,默认为verbose
+        * 指定日志记录级别,Redis总共支持四个级别: debug、verbose、notice、warning,默认为verbose
     * logfile stdout
         * 日志记录方式,默认为标准输出,如果配置Redis为守护进程方式运行,而这里又配置为日志记录方式为标准输出,则日志将会发送给/dev/null
     * databases 16
         * 设置数据库的数量,默认数据库为0,可以使用SELECT <dbid>命令在连接上指定数据库id
     * save <seconds> <changes>
         * 指定在多长时间内,有多少次更新操作,就将数据同步到数据文件,可以多个条件配合
-        * Redis默认配置文件中提供了三个条件：
+        * Redis默认配置文件中提供了三个条件: 
         * save 900 1 表示900秒(15分钟)内有1个更改
         * save 300 10 表示300秒(5分钟)内有10个更改
         * save 60 10000 表示60秒内有10000个更改
@@ -81,10 +81,10 @@ toc: true
     * appendfilename appendonly.aof
         * 指定更新日志文件名,默认为appendonly.aof
     * appendfsync everysec
-        * 指定更新日志条件,共有3个可选值： 
-        * no：表示等操作系统进行数据缓存同步到磁盘(快) 
-        * always：表示每次更新操作后手动调用fsync()将数据写到磁盘(慢,安全) 
-        * everysec：表示每秒同步一次(折衷,默认值)
+        * 指定更新日志条件,共有3个可选值:  
+        * no: 表示等操作系统进行数据缓存同步到磁盘(快) 
+        * always: 表示每次更新操作后手动调用fsync()将数据写到磁盘(慢,安全) 
+        * everysec: 表示每秒同步一次(折衷,默认值)
     * vm-enabled no
         * 指定是否启用虚拟内存机制,默认值为no,简单的介绍一下,VM机制将数据分页存放,由Redis将访问量较少的页即冷数据swap到磁盘上,访问多的页面由磁盘自动换出到内存中(在后面的文章我会仔细分析Redis的VM机制)
     * vm-swap-file /tmp/redis.swap

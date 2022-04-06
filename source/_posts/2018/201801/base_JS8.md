@@ -8,7 +8,7 @@ toc: true
 ## BOM基本操作
 
 ### BOM含义
-    浏览器对象模型(BOM)：与浏览器交互的方法和接口
+    浏览器对象模型(BOM): 与浏览器交互的方法和接口
     Browser Object Model
     BOM 是为了操作浏览器出现的 API,window 是其的一个对象.
 
@@ -75,7 +75,7 @@ toc: true
     * Window.external
 
 ### history历史对象
-- length ：返回浏览过的页面数
+- length : 返回浏览过的页面数
 - back() : 返回前一个URL
 - forward() : 返回下一个URL
 - go(i) : 返回某个具体的页面

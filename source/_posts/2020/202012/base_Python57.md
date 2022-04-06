@@ -28,7 +28,7 @@ toc: true
     ```
 
 #### Paramiko介绍
-> paramiko包含两个核心组件：SSHClient和SFTPClient.
+> paramiko包含两个核心组件: SSHClient和SFTPClient.
 1. SSHClient
     * SSHClient的作用类似于Linux的ssh命令,是对SSH会话的封装,该类封装了传输(Transport),通道(Channel)及SFTPClient建立的方法(open_sftp),通常用于执行远程命令.
 2. SFTPClient
@@ -127,7 +127,7 @@ toc: true
     * 创建一个已连通的SFTP客户端通道
 2. put(localpath, remotepath, callback=None, confirm=True)
     * 将本地文件上传到服务器
-    * 参数confirm：是否调用stat()方法检查文件状态,返回ls -l的结果
+    * 参数confirm: 是否调用stat()方法检查文件状态,返回ls -l的结果
 3. get(remotepath, localpath, callback=None)
     * 从服务器下载文件到本地
 4. mkdir()

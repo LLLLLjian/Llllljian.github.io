@@ -44,24 +44,24 @@ toc: true
     ```sql
         # 假设表叫做mm_account.
         
-        # ID连续的情况下(注意不能带where, 否则结果不好)：
+        # ID连续的情况下(注意不能带where, 否则结果不好): 
         SELECT *
         FROM `mm_account` AS t1 
         JOIN (SELECT ROUND(RAND() * (SELECT MAX(id) FROM `mm_account`)) AS id) AS t2
         WHERE t1.id >= t2.id
         ORDER BY t1.id ASC LIMIT 4;
         
-        # ID不连续的情况下：
+        # ID不连续的情况下: 
         SELECT * FROM `mm_account` 
         WHERE id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM `mm_account`)))  and city="city_91" and showSex=1
         ORDER BY id LIMIT 4;
         
-        # 如果有一个字段叫id, 最快的方法如下(随机获取5条)：
+        # 如果有一个字段叫id, 最快的方法如下(随机获取5条): 
         SELECT * FROM mm_account 
         WHERE id >= ((SELECT MAX(id) FROM mm_account)-(SELECT MIN(id) FROM mm_account)) * RAND() + (SELECT MIN(id) FROM mm_account)
         limit 5;
         
-        # 如果带where语句, 上面就不适合了, 带where语句请看下面：
+        # 如果带where语句, 上面就不适合了, 带where语句请看下面: 
         SELECT *
         FROM `mm_account` AS t1 JOIN (SELECT ROUND(RAND() * (
         (SELECT MAX(id) FROM `mm_account` where id<1000 )-(SELECT MIN(id) FROM `mm_account` where id<1000 ))+(SELECT MIN(id) FROM `mm_account` where id<1000 )) AS id) AS t2

@@ -43,7 +43,7 @@ toc: true
     * $2:这个变量包含第二个字段的文本内容
 4. eg
     ```bash
-        [root@gzns-store-sandbox009 master]# echo -e "line1 f2 f3\nline2 f4 f5\nline3 f6 f7" | awk '{ print "Line no:"NR",No of fields:"NF, "$0="$0, "$1="$1,"$2="$2,"$3="$3}'
+        [root@xxxxxx master]# echo -e "line1 f2 f3\nline2 f4 f5\nline3 f6 f7" | awk '{ print "Line no:"NR",No of fields:"NF, "$0="$0, "$1="$1,"$2="$2,"$3="$3}'
         Line no:1,No of fields:3 $0=line1 f2 f3 $1=line1 $2=f2 $3=f3
         Line no:2,No of fields:3 $0=line2 f4 f5 $1=line2 $2=f4 $3=f5
         Line no:3,No of fields:3 $0=line3 f6 f7 $1=line3 $2=f6 $3=f7

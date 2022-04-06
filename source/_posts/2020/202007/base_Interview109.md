@@ -17,24 +17,24 @@ toc: true
     * 不能, master进程被杀掉之后, worker进程也随之消失, 再访问php文件返回502
 - 问题扩展
     * Fpm的master进程
-        > 作为一种多进程的模型, Fpm由一个master进程加多个worker进程组成.当master进程启动时, 会创建一个socket, 但是他本身并不接收/处理请求.他会fork出子进程来完成请求的接收和处理.所以, master的主要职责是管理worker进程, 比如fork出worker进程, 或者kill掉worker进程.master进程通过共享内存的方式来读取worker进程的状态信息, 包括：worker进程当前状态, worker进程已经处理的请求数量等等.master进程会通过发送信号的方式来kill掉worker进程.
+        > 作为一种多进程的模型, Fpm由一个master进程加多个worker进程组成.当master进程启动时, 会创建一个socket, 但是他本身并不接收/处理请求.他会fork出子进程来完成请求的接收和处理.所以, master的主要职责是管理worker进程, 比如fork出worker进程, 或者kill掉worker进程.master进程通过共享内存的方式来读取worker进程的状态信息, 包括: worker进程当前状态, worker进程已经处理的请求数量等等.master进程会通过发送信号的方式来kill掉worker进程.
     * Fpm的worker进程
-        > Fpm中的worker进程的主要工作是处理请求.每个worker进程会竞争Accept请求, 接收成功的那一个来处理本次请求.请求处理完毕后又重新进入等待状态.此处需要注意的是：一个worker进程在同一时刻只能处理一个请求.这与Nginx的事件驱动模型有很大的区别.Nginx的子进程使用epoll来管理socket, 当一个请求的数据还未发送完成的话他就会处理下一个请求, 即同一时刻, 一个子进程会连接多个请求.而Fpm的这种子进程处理方式则大大简化了PHP的资源管理, 使得在Fpm模式下我们不需要考虑并发导致的资源冲突.
+        > Fpm中的worker进程的主要工作是处理请求.每个worker进程会竞争Accept请求, 接收成功的那一个来处理本次请求.请求处理完毕后又重新进入等待状态.此处需要注意的是: 一个worker进程在同一时刻只能处理一个请求.这与Nginx的事件驱动模型有很大的区别.Nginx的子进程使用epoll来管理socket, 当一个请求的数据还未发送完成的话他就会处理下一个请求, 即同一时刻, 一个子进程会连接多个请求.而Fpm的这种子进程处理方式则大大简化了PHP的资源管理, 使得在Fpm模式下我们不需要考虑并发导致的资源冲突.
     * PHP-FPM的三种模式
         * pm=static : 始终保持固定数量的worker进程数, 由pm.max_children决定
         * pm=dynamic 
             1. php-fpm启动时, 会初始启动一些worker, 初始启动worker数决定于pm.max_children的值.在运行过程中动态调整worker数量, worker的数量受限于pm.max_children配置, 同时受限全局配置process.max.
             2. 1秒定时器作用, 检查空闲worker数量, 按照一定策略动态调整worker数量, 增加或减少.增加时, worker最大数量<=max_children· <=全局process.max；减少时, 只有idle >pm.max_spare_servers时才会关闭一个空闲worker.
             3. 优缺点
-                * 优点：动态扩容, 不浪费系统资源
-                * 缺点：如果所有worker都在工作, 新的请求到来只能等待master在1秒定时器内再新建一个worker, 这时可能最长等待1s
+                * 优点: 动态扩容, 不浪费系统资源
+                * 缺点: 如果所有worker都在工作, 新的请求到来只能等待master在1秒定时器内再新建一个worker, 这时可能最长等待1s
         * pm=ondemand
             * php-fpm启动的时候, 不会启动任何一个worker, 而是按需启动, 只有当连接过来的时候才会启动.
             * 启动的最大worker数决定于pm.max_children的值, 同时受限全局配置process.max.
             * 1秒定时器作用, 如果空闲worker时间超过pm.process_idle_timeout的值(默认值为10s), 则关闭该worker.这个机制可能会关闭所有的worker
             * 优缺点
-                * 优点：按流量需求创建, 不浪费系统资源
-                * 缺点：由于php-fpm是短连接的, 所以每次请求都会先建立连接, 频繁的创建worker会浪费系统开销.所以, 在大流量的系统上, master进程会变得繁忙, 占用系统cpu资源, 不适合大流量环境的部署.
+                * 优点: 按流量需求创建, 不浪费系统资源
+                * 缺点: 由于php-fpm是短连接的, 所以每次请求都会先建立连接, 频繁的创建worker会浪费系统开销.所以, 在大流量的系统上, master进程会变得繁忙, 占用系统cpu资源, 不适合大流量环境的部署.
 
 #### Nginx日志分析及性能排查
 - 获取访问的PV数量
@@ -60,10 +60,10 @@ toc: true
 
 #### 代理与反向代理
 > 现实生活中的例子
-1. 正向代理：访问google.com
+1. 正向代理: 访问google.com
     * google.com -> vpn -> google.com
     * 对于人来说可以感知到,但服务器感知不到的服务器,我们叫他正向代理服务器
-2. 反向代理：通过反向代理实现负载均衡
+2. 反向代理: 通过反向代理实现负载均衡
     * baidu.com -> 反向代理服务器 -> 不同的服务器上
     * 对于人来说不可感知,但对于服务器来说是可以感知的,我们叫他反向代理服务器
 

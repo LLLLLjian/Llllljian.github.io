@@ -13,9 +13,9 @@ toc: true
 <!-- more -->
 
 #### 视图View
-> 在Django MTV模式中, View视图负责业务逻辑部分, 路由系统接收到HTTP请求, 并将任务分配给相应的视图函数, 由视图函数来负责响应这个请求.无论视图本身包含什么逻辑, 都要返回响应.其中HTTP请求中产生两个核心对象(django.http)：
-    HTTP请求：HttpRequest对象
-    HTTP响应：HttpResponse对象
+> 在Django MTV模式中, View视图负责业务逻辑部分, 路由系统接收到HTTP请求, 并将任务分配给相应的视图函数, 由视图函数来负责响应这个请求.无论视图本身包含什么逻辑, 都要返回响应.其中HTTP请求中产生两个核心对象(django.http): 
+    HTTP请求: HttpRequest对象
+    HTTP响应: HttpResponse对象
 - HttpRequest对象的属性和方法
     ```python
         # 相关属性
@@ -35,17 +35,17 @@ toc: true
         # if request.POST 来判断是否使用了HTTP POST 方法；应该使用  if request.method == "POST"
         
         request.COOKIES     # 包含所有cookies的标准Python字典对象；keys和values都是字符串.
-        FILES：      # 包含所有上传文件的类字典对象；FILES中的每一个Key都是<input type="file" name="" />标签中name属性的值, FILES中的每一个value同时也是一个标准的python字典对象, 包含下面三个Keys：
-            filename：     # 上传文件名, 用字符串表示
+        FILES:       # 包含所有上传文件的类字典对象；FILES中的每一个Key都是<input type="file" name="" />标签中name属性的值, FILES中的每一个value同时也是一个标准的python字典对象, 包含下面三个Keys: 
+            filename:      # 上传文件名, 用字符串表示
             content_type:  # 上传文件的Content Type
-            content：      # 上传文件的原始内容
+            content:       # 上传文件的原始内容
         
         request.user       # 是一个django.contrib.auth.models.User对象, 代表当前登陆的用户.如果访问用户当前没有登陆, user将被初始化为django.contrib.auth.models.AnonymousUser的实例.
-        # 你可以通过user的is_authenticated()方法来辨别用户是否登陆：if req.user.is_authenticated(); 只有激活Django中的AuthenticationMiddleware时该属性才可用
+        # 你可以通过user的is_authenticated()方法来辨别用户是否登陆: if req.user.is_authenticated(); 只有激活Django中的AuthenticationMiddleware时该属性才可用
         
         request.session   # 唯一可读写的属性, 代表当前会话的字典对象；自己有激活Django中的session支持时该属性才可用.
         
-        request.META       # 包含了所有本次HTTP请求的Header信息, 是一个python字典.这个字典中常见的键值有：
+        request.META       # 包含了所有本次HTTP请求的Header信息, 是一个python字典.这个字典中常见的键值有: 
             HTTP_REFERER   # 进站前链接网页, 可以用来统计网站流量来源. (请注意, 它是REFERRER的笔误)
             HTTP_USER_AGENT     # 用户浏览器标识, 可以获知浏览器的型号版本等信息.
             REMOTE_ADDR     # 客户端IP(如果申请是经过代理服务器的话, 那么它可能是以逗号分割的多个IP地址)
@@ -77,11 +77,11 @@ toc: true
     ```
 - 实例
     ```python
-        # url.py中：
+        # url.py中: 
         url(r"login",   views.login),
         url(r"yse",   views.yes),
         
-        # views.py中：  
+        # views.py中:   
             def login(request):
                 if request.method == "POST":
                     if request.POST.get("user") == "alex" and request.POST.get("pwd") == "666":
@@ -91,7 +91,7 @@ toc: true
                 name = "alex"
                 return render(request,"yes.html",locals())
         
-        # login.html中：
+        # login.html中: 
         <form action="/register/" method="post">
             <div class="input">
                 <input type="text" class="inputs" placeholder="用户名" name="user">
@@ -101,7 +101,7 @@ toc: true
             </div>
             <input type="button" class="button" value="注册">
         </form>
-        # yes.html中：
+        # yes.html中: 
         <h1>{{ name }}你好！</h1>
         
         # 总结: render和redirect的区别:

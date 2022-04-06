@@ -69,10 +69,10 @@ toc: true
 
 #### C Controller 控制器
 ```php
-    位置：controllers下
+    位置: controllers下
     默认index.php
     我们访问的时候相当于访问的是"www.demo/module/controller/action" 对应的三个index就是模块、控制器、动作
-    命名规则：控制器文件名不需要以Controller结尾,要继承Yaf_controller_Abstract抽象类,类名需要以Controller结尾,方法需要以Action结尾 
+    命名规则: 控制器文件名不需要以Controller结尾,要继承Yaf_controller_Abstract抽象类,类名需要以Controller结尾,方法需要以Action结尾 
 
     Class userController extends Yaf_controller_Abstract
     {

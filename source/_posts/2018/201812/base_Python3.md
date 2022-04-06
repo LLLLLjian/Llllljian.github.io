@@ -32,7 +32,7 @@ toc: true
 - Python 中的字符串有两种索引方式,从左往右以 0 开始,从右往左以 -1 开始
 - Python中的字符串不能改变
 - Python 没有单独的字符类型,一个字符就是长度为 1 的字符串.
-- 字符串的截取的语法格式如下：变量[头下标:尾下标:步长]
+- 字符串的截取的语法格式如下: 变量[头下标:尾下标:步长]
 - eg
     ```python
         word = '字符串'
@@ -143,9 +143,9 @@ toc: true
 
 #### import 与 from...import
 - 在 python 用 import 或者 from...import 来导入相应的模块
-- 将整个模块(somemodule)导入,格式为： import somemodule
-- 从某个模块中导入某个函数,格式为： from somemodule import somefunction
-- 从某个模块中导入多个函数,格式为： from somemodule import firstfunc, secondfunc, thirdfunc
-- 将某个模块中的全部函数导入,格式为： from somemodule import *
+- 将整个模块(somemodule)导入,格式为:  import somemodule
+- 从某个模块中导入某个函数,格式为:  from somemodule import somefunction
+- 从某个模块中导入多个函数,格式为:  from somemodule import firstfunc, secondfunc, thirdfunc
+- 将某个模块中的全部函数导入,格式为:  from somemodule import *
 
 

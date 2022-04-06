@@ -50,7 +50,7 @@ toc: true
         # 如果是当前登陆用户
         SET PASSWORD = PASSWORD("newpassword");
 
-        # 例如：
+        # 例如: 
         SET PASSWORD FOR 'test2'@'%' = PASSWORD("123456");
 
         update mysql.user set password=password('新密码') where User="phplamp" and Host="localhost";

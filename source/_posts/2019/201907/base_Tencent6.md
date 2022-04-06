@@ -6,7 +6,7 @@ tags:
     - Linux
     - Wechat
     - ThinkPHP
-    - Mongo
+    - MongoDB
 toc: true
 ---
 
@@ -17,7 +17,7 @@ toc: true
 
 #### 实现的思路
     服务器本身有crontab任务去执行mongoPythonForPhone.py
-    mongoPythonForPhone.py支持两种方式的手机号归属地查询：
+    mongoPythonForPhone.py支持两种方式的手机号归属地查询: 
     1. 如果没有传递参数, 将生成随机的手机号码, 插入到库中
     2. 如果传递了参数, 默认该参数为待查询手机号进行查询
     方式1每隔10s执行一次, 将随机手机号插入到phone_log中

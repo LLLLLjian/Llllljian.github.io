@@ -217,10 +217,10 @@ toc: true
         // 真实删除
         $user->delete(true);
 
-        // 默认情况下查询的数据不包含软删除数据,如果需要包含软删除的数据,可以使用下面的方式查询：
+        // 默认情况下查询的数据不包含软删除数据,如果需要包含软删除的数据,可以使用下面的方式查询: 
         User::withTrashed()->find();
         User::withTrashed()->select();
-        // 如果仅仅需要查询软删除的数据,可以使用：
+        // 如果仅仅需要查询软删除的数据,可以使用: 
         User::onlyTrashed()->find();
         User::onlyTrashed()->select();
     ```

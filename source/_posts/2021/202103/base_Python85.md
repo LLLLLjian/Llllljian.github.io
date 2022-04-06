@@ -18,17 +18,17 @@ toc: true
         log_fmt = '%(asctime)s\tFile \"%(filename)s\",line %(lineno)s\t%(levelname)s: %(message)s'
         formatter = logging.Formatter(log_fmt)
         # 创建TimedRotatingFileHandler对象
-        # filename：日志文件名的prefix；
-        # when：是一个字符串,用于描述滚动周期的基本单位,字符串的值及意义如下：
+        # filename: 日志文件名的prefix；
+        # when: 是一个字符串,用于描述滚动周期的基本单位,字符串的值及意义如下: 
         # + “S”: Seconds
         # + “M”: Minutes
         # + “H”: Hours
         # + “D”: Days
         # + “W”: Week day (0=Monday)
         # + “midnight”: Roll over at midnight
-        # interval: 滚动周期,单位有when指定,比如：when=’D’,interval=1,表示每天产生一个日志文件；
+        # interval: 滚动周期,单位有when指定,比如: when=’D’,interval=1,表示每天产生一个日志文件；
         # backupCount: 表示日志文件的保留个数
-        # suffix是指日志文件名的后缀,suffix中通常带有格式化的时间字符串,filename和suffix由“.”连接构成文件名(例如：filename=“runtime”, suffix=“%Y-%m-%d.log”,生成的文件名为runtime.2015-07-06.log)
+        # suffix是指日志文件名的后缀,suffix中通常带有格式化的时间字符串,filename和suffix由“.”连接构成文件名(例如: filename=“runtime”, suffix=“%Y-%m-%d.log”,生成的文件名为runtime.2015-07-06.log)
         # extMatch是一个编译好的正则表达式,用于匹配日志文件名的后缀,它必须和suffix是匹配的,如果suffix和extMatch匹配不上的话,过期的日志是不会被删除的.比如,suffix=“%Y-%m-%d.log”, extMatch的只应该是re.compile(r”^\d{4}-\d{2}-\d{2}.log$”).默认情况下,在TimedRotatingFileHandler对象初始化时,suffxi和extMatch会根据when的值进行初始化
         log_file_handler = TimedRotatingFileHandler(filename="ds_update", when="D", interval=2, backupCount=2)
         #log_file_handler.suffix = "%Y-%m-%d_%H-%M.log"

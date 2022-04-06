@@ -6,7 +6,7 @@ toc: true
 ---
 
 ### 安全_授权
-    授权是指验证用户是否允许做某件事的过程.Yii提供两种授权方法： 存取控制过滤器(ACF)和基于角色的存取控制(RBAC)
+    授权是指验证用户是否允许做某件事的过程.Yii提供两种授权方法:  存取控制过滤器(ACF)和基于角色的存取控制(RBAC)
 
 <!-- more -->
 
@@ -120,10 +120,10 @@ toc: true
                     ],
                 ];
             ```
-            * DbManager 使用4个数据库表存放它的数据：
-            **itemTable** ：该表存放角色和权限.默认表名为 "auth_item" .
-            **itemChildTable** ：该表存放授权条目的层次关系.默认表名为 "auth_item_child".
-            **assignmentTable** ：该表存放授权条目对用户的指派情况.默认表名为 "auth_assignment".
-            **ruleTable** ：该表存放规则.默认表名为 "auth_rule".
+            * DbManager 使用4个数据库表存放它的数据: 
+            **itemTable** : 该表存放角色和权限.默认表名为 "auth_item" .
+            **itemChildTable** : 该表存放授权条目的层次关系.默认表名为 "auth_item_child".
+            **assignmentTable** : 该表存放授权条目对用户的指派情况.默认表名为 "auth_assignment".
+            **ruleTable** : 该表存放规则.默认表名为 "auth_rule".
     * 使用RBAC
         * 可以通过\Yii::$app->authManager访问 authManager

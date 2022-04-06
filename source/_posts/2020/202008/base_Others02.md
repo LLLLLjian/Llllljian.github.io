@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### ES
-> ES全称ElasticSearch, 是个开源分布式搜索引擎,它的特点有：分布式,零配置,自动发现,索引自动分片,索引副本机制,restful风格接口,多数据源,自动搜索负载等
+> ES全称ElasticSearch, 是个开源分布式搜索引擎,它的特点有: 分布式,零配置,自动发现,索引自动分片,索引副本机制,restful风格接口,多数据源,自动搜索负载等
 
 #### 全文索引
 > 全文检索主要针对非结构化数据
@@ -20,7 +20,7 @@ toc: true
 - 全文检索
     * 创建索引, 搜索索引
 
-#### 问题1：索引里究竟存了些什么
+#### 问题1: 索引里究竟存了些什么
 - 正向索引(正排索引 forward index)
     * 从文档中查找字符串,关系型数据库使用的是正向索引
     * 正排索引是从文档角度来找其中的单词,表示每个文档(用文档ID标识)都含有哪些单词,以及每个单词出现了多少次(词频)及其出现位置(相对于文档首部的偏移量).所以每次搜索都是遍历所有文章.
@@ -32,8 +32,8 @@ toc: true
 
 #### 举例说明正排和倒排
 > 先来两个词条
-文档1 doc1的内容：A computer is a device that can execute operations
-文档2 doc2的内容：Early computers are big devices
+文档1 doc1的内容: A computer is a device that can execute operations
+文档2 doc2的内容: Early computers are big devices
 对于 a, is , to ,that ,can ,the,are 这些词对搜索来说没什么意义,用户几乎不会用他们搜索,可以过滤掉
 - 正排索引
 |   LocalId文档局部编号  |   WordId索引词编号   |   NHits出现次数   |   HitList出现位置   |

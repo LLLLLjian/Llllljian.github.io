@@ -73,7 +73,7 @@ toc: true
         var_dump(test($arr));
     ```
 - 解题思路(别人想的)
-    * 分别从坐向右,从右向左遍历数组,找到每个i的maxLeft和maxRight,再比较min(maxLeft,maxRight),若最小值大于i,则差值为蓄水量.例：横坐标上(3,0)的蓄水量为1.其maxLeft为1,maxRight为2,min(1,2)=1,1-0=1
+    * 分别从坐向右,从右向左遍历数组,找到每个i的maxLeft和maxRight,再比较min(maxLeft,maxRight),若最小值大于i,则差值为蓄水量.例: 横坐标上(3,0)的蓄水量为1.其maxLeft为1,maxRight为2,min(1,2)=1,1-0=1
     ```php
         function test($arr)
         {

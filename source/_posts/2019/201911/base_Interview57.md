@@ -16,15 +16,15 @@ toc: true
 - A
     * ![三次握手](/img/20191119_1.png)
     * 我要和你建立链接, 你真的要和我建立链接么, 我真的要和你建立链接, 成功
-    * 第一次握手：Client将SYN置1, 随机产生一个初始序列号seq发送给Server, 进入SYN_SENT状态；
-    * 第二次握手：Server收到Client的SYN=1之后, 知道客户端请求建立连接, 将自己的SYN置1, ACK置1, 产生一个acknowledge number=sequence number+1, 并随机产生一个自己的初始序列号, 发送给客户端；进入SYN_RCVD状态；
-    * 第三次握手：客户端检查acknowledge number是否为序列号+1, ACK是否为1, 检查正确之后将自己的ACK置为1, 产生一个acknowledge number=服务器发的序列号+1, 发送给服务器；进入ESTABLISHED状态；服务器检查ACK为1和acknowledge number为序列号+1之后, 也进入ESTABLISHED状态；完成三次握手, 连接建立.
+    * 第一次握手: Client将SYN置1, 随机产生一个初始序列号seq发送给Server, 进入SYN_SENT状态；
+    * 第二次握手: Server收到Client的SYN=1之后, 知道客户端请求建立连接, 将自己的SYN置1, ACK置1, 产生一个acknowledge number=sequence number+1, 并随机产生一个自己的初始序列号, 发送给客户端；进入SYN_RCVD状态；
+    * 第三次握手: 客户端检查acknowledge number是否为序列号+1, ACK是否为1, 检查正确之后将自己的ACK置为1, 产生一个acknowledge number=服务器发的序列号+1, 发送给服务器；进入ESTABLISHED状态；服务器检查ACK为1和acknowledge number为序列号+1之后, 也进入ESTABLISHED状态；完成三次握手, 连接建立.
 
 #### 问题2
 - Q
     * 扩展问题1, TCP建立连接可以两次握手吗 为什么
 - A
-    * 不可以.可能会出现以下情况：已失效的连接请求报文段又传到了服务器端.
+    * 不可以.可能会出现以下情况: 已失效的连接请求报文段又传到了服务器端.
     * client 发出的第一个连接请求报文段并没有丢失, 而是在某个网络结点长时间的滞留了, 以致延误到连接释放以后的某个时间才到达 server.本来这是一个早已失效的报文段.但 server 收到此失效的连接请求报文段后, 就误认为是 client 再次发出的一个新的连接请求.于是就向 client 发出确认报文段, 同意建立连接.假设不采用 “三次握手”, 那么只要 server 发出确认, 新的连接就建立了.由于现在 client 并没有发出建立连接的请求, 因此不会理睬 server 的确认, 也不会向 server 发送数据.但 server 却以为新的运输连接已经建立, 并一直等待 client 发来数据.这样, server 的很多资源就白白浪费掉了.采用 “三次握手” 的办法可以防止上述现象发生.例如刚才那种情况, client 不会向 server 的确认发出确认.server 由于收不到确认, 就知道 client 并没有要求建立连接.
 
 #### 问题3
@@ -32,7 +32,7 @@ toc: true
     * 扩展问题1, TCP建立连接可以采用四次握手吗？为什么？
 - A
     * 可以.但是会降低传输的效率.
-    * 四次握手是指：第二次握手：Server只发送ACK和acknowledge number；而Server的SYN和初始序列号在第三次握手时发送；原来协议中的第三次握手变为第四次握手.出于优化目的, 四次握手中的二、三可以合并.
+    * 四次握手是指: 第二次握手: Server只发送ACK和acknowledge number；而Server的SYN和初始序列号在第三次握手时发送；原来协议中的第三次握手变为第四次握手.出于优化目的, 四次握手中的二、三可以合并.
 
 #### 问题4
 - Q
@@ -50,6 +50,6 @@ toc: true
 - Q
     * 初始序列号是什么
 - A
-    * TCP连接的一方A, 随机选择一个32位的序列号(Sequence Number)作为发送数据的初始序列号(Initial Sequence Number, ISN), 比如为1000, 以该序列号为原点, 对要传送的数据进行编号：1001、1002...三次握手时, 把这个初始序列号传送给另一方B, 以便在传输数据时, B可以确认什么样的数据编号是合法的；同时在进行数据传输时, A还可以确认B收到的每一个字节, 如果A收到了B的确认编号(acknowledge number)是2001, 就说明编号为1001-2000的数据已经被B成功接受.
+    * TCP连接的一方A, 随机选择一个32位的序列号(Sequence Number)作为发送数据的初始序列号(Initial Sequence Number, ISN), 比如为1000, 以该序列号为原点, 对要传送的数据进行编号: 1001、1002...三次握手时, 把这个初始序列号传送给另一方B, 以便在传输数据时, B可以确认什么样的数据编号是合法的；同时在进行数据传输时, A还可以确认B收到的每一个字节, 如果A收到了B的确认编号(acknowledge number)是2001, 就说明编号为1001-2000的数据已经被B成功接受.
 
 

@@ -140,11 +140,11 @@ toc: true
 - yii\grid\Column
     * 基础列
     * 属性
-        * options：列组标记的HTML属性
-        * header：允许为头部行设置内容.
-        * footer：允许为尾部行设置内容.
-        * visible：定义某个列是否可见
-        * content：允许你传递一个有效的PHP回调来为一行返回数据
+        * options: 列组标记的HTML属性
+        * header: 允许为头部行设置内容.
+        * footer: 允许为尾部行设置内容.
+        * visible: 定义某个列是否可见
+        * content: 允许你传递一个有效的PHP回调来为一行返回数据
             ```php
                 function ($model, $key, $index, $column) {
                     return 'a string';
@@ -153,36 +153,36 @@ toc: true
 - yii\grid\DataColumn
     * 默认列表,从yii\grid\Column扩展而来
     * 属性
-        * attribute：与此列关联的属性名称
-        * filter：表示用于此数据列的过滤器输入(例如文本字段,下拉列表)的HTML代码
-        * format：每个数据模型的值以何种格式显示
-        * label：显示标签,并在为此列启用排序时用作排序链接标签,可对应继承AR类中的attribute
-        * value：一个匿名函数或用于确定要显示在当前列中的值的字符串
+        * attribute: 与此列关联的属性名称
+        * filter: 表示用于此数据列的过滤器输入(例如文本字段,下拉列表)的HTML代码
+        * format: 每个数据模型的值以何种格式显示
+        * label: 显示标签,并在为此列启用排序时用作排序链接标签,可对应继承AR类中的attribute
+        * value: 一个匿名函数或用于确定要显示在当前列中的值的字符串
 - yii\grid\SerialColumn
     * 序号自增列,从yii\grid\Column扩展而来
     * 渲染行号,以1起始并自动增长
 - yii\grid\ActionColumn
     * 动作列,从yii\grid\Column扩展而来
     * 属性
-        * template：展示哪些按钮,默认是
+        * template: 展示哪些按钮,默认是
             * `查看` `view` &lt;span class="glyphicon glyphicon-eye-open">&lt;/span>
             * `修改` `update` &lt;span class="glyphicon glyphicon-pencil">&lt;/span>
             * `删除` `delete` &lt;span class="glyphicon glyphicon-trash">&lt;/span>
-        * buttons：回调函数相关
+        * buttons: 回调函数相关
             ```php
                 function ($url, $model, $key) {
                     // return the button HTML code
-                    // $url：列为按钮创建的URL
-                    // $model：为当前行呈现的模型对象
-                    // $key：数据提供者数组中模型的关键字
+                    // $url: 列为按钮创建的URL
+                    // $model: 为当前行呈现的模型对象
+                    // $key: 数据提供者数组中模型的关键字
                 }
             ```
-        * header：活动列表头展示的文字
-        * headerOptions：活动列拥有的css样式
+        * header: 活动列表头展示的文字
+        * headerOptions: 活动列拥有的css样式
 - yii\grid\CheckboxColumn
     * 多选按钮列,从yii\grid\Column扩展而来
     * 属性
-        * name：输入复选框输入字段的名称
+        * name: 输入复选框输入字段的名称
     * 获取
         * var keys = $('#grid').yiiGridView('getSelectedRows');
 

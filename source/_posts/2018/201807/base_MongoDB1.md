@@ -31,7 +31,7 @@ toc: true
 
 #### 主要特点
 - MongoDB 是一个面向文档存储的数据库,操作起来比较简单和容易.
-- 你可以在MongoDB记录中设置任何属性的索引 (如：FirstName="Sameer",Address="8 Gandhi Road")来实现更快的排序.
+- 你可以在MongoDB记录中设置任何属性的索引 (如: FirstName="Sameer",Address="8 Gandhi Road")来实现更快的排序.
 - 你可以通过本地或者网络创建数据镜像,这使得MongoDB有更强的扩展性.
 - 如果负载的增加(需要更多的存储空间和更强的处理能力) ,它可以分布在计算机网络中的其他节点上这就是所谓的分片.
 - Mongo支持丰富的查询表达式.查询指令使用JSON形式的标记,可轻易查询文档中内嵌的对象及数组.
@@ -69,7 +69,7 @@ toc: true
         * use 数据库名
 - 显示集合/表
     * MySQL
-        * ：show tables;
+        * : show tables;
     * MongoDB
         * show tables
 
@@ -92,9 +92,9 @@ toc: true
 
 #### MongoDB数据类型
 - 数据类型列表
-    <table><tbody><tr><th>数据类型</th><th>描述</th><tr><td>String<td>字符串.存储数据常用的数据类型.在 MongoDB 中,UTF-8 编码的字符串才是合法的.<tr><td>Integer<td>整型数值.用于存储数值.根据你所采用的服务器,可分为 32 位或 64 位.<tr><td>Boolean<td>布尔值.用于存储布尔值(真/假).<tr><td>Double<td>双精度浮点值.用于存储浮点值.<tr><td>Min/Max keys<td>将一个值与 BSON(二进制的 JSON)元素的最低值和最高值相对比.<tr><td>Array<td>用于将数组或列表或多个值存储为一个键.<tr><td>Timestamp<td>时间戳.记录文档修改或添加的具体时间.<tr><td>Object<td>用于内嵌文档.<tr><td>Null<td>用于创建空值.<tr><td>Symbol<td>符号.该数据类型基本上等同于字符串类型,但不同的是,它一般用于采用特殊符号类型的语言.<tr><td>Date<td>日期时间.用 UNIX 时间格式来存储当前日期或时间.你可以指定自己的日期时间：创建 Date 对象,传入年月日信息.<tr><td>Object ID<td>对象 ID.用于创建文档的 ID.<tr><td>Binary Data<td>二进制数据.用于存储二进制数据.<tr><td>Code<td>代码类型.用于在文档中存储 JavaScript 代码.<tr><td>Regular expression<td>正则表达式类型.用于存储正则表达式.</table>
+    <table><tbody><tr><th>数据类型</th><th>描述</th><tr><td>String<td>字符串.存储数据常用的数据类型.在 MongoDB 中,UTF-8 编码的字符串才是合法的.<tr><td>Integer<td>整型数值.用于存储数值.根据你所采用的服务器,可分为 32 位或 64 位.<tr><td>Boolean<td>布尔值.用于存储布尔值(真/假).<tr><td>Double<td>双精度浮点值.用于存储浮点值.<tr><td>Min/Max keys<td>将一个值与 BSON(二进制的 JSON)元素的最低值和最高值相对比.<tr><td>Array<td>用于将数组或列表或多个值存储为一个键.<tr><td>Timestamp<td>时间戳.记录文档修改或添加的具体时间.<tr><td>Object<td>用于内嵌文档.<tr><td>Null<td>用于创建空值.<tr><td>Symbol<td>符号.该数据类型基本上等同于字符串类型,但不同的是,它一般用于采用特殊符号类型的语言.<tr><td>Date<td>日期时间.用 UNIX 时间格式来存储当前日期或时间.你可以指定自己的日期时间: 创建 Date 对象,传入年月日信息.<tr><td>Object ID<td>对象 ID.用于创建文档的 ID.<tr><td>Binary Data<td>二进制数据.用于存储二进制数据.<tr><td>Code<td>代码类型.用于在文档中存储 JavaScript 代码.<tr><td>Regular expression<td>正则表达式类型.用于存储正则表达式.</table>
 - ObjectId类型
-    * MongoDB生成的类似关系型DB表主键的唯一key,生成快速.具体由12个字节组成：
+    * MongoDB生成的类似关系型DB表主键的唯一key,生成快速.具体由12个字节组成: 
     * 前4个字节是unix秒,3个字节的机器标识符(为了分布式下的主键唯一),2个字节的进程id,3个字节的计数器数字
     * MongoDB中存储的文档必须有一个_id键.这个键的值可以是任何类型的,默认是个ObjectId对象
 - 字符串

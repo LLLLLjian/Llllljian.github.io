@@ -53,8 +53,8 @@ toc: true
         4. 命令python manage.py migrate
 
 ##### 字段 Field
-> 表的字段, 由Model类的属性来生成. 每个Model类属性有两个重要的 关注点： 类型和选项.
-类型规定了：表字段的类型, 对应的默认的html form widget,  这点可以猜想model是可以直接创建form的form表单项的基本验证方式
+> 表的字段, 由Model类的属性来生成. 每个Model类属性有两个重要的 关注点:  类型和选项.
+类型规定了: 表字段的类型, 对应的默认的html form widget,  这点可以猜想model是可以直接创建form的form表单项的基本验证方式
 选项, 是类型的进一步设置, 每个field都可以设置多个选项, 比如CharField的max_length
 1. 常用的选项
     <table><thead><tr><th>option名字</th><th>值</th><th>说明</th><th></th></tr></thead><tbody><tr><td>null</td><td>False, True</td><td>默认为假, 数据库字段是否可以为null</td><td></td></tr><tr><td>blank</td><td>False,True</td><td>null is purely database-related, whereas blank is validation-related.</td><td></td></tr><tr><td>choice</td><td>二元组的序列</td><td>可选项</td><td></td></tr><tr><td>default</td><td>a value or a callable object</td><td>默认值, 如果为函数的话, 则每次创建时调用</td><td></td></tr><tr><td>help_text</td><td>text</td><td>form表单项中的帮助</td><td></td></tr><tr><td>primary_key</td><td>False, True</td><td>如果model中没有设置主键, 则可自动添加一个IntegerField的主键</td><td></td></tr><tr><td>unique</td><td>True、False</td><td>唯一性约束</td><td></td></tr><tr><td>db_column</td><td>text</td><td>字段名称, 如果没有的话, 则使用属性名</td><td></td></tr><tr><td>db_index</td><td>False、True</td><td>是否设置该列为索引</td><td></td></tr></tbody></table>
@@ -85,7 +85,7 @@ toc: true
                     return self.year_in_school in {self.JUNIOR, self.SENIOR}
         ```
 2. 字段类型
-> 按照数据类型大体分为：布尔、整数、浮点数、时间、文本等类型, 每种类型又设置了多个小类用于特性化.同时又参考form设置了具有语意的类型, 比如MailField
+> 按照数据类型大体分为: 布尔、整数、浮点数、时间、文本等类型, 每种类型又设置了多个小类用于特性化.同时又参考form设置了具有语意的类型, 比如MailField
     * 布尔
         * class BooleanField(**options)
         * class NullBooleanField(**options) null=True
@@ -145,8 +145,8 @@ toc: true
     * on_delete=models.SET_NULL,    # 删除关联数据,与之关联的值设置为null(前提FK字段需要设置为可空,一对一同理)models.ForeignKey('关联表', on_delete=models.SET_NULL, blank=True, null=True)
     * on_delete=models.SET_DEFAULT, # 删除关联数据,与之关联的值设置为默认值(前提FK字段需要设置默认值,一对一同理)models.ForeignKey('关联表', on_delete=models.SET_DEFAULT, default='默认值')
     * on_delete=models.SET,         # 删除关联数据,
-        a. 与之关联的值设置为指定值,设置：models.SET(值)
-        b. 与之关联的值设置为可执行对象的返回值,设置：models.SET(可执行对象)
+        a. 与之关联的值设置为指定值,设置: models.SET(值)
+        b. 与之关联的值设置为可执行对象的返回值,设置: models.SET(可执行对象)
 5. 实例
     ```python
         from django.db import models

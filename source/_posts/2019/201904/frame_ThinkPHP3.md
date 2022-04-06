@@ -111,7 +111,7 @@ toc: true
         hello
         
         访问http://localhost/index.php/index/Index/data
-        输出结果是：
+        输出结果是: 
         first
         second
         three

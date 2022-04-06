@@ -23,7 +23,7 @@ toc: true
 - Git下载
     * 首先克隆下载应用项目仓库
         * git clone https://github.com/top-think/think tp5
-    * 然后切换到 tp5 目录下面,再克隆核心框架仓库：
+    * 然后切换到 tp5 目录下面,再克隆核心框架仓库: 
         * git clone https://github.com/top-think/framework thinkphp
     * 需要更新核心框架的时候,切换到thinkPHP的核心目录下
         * git pull https://github.com/top-think/framework

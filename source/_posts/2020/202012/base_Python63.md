@@ -48,7 +48,7 @@ toc: true
         jobs = [ 
             {
                 "name" : cron_print_time,
-                "time": [0, 17, -1, -1, 1], #minute, hour, day, month, weekday, "-1" means "all",此例为每个周一的17：00
+                "time": [0, 17, -1, -1, 1], #minute, hour, day, month, weekday, "-1" means "all",此例为每个周一的17: 00
             },
             {
                 "name" : cron_print_hello,

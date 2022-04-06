@@ -90,7 +90,7 @@ toc: true
         ```php
             <!-- 此模块方法的配置表单 -->
             <ul class="col-ul ul_l_s">
-                <li><span>选择边框样式：</span>
+                <li><span>选择边框样式: </span>
                     <select name="params[style]" >
                     <option value="">默认</option>
                     <option value="style_01">样式一</option>

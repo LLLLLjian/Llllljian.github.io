@@ -89,7 +89,7 @@ toc: true
 - 默认动作
     * 每个控制器都有一个由 yii\base\Controller::$defaultAction 属性指定的默认操作, 
     * 当路由 只包含控制器ID, 会使用所请求的控制器的默认操作.默认操作默认为 index,
-    * 如果想修改默认操作,代码如下：
+    * 如果想修改默认操作,代码如下: 
     ```php
         namespace app\controllers;
 

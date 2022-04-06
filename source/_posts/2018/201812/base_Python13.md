@@ -73,7 +73,7 @@ toc: true
                     #break
                 else:
                     human = 22 + (age - 2)*5
-                    print("相当于人类：",human)
+                    print("相当于人类: ",human)
                     #break
             except ValueError:
                 print("输入不合法,请输入有效年龄")

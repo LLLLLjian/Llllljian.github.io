@@ -48,7 +48,7 @@ toc: true
             /bin/echo a b c d e f g h i j k l m n o p q r s t u v w x y z
             a b c d e f g h i j k l m n o p q r s t u v w x y z
         ```
-    * 指定一次处理的参数个数：指定为5, 多行输出
+    * 指定一次处理的参数个数: 指定为5, 多行输出
         ```bash
             $ cat xargs.txt | xargs -n 5
             a b c d e
@@ -89,9 +89,9 @@ toc: true
 6. xargs与exec的区别
     * exec参数是一个一个传递的, 传递一个参数执行一次命令；xargs一次将参数传给命令, 可以使用-n控制参数个数
         ```bash
-            #xargs将参数一次传给echo, 即执行：echo begin ./xargs.txt ./args.txt
+            #xargs将参数一次传给echo, 即执行: echo begin ./xargs.txt ./args.txt
             find . -name '*.txt' -type f | xargs echo begin
-            #exec一次传递一个参数, 即执行：echo begin ./xargs.txt;echo begin ./args.txt
+            #exec一次传递一个参数, 即执行: echo begin ./xargs.txt;echo begin ./args.txt
             find . -name '*.txt' -type f -exec echo begin {} \;
         ```
     * exec文件名有空格等特殊字符也能处理；xargs不能处理特殊文件名, 如果想处理特殊文件名需要特殊处理

@@ -47,7 +47,7 @@ toc: true
     * 序列化相关
         * __sleep() : 序列化时调用,serialize() 函数会检查类中是否存在该魔术方法.如果存在,该方法会先被调用,然后才执行序列化操作.
         * __wakeup() : unserialize() 会检查是否存在一个 __wakeup() 方法.如果存在,则会先调用该方法,用在反序列化操作中,例如重新建立数据库连接,或执行其它初始化操作
-    * 操作类和对象方法：
+    * 操作类和对象方法: 
         * __toString() : 方法用于一个类被当成字符串时调用,例如把一个类当做字符串进行输出
         * __invoke() : 当尝试以调用函数的方式调用一个对象时,__invoke() 方法会被自动调用.
         * __set_state() : 当调用 var_export() 导出类时,此静态 方法会被调用. 本方法的唯一参数是一个数组
@@ -85,10 +85,10 @@ toc: true
                 }
 
                 if (is_dir($new_dir)) {
-                    echo "<br>目录：".$new_dir . '<br>';
+                    echo "<br>目录: ".$new_dir . '<br>';
                     get_dir_info($new_dir);
                 } else {
-                    echo "文件：".$path.':'.$content .'<br>';
+                    echo "文件: ".$path.':'.$content .'<br>';
                 }
             }
         }

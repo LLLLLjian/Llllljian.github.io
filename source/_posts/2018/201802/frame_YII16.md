@@ -14,28 +14,28 @@ toc: true
 - 实例化生命周期
     * 前提 : new一个AR实例的时候
     * 类的构造函数调用
-    * yii\db\ActiveRecord::init()：触发 yii\db\ActiveRecord::EVENT_INIT 事件
+    * yii\db\ActiveRecord::init(): 触发 yii\db\ActiveRecord::EVENT_INIT 事件
 
 - 查询数据生命周期
     * 前提 : find()数据的时候
     * 类的构造函数调用.
-    * yii\db\ActiveRecord::init()：触发 yii\db\ActiveRecord::EVENT_INIT 事件.
-    * yii\db\ActiveRecord::afterFind()：触发 yii\db\ActiveRecord::EVENT_AFTER_FIND 事件.
+    * yii\db\ActiveRecord::init(): 触发 yii\db\ActiveRecord::EVENT_INIT 事件.
+    * yii\db\ActiveRecord::afterFind(): 触发 yii\db\ActiveRecord::EVENT_AFTER_FIND 事件.
 
 - 保存数据生命周期
     * 前提 : save()方法插入或更新 AR 实例
-    * yii\db\ActiveRecord::beforeValidate()：触发 yii\db\ActiveRecord::EVENT_BEFORE_VALIDATE 事件.如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
+    * yii\db\ActiveRecord::beforeValidate(): 触发 yii\db\ActiveRecord::EVENT_BEFORE_VALIDATE 事件.如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
     * 执行数据验证.如果数据验证失败,步骤 3 之后的步骤将被跳过.
-    * yii\db\ActiveRecord::afterValidate()：触发 yii\db\ActiveRecord::EVENT_AFTER_VALIDATE 事件.
-    * yii\db\ActiveRecord::beforeSave()：触发 yii\db\ActiveRecord::EVENT_BEFORE_INSERT 或者 yii\db\ActiveRecord::EVENT_BEFORE_UPDATE 事件. 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
+    * yii\db\ActiveRecord::afterValidate(): 触发 yii\db\ActiveRecord::EVENT_AFTER_VALIDATE 事件.
+    * yii\db\ActiveRecord::beforeSave(): 触发 yii\db\ActiveRecord::EVENT_BEFORE_INSERT 或者 yii\db\ActiveRecord::EVENT_BEFORE_UPDATE 事件. 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
     * 执行真正的数据插入或者更新.
-    * yii\db\ActiveRecord::afterSave()：触发 yii\db\ActiveRecord::EVENT_AFTER_INSERT 或者 yii\db\ActiveRecord::EVENT_AFTER_UPDATE 事件.
+    * yii\db\ActiveRecord::afterSave(): 触发 yii\db\ActiveRecord::EVENT_AFTER_INSERT 或者 yii\db\ActiveRecord::EVENT_AFTER_UPDATE 事件.
 
 - 删除数据生命周期
     * 前提 : delete()数据的时候[updateAll(), deleteAll(), updateCounters(), updateAllCounters()]
-    * yii\db\ActiveRecord::beforeDelete()：触发 yii\db\ActiveRecord::EVENT_BEFORE_DELETE 事件. 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
+    * yii\db\ActiveRecord::beforeDelete(): 触发 yii\db\ActiveRecord::EVENT_BEFORE_DELETE 事件. 如果这方法返回 false 或者 yii\base\ModelEvent::$isValid 值为 false,接下来的步骤都会被跳过.
     * 执行真正的数据删除.
-    * yii\db\ActiveRecord::afterDelete()：触发 yii\db\ActiveRecord::EVENT_AFTER_DELETE 事件.
+    * yii\db\ActiveRecord::afterDelete(): 触发 yii\db\ActiveRecord::EVENT_AFTER_DELETE 事件.
 
 - 刷新数据生命周期
     * 前提 : refresh() 刷新 AR 实例
@@ -99,23 +99,23 @@ toc: true
     * 调用 查询生成器的查询方法 来取出数据到 AR 实例中
 - 查询实例
     ```php
-        // 返回 ID 为 123 的客户：
+        // 返回 ID 为 123 的客户: 
         // SELECT * FROM `customer` WHERE `id` = 123
         $customer = Customer::find()->where(['id' => 123])
                                     ->one();
 
-        // 取回所有活跃客户并以他们的 ID 排序：
+        // 取回所有活跃客户并以他们的 ID 排序: 
         // SELECT * FROM `customer` WHERE `status` = 1 ORDER BY `id`
         $customers = Customer::find()->where(['status' => Customer::STATUS_ACTIVE])
                                      ->orderBy('id')
                                      ->all();
 
-        // 取回活跃客户的数量：
+        // 取回活跃客户的数量: 
         // SELECT COUNT(*) FROM `customer` WHERE `status` = 1
         $count = Customer::find()->where(['status' => Customer::STATUS_ACTIVE])
                                  ->count();
 
-        // 以客户 ID 索引结果集：
+        // 以客户 ID 索引结果集: 
         // SELECT * FROM `customer`
         $customers = Customer::find()->indexBy('id')
                                      ->all();
@@ -408,7 +408,7 @@ toc: true
 - 声明关联关系
     ```php
         // 对应关系有两种 hasOne[一对一] hasMany[一对多]
-        // 每个关联方法必须这样命名：getXyz.然后通过 xyz(首字母小写)调用这个关联名[大小写敏感]
+        // 每个关联方法必须这样命名: getXyz.然后通过 xyz(首字母小写)调用这个关联名[大小写敏感]
         class Customer extends ActiveRecord
         {
             // ...
@@ -455,7 +455,7 @@ toc: true
     ```php
         class Customer extends ActiveRecord
         {
-            public function getBigOrders($threshold = 100) // 老司机的提醒：$threshold 参数一定一定要给个默认值
+            public function getBigOrders($threshold = 100) // 老司机的提醒: $threshold 参数一定一定要给个默认值
             {
                 return $this->hasMany(Order::className(), ['customer_id' => 'id'])
                     ->where('subtotal > :threshold', [':threshold' => $threshold])

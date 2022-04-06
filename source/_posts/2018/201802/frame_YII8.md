@@ -46,7 +46,7 @@ toc: true
     * 当根目录不能被Web访问时该属性应设置,否则,应设置 basePath 属性和baseUrl. 路径别名 可在此处使用
     * 当指定sourcePath 属性, 资源管理器 会发布包的资源到一个可Web访问并覆盖该属性, 如果你的资源文件在一个Web可访问目录下,应设置该属性,这样就不用再发布了. 路径别名 可在此处使用
     * 和 basePath 类似, 如果你指定 sourcePath 属性, 资源管理器 会发布这些资源并覆盖该属性,路径别名 可在此处使用.
-    * 注意正斜杠"/"应作为目录分隔符, 每个JavaScript文件可指定为以下两种格式之一：
+    * 注意正斜杠"/"应作为目录分隔符, 每个JavaScript文件可指定为以下两种格式之一: 
         ```php
             相对路径表示为本地JavaScript文件 (如 js/main.js),文件实际的路径在该相对路径前加上yii\web\AssetManager::$basePath,文件实际的URL 在该路径前加上yii\web\AssetManager::$baseUrl.
             绝对URL地址表示为外部JavaScript文件,如 http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js 或 //ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js.
@@ -60,7 +60,7 @@ toc: true
     * 发布资源 : 资源文件放在可通过Web直接访问的Web目录中；
     * 外部资源 : 资源文件放在与你的Web应用不同 的Web服务器上
 - 资源依赖
-    资源依赖主要通过yii\web\AssetBundle::$depends 属性来指定,在AppAsset 示例中,资源包依赖其他两个资源包： yii\web\YiiAsset 和 yii\bootstrap\BootstrapAsset 也就是该资源包的CSS和JavaScript文件要在这两个依赖包的文件包含 之后 才包含
+    资源依赖主要通过yii\web\AssetBundle::$depends 属性来指定,在AppAsset 示例中,资源包依赖其他两个资源包:  yii\web\YiiAsset 和 yii\bootstrap\BootstrapAsset 也就是该资源包的CSS和JavaScript文件要在这两个依赖包的文件包含 之后 才包含
 - 资源选项
 
 #### 自定义加载

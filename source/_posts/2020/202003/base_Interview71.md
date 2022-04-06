@@ -15,15 +15,15 @@ toc: true
     * 是指多个线程在运行过程中因争夺资源而造成的一种僵局, 当进程处于这种僵持状态时, 若无外力作用, 它们都将无法再向前推进
     ![死锁的形成](/img/20200310_1.png)
 - 产生死锁的必要条件
-    1. 互斥条件：进程要求对所分配的资源进行排它性控制, 即在一段时间内某资源仅为一进程所占用.
-    2. 请求和保持条件：当进程因请求资源而阻塞时, 对已获得的资源保持不放.
-    3. 不剥夺条件：进程已获得的资源在未使用完之前, 不能剥夺, 只能在使用完时由自己释放.
-    4. 环路等待条件：在发生死锁时, 必然存在一个进程--资源的环形链.
+    1. 互斥条件: 进程要求对所分配的资源进行排它性控制, 即在一段时间内某资源仅为一进程所占用.
+    2. 请求和保持条件: 当进程因请求资源而阻塞时, 对已获得的资源保持不放.
+    3. 不剥夺条件: 进程已获得的资源在未使用完之前, 不能剥夺, 只能在使用完时由自己释放.
+    4. 环路等待条件: 在发生死锁时, 必然存在一个进程--资源的环形链.
 - 预防死锁
-    * 资源一次性分配：一次性分配所有资源, 这样就不会再有请求了：(破坏请求条件)
-    * 只要有一个资源得不到分配, 也不给这个进程分配其他的资源：(破坏请保持条件)
-    * 可剥夺资源：即当某进程获得了部分资源, 但得不到其它资源, 则释放已占有的资源(破坏不可剥夺条件)
-    * 资源有序分配法：系统给每类资源赋予一个编号, 每一个进程按编号递增的顺序请求资源, 释放则相反(破坏环路等待条件)
+    * 资源一次性分配: 一次性分配所有资源, 这样就不会再有请求了: (破坏请求条件)
+    * 只要有一个资源得不到分配, 也不给这个进程分配其他的资源: (破坏请保持条件)
+    * 可剥夺资源: 即当某进程获得了部分资源, 但得不到其它资源, 则释放已占有的资源(破坏不可剥夺条件)
+    * 资源有序分配法: 系统给每类资源赋予一个编号, 每一个进程按编号递增的顺序请求资源, 释放则相反(破坏环路等待条件)
 
 #### explain详解
 - 输出字段
@@ -36,28 +36,28 @@ toc: true
         * SELECT的查询序列号
         * 从1开始,执行的时候从大到小,相同编号从上到下依次执行
     * select_type
-        * SIMPLE：简单SELECT(不使用UNION或子查询等)
-        * PRIMARY：最外面的SELECT
-        * UNION：UNION中的第二个或后面的SELECT语句
-        * DEPENDENT UNION：UNION中的第二个或后面的SELECT语句,取决于外面的查询
-        * UNION RESULT：UNION的结果.
-        * SUBQUERY：子查询中的第一个SELECT
-        * DEPENDENT SUBQUERY：子查询中的第一个SELECT,取决于外面的查询
-        * DERIVED：导出表的SELECT(FROM子句的子查询)
+        * SIMPLE: 简单SELECT(不使用UNION或子查询等)
+        * PRIMARY: 最外面的SELECT
+        * UNION: UNION中的第二个或后面的SELECT语句
+        * DEPENDENT UNION: UNION中的第二个或后面的SELECT语句,取决于外面的查询
+        * UNION RESULT: UNION的结果.
+        * SUBQUERY: 子查询中的第一个SELECT
+        * DEPENDENT SUBQUERY: 子查询中的第一个SELECT,取决于外面的查询
+        * DERIVED: 导出表的SELECT(FROM子句的子查询)
     * table
         * 显示这一行的数据是关于哪张表的
     * partitions 
         * 分区中的记录将被查询相匹配.显示此列仅在使用分区关键字.该值为NULL对于非分区表
     * type
         * 这列最重要,显示了连接使用了哪种类别,有无使用索引,是使用Explain命令分析性能瓶颈的关键项之一
-        * 从好到坏依次是：system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL
+        * 从好到坏依次是: system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL
         * 至少达到range级别,最好能达到ref
         * system表仅有一行(=系统表).这是const联接类型的一个特例.
 	    * const表最多有一个匹配行,它将在查询开始时被读取.因为仅有一行,在这行的列值可被优化器剩余部分认为是常数.const表很快,因为它们只读取一次！
 	    * eq_ref对于每个来自于前面的表的行组合,从该表中读取一行.这可能是最好的联接类型,除了const类型.它用在一个索引的所有部分被联接使用并且索引是UNIQUE或PRIMARY KEY.
 	    * ref对于每个来自于前面的表的行组合,所有有匹配索引值的行将从这张表中读取.如果联接只使用键的最左边的前缀,或如果键不是UNIQUE或PRIMARY KEY(换句话说,如果联接不能基于关键字选择单个行的话),则使用ref.如果使用的键仅仅匹配少量行,该联接类型是不错的.ref可以用于使用=或<=>操作符的带索引的列.ref_or_null该联接类型如同ref,但是添加了MySQL可以专门搜索包含NULL值的行.在解决子查询中经常使用该联接类型的优化.
 	    * index_merge该联接类型表示使用了索引合并优化方法.在这种情况下,key列包含了使用的索引的清单,key_len包含了使用的索引的最长的关键元素.
-	    * unique_subquery该类型替换了下面形式的IN子查询的ref：value IN (SELECT primary_key FROM single_table WHERE some_expr). unique_subquery是一个索引查找函数,可以完全替换子查询,效率更高.index_subquery该联接类型类似于unique_subquery.可以替换IN子查询,但只适合下列形式的子查询中的非唯一索引：value IN (SELECT key_column FROM single_table WHERE some_expr)
+	    * unique_subquery该类型替换了下面形式的IN子查询的ref: value IN (SELECT primary_key FROM single_table WHERE some_expr). unique_subquery是一个索引查找函数,可以完全替换子查询,效率更高.index_subquery该联接类型类似于unique_subquery.可以替换IN子查询,但只适合下列形式的子查询中的非唯一索引: value IN (SELECT key_column FROM single_table WHERE some_expr)
 	    * range只检索给定范围的行,使用一个索引来选择行.key列显示使用了哪个索引.key_len包含所使用索引的最长关键元素.在该类型中ref列为NULL. 当使用=、<>、>、>=、<、<=、IS NULL、<=>、BETWEEN或者IN操作符,用常量比较关键字列时,可以使用range.
 	    * index该联接类型与ALL相同,除了只有索引树被扫描.这通常比ALL快,因为索引文件通常比数据文件小. 当查询只使用作为单索引一部分的列时,MySQL可以使用该联接类型.
 	    * ALL对于每个来自于先前的表的行组合,进行完整的表扫描.如果表是第一个没标记const的表,这通常不好,并且通常在它情况下很差.通常可以增加更多的索引而不要使用ALL,使得行能基于前面的表中的常数值或列值被检索出.

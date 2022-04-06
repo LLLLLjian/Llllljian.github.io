@@ -18,7 +18,7 @@ A: 还有文件追加的方式
 A: 还有查看端口的
 
 #### cat
-> cat(英文全拼：concatenate)命令用于连接文件并打印到标准输出设备上.
+> cat(英文全拼: concatenate)命令用于连接文件并打印到标准输出设备上.
 - 使用权限
     * 所有使用者
 - 语法格式
@@ -26,15 +26,15 @@ A: 还有查看端口的
         cat [-AbeEnstTuv] [--help] [--version] fileName
     ```
 - 参数说明
-    * -n 或 --number：由 1 开始对所有输出的行数编号.
-    * -b 或 --number-nonblank：和 -n 相似,只不过对于空白行不编号.
-    * -s 或 --squeeze-blank：当遇到有连续两行以上的空白行,就代换为一行的空白行.
-    * -v 或 --show-nonprinting：使用 ^ 和 M- 符号,除了 LFD 和 TAB 之外.
+    * -n 或 --number: 由 1 开始对所有输出的行数编号.
+    * -b 或 --number-nonblank: 和 -n 相似,只不过对于空白行不编号.
+    * -s 或 --squeeze-blank: 当遇到有连续两行以上的空白行,就代换为一行的空白行.
+    * -v 或 --show-nonprinting: 使用 ^ 和 M- 符号,除了 LFD 和 TAB 之外.
     * -E 或 --show-ends : 在每行结束处显示 $.
     * -T 或 --show-tabs: 将 TAB 字符显示为 ^I.
-    * -A, --show-all：等价于 -vET.
-    * -e：等价于"-vE"选项；
-    * -t：等价于"-vT"选项；
+    * -A, --show-all: 等价于 -vET.
+    * -e: 等价于"-vE"选项；
+    * -t: 等价于"-vT"选项；
 - 实例
     ```bash
         # 把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里
@@ -49,7 +49,7 @@ A: 还有查看端口的
 
 #### head
 > head 命令可用于查看文件的开头部分的内容,有一个常用的参数 -n 用于显示行数,默认为 10,即显示 10 行的内容
-- 命令格式：
+- 命令格式: 
     ```bash
         head [参数] [文件]
     ```

@@ -143,7 +143,7 @@ toc: true
         ```python
             author = Author.objects.first()
             books = author.books.all()　　 
-            for book in books：
+            for book in books: 
                 print(book)
         ```
     * 已知主表中的数据查询从表中所有与之相关的数据

@@ -48,7 +48,7 @@ toc: true
 
 #### Lua 特性
 1. 轻量级: 它用标准C语言编写并以源代码形式开放,编译后仅仅一百余K,可以很方便的嵌入别的程序里.
-2. 可扩展: Lua提供了非常易于使用的扩展接口和机制：由宿主语言(通常是C或C++)提供这些功能,Lua可以使用它们,就像是本来就内置的功能一样.
+2. 可扩展: Lua提供了非常易于使用的扩展接口和机制: 由宿主语言(通常是C或C++)提供这些功能,Lua可以使用它们,就像是本来就内置的功能一样.
 3. 其它特性:
     1. 支持面向过程(procedure-oriented)编程和函数式编程(functional programming)；
     2. 自动内存管理；只提供了一种通用类型的表(table),用它可以实现数组,哈希表,集合,对象；
@@ -59,7 +59,7 @@ toc: true
 1. 游戏开发
 2. 独立应用脚本
 3. Web 应用脚本
-4. 扩展和数据库插件如：MySQL Proxy 和 MySQL WorkBench
+4. 扩展和数据库插件如: MySQL Proxy 和 MySQL WorkBench
 5. 安全系统,如入侵检测系统
 
 #### Lua环境安装
@@ -115,6 +115,6 @@ toc: true
             --]]
         ```
 3. 数据类型
-    <table class="reference"><tbody><tr><th style="width:20%">数据类型</th><th>描述</th></tr><tr><td>nil</td><td>这个最简单,只有值nil属于该类,表示一个无效值(在条件表达式中相当于false).</td></tr><tr><td>boolean</td><td>包含两个值：false和true.</td></tr><tr><td>number</td><td>表示双精度类型的实浮点数</td></tr><tr><td>string</td><td>字符串由一对双引号或单引号来表示</td></tr><tr><td>function</td><td>由 C 或 Lua 编写的函数</td></tr><tr><td>userdata</td><td>表示任意存储在变量中的C数据结构</td></tr><tr><td>thread</td><td>表示执行的独立线路,用于执行协同程序</td></tr><tr><td>table</td><td> Lua 中的表(table)其实是一个"关联数组"(associative arrays),数组的索引可以是数字、字符串或表类型.在 Lua 里,table 的创建是通过"构造表达式"来完成,最简单构造表达式是{},用来创建一个空表.</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th style="width:20%">数据类型</th><th>描述</th></tr><tr><td>nil</td><td>这个最简单,只有值nil属于该类,表示一个无效值(在条件表达式中相当于false).</td></tr><tr><td>boolean</td><td>包含两个值: false和true.</td></tr><tr><td>number</td><td>表示双精度类型的实浮点数</td></tr><tr><td>string</td><td>字符串由一对双引号或单引号来表示</td></tr><tr><td>function</td><td>由 C 或 Lua 编写的函数</td></tr><tr><td>userdata</td><td>表示任意存储在变量中的C数据结构</td></tr><tr><td>thread</td><td>表示执行的独立线路,用于执行协同程序</td></tr><tr><td>table</td><td> Lua 中的表(table)其实是一个"关联数组"(associative arrays),数组的索引可以是数字、字符串或表类型.在 Lua 里,table 的创建是通过"构造表达式"来完成,最简单构造表达式是{},用来创建一个空表.</td></tr></tbody></table>
 
 

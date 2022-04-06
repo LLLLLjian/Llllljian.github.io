@@ -68,14 +68,14 @@ toc: true
 2. 网络传输包的大小
 3. nfs挂载的优化
     * timeo:如果超时,客户端等待的时间,以十分之一秒计算
-    * retrans：超时尝试的次数
-    * bg：后台挂载,很有用
-    * hard：如果server端没有响应,那么客户端一直尝试挂载
-    * wsize：写块大小
-    * rsize：读块大小
-    * intr：可以中断不成功的挂载
-    * noatime：不更新文件的inode访问时间,可以提高速度
-    * async：异步读写
+    * retrans: 超时尝试的次数
+    * bg: 后台挂载,很有用
+    * hard: 如果server端没有响应,那么客户端一直尝试挂载
+    * wsize: 写块大小
+    * rsize: 读块大小
+    * intr: 可以中断不成功的挂载
+    * noatime: 不更新文件的inode访问时间,可以提高速度
+    * async: 异步读写
 4. nfsd的个数
 5. nfsd的队列长度
 

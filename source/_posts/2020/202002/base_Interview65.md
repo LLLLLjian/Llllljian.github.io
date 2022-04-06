@@ -48,7 +48,7 @@ toc: true
              * @param ListNode $head
              * @return ListNode
              */
-            // 明确递归函数的含义：传入一个链表(或片段), 将其反转, 并返回链表头元素
+            // 明确递归函数的含义: 传入一个链表(或片段), 将其反转, 并返回链表头元素
             // 所以, 完全反转以后, 原来的最后一个元素就变为了链表头元素
             function reverseList($head) {
                 if ($head === null || $head->next === null) return $head;

@@ -151,7 +151,7 @@ toc: true
 #### Shell函数
 - 先定义后使用
 - 函数返回值,可以显式增加return语句；如果不加,会将最后一条命令运行结果作为返回值.
-- Shell 函数返回值只能是整数,一般用来表示函数执行成功与否,0表示成功,其他值表示失败.如果 return 其他数据,比如一个字符串,往往会得到错误提示：“numeric argument required”.
+- Shell 函数返回值只能是整数,一般用来表示函数执行成功与否,0表示成功,其他值表示失败.如果 return 其他数据,比如一个字符串,往往会得到错误提示: “numeric argument required”.
 - 如果一定要让函数返回字符串,那么可以先定义一个变量,用来接收函数的计算结果,脚本在需要的时候访问这个变量来获得函数返回值
 - 调用函数只需要给出函数名,不需要加括号
 - 函数返回值在调用该函数后通过 $? 来获得
@@ -162,7 +162,7 @@ toc: true
         list of commands
         [ return value ]
     }
-    　　如果你愿意,也可以在函数名前加上关键字 function：
+    　　如果你愿意,也可以在函数名前加上关键字 function: 
     function functionName () {
         list of commands
         [ return value ]

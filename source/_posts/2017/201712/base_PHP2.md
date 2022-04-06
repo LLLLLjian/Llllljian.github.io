@@ -11,7 +11,7 @@ toc: true
     define(常量名, 常量值, [区分大小写参数])        //true表示不区分/false表示区分大小写
     const 常量名 = 常量值    // 新,建议
     常量名可以使用特殊字符
-    constant($name)     // 获取常量名  // 例：echo constant('-_-');
+    constant($name)     // 获取常量名  // 例: echo constant('-_-');
 
 - 常量相关函数
     defined

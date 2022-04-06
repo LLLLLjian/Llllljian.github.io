@@ -94,8 +94,8 @@ toc: true
                 'default': ThreadPoolExecutor(20)
             }
             job_defaults = {
-                # coalesce：累计的任务是否执行.True不执行, False,执行.同上, 由于某种原因, 比如进场挂了, 导致任务多次没有调用, 则前几次的累计任务的任务是否执行的策略
-                # max_instances：同一个任务在线程池中最多跑的实例数.
+                # coalesce: 累计的任务是否执行.True不执行, False,执行.同上, 由于某种原因, 比如进场挂了, 导致任务多次没有调用, 则前几次的累计任务的任务是否执行的策略
+                # max_instances: 同一个任务在线程池中最多跑的实例数.
                 'coalesce': True
             }
             # BackgroundScheduler 调用start后主线程不会阻塞.当你不运行任何其他框架时使用, 并希望调度器在你应用的后台执行

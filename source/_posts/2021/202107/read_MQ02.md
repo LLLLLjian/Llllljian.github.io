@@ -21,15 +21,15 @@ toc: true
 - 整体结构图
     ![RabbitMQ整体结构图](/img/20210720_1.png)
 - 概念说明
-    * Broker：简单来说就是消息队列服务器实体.
-    * Exchange：消息交换机, 它指定消息按什么规则, 路由到哪个队列.
-    * Queue：消息队列载体, 每个消息都会被投入到一个或多个队列.
-    * Binding：绑定, 它的作用就是把exchange和queue按照路由规则绑定起来.
-    * Routing Key：路由关键字, exchange根据这个关键字进行消息投递.
-    * vhost：虚拟主机, 一个broker里可以开设多个vhost, 用作不同用户的权限分离.
-    * producer：消息生产者, 就是投递消息的程序.
-    * consumer：消息消费者, 就是接受消息的程序.
-    * channel：消息通道, 在客户端的每个连接里, 可建立多个channel, 每个channel代表一个会话任务.
+    * Broker: 简单来说就是消息队列服务器实体.
+    * Exchange: 消息交换机, 它指定消息按什么规则, 路由到哪个队列.
+    * Queue: 消息队列载体, 每个消息都会被投入到一个或多个队列.
+    * Binding: 绑定, 它的作用就是把exchange和queue按照路由规则绑定起来.
+    * Routing Key: 路由关键字, exchange根据这个关键字进行消息投递.
+    * vhost: 虚拟主机, 一个broker里可以开设多个vhost, 用作不同用户的权限分离.
+    * producer: 消息生产者, 就是投递消息的程序.
+    * consumer: 消息消费者, 就是接受消息的程序.
+    * channel: 消息通道, 在客户端的每个连接里, 可建立多个channel, 每个channel代表一个会话任务.
 
 #### RabbitMQ生产/消费流程
 > 生产者将消息发送到Exchange, 由Exchange将消息路由到一个或多个Queue中(或者丢弃), 在绑定(Binding)Exchange与Queue的同时, 一般会指定一个binding key；消费者将消息发送给   Exchange时, 一般会指定一个routing key；当binding key与routing key相匹配时, 消息将会被路由到对应的Queue中. 

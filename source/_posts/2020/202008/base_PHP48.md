@@ -23,7 +23,7 @@ toc: true
         $redis = new Redis();
         $redis->connect('127.0.0.1', 6379);
 
-        //设置键值：成功返回true,否则返回false,键值不存在则新建,否则覆盖
+        //设置键值: 成功返回true,否则返回false,键值不存在则新建,否则覆盖
         $redis->set('string', 'hello world!');
 
         //从左往右第五个字符开始替换为另一指定字符串,成功返回替换后新字符串的长度.
@@ -32,13 +32,13 @@ toc: true
         //截取字符串里指定key对应的value里的第一个到第七个字符.
         $redis->getRange('string', 0, 6);
 
-        //添加键,返回旧键值：若key不存在则创建键值,返回false
+        //添加键,返回旧键值: 若key不存在则创建键值,返回false
         $redis->getSet('ad', 'hi man');
 
-        //一次设置多个键值对：成功返回true
+        //一次设置多个键值对: 成功返回true
         $redis->mset(['name' => 'jet', 'age' => 18]);
 
-        //一次获取多个key的值：返回一个键值对数组,其中不存在的key值为false.
+        //一次获取多个key的值: 返回一个键值对数组,其中不存在的key值为false.
         $redis->mget(['name', 'age']);
 
         //创建一个具有时间限制的键值,过期则删除,秒为单位,成功返回true
@@ -74,7 +74,7 @@ toc: true
         //为指定key值尾部添加字符,返回值得长度,若key不存在则创建
         $redis->append('name', 'haha');
 
-        //获取键值：成功返回String类型键值,若key不存在或不是String类型则返回false
+        //获取键值: 成功返回String类型键值,若key不存在或不是String类型则返回false
         $redis->get('name');
     ```
 - 使用场景
@@ -190,7 +190,7 @@ toc: true
             }
         ```
     * getset()
-        * 这个命令主要有两个参数getset(key,newValue).该方法是原子的,对key设置newValue这个值,并且返回key原来的旧值.假设key原来是不存在的,那么多次执行这个命令,会出现下边的效果：getset(key,"value1")返回null此时key的值会被设置为value1;getset(key,"value2")返回value1此时key的值会被设置为value2依次类推
+        * 这个命令主要有两个参数getset(key,newValue).该方法是原子的,对key设置newValue这个值,并且返回key原来的旧值.假设key原来是不存在的,那么多次执行这个命令,会出现下边的效果: getset(key,"value1")返回null此时key的值会被设置为value1;getset(key,"value2")返回value1此时key的值会被设置为value2依次类推
 
 
 

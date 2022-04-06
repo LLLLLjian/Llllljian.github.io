@@ -21,7 +21,7 @@ toc: true
         * 根据 x_end 将气球进行排序.
         * 初始化 first_end 为第一个气球结束的坐标 points[0][1].
         * 初始化箭的数量 arrows = 1.
-        * 遍历所有的气球：如果气球的开始坐标大于 first_end：则增加箭的数量.将 first_end 设置为当前气球的 x_end.
+        * 遍历所有的气球: 如果气球的开始坐标大于 first_end: 则增加箭的数量.将 first_end 设置为当前气球的 x_end.
         * 返回 arrows
     ```php
         class Solution 

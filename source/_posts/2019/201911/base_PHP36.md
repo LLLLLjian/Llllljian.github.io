@@ -58,7 +58,7 @@ toc: true
                 $temp_encode = ($json_options === '') ? json_encode($temp) : json_encode($temp, $json_options);
                 if ($temp_encode === false) {
                     $json_error_code = ($json_error_code === '') ? -100 : intval($json_error_code);
-                    $result = json_encode(array('code' => $json_error_code, 'msg' => '技术故障：json编码失败, ' . json_last_error_msg(), 'data' => ''));
+                    $result = json_encode(array('code' => $json_error_code, 'msg' => '技术故障: json编码失败, ' . json_last_error_msg(), 'data' => ''));
                     $is_error = 1;
                 } else {
                     $result = $temp_encode;
@@ -115,12 +115,12 @@ toc: true
             }
 
             /* 输出接口返回结果并结束程序【待弃用, 目前用这个方法的要换成之后定义的专门格式的方法】
-             * string	$format 输出格式：raw/json/xml(默认raw代表仅直接原生输出显示$msg；json代表json数组array('code' => 返回码, 'msg' => '返回消息', 'data' => 返回数据)；xml代表xml格式(根目录标签 为root), 标签同json数组下标
+             * string	$format 输出格式: raw/json/xml(默认raw代表仅直接原生输出显示$msg；json代表json数组array('code' => 返回码, 'msg' => '返回消息', 'data' => 返回数据)；xml代表xml格式(根目录标签 为root), 标签同json数组下标
              * int	$is_error 是否发现技术故障, 1是, 0否
              * mixed	$msg 返回消息(json/xml仅限字符串, raw格式不限)
              * mixed	$data 返回resource类型之外任何类型的数据；对于json格式, 所有字符串的编码必须是UTF-8；仅json/xml格式用
              * int	$code 返回码(输出格式不是raw时有效), 仅json/xml格式用
-             * array $options 其它选项设置数组, 支持的数组下标：
+             * array $options 其它选项设置数组, 支持的数组下标: 
              *	(string/array) headers header头字符串或各行数组, 仅raw格式用
              *	(int) json_options json_encode的常量选项, 例如JSON_UNESCAPED_UNICODE等等, 仅json格式用
              *	(int) json_error_code	json_encode报错时的返回码, 仅json格式用
@@ -394,7 +394,7 @@ toc: true
             }
         }
 
-        常用示例：
+        常用示例: 
         $msg = Io::get_req_value('msg');
         $para = Io::get_req_value_all();
         Io::debug_echo($msg);

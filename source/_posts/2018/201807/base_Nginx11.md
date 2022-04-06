@@ -21,7 +21,7 @@ toc: true
     反向代理服务器
     实现负载均衡
     虚拟主机
-    FastCGI：Nginx本身不支持PHP等语言,但是它可以通过FastCGI来将请求扔给某些语言或框架处理
+    FastCGI: Nginx本身不支持PHP等语言,但是它可以通过FastCGI来将请求扔给某些语言或框架处理
 
 #### Nginx和Apache的异同
     轻量级,同样起web 服务,比apache 占用更少的内存及资源 
@@ -37,8 +37,8 @@ toc: true
 
 #### Master进程和Worker进程
     一个master进程,生成一个或者多个worker进程
-    Master进程：读取及评估配置和维持
-    Worker进程：处理请求
+    Master进程: 读取及评估配置和维持
+    Worker进程: 处理请求
 
 #### nginx常用命令
     启动nginx  ./sbin/nginx

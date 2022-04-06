@@ -16,10 +16,10 @@ toc: true
 - A
     * ![四次挥手](/img/20191120_1.png)
     * 我要和你断开链接；好的, 断吧.我也要和你断开链接；好的, 断吧
-    * 第一次挥手：Client将FIN置为1, 发送一个序列号seq给Server；进入FIN_WAIT_1状态；
-    * 第二次挥手：Server收到FIN之后, 发送一个ACK=1, acknowledge number=收到的序列号+1；进入CLOSE_WAIT状态.此时客户端已经没有要发送的数据了, 但仍可以接受服务器发来的数据.
-    * 第三次挥手：Server将FIN置1, 发送一个序列号给Client；进入LAST_ACK状态；
-    * 第四次挥手：Client收到服务器的FIN后, 进入TIME_WAIT状态；接着将ACK置1, 发送一个acknowledge number=序列号+1给服务器；服务器收到后, 确认acknowledge number后, 变为CLOSED状态, 不再向客户端发送数据.客户端等待2*MSL(报文段最长寿命)时间后, 也进入CLOSED状态.完成四次挥手.
+    * 第一次挥手: Client将FIN置为1, 发送一个序列号seq给Server；进入FIN_WAIT_1状态；
+    * 第二次挥手: Server收到FIN之后, 发送一个ACK=1, acknowledge number=收到的序列号+1；进入CLOSE_WAIT状态.此时客户端已经没有要发送的数据了, 但仍可以接受服务器发来的数据.
+    * 第三次挥手: Server将FIN置1, 发送一个序列号给Client；进入LAST_ACK状态；
+    * 第四次挥手: Client收到服务器的FIN后, 进入TIME_WAIT状态；接着将ACK置1, 发送一个acknowledge number=序列号+1给服务器；服务器收到后, 确认acknowledge number后, 变为CLOSED状态, 不再向客户端发送数据.客户端等待2*MSL(报文段最长寿命)时间后, 也进入CLOSED状态.完成四次挥手.
 
 #### 问题2
 - Q

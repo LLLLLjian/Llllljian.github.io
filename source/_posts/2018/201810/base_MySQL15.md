@@ -8,7 +8,7 @@ toc: true
 ### MySQL基础配置文件
     学习一下MySQL的配置文件
     my.ini(Linux系统下是my.cnf),当mysql服务器启动时它会读取这个文件,设置相关的运行环境参数.
-    my.ini分为两块：Client Section和Server Section.
+    my.ini分为两块: Client Section和Server Section.
     Client Section用来配置MySQL客户端参数
 
 <!-- more -->
@@ -40,7 +40,7 @@ toc: true
 
         query_cache_size=0 # 查询缓存大小,用于缓存SELECT查询结果.如果有许多返回相同查询结果的SELECT查询,并且很少改变表,可以设置query_cache_size大于0,可以极大改善查询效率.而如果表数据频繁变化,就不要使用这个,会适得其反
 
-        table_cache=256 # 这个参数在5.1.3之后的版本中叫做table_open_cache,用于设置table高速缓存的数量.由于每个客户端连接都会至少访问一个表,因此此参数的值与 max_connections有关.当某一连接访问一个表时,MySQL会检查当前已缓存表的数量.如果该表已经在缓存中打开,则会直接访问缓存中的表已加快查询速度；如果该表未被缓存,则会将当前的表添加进缓存并进行查询.在执行缓存操作之前,table_cache用于限制缓存表的最大数目：如果当前已经缓存的表未达到table_cache,则会将新表添加进来；若已经达到此值,MySQL将根据缓存表的最后查询时间、查询率等规则释放之前的缓存.
+        table_cache=256 # 这个参数在5.1.3之后的版本中叫做table_open_cache,用于设置table高速缓存的数量.由于每个客户端连接都会至少访问一个表,因此此参数的值与 max_connections有关.当某一连接访问一个表时,MySQL会检查当前已缓存表的数量.如果该表已经在缓存中打开,则会直接访问缓存中的表已加快查询速度；如果该表未被缓存,则会将当前的表添加进缓存并进行查询.在执行缓存操作之前,table_cache用于限制缓存表的最大数目: 如果当前已经缓存的表未达到table_cache,则会将新表添加进来；若已经达到此值,MySQL将根据缓存表的最后查询时间、查询率等规则释放之前的缓存.
 
         tmp_table_size=34M # 内存中的每个临时表允许的最大大小.如果临时表大小超过该值,临时表将自动转为基于磁盘的表(Disk Based Table).
 

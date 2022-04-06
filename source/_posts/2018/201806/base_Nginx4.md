@@ -60,7 +60,7 @@ toc: true
             #设定请求大小;
             client_max_body_size 8m; 
 
-            #开启高效文件传输模式,sendfile指令指定nginx是否调用sendfile函数来输出文件,对于普通应用设为 on,如果用来进行下载等应用磁盘IO重负载应用,可设置为off,以平衡磁盘与网络I/O处理速度,降低系统的负载.注意：如果图片显示不正常把这个改成off.
+            #开启高效文件传输模式,sendfile指令指定nginx是否调用sendfile函数来输出文件,对于普通应用设为 on,如果用来进行下载等应用磁盘IO重负载应用,可设置为off,以平衡磁盘与网络I/O处理速度,降低系统的负载.注意: 如果图片显示不正常把这个改成off.
             sendfile on; 
 
             #开启目录列表访问,合适下载服务器,默认关闭.
@@ -75,7 +75,7 @@ toc: true
             #长连接超时时间,单位是秒
             keepalive_timeout 120;
 
-            #FastCGI相关参数是为了改善网站的性能：减少资源占用,提高访问速度.下面参数看字面意思都能理解.
+            #FastCGI相关参数是为了改善网站的性能: 减少资源占用,提高访问速度.下面参数看字面意思都能理解.
             fastcgi_connect_timeout 300;
             fastcgi_send_timeout 300;
             fastcgi_read_timeout 300;

@@ -59,8 +59,8 @@ toc: true
         //移动的次数
         $step = 0;
         hanuota(2, 'A', 'B', 'C');
-        echo "移动次数：" . $step;
-        echo "移动次数：" . getCount(2);
+        echo "移动次数: " . $step;
+        echo "移动次数: " . getCount(2);
 
         function getCount($num)
         {
@@ -74,7 +74,7 @@ toc: true
         将圆盘 1 从 A 柱子 到 C 柱子 
         将圆盘 2 从 A 柱子 到 B 柱子 
         将圆盘 1 从 C 柱子 到 B 柱子 
-        移动次数：3
-        移动次数：3
+        移动次数: 3
+        移动次数: 3
     ```
 

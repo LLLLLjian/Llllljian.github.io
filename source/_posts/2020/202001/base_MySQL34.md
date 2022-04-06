@@ -33,7 +33,7 @@ toc: true
     ```sql
         select id, name from employee  where name = 'jay' limit 1
     ```
-- 理由：
+- 理由: 
     * 加上limit 1后,只要找到了对应的一条记录,就不会继续向下扫描了,效率将会大大提高
 
 #### 优化建议-SELECT
@@ -52,7 +52,7 @@ toc: true
         select * from user where age = 18
     ```
 - 理由
-    * 使用or可能会使索引失效, 从而全表扫描.对于or+没有索引的age这种情况, 假设它走了userId的索引, 但是走到age查询条件时, 它还得全表扫描, 也就是需要三步过程：全表扫描+索引扫描+合并
+    * 使用or可能会使索引失效, 从而全表扫描.对于or+没有索引的age这种情况, 假设它走了userId的索引, 但是走到age查询条件时, 它还得全表扫描, 也就是需要三步过程: 全表扫描+索引扫描+合并
 
 #### 优化建议-SELECT
 > 优化limit分页
@@ -62,12 +62,12 @@ toc: true
     ```
 - 正例
     ```sql
-        //方案一 ：返回上次查询的最大记录(偏移量)
+        //方案一 : 返回上次查询的最大记录(偏移量)
         select id, name from employee where id > 10000 limit 10.
 
-        //方案二：order by + 索引
+        //方案二: order by + 索引
         select id, name from employee order by id  limit 10000, 10
-        //方案三：在业务允许的情况下限制页数：
+        //方案三: 在业务允许的情况下限制页数: 
     ```
 - 理由
     * 当偏移量最大的时候, 查询效率就会越低, 因为Mysql并非是跳过偏移量直接去取后面的数据, 而是先把偏移量+要取的条数, 然后再把前面偏移量这一段的数据抛弃掉再返回的.

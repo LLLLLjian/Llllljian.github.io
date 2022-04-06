@@ -11,7 +11,7 @@ toc: true
 <!-- more -->
 
 #### Python3 错误和异常
-> Python 有两种错误很容易辨认：语法错误和异常
+> Python 有两种错误很容易辨认: 语法错误和异常
 - 语法错误
     * Python 的语法错误或者称之为解析错
     ```python

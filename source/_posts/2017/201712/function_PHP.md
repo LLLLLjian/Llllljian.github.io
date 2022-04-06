@@ -148,7 +148,7 @@ toc: true
             return $tmp_rec_long;
         }
 
-        $tmp_rec_long = str_replace("：",":",$tmp_rec_long);
+        $tmp_rec_long = str_replace(": ",":",$tmp_rec_long);
 
         $tmp_rec_long_arr = explode(":", $tmp_rec_long);
         $tmp_rec_long_count = count($tmp_rec_long_arr);

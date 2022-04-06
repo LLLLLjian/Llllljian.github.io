@@ -61,7 +61,7 @@ toc: true
     ```python
         # 模块A
         print('你好,我是模块A……')
-        print('模块A中__name__的值：{}'.format(__name__))
+        print('模块A中__name__的值: {}'.format(__name__))
         print('-------------------------')
     ```
 - 还是模块B
@@ -70,22 +70,22 @@ toc: true
 
         from package01 import A
         print('你好,我是模块B……')
-        print('模块B中__name__的值：{}'.format(__name__))
+        print('模块B中__name__的值: {}'.format(__name__))
     ```
 - 运行模块A
     ```bash
         你好,我是模块A……
-        模块A中__name__的值：__main__
+        模块A中__name__的值: __main__
         -------------------------
     ```
 - 运行模块B
     ```bash
         你好,我是模块A……
-        模块A中__name__的值：package01.A
+        模块A中__name__的值: package01.A
         -------------------------
 
         你好,我是模块B……
-        模块B中__name__的值：__main__
+        模块B中__name__的值: __main__
     ```
 - 结论
     * 当哪个模块被直接执行时,该模块“\__name__”的值就是“\__main__”,当被导入另一模块时,“\__name__”的值就是模块的真实名称

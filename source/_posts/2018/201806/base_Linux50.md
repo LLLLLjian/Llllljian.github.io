@@ -100,8 +100,8 @@ toc: true
         * nice的范围为-20 ~ 19 
         * PRI的范围为60 ~ 99
 - 进程显示说明
-    * ps -l：显示当前终端下开启的任务. 
-    * ps -al：显示当前终端下所有的任务. 
+    * ps -l: 显示当前终端下开启的任务. 
+    * ps -al: 显示当前终端下所有的任务. 
     ```bash
         [llllljian@llllljian-virtual-machine ~ 20:37:46 #13]$ ps -l
         F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
@@ -114,7 +114,7 @@ toc: true
 
         UID : 代表执行者的身份 
         PID : 代表这个进程的代号 
-        PPID ：代表这个进程是由哪个进程发展衍生而来的,亦即父进程的代号 
-        PRI ：代表这个进程可被执行的优先级,其值越小越早被执行 
-        NI ：代表这个进程的nice值
+        PPID : 代表这个进程是由哪个进程发展衍生而来的,亦即父进程的代号 
+        PRI : 代表这个进程可被执行的优先级,其值越小越早被执行 
+        NI : 代表这个进程的nice值
     ```

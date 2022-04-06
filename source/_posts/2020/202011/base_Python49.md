@@ -89,7 +89,7 @@ toc: true
                     'format': '%(levelname)s %(module)s %(lineno)d %(message)s'
                 },
             },
-            'filters': {  # 过滤器：可以对日志进行输出时的过滤用的
+            'filters': {  # 过滤器: 可以对日志进行输出时的过滤用的
                 'require_debug_true': {  # 在debug=True下产生的一些日志信息,要不要记录日志,需要的话就在handlers中加上这个过滤器,不需要就不加
                     '()': 'django.utils.log.RequireDebugTrue',
                 },
@@ -124,7 +124,7 @@ toc: true
                 'django': {  # 和django结合起来使用,将django中之前的日志输出内容的时候,按照我们的日志配置进行输出,
                     'handlers': ['console', 'file'],  # 项目上线,需要把console去掉
                     'propagate': True,
-                    # 冒泡：是否将日志信息记录冒泡给其他的日志处理系统,工作中都是True,不然django这个日志系统捕获到日志信息之后,其他模块中可能也有日志记录功能的模块,就获取不到这个日志信息了
+                    # 冒泡: 是否将日志信息记录冒泡给其他的日志处理系统,工作中都是True,不然django这个日志系统捕获到日志信息之后,其他模块中可能也有日志记录功能的模块,就获取不到这个日志信息了
                 },
                 'django.db.backends': {
                     'handlers': ['console'],

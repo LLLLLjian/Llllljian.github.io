@@ -17,17 +17,17 @@ toc: true
 1. 从容器里面拷文件到宿主机
     * 需要执行的命令
         ```bash
-            docker cp 容器名：要拷贝的文件在容器里面的路径       要拷贝到宿主机的相应路径
+            docker cp 容器名: 要拷贝的文件在容器里面的路径       要拷贝到宿主机的相应路径
         ```
     * eg
         ```bash
-            # 假设容器名为testtomcat,要从容器里面拷贝的文件路为：/usr/local/tomcat/webapps/test/js/test.js,  现在要将test.js从容器里面拷到宿主机的/opt路径下面
+            # 假设容器名为testtomcat,要从容器里面拷贝的文件路为: /usr/local/tomcat/webapps/test/js/test.js,  现在要将test.js从容器里面拷到宿主机的/opt路径下面
             docker cp testtomcat:/usr/local/tomcat/webapps/test/js/test.js /opt
         ```
 2. 从宿主机拷文件到容器里面
     * 需要执行的命令
         ```bash
-            docker cp 要拷贝的文件路径 容器名：要拷贝到容器里面对应的路径
+            docker cp 要拷贝的文件路径 容器名: 要拷贝到容器里面对应的路径
         ```
     * eg
         ```bash

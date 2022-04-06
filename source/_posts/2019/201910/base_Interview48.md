@@ -15,11 +15,11 @@ toc: true
     * HTTP Keep-Alive的作用
 - A
     * 作用
-        * Keep-Alive：使客户端到服务器端的连接持续有效, 当出现对服务器的后继请求时, Keep-Alive功能避免了建立或者重新建立连接.Web服务器, 基本上都支持HTTP Keep-Alive.
+        * Keep-Alive: 使客户端到服务器端的连接持续有效, 当出现对服务器的后继请求时, Keep-Alive功能避免了建立或者重新建立连接.Web服务器, 基本上都支持HTTP Keep-Alive.
     * 缺点
         * 对于提供静态内容的网站来说, 这个功能通常很有用.但是, 对于负担较重的网站来说, 虽然为客户保留打开的连 接有一定的好处, 但它同样影响了性能, 因为在处理暂停期间, 本来可以释放的资源仍旧被占用.当Web服务器和应用服务器在同一台机器上运行时, Keep- Alive功能对资源利用的影响尤其突出.
     * 解决
-        * Keep-Alive: timeout=5, max=100; timeout：过期时间5秒(对应httpd.conf里的参数是：KeepAliveTimeout), max是最多一百次请求, 强制断掉连接.就是在timeout时间内又有新的连接过来, 同时max会自动减1, 直到为0, 强制断掉.
+        * Keep-Alive: timeout=5, max=100; timeout: 过期时间5秒(对应httpd.conf里的参数是: KeepAliveTimeout), max是最多一百次请求, 强制断掉连接.就是在timeout时间内又有新的连接过来, 同时max会自动减1, 直到为0, 强制断掉.
 
 #### 问题2
 - Q
@@ -30,7 +30,7 @@ toc: true
     * print
         * 是语句不是函数, 有返回值 1 , 只能输出一个变量, 不需要圆括号.不能输出数组和对象, 只能打印简单类型(如int,string).
     * print_r
-        * 是函数, 可以打印复合类型, 例如：stirng、int、float、array、object等, 输出array时会用结构表示, 而且可以通过print_r($str,true)来使print_r不输出而返回print_r处理后的值
+        * 是函数, 可以打印复合类型, 例如: stirng、int、float、array、object等, 输出array时会用结构表示, 而且可以通过print_r($str,true)来使print_r不输出而返回print_r处理后的值
     * printf
         * 是函数, 有返回值, 返回值是打印内容的长度, 把文字格式化以后输出(参看C语言)
     * sprintf
@@ -104,7 +104,7 @@ toc: true
     * 序列化相关
         * \_\_sleep() : 序列化时调用, serialize() 函数会检查类中是否存在该魔术方法.如果存在, 该方法会先被调用, 然后才执行序列化操作.
         * \_\_wakeup() : unserialize() 会检查是否存在一个 \_\_wakeup() 方法.如果存在, 则会先调用该方法, 用在反序列化操作中, 例如重新建立数据库连接, 或执行其它初始化操作
-    * 操作类和对象方法：
+    * 操作类和对象方法: 
         * \_\_toString() : 方法用于一个类被当成字符串时调用, 例如把一个类当做字符串进行输出
         * \_\_invoke() : 当尝试以调用函数的方式调用一个对象时, \_\_invoke() 方法会被自动调用.
         * \_\_set_state() : 当调用 var_export() 导出类时, 此静态 方法会被调用. 本方法的唯一参数是一个数组

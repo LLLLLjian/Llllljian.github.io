@@ -67,13 +67,13 @@ toc: true
     * 故事前景: 现在有两个系统,分别是系统A llllljian1.com和系统B llllljian2.com,一个SSO sso.com
     1. 用户A想访问 llllljian1.com中需要登陆的某些页面
     2. 系统A发现用户还没有登陆
-    3. 重定向到sso认证中心,并将自己的地址作为参数.请求的地址如下：sso.com?service=llllljian1.com
+    3. 重定向到sso认证中心,并将自己的地址作为参数.请求的地址如下: sso.com?service=llllljian1.com
     4. sso认证中心发现用户未登录,将用户引导至登录页面,用户进行输入用户名和密码进行登录,用户与认证中心建立全局会话(生成一份Token,写到Cookie中,保存在浏览器上)
-    5. 认证中心重定向回系统A,并把Token携带过去给系统A,重定向的地址如下：llllljian1.com?token=xxxxxxx
+    5. 认证中心重定向回系统A,并把Token携带过去给系统A,重定向的地址如下: llllljian1.com?token=xxxxxxx
     6. 系统A去sso认证中心验证这个Token是否正确,如果正确,则系统A和用户建立局部会话(创建Session).到此,系统A和用户已经是登录状态了
     7. 用户想要访问系统B llllljian2.com受限的资源(比如说订单功能,订单功能需要登录后才能访问)
     8. 系统B llllljian2.com发现用户并没有登录
-    9. 于是重定向到sso认证中心,并将自己的地址作为参数.请求的地址如下：sso.com?service=llllljian2.com
+    9. 于是重定向到sso认证中心,并将自己的地址作为参数.请求的地址如下: sso.com?service=llllljian2.com
     10. 注意,因为之前用户与认证中心sso.com已经建立了全局会话(当时已经把Cookie保存到浏览器上了),所以这次系统B重定向到认证中心sso.com是可以带上Cookie的
-    11. 认证中心根据带过来的Cookie发现已经与用户建立了全局会话了,认证中心重定向回系统B,并把Token携带过去给系统B,重定向的地址如下：llllljian2.com?token=xxxxxxx
+    11. 认证中心根据带过来的Cookie发现已经与用户建立了全局会话了,认证中心重定向回系统B,并把Token携带过去给系统B,重定向的地址如下: llllljian2.com?token=xxxxxxx
     12. 系统B去sso认证中心验证这个Token是否正确,如果正确,则系统B和用户建立局部会话(创建Session).到此,系统B和用户已经是登录状态了

@@ -27,7 +27,7 @@ toc: true
                 server unix:/tmp/backend3;
             }
 
-            每7个请求会通过以下方式分发： 5个请求分到backend1.example.com, 一个请求分到第二个服务器,一个请求分到第三个服务器. 与服务器通信的时候,如果出现错误,请求会被传给下一个服务器,直到所有可用的服务器都被尝试过. 如果所有服务器都返回失败,客户端将会得到最后通信的那个服务器的(失败)响应结果.
+            每7个请求会通过以下方式分发:  5个请求分到backend1.example.com, 一个请求分到第二个服务器,一个请求分到第三个服务器. 与服务器通信的时候,如果出现错误,请求会被传给下一个服务器,直到所有可用的服务器都被尝试过. 如果所有服务器都返回失败,客户端将会得到最后通信的那个服务器的(失败)响应结果.
         ```
 - server
     * 说明
@@ -165,7 +165,7 @@ toc: true
     * flag
         * last 停止执行当前这一轮的ngx_http_rewrite_module指令集,然后查找匹配改变后URI的新location；
         * break 停止执行当前这一轮的ngx_http_rewrite_module指令集；
-        * redirect 在replacement字符串未以'http：//'或“https：//”开头时,使用返回状态码为302的临时重定向；
+        * redirect 在replacement字符串未以'http: //'或“https: //”开头时,使用返回状态码为302的临时重定向；
         * permanent 返回状态码为301的永久重定向.
 - rewrite_log指令
     * 说明

@@ -14,7 +14,7 @@ toc: true
 - Q
     * MySQL的索引机制,复合索引的使用原则
 - A
-    * 一般都会用书本中的目录来介绍索引机制,包括有些书本会有专门的快速检索附录,就很类似于数据库的索引.MySQL的索引包括4类：主键索引(primary key)、唯一索引(unique)、常规索引(index)、全文索引(fullindex).Show index from table_name; –查看表中的索引.Show status like ‘Handler_read%’ –查看索引的使用情况复合索引,一般遵循最左前缀原则,如table_a 的 a b c 三列建复合索引.create index ind_table_a on table_a(a,b,c);那么,只有在条件中用到a,或者a、b,或者a、b、c这样的情况下,才会用到刚建的复合索引.
+    * 一般都会用书本中的目录来介绍索引机制,包括有些书本会有专门的快速检索附录,就很类似于数据库的索引.MySQL的索引包括4类: 主键索引(primary key)、唯一索引(unique)、常规索引(index)、全文索引(fullindex).Show index from table_name; –查看表中的索引.Show status like ‘Handler_read%’ –查看索引的使用情况复合索引,一般遵循最左前缀原则,如table_a 的 a b c 三列建复合索引.create index ind_table_a on table_a(a,b,c);那么,只有在条件中用到a,或者a、b,或者a、b、c这样的情况下,才会用到刚建的复合索引.
     
 #### 问题2
 - Q
@@ -24,7 +24,7 @@ toc: true
     show engines查看支持表类型配置.常见包括:MyISAM/Innodb/Memory/Merge/NDB
     其中,MyISAM和Innodb是最常用的两个表类型,各有优势,我们可以根据需求情况选择适合自己的表类型.
     * \[MyISAM]
-    1)每个数据库存储包括3个文件：.frm(表定义)、MYD(数据文件)、MYI(索引文件)
+    1)每个数据库存储包括3个文件: .frm(表定义)、MYD(数据文件)、MYI(索引文件)
     2)数据文件或索引文件可以指向多个磁盘
     3)Linux的默认引擎,win默认InnoDB
     4)面向非事务类型,避免事务型额外的开销
@@ -42,8 +42,8 @@ toc: true
 - Q
     * 简单说下快速排序算法
 - A
-    * 基本思想：通过一趟排序将待排序列分割成两部分,其中一部分比另一部分记录小,再分别对这两部分继续快速排序,以达到有序.
-    * 算法实现：设有两个指针low和high,初值为low=1,high=n,设基准值为key(通常选第一个),则首先从high位置开始向前搜索,找到第一个比key小的记录与key交换,然后从low位置向后搜索,找到第一个比key大的记录与基准值交换,重复直至low=high为止.
+    * 基本思想: 通过一趟排序将待排序列分割成两部分,其中一部分比另一部分记录小,再分别对这两部分继续快速排序,以达到有序.
+    * 算法实现: 设有两个指针low和high,初值为low=1,high=n,设基准值为key(通常选第一个),则首先从high位置开始向前搜索,找到第一个比key小的记录与key交换,然后从low位置向后搜索,找到第一个比key大的记录与基准值交换,重复直至low=high为止.
     第一趟排序结果,key之前的记录值比key之后的记录值小.
     11 25 9 3 16 2 //选择11为key
     2 25 9 3 16 11
@@ -56,7 +56,7 @@ toc: true
 - A
     * eg
         ```bash
-            [例]：有如下文件test,请统计每个网址出现次数,用一句shell实现.
+            [例]: 有如下文件test,请统计每个网址出现次数,用一句shell实现.
             a        www.baidu.com        20:00
             b        www.qq.com        19:30
             c        www.baidu.com        14:00

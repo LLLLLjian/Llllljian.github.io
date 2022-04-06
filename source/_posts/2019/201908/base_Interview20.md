@@ -39,7 +39,7 @@ toc: true
 - A
     * HTTP,超文本传输协议.它定义了浏览器和服务器的通信规则.HTTP协议是基于TCP/IP的TCP协议上,现在万维网使用的是HTTP1.1版本,其特点包括,C/S模式,请求简单(GET/POST/HEAD),灵活(可以传输任何类型的数据HTML、XML、JSON、自定义等),无连接(每次连接只处理一个请求,从发出请求到收到200状态为止断开连接),无状态.
     * 对HTTP协议的考察主要包括,响应消息格式、请求消息格式、状态码等知识点.
-    * 一般一个HTTP协议包括：起始行(start line)、首部(header)、主体(body)三个部分.
+    * 一般一个HTTP协议包括: 起始行(start line)、首部(header)、主体(body)三个部分.
         * \[响应消息格式]
             HTTP/1.1 200 0K
             Connectlon:close
@@ -48,7 +48,7 @@ toc: true
             Last—Nodified:Mon,22 Jun 1998 09;23;24 GMT
             Content—Length:682l
             Content—Type:text/html
-            这个响应消息分为3部分：1个起始的状态行(status line),首部、1个包含所请求对象本身的附属体.状态行有3个字段:协议版本字段、状态码字段、原因短语字段.
+            这个响应消息分为3部分: 1个起始的状态行(status line),首部、1个包含所请求对象本身的附属体.状态行有3个字段:协议版本字段、状态码字段、原因短语字段.
         * \[请求消息格式]
             GET /somedir/page.html HTTP/1.1
             Host:www.itheima.com

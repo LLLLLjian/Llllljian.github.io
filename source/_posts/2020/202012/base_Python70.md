@@ -121,7 +121,7 @@ toc: true
         otherStyleTime = now.strftime("%Y--%m--%d %H:%M:%S")
         print otherStyleTime
 
-        # 结果如下：
+        # 结果如下: 
         2018-08-11 09:51:17.362986
         2018--08--11 09:51:17
     ```

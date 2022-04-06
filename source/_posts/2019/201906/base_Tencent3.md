@@ -50,7 +50,7 @@ toc: true
             */
             'default'         => [
                 /*
-                * 指定 API 调用返回结果的类型：array(default)/object/raw/自定义类名
+                * 指定 API 调用返回结果的类型: array(default)/object/raw/自定义类名
                 */
                 'response_type' => 'array',
                 /*
@@ -60,9 +60,9 @@ toc: true
                 /*
                 * 日志配置
                 *
-                * level: 日志级别,可选为：
+                * level: 日志级别,可选为: 
                 *                 debug/info/notice/warning/error/critical/alert/emergency
-                * file：日志文件位置(绝对路径!!!),要求可写权限
+                * file: 日志文件位置(绝对路径!!!),要求可写权限
                 */
                 'log' => [
                     'permission' => 0777,
@@ -85,8 +85,8 @@ toc: true
                     /*
                     * OAuth 配置
                     *
-                    * scopes：公众平台(snsapi_userinfo / snsapi_base),开放平台：snsapi_login
-                    * callback：OAuth授权完成后的回调页地址(如果使用中间件,则随便填写...)
+                    * scopes: 公众平台(snsapi_userinfo / snsapi_base),开放平台: snsapi_login
+                    * callback: OAuth授权完成后的回调页地址(如果使用中间件,则随便填写...)
                     */
                     //'oauth' => [
                     //    'scopes'   => array_map('trim',

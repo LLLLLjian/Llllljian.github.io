@@ -35,8 +35,8 @@ toc: true
     * bs=8k  每次读或写的大小,即一个块的大小.
     * count=xxx  读写块的总数量
 - eg
-    * 测试方式：使用dd指令,对磁盘进行连续写入,不使用内存缓冲区,每次写入8k的数据,总共写入20万次,产生1.6G大小的文件.
-    * 测试指令：dd if=/dev/zero of=/data01/test.dbf bs=8k count=200000 conv=fdatasync
+    * 测试方式: 使用dd指令,对磁盘进行连续写入,不使用内存缓冲区,每次写入8k的数据,总共写入20万次,产生1.6G大小的文件.
+    * 测试指令: dd if=/dev/zero of=/data01/test.dbf bs=8k count=200000 conv=fdatasync
 
 #### 应用实例
 1. 将本地的/dev/hdb整盘备份到/dev/hdd

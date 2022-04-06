@@ -13,11 +13,11 @@ toc: true
 <!-- more -->
 
 #### Django 如何处理一个请求
-- 当一个用户请求Django 站点的一个页面, 下面是Django 系统决定执行哪个Python 代码使用的算法：
+- 当一个用户请求Django 站点的一个页面, 下面是Django 系统决定执行哪个Python 代码使用的算法: 
     * Django 确定使用根 URLconf 模块.通常, 这是 ROOT_URLCONF 设置的值, 但如果传入 HttpRequest 对象拥有 urlconf 属性(通过中间件设置), 它的值将被用来代替 ROOT_URLCONF 设置.
     * Django 加载该 Python 模块并寻找可用的 urlpatterns .它是 django.urls.path() 和(或) django.urls.re_path() 实例的序列(sequence).
     * Django 会按顺序遍历每个 URL 模式, 然后会在所请求的URL匹配到第一个模式后停止, 并与 path_info 匹配.
-    * 一旦有 URL 匹配成功, Django 导入并调用相关的视图, 这个视图是一个Python 函数(或基于类的视图 class-based view ).视图会获得如下参数：
+    * 一旦有 URL 匹配成功, Django 导入并调用相关的视图, 这个视图是一个Python 函数(或基于类的视图 class-based view ).视图会获得如下参数: 
         * 一个 HttpRequest 实例.
         * 如果匹配的 URL 包含未命名组, 那么来自正则表达式中的匹配项将作为位置参数提供.
         * 关键字参数由路径表达式匹配的任何命名部分组成, 并由 django.urls.path() 或 django.urls.re_path() 的可选 kwargs 参数中指定的任何参数覆盖.
@@ -33,7 +33,7 @@ toc: true
         ]
     ```
     * 参数说明
-        <table class="relative-table wrapped confluenceTable tablesorter tablesorter-default" style="width: 100.0%;" role="grid"><colgroup><col style="width: 6.17181%;"><col style="width: 93.8282%;"></colgroup><thead><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="参数: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">参数</div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="说明: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody aria-live="polite" aria-relevant="all"><tr role="row"><td class="confluenceTd">正则表达式</td><td class="confluenceTd"><p>regex是正则表达式的通用缩写, 它是<span style="color: rgb(0,0,255);">一种匹配字符串或url地址的语法</span>.</p><p>Django拿着<span style="color: rgb(0,0,255);">用户请求的url地址, 在urls.py文件中对urlpatterns列表中的每一项条目从头开始进行逐一对比, 一旦遇到匹配项, 立即执行该条目映射的视图函数或二级路由, 其后的条目将不再继续匹配</span>.因此, url路由的编写顺序至关重要！</p><p>需要注意的是, <span style="color: rgb(0,0,255);">regex不会去匹配GET或POST参数或域名</span>, 例如：https://www.example.com/myapp/, regex只尝试匹配myapp/.对于https://www.example.com/myapp/?page=3, regex也只尝试匹配myapp/.如果你想深入研究正则表达式, 可以读一些相关的书籍或专论, 但是在Django的实践中, 你不需要多高深的正则表达式知识.</p><p><span style="color: rgb(0,0,0);"><strong>性能注释</strong>：<span style="color: rgb(0,0,0);">当URLconf模块加载的时候, </span>正则表达式会进行预先编译, 因此它的匹配搜索速度非常快, 你通常感觉不到</span></p></td></tr><tr role="row"><td class="confluenceTd">view视图函数</td><td class="confluenceTd"><p>当正则表达式匹配到某个条目时, <span style="color: rgb(0,0,255);">自动将封装的HttpRequest对象作为第一个参数, 正则表达式“捕获”到的值作为第二个参数, 传递给该条目指定的视图</span>.</p><p><strong>注</strong>：如果是简单捕获, 那么捕获值将作为一个位置参数进行传递, 如果是命名捕获, 那么将作为关键字参数进行传递.</p></td></tr><tr role="row"><td class="confluenceTd">参数(kwargs)</td><td class="confluenceTd">任意数量的关键字参数可以作为一个字典传递给目标视图</td></tr><tr role="row"><td class="confluenceTd">别名name</td><td class="confluenceTd">对你的URL进行命名, 可以让你能够在Django的任意处, 尤其是模板内显式地引用它.相当于给URL取了个全局变量名, 避免了高额的维护成本</td></tr></tbody></table>
+        <table class="relative-table wrapped confluenceTable tablesorter tablesorter-default" style="width: 100.0%;" role="grid"><colgroup><col style="width: 6.17181%;"><col style="width: 93.8282%;"></colgroup><thead><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="参数: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">参数</div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="说明: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody aria-live="polite" aria-relevant="all"><tr role="row"><td class="confluenceTd">正则表达式</td><td class="confluenceTd"><p>regex是正则表达式的通用缩写, 它是<span style="color: rgb(0,0,255);">一种匹配字符串或url地址的语法</span>.</p><p>Django拿着<span style="color: rgb(0,0,255);">用户请求的url地址, 在urls.py文件中对urlpatterns列表中的每一项条目从头开始进行逐一对比, 一旦遇到匹配项, 立即执行该条目映射的视图函数或二级路由, 其后的条目将不再继续匹配</span>.因此, url路由的编写顺序至关重要！</p><p>需要注意的是, <span style="color: rgb(0,0,255);">regex不会去匹配GET或POST参数或域名</span>, 例如: https://www.example.com/myapp/, regex只尝试匹配myapp/.对于https://www.example.com/myapp/?page=3, regex也只尝试匹配myapp/.如果你想深入研究正则表达式, 可以读一些相关的书籍或专论, 但是在Django的实践中, 你不需要多高深的正则表达式知识.</p><p><span style="color: rgb(0,0,0);"><strong>性能注释</strong>: <span style="color: rgb(0,0,0);">当URLconf模块加载的时候, </span>正则表达式会进行预先编译, 因此它的匹配搜索速度非常快, 你通常感觉不到</span></p></td></tr><tr role="row"><td class="confluenceTd">view视图函数</td><td class="confluenceTd"><p>当正则表达式匹配到某个条目时, <span style="color: rgb(0,0,255);">自动将封装的HttpRequest对象作为第一个参数, 正则表达式“捕获”到的值作为第二个参数, 传递给该条目指定的视图</span>.</p><p><strong>注</strong>: 如果是简单捕获, 那么捕获值将作为一个位置参数进行传递, 如果是命名捕获, 那么将作为关键字参数进行传递.</p></td></tr><tr role="row"><td class="confluenceTd">参数(kwargs)</td><td class="confluenceTd">任意数量的关键字参数可以作为一个字典传递给目标视图</td></tr><tr role="row"><td class="confluenceTd">别名name</td><td class="confluenceTd">对你的URL进行命名, 可以让你能够在Django的任意处, 尤其是模板内显式地引用它.相当于给URL取了个全局变量名, 避免了高额的维护成本</td></tr></tbody></table>
 
 #### Django中url与path及re_path区别
 - url
@@ -187,8 +187,8 @@ toc: true
 
             # re_path
             re_path(r'^$', views.index),            # 当用户访问 http://127.0.0.1:8080 时, 后端用view.py中的index()函数处理.$表示结尾
-            re_path(r"^host/(\d+)",views.host),    # URL示例：127.0.0.1:8080/host/100 \d代表数字；()表示无名分组且可以传参, 函数内参数和次顺序一一对应； +表示重复一次或多次前面类型的字符.(\d+)表示不定位数的数字
-            re_path(r'^host_list/(\d{4})/(\d{2})$', views.host_list),  # URL示例： 127.0.0.1:8080/host_list/2015/10   {4}表示重复四次前面的数字
+            re_path(r"^host/(\d+)",views.host),    # URL示例: 127.0.0.1:8080/host/100 \d代表数字；()表示无名分组且可以传参, 函数内参数和次顺序一一对应； +表示重复一次或多次前面类型的字符.(\d+)表示不定位数的数字
+            re_path(r'^host_list/(\d{4})/(\d{2})$', views.host_list),  # URL示例:  127.0.0.1:8080/host_list/2015/10   {4}表示重复四次前面的数字
             re_path(r"^login",views.login,name="log"),    # 127.0.0.1:8080/login
             re_path(r'^article/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})',views.article_month),  # 127.0.0.1:8080/article/2015/09/10  ?P表示有名分组, ()内是分组, <>内是组名函数内参数名必须和组名相同, 顺序可以乱.
         ]

@@ -13,7 +13,7 @@ toc: true
 #### while循环
 - 格式
     ```python
-        while 判断条件：
+        while 判断条件: 
             语句
     ```
 - 注意

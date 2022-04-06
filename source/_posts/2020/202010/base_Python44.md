@@ -28,7 +28,7 @@ toc: true
     * 将数据封装到对象中
 2. CBV
     * 基于反射实现根据请求方式不同, 执行不同的方法
-    * 原理：url-->view方法-->dispatch方法(反射执行其它方法：GET/POST/PUT/DELETE等等)
+    * 原理: url-->view方法-->dispatch方法(反射执行其它方法: GET/POST/PUT/DELETE等等)
 
 #### 简单实例
 > 创建一个项目和一个app(我这里命名为api)
@@ -137,7 +137,7 @@ toc: true
                                             "only accepts arguments that are already "
                                             "attributes of the class." % (cls.__name__, key))
 
-                    def view(request, *args, **kwargs):  # 作用：增加属性,  调用dispatch方法 
+                    def view(request, *args, **kwargs):  # 作用: 增加属性,  调用dispatch方法 
                         self = cls(**initkwargs)  # 创建一个 cls 的实例对象,  cls 是调用这个方法的 类(Demo)
                         if hasattr(self, 'get') and not hasattr(self, 'head'):
                             self.head = self.get
@@ -171,7 +171,7 @@ toc: true
                 """
                 Main entry point for a request-response process.
                 """
-                def view(request, *args, **kwargs):  # 作用：增加属性,  调用dispatch方法 
+                def view(request, *args, **kwargs):  # 作用: 增加属性,  调用dispatch方法 
                     self = cls(**initkwargs)  # 创建一个 cls 的实例对象,  cls 是调用这个方法的 类(Demo)
                     if hasattr(self, 'get') and not hasattr(self, 'head'):
                         self.head = self.get

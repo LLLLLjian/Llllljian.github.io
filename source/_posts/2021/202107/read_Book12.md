@@ -132,6 +132,6 @@ YAML 全称是 ”YAML Ain’t a Markup Language” 的递归缩写, 该语言�
             - python
 
             # 输出结果
-            book： yaml
-            books：[java, yaml, python]
+            book:  yaml
+            books: [java, yaml, python]
         ```

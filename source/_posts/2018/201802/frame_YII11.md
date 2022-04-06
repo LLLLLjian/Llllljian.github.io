@@ -34,27 +34,27 @@ toc: true
         // $_SESSION 不同,$_SESSION 要求先执行 session_start().
         $session = Yii::$app->session;
 
-        // 获取session中的变量值,以下用法是相同的：
+        // 获取session中的变量值,以下用法是相同的: 
         $language = $session->get('language');
         $language = $session['language'];
         $language = isset($_SESSION['language']) ? $_SESSION['language'] : null;
 
-        // 设置一个session变量,以下用法是相同的：
+        // 设置一个session变量,以下用法是相同的: 
         $session->set('language', 'en-US');
         $session['language'] = 'en-US';
         $_SESSION['language'] = 'en-US';
 
-        // 删除一个session变量,以下用法是相同的：
+        // 删除一个session变量,以下用法是相同的: 
         $session->remove('language');
         unset($session['language']);
         unset($_SESSION['language']);
 
-        // 检查session变量是否已存在,以下用法是相同的：
+        // 检查session变量是否已存在,以下用法是相同的: 
         if ($session->has('language')) ...
         if (isset($session['language'])) ...
         if (isset($_SESSION['language'])) ...
 
-        // 遍历所有session变量,以下用法是相同的：
+        // 遍历所有session变量,以下用法是相同的: 
         foreach ($session as $name => $value) ...
         foreach ($_SESSION as $name => $value) .
     ```

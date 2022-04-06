@@ -20,7 +20,7 @@ toc: true
     * 强大而又高度灵活的配置文件支持. 并支持缓存配置文件, 避免复杂的配置结构带来的性能损失.
     * 在框架本身,对危险的操作习惯做了禁止.
     * 更快的执行速度, 更少的内存占用.
-    * 自己的理解：性能高
+    * 自己的理解: 性能高
 - 缺点
     * C的扩展,致命性错误对C的要求很高
 
@@ -67,7 +67,7 @@ toc: true
     application.dispatcher.throwException=1
     application.dispatcher.catchException=0
 
-    ;说明：如下的配置都是Ap的默认配置,可以省略
+    ;说明: 如下的配置都是Ap的默认配置,可以省略
     
     ;加载第三方类库
     application.library=APPLICATION_PATH "/../library"

@@ -37,12 +37,12 @@ toc: true
         #读取配置文件
         conf.read('config.ini', encoding="utf-8")
         #列表方式返回配置文件所有的section
-        print( config.sections() )    #结果：['default', 'email']
+        print( config.sections() )    #结果: ['default', 'email']
         #列表方式返回配置文件email 这个section下的所有键名称
-        print( conf.options('email') )    #结果：['user_name', 'password']
+        print( conf.options('email') )    #结果: ['user_name', 'password']
         #以[(),()]格式返回 email 这个section下的所有键值对
-        print( conf.items('email') )    #结果：[('user_name', '32@qq.com'), ('password', '123456')]
-        #使用get方法获取配置文件具体的值,get方法：参数1-->section(节) 参数2-->key(键名)
+        print( conf.items('email') )    #结果: [('user_name', '32@qq.com'), ('password', '123456')]
+        #使用get方法获取配置文件具体的值,get方法: 参数1-->section(节) 参数2-->key(键名)
         value = conf.get('default', 'excel_path')
         print(value)
     ```

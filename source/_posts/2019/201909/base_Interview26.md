@@ -48,7 +48,7 @@ toc: true
 
 #### 问题2
 - Q
-    * 如何判断上传文件类型,如：仅允许 jpg 上传
+    * 如何判断上传文件类型,如: 仅允许 jpg 上传
 - A
     ```php
         //判断mime类型及文件后缀名
@@ -82,14 +82,14 @@ toc: true
     * 不使用临时变量交换两个变量的值$a=1; $b=2; => $a=2; $b=1;
 - A
     ```php
-        // 1.字符串截取法：
+        // 1.字符串截取法: 
         function myExchange(&$a = '', &$b = '') {
             $a = $a . $b;
             $b = substr($a,0,‐strlen($b));
             $a = substr($a,strlen($a)‐strlen($b),strlen($b));
             return true;
         }
-        // 2.数组法：
+        // 2.数组法: 
         private function myExchange(&$a = '', &$b = '') {
             $a = array($a, $b);
             $b = $a[0];

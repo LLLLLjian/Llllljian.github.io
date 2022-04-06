@@ -112,19 +112,19 @@ toc: true
                 'rules' => [
                     // 命名参数
                     [
-                        //eg： index.php/posts/2018/php => 路由为post/index,year=2018,category=php 
+                        //eg:  index.php/posts/2018/php => 路由为post/index,year=2018,category=php 
                         'posts/<year:\d{4}>/<category>' => 'post/index',
-                        //eg： index.php/posts => 路由为post/index
+                        //eg:  index.php/posts => 路由为post/index
                         'posts' => 'post/index',
-                        //eg： index.php/post/100 => 路由为post/view,id=100
+                        //eg:  index.php/post/100 => 路由为post/view,id=100
                         'post/<id:\d+>' => 'post/view',
                     ],
                     // 参数化路线
                     [
-                        //eg： index.php/posts：page是1,tag是''.
-                        //eg： index.php/posts/2：page是2,tag是''.
-                        //eg： index.php/posts/2/news：page是2,tag是'news'.
-                        //eg： index.php/posts/news：page是1,tag是'news'.
+                        //eg:  index.php/posts: page是1,tag是''.
+                        //eg:  index.php/posts/2: page是2,tag是''.
+                        //eg:  index.php/posts/2/news: page是2,tag是'news'.
+                        //eg:  index.php/posts/news: page是1,tag是'news'.
                         'pattern' => 'posts/<page:\d+>/<tag>',
                         'route' => 'post/index',
                         'defaults' => ['page' => 1, 'tag' => ''],

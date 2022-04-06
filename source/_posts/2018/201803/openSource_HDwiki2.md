@@ -41,15 +41,15 @@ toc: true
 - 源码分析
     ```php
         // url例子
-        首页请求：/index.php
-        百科分类的请求：/index.php?category
-        排行榜的请求：/index.php?list
-        按字母浏览的请求：/index.php?list-letter-H
-        某个具体分类的请求：/index.php?category-view-1
-        随便看看的请求：/index.php?doc-random
-        首页右侧用户排行榜里面用户的请求：/index.php?user-space-1
-        登录的请求：/index.php?user-login
-        注册的请求：/index.php?user-register
+        首页请求: /index.php
+        百科分类的请求: /index.php?category
+        排行榜的请求: /index.php?list
+        按字母浏览的请求: /index.php?list-letter-H
+        某个具体分类的请求: /index.php?category-view-1
+        随便看看的请求: /index.php?doc-random
+        首页右侧用户排行榜里面用户的请求: /index.php?user-space-1
+        登录的请求: /index.php?user-login
+        注册的请求: /index.php?user-register
 
         // 源码
         $pos = strpos($querystring , '.');
@@ -89,14 +89,14 @@ toc: true
 
         // 对上边URL的解析
         // control = index method = dodefault
-        首页请求：/index.php 
+        首页请求: /index.php 
         // control = category method = dodefault
-        百科分类的请求：/index.php?category
+        百科分类的请求: /index.php?category
         // control = list method = dodefault
-        排行榜的请求：/index.php?list
+        排行榜的请求: /index.php?list
         // control = list method = doletter  $this->get[2] = H
-        按字母浏览的请求：/index.php?list-letter-H
+        按字母浏览的请求: /index.php?list-letter-H
         // control = category method = doview  $this->get[2] = 1
-        某个具体分类的请求：/index.php?category-view-1
+        某个具体分类的请求: /index.php?category-view-1
         ....
     ```

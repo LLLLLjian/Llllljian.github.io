@@ -54,7 +54,7 @@ toc: true
                 <td ><input class="inp_txt2" size="10" name="listplay[category_letter]"  maxlength="10" value="{$listdisplay['category_letter']}" /></td>
             </tr>
         ```
-    * eg ： admin_base.htm : 后台-全局-站点设置[没有限制]
+    * eg :  admin_base.htm : 后台-全局-站点设置[没有限制]
         ```php
             <tr>
                 <!-- 同上 -->

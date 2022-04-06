@@ -55,7 +55,7 @@ toc: true
         print ("tup1[0]: ", tup1[0])
         print ("tup2[1:5]: ", tup2[1:5])
 
-        输出结果：
+        输出结果: 
         tup1[0]:  Google
         tup2[1:5]:  (2, 3, 4, 5)
     ```
@@ -73,7 +73,7 @@ toc: true
         tup3 = tup1 + tup2;
         print (tup3)
 
-        输出结果：
+        输出结果: 
         (12, 34.56, 'abc', 'xyz')
     ```
 

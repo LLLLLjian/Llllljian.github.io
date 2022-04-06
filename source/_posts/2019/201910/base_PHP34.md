@@ -5,7 +5,7 @@ tags: PHP
 toc: true
 ---
 
-### PHP性能优化利器：生成器yield理解
+### PHP性能优化利器: 生成器yield理解
     今天看了一下python中的生成器, 搜了一下发现PHP里也有生成器, 处理大文件的时候会用到
 
 <!-- more -->

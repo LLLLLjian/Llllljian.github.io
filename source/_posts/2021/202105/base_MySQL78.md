@@ -55,43 +55,43 @@ MySQL 规定了主库和备库的 server_id 必须不同, 这样就可以保证�
 
 但是依然存在一些问题, 当 IO 利用率 100%时, 表示系统的 IO 是在工作的, 每个请求都有机会获得 IO 资源, 执行任务.检测执行语句需要的资源很少, 所以可能在拿到 IO 资源的时候就可以提交成功, 并且在未到达超时时间时就返回给检测系统, 那么就会得出“系统正常”的结论.但其实业务系统上正常的 SQL语句已经执行的很慢了.
 
-上述所说的所有方法, 都是基于外部检测的.存在两个问题：一是检测方式并不能真正完全的反应系统当前的状况, 二是定时轮询检测有时间间隔, 如不能及时发现, 可能导致切换慢的问题.
+上述所说的所有方法, 都是基于外部检测的.存在两个问题: 一是检测方式并不能真正完全的反应系统当前的状况, 二是定时轮询检测有时间间隔, 如不能及时发现, 可能导致切换慢的问题.
 
 
 ##### 内部统计
 
 可以通过MySQL 统计的 IO 请求时间, 来判断数据库是否出问题.
 
-可以通过下面语句, 查看各类 IO 操作统计值：
+可以通过下面语句, 查看各类 IO 操作统计值: 
 
 
     select * from performance_schema.file_summary_by_event_name where event_name = 'wait/io/file/innodb/innodb_log_file';
 
 
-从上到下分别统计的是：所有 IO 类型、读操作、写操作、其他类型数据.
+从上到下分别统计的是: 所有 IO 类型、读操作、写操作、其他类型数据.
 
-performance_schema 统计是有性能损耗的, 因此只需打开需要的监控即可.例如 redo log：
+performance_schema 统计是有性能损耗的, 因此只需打开需要的监控即可.例如 redo log: 
 
 
     mysql> update setup_instruments set ENABLED='YES', Timed='YES' where name like '%wait/io/file/innodb/innodb_log_file%';
 
-检测语句, 200 ms 为异常：
+检测语句, 200 ms 为异常: 
 
     mysql> select event_name,MAX_TIMER_WAIT  FROM performance_schema.file_summary_by_event_name where event_name in ('wait/io/file/innodb/innodb_log_file','wait/io/file/sql/binlog') and MAX_TIMER_WAIT>200*1000000000;
 
-清空语句：
+清空语句: 
 
     mysql> truncate table performance_schema.file_summary_by_event_name;
 
-#### 30 | 答疑文章(二)：
+#### 30 | 答疑文章(二): 
 
-用动态的观点看加锁加锁规则：两个“原则”, 两个“优化”, 一个bug.
+用动态的观点看加锁加锁规则: 两个“原则”, 两个“优化”, 一个bug.
 
-- 原则1：加锁的基本单位是 next-key lock.它是前开后闭区间.
-- 原则2：查找过程中访问到的对象会加锁.
-- 优化1：索引上的等值查询, 给唯一索引加锁的时候, next-key lock 退化为行锁.
-- 优化2：索引上的等值查询, 向右遍历时且最后一个值不满足等值条件的时候, next-key lock 退化为间隙锁.
-- 一个bug：唯一索引上的范围查询会访问到不满足条件的第一个值为止.
+- 原则1: 加锁的基本单位是 next-key lock.它是前开后闭区间.
+- 原则2: 查找过程中访问到的对象会加锁.
+- 优化1: 索引上的等值查询, 给唯一索引加锁的时候, next-key lock 退化为行锁.
+- 优化2: 索引上的等值查询, 向右遍历时且最后一个值不满足等值条件的时候, next-key lock 退化为间隙锁.
+- 一个bug: 唯一索引上的范围查询会访问到不满足条件的第一个值为止.
 
 
 ##### 不等号条件里的等值查询
@@ -117,7 +117,7 @@ update 语句先插入再删除.
 
 #### 31误删数据后除了跑路, 还能怎么办？
 
-误删数据分类：
+误删数据分类: 
 1、使用 delete 语句误删数据行；
 2、使用 drop table 或者 truncate table 语句误删数据表；
 3、使用 drop database 语句误删数据库；
@@ -128,7 +128,7 @@ update 语句先插入再删除.
 
 在前提是 binlog_format=row 和 binglog_row_image=NULL 的前提下, 如果使用 delete 语句误删了数据行, 可以用 Flashback 工具通过闪回把数据恢复回来.
 
-具体恢复数据时, 对单个事务做如下处理：
+具体恢复数据时, 对单个事务做如下处理: 
 
 1. 对于 insert 语句, 对应的 binlog event 类型是 Write_rows event, 把它改成 Delete_rows event 即可；
 2. 对于 delete 语句, 将 Delete_rows event 改为 Write_rows event；
@@ -138,7 +138,7 @@ update 语句先插入再删除.
 
 恢复数据比较安全的做法是, 恢复出一个备份, 或者找一个从库作为临时库, 在这个临时库上执行这些操作, 然后再将确认过的临时数据库的数据, 恢复回主库.
 
-预防误删数据方法：
+预防误删数据方法: 
 
 1. 把 sql_safe_updates 参数设置为 on.这样的话, 如果忘记在 delete 或者 update 语句中写 where 条件, 或者 where 条件里面没有包含索引字段的话, 这条语句执行就会报错.
 2. 代码上线前, 必须经过 SQL 审计.
@@ -148,7 +148,7 @@ update 语句先插入再删除.
 
 误删了库或表, 就要求线上有定期的全量备份, 并且实时备份 binlog.
 
-恢复数据的流程：
+恢复数据的流程: 
 
 1. 取最近一次全量备份, 假设这个库是一天一备, 上次备份时当天 0 点；
 2. 用备份恢复一个临时库；
@@ -160,19 +160,19 @@ update 语句先插入再删除.
 
 1、为了加速数据恢复, 在使用 mysqlbillog 命令时, 加 database 参数来指定误删表所在的库.
 
-2、在应用日志的时候, 需要跳过 12 点误操作的那个语句的 binlog：
+2、在应用日志的时候, 需要跳过 12 点误操作的那个语句的 binlog: 
 
 - 如果没有使用 GTID 模式, 只能在应用到 12 点的 binlog 文件的时候, 先用 -stop-position 参数执行到误操作之前的日志, 再用 -start-position 从误操作之后的日志继续执行.
 - 如果使用了 GTID 模式, 只需要把误操作的 GTID 加到临时库实例的 GTID 集合就行了.
 
 
-使用 mysqlbinlog 方法恢复数据不够快的原因：
+使用 mysqlbinlog 方法恢复数据不够快的原因: 
 
 1. mysqlbinlog 并不能指定只解析一个表的日志；
 2. 用 mysqlbinlog 解析出日志应用, 应用日志的过程只能是单线程.
 
 
-一种加速的方法是, 将临时实例设置成线上备库的从库：
+一种加速的方法是, 将临时实例设置成线上备库的从库: 
 
 1. 在 start slave 之前, 先通过执行 change replication filter replicate_do_table  = (tbl_name) 命令, 就可以让临时库只同步误操作的表；
 2. 这样也可以用上并行复制技术, 加速数据恢复过程.
@@ -180,7 +180,7 @@ update 语句先插入再删除.
 ![](/img/20210520_2.png)
 
 
-把之前删掉的 binlog 放回备库的操作步骤：
+把之前删掉的 binlog 放回备库的操作步骤: 
 
 1. 从备份系统下载 master.000005 和 master.000006 这两个文件, 放到备库的日志目录下；
 2. 打开日志目录下的 master.index 文件, 在文件开头加入两行, 内容分别是 “./master.000005" 和 “./master.000006”;
@@ -199,7 +199,7 @@ update 语句先插入再删除.
 
 1、账号分离, 不同的人有不同的权限, 避免写错命令.
 
-2、制定操作规范.避免写错要删除的表名.比如：在删除表之前先对表做改名操作.观察一段时间如果对业务没有影响, 再通过管理系统删除有固定后缀的表.
+2、制定操作规范.避免写错要删除的表名.比如: 在删除表之前先对表做改名操作.观察一段时间如果对业务没有影响, 再通过管理系统删除有固定后缀的表.
 
 
 ##### rm 删除数据

@@ -26,26 +26,26 @@ toc: true
     * InnoDB支持MVCC(多版本并发控制), 而MyISAM不支持
     * InnoDB支持外键,而MyISAM不支持
     * InnoDB不支持全文索引,而MyISAM支持.(X)
-    * InnoDB：如果要提供提交、回滚、崩溃恢复能力的事务安全(ACID兼容)能力,并要求实现并发控制,InnoDB是一个好的选择
-    * MyISAM：如果数据表主要用来插入和查询记录,则MyISAM(但是不支持事务)引擎能提供较高的处理效率
+    * InnoDB: 如果要提供提交、回滚、崩溃恢复能力的事务安全(ACID兼容)能力,并要求实现并发控制,InnoDB是一个好的选择
+    * MyISAM: 如果数据表主要用来插入和查询记录,则MyISAM(但是不支持事务)引擎能提供较高的处理效率
 - `HTTP`与`HTTPS`区别
     * https协议需要到ca申请证书,一般免费证书较少,因而需要一定费用.
     * http是超文本传输协议,信息是明文传输,https则是具有安全性的ssl加密传输协议.
     * http和https使用的是完全不同的连接方式,用的端口也不一样,前者是80,后者是443.
     * http的连接很简单,是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议,比http协议安全.
 - `Apache`与`Nginx`区别
-    * nginx 相对 apache 的优点：
+    * nginx 相对 apache 的优点: 
         * 轻量级,同样起web 服务,比apache 占用更少的内存及资源
         * 抗并发,nginx 处理请求是异步非阻塞的,而apache 则是阻塞型的,在高并发下nginx
         * 能保持低资源低消耗高性能
         * 高度模块化的设计,编写模块相对简单
         * 社区活跃,各种高性能模块出品迅速啊
-    * apache 相对nginx 的优点：
+    * apache 相对nginx 的优点: 
         * rewrite ,比nginx 的rewrite 强大
         * 模块超多,基本想到的都可以找到
         * 少bug ,nginx 的bug 相对较多
         * 超稳定
-    * 作为 Web 服务器：相比 Apache,Nginx 使用更少的资源,支持更多的并发连接,体现更高的效率,这点使 Nginx 尤其受到虚拟主机提供商的欢迎
+    * 作为 Web 服务器: 相比 Apache,Nginx 使用更少的资源,支持更多的并发连接,体现更高的效率,这点使 Nginx 尤其受到虚拟主机提供商的欢迎
     * Nginx 配置简洁, Apache 复杂 ,Nginx 启动特别容易, 并且几乎可以做到7*24不间断运行,即使运行数个月也不需要重新启动. 你还能够不间断服务的情况下进行软件版本的升级. Nginx 静态处理性能比 Apache 高 3倍以上 ,Apache 对 PHP 支持比较简单,Nginx 需要配合其他后端来使用 ,Apache 的组件比 Nginx 多.
     * 最核心的区别在于apache是同步多进程模型,一个连接对应一个进程；nginx是异步的,多个连接(万级别)可以对应一个进程 .
     * nginx的优势是处理静态请求,cpu内存使用率低,apache适合处理动态请求,所以现在一般前端用nginx作为反向代理抗住压力,apache作为后端处理动态请求

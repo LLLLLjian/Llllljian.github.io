@@ -121,7 +121,7 @@ toc: true
 3. 查看uwsgi运行状态
     ```bash
         # 返回json,显示进程和worker的详细状态
-        uwsgi --connect-and-read uwsgi.status或127.0.0.1：9191
+        uwsgi --connect-and-read uwsgi.status或127.0.0.1: 9191
     ```
 4. 关闭uwsgi
     * uwsgi命令关闭

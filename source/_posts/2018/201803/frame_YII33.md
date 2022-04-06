@@ -182,7 +182,7 @@ toc: true
             $order->addItems($items);
         });
 
-        // 这相当于下列的代码：
+        // 这相当于下列的代码: 
         $transaction = Yii::$app->db->beginTransaction();
         try {
             $order = new Order($customer);

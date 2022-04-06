@@ -14,17 +14,17 @@ toc: true
 - SELECT
     ```php
         $query->select(['id', 'email']);
-        // 等同于：
+        // 等同于: 
         $query->select('id, email');
-        // 等同于：
+        // 等同于: 
         "SELECT id, email"
 
         $query->select(['user.id AS user_id', 'email']);
-        // 等同于：
+        // 等同于: 
         $query->select('user.id AS user_id, email');
-        // 等同于：
+        // 等同于: 
         $query->select(['user_id' => 'user.id', 'email']);
-        // 等同于：
+        // 等同于: 
         "SELECT user.id AS user_id, email"
 
         //没有调用select()方法,那么选择的将是 '*' 
@@ -45,7 +45,7 @@ toc: true
         SELECT * FROM `user`
 
         $query->from(['public.user u', 'public.post p']);
-        // 等同于：
+        // 等同于: 
         $query->from('public.user u, public.post p');
         // 等同于 
         $query->from(['u' => 'public.user', 'p' => 'public.post']);
@@ -64,7 +64,7 @@ toc: true
         // 等同于 status IS NULL  
         ['status' => null]  
     ```
-    * 字符串格式,例如：'status=1'
+    * 字符串格式,例如: 'status=1'
         ```php
             $query->where('status=1');
 
@@ -75,13 +75,13 @@ toc: true
             // raw SQL using MySQL YEAR() function on a date field
             $query->where('YEAR(somedate) = 2015');           
         ```
-    * 哈希格式,例如： ['status' => 1, 'type' => 2]
+    * 哈希格式,例如:  ['status' => 1, 'type' => 2]
         ```php
             $query->where(['status' => 10, 'type' => null, 'id' => [4, 8, 15],]);
             // 等同于
             WHERE (`status` = 10) AND (`type` IS NULL) AND (`id` IN (4, 8, 15))
         ```
-    * 操作符格式,例如：['like', 'name', 'test']
+    * 操作符格式,例如: ['like', 'name', 'test']
         * and  
             ```php
                 ['and', 'id=1', 'id=2']
@@ -108,14 +108,14 @@ toc: true
                 // 等同于
                 id BETWEEN 1 AND 10
             ```
-        * not between ：类似between
+        * not between : 类似between
         * in
             ```php
                 ['in', 'id', [1, 2, 3]]
                 // 等同于
                 id IN (1, 2, 3)
             ```
-        * not in ：类似in
+        * not in : 类似in
         * like
             ```php
                 ['like', 'name', 'tester']

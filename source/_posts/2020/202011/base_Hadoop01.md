@@ -17,11 +17,11 @@ Apache Hadoop软件库是一个框架,该框架允许使用简单的编程模型
 - 官网
     * http://hadoop.apache.org/
 - 模块
-    * Hadoop Common：支持其他Hadoop模块的通用实用程序.
-    * Hadoop分布式文件系统(HDFS™)：一种分布式文件系统,可提供对应用程序数据的高吞吐量访问.
-    * Hadoop YARN：用于作业调度和集群资源管理的框架.
-    * Hadoop MapReduce：基于YARN的系统,用于并行处理大数据集.
-    * Hadoop Ozone： Hadoop的对象存储.
+    * Hadoop Common: 支持其他Hadoop模块的通用实用程序.
+    * Hadoop分布式文件系统(HDFS™): 一种分布式文件系统,可提供对应用程序数据的高吞吐量访问.
+    * Hadoop YARN: 用于作业调度和集群资源管理的框架.
+    * Hadoop MapReduce: 基于YARN的系统,用于并行处理大数据集.
+    * Hadoop Ozone:  Hadoop的对象存储.
 - 插入一个相关项目(接下来要学的点)
     * Spark: 一种用于Hadoop数据的快速通用计算引擎.Spark提供了一个简单而富于表现力的编程模型,该模型支持广泛的应用程序,包括ETL,机器学习,流处理和图形计算.
 

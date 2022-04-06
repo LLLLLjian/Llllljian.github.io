@@ -80,7 +80,7 @@ toc: true
             -rw-rw-r-- 1 llllljian llllljian    9 4月  12 13:24 2.txt
             
             sudo chgrp test 1.txt
-            chgrp: 无效的组："test"
+            chgrp: 无效的组: "test"
         ```
     * chown
         * 改变文件的拥有者

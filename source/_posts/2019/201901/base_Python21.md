@@ -36,8 +36,8 @@ toc: true
         x = MyClass()
         
         # 访问类的属性和方法
-        print("MyClass 类的属性 i 为：", x.i)
-        print("MyClass 类的方法 f 输出为：", x.f())
+        print("MyClass 类的属性 i 为: ", x.i)
+        print("MyClass 类的方法 f 输出为: ", x.f())
     ```
 
 #### 类方法
@@ -201,12 +201,12 @@ toc: true
 
 #### 类属性与方法
 - 类的私有属性
-    * __private_attrs：两个下划线开头,声明该属性为私有,不能在类的外部被使用或直接访问.在类内部的方法中使用时 self.__private_attrs
+    * __private_attrs: 两个下划线开头,声明该属性为私有,不能在类的外部被使用或直接访问.在类内部的方法中使用时 self.__private_attrs
 - 类的方法
     * 在类地内部,使用 def 关键字来定义一个方法,与一般函数定义不同,类方法必须包含参数 self,且为第一个参数,self 代表的是类的实例
     * self 的名字并不是规定死的,也可以使用 this,但是最好还是按照约定是用 self
 - 类的私有方法
-    * __private_method：两个下划线开头,声明该方法为私有方法,只能在类的内部调用 ,不能在类地外部调用.self.__private_methods
+    * __private_method: 两个下划线开头,声明该方法为私有方法,只能在类的内部调用 ,不能在类地外部调用.self.__private_methods
 - eg
     ```python
         #!/usr/bin/python3

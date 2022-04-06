@@ -155,7 +155,7 @@ toc: true
     ```
 
 #### 实例[关于1,3]
-    前提：表goods和表news都要能上传附件[利用行为快速实现]
+    前提: 表goods和表news都要能上传附件[利用行为快速实现]
     ```php
         class News extends \yii\db\ActiveRecord
         {

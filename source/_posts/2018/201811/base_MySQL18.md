@@ -16,13 +16,13 @@ toc: true
 #### SQL语言基础
 - 数据定义语言(DDL)
     * Data Definition Language
-    * 用于定义和管理数据对象,包括数据库、数据表、函数、视图、索引、触发器等.例如：CREATE、DROP、ALTER等语句
+    * 用于定义和管理数据对象,包括数据库、数据表、函数、视图、索引、触发器等.例如: CREATE、DROP、ALTER等语句
 - 数据控制语言(DCL)
     * Data Control Language
-    * 用来管理数据库的语言,包含授权用户访问、拒绝用户访问、撤销授予的权限.例如：GRANT、DENY、REVOKE、COMMIT、ROLLBACK等语句
+    * 用来管理数据库的语言,包含授权用户访问、拒绝用户访问、撤销授予的权限.例如: GRANT、DENY、REVOKE、COMMIT、ROLLBACK等语句
 - 数据操作语言(DML)
     * Data Manipulation Language
-    * 用于操作数据库对象中所包含的数据,增、删、改.例如：INSERT、DELETE、UPDATE语句
+    * 用于操作数据库对象中所包含的数据,增、删、改.例如: INSERT、DELETE、UPDATE语句
 - 数据查询语言(DQL)
     * Data Query Language
     * 用于查询数据库对象中所包含的数据,能够进行单表查询、连接查询、嵌套查询,以及集合查询等各种复杂程度不同的数据库查询,并将数据返回到客户机中显示
@@ -55,8 +55,8 @@ toc: true
 - 逻辑运算符
     * 与(and或&&)、或(or或||)、非(not或!)
 - 运算符优先级
-    * 算术运算符优先级：先乘除,后加减,括号优先
-    * 逻辑运算符优先级：先与操作,再或操作,括号优先
+    * 算术运算符优先级: 先乘除,后加减,括号优先
+    * 逻辑运算符优先级: 先与操作,再或操作,括号优先
 
 #### 系统内置函数
 - 数学函数

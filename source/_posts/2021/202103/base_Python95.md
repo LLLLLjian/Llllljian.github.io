@@ -28,20 +28,20 @@ toc: true
 
         def filter(self, *args, **kwargs)
             # 条件查询
-            # 条件可以是：参数, 字典, Q
+            # 条件可以是: 参数, 字典, Q
 
         def exclude(self, *args, **kwargs)
             # 条件查询,但是hi排除的, 例如id=1, 是除了id=1的其他的都要
-            # 条件可以是：参数, 字典, Q
+            # 条件可以是: 参数, 字典, Q
 
         def select_related(self, *fields)
-            # 性能相关：表之间进行join连表操作, 一次性获取关联的数据.
+            # 性能相关: 表之间进行join连表操作, 一次性获取关联的数据.
             model.tb.objects.all().select_related()
             model.tb.objects.all().select_related('外键字段')
             model.tb.objects.all().select_related('外键字段__外键字段')
 
         def prefetch_related(self, *lookups)
-            # 性能相关：多表连表操作时速度会慢, 使用其执行多次SQL查询在Python代码中实现连表操作.
+            # 性能相关: 多表连表操作时速度会慢, 使用其执行多次SQL查询在Python代码中实现连表操作.
             # 获取所有用户表
             # 获取用户类型表where id in (用户表中的查到的所有用户ID)
             models.UserInfo.objects.prefetch_related('外键字段')
@@ -80,14 +80,14 @@ toc: true
             models.UserInfo.objects.values('nid').distinct()
             # select distinct nid from userinfo
 
-            注：只有在PostgreSQL中才能使用distinct进行去重
+            注: 只有在PostgreSQL中才能使用distinct进行去重
 
         def order_by(self, *field_names)
             # 用于排序
             models.UserInfo.objects.all().order_by('-id','age')
 
         def extra(self, select=None, where=None, params=None, tables=None, order_by=None, select_params=None)
-            # 构造额外的查询条件或者映射, 如：子查询
+            # 构造额外的查询条件或者映射, 如: 子查询
 
             Entry.objects.extra(select={'new_id': "select col from sometable where othercol > %s"}, select_params=(1,))
             Entry.objects.extra(where=['headline=%s'], params=['Lennon'])
@@ -97,7 +97,7 @@ toc: true
         def reverse(self):
             # 倒序
             models.UserInfo.objects.all().order_by('-nid').reverse()
-            # 注：如果存在order_by, reverse则是倒序, 如果多个排序则一一倒序
+            # 注: 如果存在order_by, reverse则是倒序, 如果多个排序则一一倒序
 
         def defer(self, *fields):
             models.UserInfo.objects.defer('username','id')
@@ -149,8 +149,8 @@ toc: true
 
         def dates(self, field_name, kind, order='ASC'):
             # 根据时间进行某一部分进行去重查找并截取指定内容
-            # kind只能是："year"(年), "month"(年-月), "day"(年-月-日)
-            # order只能是："ASC"  "DESC"
+            # kind只能是: "year"(年), "month"(年-月), "day"(年-月-日)
+            # order只能是: "ASC"  "DESC"
             # 并获取转换后的时间
                 - year : 年-01-01
                 - month: 年-月-01
@@ -161,7 +161,7 @@ toc: true
         def datetimes(self, field_name, kind, order='ASC', tzinfo=None):
             # 根据时间进行某一部分进行去重查找并截取指定内容, 将时间转换为指定时区时间
             # kind只能是 "year", "month", "day", "hour", "minute", "second"
-            # order只能是："ASC"  "DESC"
+            # order只能是: "ASC"  "DESC"
             # tzinfo时区对象
             models.DDD.objects.datetimes('ctime','hour',tzinfo=pytz.UTC)
             models.DDD.objects.datetimes('ctime','hour',tzinfo=pytz.timezone('Asia/Shanghai'))

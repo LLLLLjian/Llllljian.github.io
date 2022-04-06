@@ -67,7 +67,7 @@ toc: true
         // 如果 nums[i]nums[i] == nums[i-1]nums[i−1],则说明该数字重复,会导致结果重复,所以应该跳过
         // 当 sumsum == 00 时,nums[L]nums[L] == nums[L+1]nums[L+1] 则会导致结果重复,应该跳过,L++
         // 当 sumsum == 00 时,nums[R]nums[R] == nums[R-1]nums[R−1] 则会导致结果重复,应该跳过,R--
-        // 时间复杂度：O(n^2),nn 为数组长度
+        // 时间复杂度: O(n^2),nn 为数组长度
         function threeSum($nums) {
             $count = count($nums);
             $res = array();

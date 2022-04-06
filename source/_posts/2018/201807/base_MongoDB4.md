@@ -15,7 +15,7 @@ toc: true
 #### 原生
 - 确保连接及选择一个数据库
     ```php
-        // 连接默认主机和端口为：mongodb://localhost:27017
+        // 连接默认主机和端口为: mongodb://localhost:27017
         $m = new MongoClient(); 
         // 获取名称为 "test" 的数据库
         $db = $m->test; 

@@ -13,7 +13,7 @@ toc: true
 <!-- more -->
 
 #### OpenResty 介绍
-> OpenResty(又称：ngx_openresty) 是一个基于 NGINX 的可伸缩的 Web 平台,由中国人章亦春发起,提供了很多高质量的第三方模块.
+> OpenResty(又称: ngx_openresty) 是一个基于 NGINX 的可伸缩的 Web 平台,由中国人章亦春发起,提供了很多高质量的第三方模块.
 OpenResty 是一个强大的 Web 应用服务器,Web 开发人员可以使用 Lua 脚本语言调动 Nginx 支持的各种 C 以及 Lua 模块,更主要的是在性能方面,OpenResty可以 快速构造出足以胜任 10K 以上并发连接响应的超高性能 Web 应用系统.
 360,UPYUN,阿里云,新浪,腾讯网,去哪儿网,酷狗音乐等都是 OpenResty 的深度用户.
 
@@ -83,7 +83,7 @@ OpenResty 是一个强大的 Web 应用服务器,Web 开发人员可以使用 Lu
     * upload_pass_form_field 从表单原样转到后端的参数,可以正则表达式表示
     * upload_pass_form_field “^submit$|^description$”; 意思是把submit,description这两个字段也原样通过upload_pass传递到后端php处理.如果希望把所有的表单字段都传给后端可以用upload_pass_form_field “^.*$”;
 
-    * upload_set_form_field 名称和值都可能包含以下特殊变量：
+    * upload_set_form_field 名称和值都可能包含以下特殊变量: 
     * $upload_field_name 表单的name值
     * $upload_content_type 上传文件的类型
     * $upload_file_name 客户端上传的原始文件名称

@@ -28,8 +28,8 @@ toc: true
     * InnoDB支持MVCC(多版本并发控制), 而MyISAM不支持
     * InnoDB支持外键,而MyISAM不支持
     * InnoDB不支持全文索引,而MyISAM支持.(X)
-    * InnoDB：如果要提供提交、回滚、崩溃恢复能力的事务安全(ACID兼容)能力,并要求实现并发控制,InnoDB是一个好的选择
-    * MyISAM：如果数据表主要用来插入和查询记录,则MyISAM(但是不支持事务)引擎能提供较高的处理效率
+    * InnoDB: 如果要提供提交、回滚、崩溃恢复能力的事务安全(ACID兼容)能力,并要求实现并发控制,InnoDB是一个好的选择
+    * MyISAM: 如果数据表主要用来插入和查询记录,则MyISAM(但是不支持事务)引擎能提供较高的处理效率
 
 #### MySQL锁机制
 - 读锁

@@ -40,7 +40,7 @@ toc: true
     explode($separ, $str)   //使用一个字符串分割另一个字符串
     implode([$glue,] $arr)  //将数组元素的值根据$glue连接成字符串
     chunk_split($str [,$len [,$end]])   //将字符串分割成小块
-        $len：每段字符串的长度,$end：每段字符串末尾加的字符串(如"\r\n")
+        $len: 每段字符串的长度,$end: 每段字符串末尾加的字符串(如"\r\n")
     html_entity_decode($str [,$flags [,$encoding]]) //将HTML实体转成字符信息
     htmlentities($str [,$flags [,$encoding]])   //将字符信息转成HTML实体
     htmlspecialchars_decode($str)   //将特殊HTML实体转成字符信息
@@ -69,7 +69,7 @@ toc: true
     str_replace($search, $replace, $str [,$count [,$type]])  //子字符串替换
     str_ireplace    //字符串替换(忽略大小写)
     str_pad($str, $len [,$pad [,$type]])  //使用另一个字符串填充字符串为指定长度
-        $type：在何处填充.STR_PAD_RIGHT,STR_PAD_LEFT 或 STR_PAD_BOTH
+        $type: 在何处填充.STR_PAD_RIGHT,STR_PAD_LEFT 或 STR_PAD_BOTH
     str_repeat($str, $num)  //重复一个字符串
     str_shuffle($str)   //随机打乱一个字符串
     str_word_count($str [,$format [,$charlist]])    //返回字符串中单词的使用情况
@@ -139,10 +139,10 @@ toc: true
             $matches[m][n] (m>=1, n>=0) 表示存放第n+1个匹配到结果的第m个表达式的内容
     preg_split($pattern, $subject [,$limit [,$flags]])  通过一个正则表达式分隔字符串
         $limit表示限制分隔得到的子串最多只有limit个,-1表示不限制
-        $flags参数：
-            PREG_SPLIT_NO_EMPTY：将返回分隔后的非空部分
-            PREG_SPLIT_DELIM_CAPTURE：用于分隔的模式中的括号表达式将被捕获并返回
-            PREG_SPLIT_OFFSET_CAPTURE：对于每一个出现的匹配返回时将会附加字符串偏移量
+        $flags参数: 
+            PREG_SPLIT_NO_EMPTY: 将返回分隔后的非空部分
+            PREG_SPLIT_DELIM_CAPTURE: 用于分隔的模式中的括号表达式将被捕获并返回
+            PREG_SPLIT_OFFSET_CAPTURE: 对于每一个出现的匹配返回时将会附加字符串偏移量
     preg_quote($str [,$delimiter])  转义正则表达式字符
     preg_last_error()   返回最后一个PCRE正则执行产生的错误代码
 
@@ -279,12 +279,12 @@ toc: true
     array_walk        对数组中的每个成员应用用户函数,只能处理一个数组,键和值均可处理,与foreach功能相同
         bool array_walk ( array &$array , callback $funcname [, mixed $userdata ] )
 
-    //栈：后进先出
+    //栈: 后进先出
     入栈和出栈会重新分配索引下标
     array_push        将一个或多个单元压入数组的末尾(入栈)
     array_pop        将数组最后一个单元弹出(出栈)        使用此函数后会重置(reset())array 指针.
 
-    //队列：先进先出
+    //队列: 先进先出
     队列函数会重新分配索引下标
     array_unshift    在数组开头插入一个或多个单元
     array_shift        将数组开头的单元移出数组            使用此函数后会重置(reset())array 指针.
@@ -372,30 +372,30 @@ toc: true
                     显示关于一个或多个表达式的结构信息,包括表达式的类型与值.
                     数组将递归展开值,通过缩进显示其结构.
     var_export($var [,bool $return]) //输出或返回一个变量的字符串表示
-        $return：为true,则返回变量执行后的结果
+        $return: 为true,则返回变量执行后的结果
     print_r         打印关于变量的易于理解的信息
     empty           检查一个变量是否为空
     isset           检测变量是否存在
 
 ### 时间函数
     date($format [,$timestamp]) //格式化一个本地时间／日期,$timestamp默认为time()
-    Y：4位数字完整表示的年份
-    m：数字表示的月份,有前导零
-    d：月份中的第几天,有前导零的2位数字
-    j：月份中的第几天,没有前导零
-    H：小时,24小时格式,有前导零
-    h：小时,12小时格式,有前导零
-    i：有前导零的分钟数
-    s：秒数,有前导零
-    L：是否为闰年,如果是闰年为1,否则为0
-    M：三个字母缩写表示的月份,Jan到Dec
-    W：年份中的第几周,每周从星期一开始
-    z：年份中的第几天
-    N：数字表示的星期中的第几天
-    w：星期中的第几天,数字表示
-    e：时区标识
-    T：本机所在的时区
-    U：从Unix纪元开始至今的秒数(时间戳)
+    Y: 4位数字完整表示的年份
+    m: 数字表示的月份,有前导零
+    d: 月份中的第几天,有前导零的2位数字
+    j: 月份中的第几天,没有前导零
+    H: 小时,24小时格式,有前导零
+    h: 小时,12小时格式,有前导零
+    i: 有前导零的分钟数
+    s: 秒数,有前导零
+    L: 是否为闰年,如果是闰年为1,否则为0
+    M: 三个字母缩写表示的月份,Jan到Dec
+    W: 年份中的第几周,每周从星期一开始
+    z: 年份中的第几天
+    N: 数字表示的星期中的第几天
+    w: 星期中的第几天,数字表示
+    e: 时区标识
+    T: 本机所在的时区
+    U: 从Unix纪元开始至今的秒数(时间戳)
     time() //返回当前的Unix时间戳(秒)
     strtotime($time [,$now]) //将任何英文文本的日期时间描述解析为Unix时间戳
         date("Y-m-d H:i:s", strtotime("-1 day")); //格式化前一天的时间戳
@@ -405,4 +405,4 @@ toc: true
         "+1 week -2 days 4 hours 2 seconds"
         "last Monday"
         "next Thursday"
-    eg : 指定日期一个月后的时间戳：strtotime('+1 month', strtotime($date));
+    eg : 指定日期一个月后的时间戳: strtotime('+1 month', strtotime($date));

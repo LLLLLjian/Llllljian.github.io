@@ -56,14 +56,14 @@ toc: true
         models.Publish.objects.create(name='浙江出版社', addr="浙江.杭州")
         models.Classify.objects.create(category='武侠')
         models.Author.objects.create(name='金庸', sex='男', age=89, university='东吴大学')
-        # 2. 类实例化：obj=类(属性=XX) obj.save()
+        # 2. 类实例化: obj=类(属性=XX) obj.save()
         obj = models.Author(name='吴承恩', age=518, sex='男', university='龙溪学院')
         obj.save()
 
         # 1对多
         # 1. 表.objects.create()
         models.Book.objects.create(title='笑傲江湖', price=200, date=1968, classify_id=6, publish_id=6)
-        # 2. 类实例化：obj=类(属性=X,外键=obj)obj.save()
+        # 2. 类实例化: obj=类(属性=X,外键=obj)obj.save()
         classify_obj = models.Classify.objects.get(category='武侠')
         publish_obj = models.Publish.objects.get(name='河北出版社')
         # 注意以上获取得是和 book对象 向关联的(外键)的对象
@@ -78,7 +78,7 @@ toc: true
         book.author.add(author1, author2)
 
         # 书籍和作者是多对多关系,
-        # 切记：如果两表之间存在多对多关系,例如书籍相关的所有作者对象集合,作者也关联的所有书籍对象集合
+        # 切记: 如果两表之间存在多对多关系,例如书籍相关的所有作者对象集合,作者也关联的所有书籍对象集合
         book = models.Book.objects.get(title='西游记')
         author = models.Author.objects.get(name='吴承恩')
         author2 = models.Author.objects.get(name='张根')
@@ -110,8 +110,8 @@ toc: true
                                     'publish__name',
                                     'date',
                                     'classify__category',         #切记 正向连表:外键字段___对应表字段
-                                    'author__name',               #反向连表： 小写表名__对应表字段
-                                    'author__sex',                #区别：正向 外键字段__,反向 小写表名__
+                                    'author__name',               #反向连表:  小写表名__对应表字段
+                                    'author__sex',                #区别: 正向 外键字段__,反向 小写表名__
                                     'author__age',
                                     'author__university')
         books = models.Book.objects.values('title','publish__name').distinct()  # exclude 按条件排除...
@@ -135,7 +135,7 @@ toc: true
         books = models.Publish.objects.filter(name__contains='湖南').values('name','book__title')
         authors = models.Book.objects.filter(title__icontains='我的').values('author__name')
         print(authors)
-        # fifter()也支持__小写表名语法进行连表查询：在publish标查询 出版过《笑傲江湖》的出版社
+        # fifter()也支持__小写表名语法进行连表查询: 在publish标查询 出版过《笑傲江湖》的出版社
         publishs = models.Publish.objects.filter(book__title='笑傲江湖').values('name')
         print(publishs)
         # 查询谁(哪位作者)出版过的书价格大于200元

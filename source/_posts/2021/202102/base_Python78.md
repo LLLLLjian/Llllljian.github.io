@@ -85,15 +85,15 @@ toc: true
                 如果不存在lock_name,则创建,并且设置过期时间,避免死锁
                 如果存在lock_name,则刷新过期时间
 
-                插入成功：返回True
-                已存在：返回False并且刷新过期时间
+                插入成功: 返回True
+                已存在: 返回False并且刷新过期时间
                 :param lock_name:
                 :param value:
                 :param expire_time:
                 :return:
                 """
                 if self.conn.setnx(lock_name, value):
-                    # 注意：Todo 这里可能会有问题,如果程序在写入redis之后但未设置有效期之前突然崩溃,则无法设置过期时间,将发生死锁
+                    # 注意: Todo 这里可能会有问题,如果程序在写入redis之后但未设置有效期之前突然崩溃,则无法设置过期时间,将发生死锁
                     self.conn.expire(lock_name, expire_time)
                     return True
                 elif self.conn.ttl(lock_name):
@@ -103,14 +103,14 @@ toc: true
             def release_lock(self, lock_name, value):
                 """
                 释放锁
-                注意：只有value值一致才会删除,避免在并发下删除了其他进程/线程设置的锁
+                注意: 只有value值一致才会删除,避免在并发下删除了其他进程/线程设置的锁
                 :param lock_name:
                 :param value:
                 :return:
                 """
                 redis_value = self.conn.get(lock_name)
 
-                # 注意：如果是get_redis_connection的话,从redis里面读取的是bytes字符的
+                # 注意: 如果是get_redis_connection的话,从redis里面读取的是bytes字符的
                 redis_value = redis_value.decode('utf-8') if isinstance(redis_value, bytes) else redis_value
                 if str(redis_value) == str(value):
                     self.conn.delete(lock_name)

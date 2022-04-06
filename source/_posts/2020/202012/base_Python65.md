@@ -86,9 +86,9 @@ toc: true
     * 返回创建线程时使用的堆栈大小.也可以使用可选参数size指定之后创建线程时的堆栈大小,size可以是0或者一个不小于32KiB的正整数.如果参数没有指定,则默认为0.如果系统或者其他原因不支持改变堆栈大小,则会报RuntimeError错误；如果指定的堆栈大小不合法,则会报ValueError,但并不会修改这个堆栈的大小.32KiB是保证能解释器运行的最小堆栈大小,当然这个值会因为系统或者其他原因有限制,比如它要求的值是大于32KiB的某个值,只需根据要求修改即可
 
 ##### threading常量
-> threading.TIMEOUT_MAX：指定阻塞函数(如Lock.acquire()、RLock.acquire()、Condition.wait()等)中参数timeout的最大值,在给这些阻塞函数传参时如果超过了这个指定的最大值会抛出OverflowError错误
+> threading.TIMEOUT_MAX: 指定阻塞函数(如Lock.acquire()、RLock.acquire()、Condition.wait()等)中参数timeout的最大值,在给这些阻塞函数传参时如果超过了这个指定的最大值会抛出OverflowError错误
 
-##### 线程对象：threading.Thread
+##### 线程对象: threading.Thread
 > threading.Thread目前还没有优先级和线程组的功能,而且创建的线程也不能被销毁、停止、暂定、恢复或中断.
 1. 守护线程
     * 只有所有守护线程都结束,整个Python程序才会退出,但并不是说Python程序会等待守护线程运行完毕,相反,当程序退出时,如果还有守护线程在运行,程序会去强制终结所有守护线程,当守所有护线程都终结后,程序才会真正退出.可以通过修改daemon属性或者初始化线程时指定daemon参数来指定某个线程为守护线程.

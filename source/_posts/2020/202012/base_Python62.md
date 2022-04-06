@@ -24,7 +24,7 @@ toc: true
     3. 服务器把HTML文档作为HTTP响应的Body发送给浏览器；
     4. 浏览器收到HTTP响应,从HTTP Body取出HTML文档并显示.
 - 对于所有的Web应用,本质上其实就是一个socket服务端,用户的浏览器其实就是一个socket客户端.
-- 接受HTTP请求、解析HTTP请求、发送HTTP响应都是底层的东西,如果要研究这些底层那得花上一定的时间.因此我们不希望接触到TCP连接、HTTP原始请求和响应格式,所以,需要一个统一的接口,让我们专心用Python编写Web业务.这个接口就是WSGI：Web Server Gateway Interface.
+- 接受HTTP请求、解析HTTP请求、发送HTTP响应都是底层的东西,如果要研究这些底层那得花上一定的时间.因此我们不希望接触到TCP连接、HTTP原始请求和响应格式,所以,需要一个统一的接口,让我们专心用Python编写Web业务.这个接口就是WSGI: Web Server Gateway Interface.
 
 #### WSGI
 > WSGI,全称 Web Server Gateway Interface,或者 Python Web Server Gateway Interface ,是为 Python 语言定义的 Web 服务器和 Web 应用程序或框架之间的一种简单而通用的接口.自从 WSGI 被开发出来以后,许多其它语言中也出现了类似接口

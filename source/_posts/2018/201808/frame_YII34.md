@@ -14,7 +14,7 @@ toc: true
 - eg
     ```php
         <?= DetailView::widget([
-            // 模型对象,如：AR类findOne()返回
+            // 模型对象,如: AR类findOne()返回
             'model' => $user,
             // 所有需要展示的模型属性
             'attributes' => [
@@ -40,7 +40,7 @@ toc: true
                 ]
             ],
             // 自定义表格样式
-            'template' => '<tr><th style="text-align:right">{label}：</th><td>{value}</td></tr>',
+            'template' => '<tr><th style="text-align:right">{label}: </th><td>{value}</td></tr>',
             // 为表格添加样式类
             'options' => ['class' => 'table table-striped']
         ]) ?>
@@ -86,7 +86,7 @@ toc: true
         
             <p style="font-size:13px">
                 <span style="color:orangered"><?= date('Y.m.d', $model->day) ?></span><br>
-                <span style="color:#999">心情：<?= $moodCfg[$model->mood] ?></span>//这里访问ListView的'viewParams'参数传过来的参数$moodCfg
+                <span style="color:#999">心情: <?= $moodCfg[$model->mood] ?></span>//这里访问ListView的'viewParams'参数传过来的参数$moodCfg
             </p>
         
             <div style="margin:15px 0">    
@@ -94,8 +94,8 @@ toc: true
             </div>
         
             <p class="info">
-                添加：<?= date('Y-m-d H:i:s', $model->created_at) ?><br>
-                最后修改：<?= date('Y-m-d H:i:s', $model->updated_at) ?>
+                添加: <?= date('Y-m-d H:i:s', $model->created_at) ?><br>
+                最后修改: <?= date('Y-m-d H:i:s', $model->updated_at) ?>
             </p>
         
             <div style="text-align:right">
@@ -143,7 +143,7 @@ toc: true
                     // 设置宽度
                     //'options' => ['width' => '150'],
                     
-                    // 数据列有链接：不想让html原样输出就要设置类型format=>raw
+                    // 数据列有链接: 不想让html原样输出就要设置类型format=>raw
                     'format' => 'raw',
                     // 设置该列显示内容
                     'value' => function($model, $key, $index, $column) {
@@ -327,11 +327,11 @@ toc: true
             [
                 'class' => 'yii\grid\DataColumn’,
                 /**
-                  * DataColumn：显示数据,默认值.
-                  * ActionColumn：显示操作按钮等
-                  * CheckboxColumn：显示操复选框(复选框值为数据表主键值)
-                  * RadioButtonColumn：显示单选按钮(单选框值为数据表主键值)
-                  * SerialColumn：显示行号
+                  * DataColumn: 显示数据,默认值.
+                  * ActionColumn: 显示操作按钮等
+                  * CheckboxColumn: 显示操复选框(复选框值为数据表主键值)
+                  * RadioButtonColumn: 显示单选按钮(单选框值为数据表主键值)
+                  * SerialColumn: 显示行号
                   **/
                 'attribute' => 'day',//AR模型属性名称,即要显示的数据表字段名称
                 'label' => '日期',//设置属性标签
@@ -343,7 +343,7 @@ toc: true
 
                 /* 设置下拉框搜索 */
                 'filter' => [],//键值对数组
-                //也可以这样写：
+                //也可以这样写: 
                 'filter' => Html::activeDropDownList($searchModel,
                 'mood', [],//键值对数组
                 ['prompt' => '全部']),
@@ -378,7 +378,7 @@ toc: true
                 ]
             ],
             
-            'layout' => "{items}\n{summary}\n{pager}",//整体布局与样式设置,由上而下分别为：表格、简介、分页(默认为：{summary}\n{items}\n{pager})
+            'layout' => "{items}\n{summary}\n{pager}",//整体布局与样式设置,由上而下分别为: 表格、简介、分页(默认为: {summary}\n{items}\n{pager})
             'tableOptions' => ['class' => 'table table-striped table-bordered'],//设置表格样式(默认设置)
             'showHeader' => true,//是否显示表格头部(默认为true,为false则表格标题行和搜索行都消失)
             'showFooter' => true,//是否显示表格底部部(默认为false,为true时底部多一空行)

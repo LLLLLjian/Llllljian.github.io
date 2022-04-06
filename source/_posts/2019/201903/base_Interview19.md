@@ -65,18 +65,18 @@ toc: true
                 console.log(i);    //  i 是循环体内局部作用域,不受外界影响.
             }, 0);
         }
-        // 输出结果：
+        // 输出结果: 
         0  1  2  3  4  5  6  7  8 9
     ```
 
 #### setInterval与setTimeout的区别
 - setInterval
     * setInterval()方法可按照指定的周期来调用函数或者计算表达式(以毫秒为单位)
-    * 语法：setInterval(函数表达式,毫秒数)；
+    * 语法: setInterval(函数表达式,毫秒数)；
     * setInterval()会不停的调用函数,直到clearInterval()被调用或者窗口被关闭,由 setInterval()返回的ID值可用作clearInterval()方法的参数.
 - setTimeout
     * setTimeout()方法用于在指定毫秒数后再调用函数或者计算表达式(以毫秒为单位)
-    * 语法：setTimeout(函数表达式,毫秒数)；
+    * 语法: setTimeout(函数表达式,毫秒数)；
     * setTimeout()只执行函数一次,如果需要多次调用可以使用setInterval(),或者在函数体内再次调用setTimeout()
 - 区别
     * setTimeout()方法只运行一次,也就是说当达到设定的时间后就出发运行指定的代码,运行完后就结束了,如果还想再次执行同样的函数,可以在函数体内再次调用setTimeout(),可以达到循环调用的效果.

@@ -28,7 +28,7 @@ toc: true
     ```
 - 创建一个cookie并设置有效时间为7天
     ```javascript
-        // 注意单位是：天
+        // 注意单位是: 天
         $.cookie('the_cookie', 'the_value', { expires: 7 });
     ```
 - 创建一个cookie并设置cookie的有效路径
@@ -62,7 +62,7 @@ toc: true
     * 创建该Cookie的页面域名；
 - secure
     * Booblean
-    * 如果设为true,那么此Cookie的传输会要求一个安全协议,例如：HTTPS；
+    * 如果设为true,那么此Cookie的传输会要求一个安全协议,例如: HTTPS；
 - eg
     ```javascript
         $.cookie('the_cookie','the_value',{

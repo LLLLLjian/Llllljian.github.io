@@ -34,7 +34,7 @@ toc: true
         }
 
         function showRequest(formData, jqForm, options) {
-            //formData: 数组对象,提交表单时,Form插件会以Ajax方式自动提交这些数据,格式如：[{name:user,value:val },{name:pwd,value:pwd}]
+            //formData: 数组对象,提交表单时,Form插件会以Ajax方式自动提交这些数据,格式如: [{name:user,value:val },{name:pwd,value:pwd}]
             //jqForm:   jQuery对象,封装了表单的元素   
             //options:  options对象
             var queryString = $.param(formData);   //name=1&address=2
@@ -82,7 +82,7 @@ toc: true
         }
 
         function showRequest(formData, jqForm, options) {
-            //formData: 数组对象,提交表单时,Form插件会以Ajax方式自动提交这些数据,格式如：[{name:user,value:val },{name:pwd,value:pwd}]
+            //formData: 数组对象,提交表单时,Form插件会以Ajax方式自动提交这些数据,格式如: [{name:user,value:val },{name:pwd,value:pwd}]
             //jqForm:   jQuery对象,封装了表单的元素   
             //options:  options对象
             var queryString = $.param(formData);   //name=1&address=2
@@ -114,7 +114,7 @@ toc: true
 
         //在这里对表单进行验证,如果不符合规则,将返回false来阻止表单提交,直到符合规则为止
         function validate(formData, jqForm, options) {
-            //方式一：利用formData参数
+            //方式一: 利用formData参数
             for (var i=0; i < formData.length; i++) {
                 if (!formData[i].value) {
                         alert('用户名,地址和自我介绍都不能为空!');
@@ -122,14 +122,14 @@ toc: true
                     }
                 } 
 
-            //方式二：利用jqForm对象
+            //方式二: 利用jqForm对象
             var form = jqForm[0]; //把表单转化为dom对象
                 if (!form.name.value || !form.address.value) {
                         alert('用户名和地址不能为空,自我介绍可以为空！');
                         return false;
                 }
 
-            //方式三：利用fieldValue()方法,fieldValue 是表单插件的一个方法,它能找出表单中的元素的值,返回一个集合.
+            //方式三: 利用fieldValue()方法,fieldValue 是表单插件的一个方法,它能找出表单中的元素的值,返回一个集合.
             var usernameValue = $('input[name=name]').fieldValue();
             var addressValue = $('input[name=address]').fieldValue();
             if (!usernameValue[0] || !addressValue[0]) {
@@ -138,7 +138,7 @@ toc: true
             }
 
             var queryString = $.param(formData); //组装数据
-            //alert(queryString); //类似 ： name=1&add=2  
+            //alert(queryString); //类似 :  name=1&add=2  
             return true;
         }
     ```

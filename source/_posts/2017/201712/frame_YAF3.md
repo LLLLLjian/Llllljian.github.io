@@ -7,18 +7,18 @@ toc: true
 
 ### 路由组件
 
-    路由组件有两个部分：路由器(Yaf_Router)和路由协议(Yaf_Route_Abstract).
+    路由组件有两个部分: 路由器(Yaf_Router)和路由协议(Yaf_Route_Abstract).
 
 #### 路由器
 
-    默认：Yaf_Router 
+    默认: Yaf_Router 
     路由器主要负责解析一个请求并且决定什么module、controller、action被请求；
     它同时也定义了一种方法来实现用户自定义路由,这也使得它成为最重要的一个MVC组组件.
     路由器主要负责管理和运行路由链,它根据路由协议栈倒序依次调用各个路由协议, 一直到某一个路由协议返回成功以后, 就匹配成功.
 
 #### 路由协议
 
-    默认：Yaf_Route_Abstract
+    默认: Yaf_Route_Abstract
     路由协议事实上主要负责匹配我们预先定义好的路由协议,
     默认是基于HTTP路由的, 它期望一个请求是HTTP请求并且请求对象是使用Yaf_Request_Http
 

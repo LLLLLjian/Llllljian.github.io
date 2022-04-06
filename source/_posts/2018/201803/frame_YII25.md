@@ -82,10 +82,10 @@ toc: true
         }
     ```
 - yii\web\User.php
-    * EVENT_BEFORE_LOGIN：在登录 yii\web\User::login() 时引发. 如果事件句柄将事件对象的 isValid 属性设为 false, 登录流程将会被取消.
-    * EVENT_AFTER_LOGIN：登录成功后引发.
-    * EVENT_BEFORE_LOGOUT：注销 yii\web\User::logout() 前引发. 如果事件句柄将事件对象的 isValid 属性设为 false, 注销流程将会被取消.
-    * EVENT_AFTER_LOGOUT：成功注销后引发.
+    * EVENT_BEFORE_LOGIN: 在登录 yii\web\User::login() 时引发. 如果事件句柄将事件对象的 isValid 属性设为 false, 登录流程将会被取消.
+    * EVENT_AFTER_LOGIN: 登录成功后引发.
+    * EVENT_BEFORE_LOGOUT: 注销 yii\web\User::logout() 前引发. 如果事件句柄将事件对象的 isValid 属性设为 false, 注销流程将会被取消.
+    * EVENT_AFTER_LOGOUT: 成功注销后引发.
     ```php
         // 当前用户的身份实例.未认证用户则为 Null .
         $identity = Yii::$app->user->identity;

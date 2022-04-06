@@ -162,8 +162,8 @@ toc: true
             www       3105  0.0  0.1  69276  8844 ?        S    Jun23   1:17 nginx: worker process            
             root     17773  0.0  0.0  64264  3020 ?        Ss   Apr11   0:00 nginx: master process /usr/local/nginx-1.6.0/sbin/nginx
 
-            Master进程：读取及评估配置和维持
-            Worker进程：处理请求
+            Master进程: 读取及评估配置和维持
+            Worker进程: 处理请求
         ```
 - error_log
     * 说明

@@ -48,7 +48,7 @@ toc: true
         serif; font-size: pt; color: #;"><tr style="height:px"></tr><tr>
         <td width="%"></td>
         <td width="%" align="center" style="font-size:px;color:#AAA">页脚</td>
-        <td width="%" style="text-align: left;">页码：{PAGENO}/{nb}</td>
+        <td width="%" style="text-align: left;">页码: {PAGENO}/{nb}</td>
         </tr></table>';
         //添加页眉和页脚到pdf中
         $mpdf->SetHTMLHeader($header);

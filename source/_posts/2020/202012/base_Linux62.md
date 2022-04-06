@@ -86,10 +86,10 @@ toc: true
             [ -L $var ]
         ```
 2. 双圆括号(( expression ))
-    * 作用：双圆括号允许你将高级数学表达式放入比较中
+    * 作用: 双圆括号允许你将高级数学表达式放入比较中
     <table border="1"><caption>双圆括号命令符号</caption><tbody><tr><td style="text-align: center"><strong><span style="font-size: 14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 符号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong></td><td style="text-align: center"><strong><span style="font-size: 14px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 描述&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">val++</span></td><td style="text-align: center"><span style="font-size: 14px">后增</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">val--</span></td><td style="text-align: center"><span style="font-size: 14px">后减</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">++val</span></td><td style="text-align: center"><span style="font-size: 14px">先加</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">--val</span></td><td style="text-align: center"><span style="font-size: 14px">先减</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">!</span></td><td style="text-align: center"><span style="font-size: 14px">逻辑求反</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">~</span></td><td style="text-align: center"><span style="font-size: 14px">位求反</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">**</span></td><td style="text-align: center"><span style="font-size: 14px">幂运算</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">&lt;&lt;</span></td><td style="text-align: center"><span style="font-size: 14px">左位移</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">&gt;&gt;</span></td><td style="text-align: center"><span style="font-size: 14px">&nbsp;右位移</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">&amp;</span></td><td style="text-align: center"><span style="font-size: 14px">&nbsp;位布尔和</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">|</span></td><td style="text-align: center"><span style="font-size: 14px">&nbsp;位布尔或</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">&amp;&amp;</span></td><td style="text-align: center"><span style="font-size: 14px">&nbsp;逻辑和</span></td></tr><tr><td style="text-align: center"><span style="font-size: 14px">||</span></td><td style="text-align: center"><span style="font-size: 14px">&nbsp;逻辑或</span></td></tr></tbody></table>
 3. 双方括号[[ expression ]]
-    * 作用：提供了针对字符串比较高级特性,除了可以像方括号使用test命令那样之外,还可以进行模式匹配
+    * 作用: 提供了针对字符串比较高级特性,除了可以像方括号使用test命令那样之外,还可以进行模式匹配
     * demo
         ```bash
             # 当str1等于str2时,返回真.也就是说,str1和str2包含 的文本是一模一样的
@@ -108,7 +108,7 @@ toc: true
             [[ -n $str1 ]]
         ```
 4. $单方括号$[ operation ]
-    * 作用：执行数学表达式
+    * 作用: 执行数学表达式
     * demo
         ```bash
             var3=$[ $var1 / $var2 ]

@@ -79,7 +79,7 @@ toc: true
                 data.err? toastr.error(data.msg) : toastr.success(data.msg);
             }
 
-            其它颜色响应：
+            其它颜色响应: 
 
             //常规消息提示,默认背景为浅蓝色  
             toastr.info("你有新消息了!");  
@@ -191,12 +191,12 @@ toc: true
         ```
     * 配置参数
         ``` javascript
-            exclude：不被导出的表格行的CSS class类.
-            name：导出的Excel文档的名称.
-            filename：Excel文件的名称.
-            exclude_img：是否导出图片.
-            exclude_links：是否导出超链接
-            exclude_inputs：是否导出输入框中的内容.
+            exclude: 不被导出的表格行的CSS class类.
+            name: 导出的Excel文档的名称.
+            filename: Excel文件的名称.
+            exclude_img: 是否导出图片.
+            exclude_links: 是否导出超链接
+            exclude_inputs: 是否导出输入框中的内容.
         ```
 
 ###   树插件类

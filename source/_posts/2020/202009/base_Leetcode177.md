@@ -55,9 +55,9 @@ toc: true
                 return $this->result;
             }
 
-            // 路径：board 中小于 row 的那些行都已经成功放置了皇后
-            // 选择列表：第 row 行的所有列都是放置皇后的选择
-            // 结束条件：row 超过 board 的最后一行
+            // 路径: board 中小于 row 的那些行都已经成功放置了皇后
+            // 选择列表: 第 row 行的所有列都是放置皇后的选择
+            // 结束条件: row 超过 board 的最后一行
             private function helper($n, $board, $row)
             {
                 // row 从 0 开始,row = n 时已越界

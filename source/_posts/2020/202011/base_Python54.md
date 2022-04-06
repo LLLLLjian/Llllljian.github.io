@@ -139,7 +139,7 @@ toc: true
 
                         #如果这个值是正确的话,就会给这个字典添加一个键值对
                         #刚才在full_clean中self.cleaned_data = {}已经初始化了.
-                        #{”pws“：123}
+                        #{”pws“: 123}
                 except ValidationError as e:
                     self.add_error(name, e)
                     #如果出现错误,就会给_error这个字典添加一个键值对

@@ -50,11 +50,11 @@ toc: true
 
 #### 转义字符
 - list
-    <table class="reference"><thead><tr><th>转义字符</th><th>描述</th></tr></thead><tbody><tr><td>\\(在行尾时)</td><td>续行符</td></tr><tr><td>\\\</td><td>反斜杠符号</td></tr><tr><td>\'</td><td>单引号</td></tr><tr><td>\"</td><td>双引号</td></tr><tr><td>\a</td><td>响铃</td></tr><tr><td>\b</td><td>退格(Backspace)</td></tr><tr><td>\e</td><td>转义</td></tr><tr><td>\000</td><td>空</td></tr><tr><td>\n</td><td>换行</td></tr><tr><td>\v</td><td>纵向制表符</td></tr><tr><td>\t</td><td>横向制表符</td></tr><tr><td>\r</td><td>回车</td></tr><tr><td>\f</td><td>换页</td></tr><tr><td>\oyy</td><td>八进制数,yy代表的字符,例如：\o12代表换行</td></tr><tr><td>\xyy</td><td>十六进制数,yy代表的字符,例如：\x0a代表换行</td></tr><tr><td>\other</td><td>其它的字符以普通格式输出</td></tr></tbody></table>
+    <table class="reference"><thead><tr><th>转义字符</th><th>描述</th></tr></thead><tbody><tr><td>\\(在行尾时)</td><td>续行符</td></tr><tr><td>\\\</td><td>反斜杠符号</td></tr><tr><td>\'</td><td>单引号</td></tr><tr><td>\"</td><td>双引号</td></tr><tr><td>\a</td><td>响铃</td></tr><tr><td>\b</td><td>退格(Backspace)</td></tr><tr><td>\e</td><td>转义</td></tr><tr><td>\000</td><td>空</td></tr><tr><td>\n</td><td>换行</td></tr><tr><td>\v</td><td>纵向制表符</td></tr><tr><td>\t</td><td>横向制表符</td></tr><tr><td>\r</td><td>回车</td></tr><tr><td>\f</td><td>换页</td></tr><tr><td>\oyy</td><td>八进制数,yy代表的字符,例如: \o12代表换行</td></tr><tr><td>\xyy</td><td>十六进制数,yy代表的字符,例如: \x0a代表换行</td></tr><tr><td>\other</td><td>其它的字符以普通格式输出</td></tr></tbody></table>
 
 #### 字符串运算符
 - list
-    <table class="reference"><tbody><tr><th width="10%">操作符</th><th>描述</th><th width="20%">实例</th></tr><tr><th colspan="3" align="center" valign="middle">a值为字符串 "Hello",b变量值为 "Python"</th></tr><tr><td>+</td><td>字符串连接</td><td> a + b 输出结果： HelloPython</td></tr><tr><td>*</td><td>重复输出字符串</td><td> a*2 输出结果：HelloHello</td></tr><tr><td>[]</td><td>通过索引获取字符串中字符</td><td> a[1] 输出结果<b>e</b></td></tr><tr><td>[ : ]</td><td>截取字符串中的一部分,遵循<strong>左闭右开</strong>原则,str[0,2] 是不包含第 3 个字符的.</td><td> a[1:4] 输出结果<b>ell</b></td></tr><tr><td>in</td><td>成员运算符 - 如果字符串中包含给定的字符返回 True</td><td><b>'H' in a</b> 输出结果 True</td></tr><tr><td>not in</td><td>成员运算符 - 如果字符串中不包含给定的字符返回 True</td><td><b>'M' not in a</b> 输出结果 True</td></tr><tr><td>r/R</td><td>原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用,没有转义特殊或不能打印的字符.原始字符串除在字符串的第一个引号前加上字母<span class="marked">r</span>(可以大小写)以外,与普通字符串有着几乎完全相同的语法.</td><td><pre class="prettyprint prettyprinted" style=""><span class="kwd">print</span><span class="pun">(</span><span class="pln"> r</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span><span class="pln"></span><span class="kwd">print</span><span class="pun">(</span><span class="pln"> R</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span></pre></td></tr><tr><td>%</td><td>格式字符串</td><td>请看下一节内容.</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th width="10%">操作符</th><th>描述</th><th width="20%">实例</th></tr><tr><th colspan="3" align="center" valign="middle">a值为字符串 "Hello",b变量值为 "Python"</th></tr><tr><td>+</td><td>字符串连接</td><td> a + b 输出结果:  HelloPython</td></tr><tr><td>*</td><td>重复输出字符串</td><td> a*2 输出结果: HelloHello</td></tr><tr><td>[]</td><td>通过索引获取字符串中字符</td><td> a[1] 输出结果<b>e</b></td></tr><tr><td>[ : ]</td><td>截取字符串中的一部分,遵循<strong>左闭右开</strong>原则,str[0,2] 是不包含第 3 个字符的.</td><td> a[1:4] 输出结果<b>ell</b></td></tr><tr><td>in</td><td>成员运算符 - 如果字符串中包含给定的字符返回 True</td><td><b>'H' in a</b> 输出结果 True</td></tr><tr><td>not in</td><td>成员运算符 - 如果字符串中不包含给定的字符返回 True</td><td><b>'M' not in a</b> 输出结果 True</td></tr><tr><td>r/R</td><td>原始字符串 - 原始字符串: 所有的字符串都是直接按照字面的意思来使用,没有转义特殊或不能打印的字符.原始字符串除在字符串的第一个引号前加上字母<span class="marked">r</span>(可以大小写)以外,与普通字符串有着几乎完全相同的语法.</td><td><pre class="prettyprint prettyprinted" style=""><span class="kwd">print</span><span class="pun">(</span><span class="pln"> r</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span><span class="pln"></span><span class="kwd">print</span><span class="pun">(</span><span class="pln"> R</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span></pre></td></tr><tr><td>%</td><td>格式字符串</td><td>请看下一节内容.</td></tr></tbody></table>
 - eg
     ```python
         #!/usr/bin/python3
@@ -62,10 +62,10 @@ toc: true
         a = "Hello"
         b = "Python"
         
-        print("a + b 输出结果：", a + b)
-        print("a * 2 输出结果：", a * 2)
-        print("a[1] 输出结果：", a[1])
-        print("a[1:4] 输出结果：", a[1:4])
+        print("a + b 输出结果: ", a + b)
+        print("a * 2 输出结果: ", a * 2)
+        print("a[1] 输出结果: ", a[1])
+        print("a[1:4] 输出结果: ", a[1:4])
         
         if( "H" in a) :
             print("H 在变量 a 中")
@@ -80,12 +80,12 @@ toc: true
         print (r'\n')
         print (R'\n')
 
-        输出结果为：
+        输出结果为: 
 
-        a + b 输出结果： HelloPython
-        a * 2 输出结果： HelloHello
-        a[1] 输出结果： e
-        a[1:4] 输出结果： ell
+        a + b 输出结果:  HelloPython
+        a * 2 输出结果:  HelloHello
+        a[1] 输出结果:  e
+        a[1:4] 输出结果:  ell
         H 在变量 a 中
         M 不在变量 a 中
         \n
@@ -94,7 +94,7 @@ toc: true
 
 #### 字符串格式化
 - list
-    <table class="reference"><tbody><tr><th width="10%">操作符</th><th>描述</th><th width="20%">实例</th></tr><tr><td>+</td><td>字符串连接</td><td> a + b 输出结果： HelloPython</td></tr><tr><td>*</td><td>重复输出字符串</td><td> a*2 输出结果：HelloHello</td></tr><tr><td>[]</td><td>通过索引获取字符串中字符</td><td> a[1] 输出结果<b>e</b></td></tr><tr><td>[ : ]</td><td>截取字符串中的一部分,遵循<strong>左闭右开</strong>原则,str[0,2] 是不包含第 3 个字符的.</td><td> a[1:4] 输出结果<b>ell</b></td></tr><tr><td>in</td><td>成员运算符 - 如果字符串中包含给定的字符返回 True</td><td><b>'H' in a</b> 输出结果 True</td></tr><tr><td>not in</td><td>成员运算符 - 如果字符串中不包含给定的字符返回 True</td><td><b>'M' not in a</b> 输出结果 True</td></tr><tr><td>r/R</td><td>原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用,没有转义特殊或不能打印的字符.原始字符串除在字符串的第一个引号前加上字母<span class="marked">r</span>(可以大小写)以外,与普通字符串有着几乎完全相同的语法.</td><td><pre class="prettyprint prettyprinted" style=""><span class="kwd">print</span><span class="pun">(</span><span class="pln"> r</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span><span class="pln"></span><span class="kwd">print</span><span class="pun">(</span><span class="pln"> R</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span></pre></td></tr><tr><td>%</td><td>格式字符串</td><td>请看下一节内容.</td></tr></tbody></table>
+    <table class="reference"><tbody><tr><th width="10%">操作符</th><th>描述</th><th width="20%">实例</th></tr><tr><td>+</td><td>字符串连接</td><td> a + b 输出结果:  HelloPython</td></tr><tr><td>*</td><td>重复输出字符串</td><td> a*2 输出结果: HelloHello</td></tr><tr><td>[]</td><td>通过索引获取字符串中字符</td><td> a[1] 输出结果<b>e</b></td></tr><tr><td>[ : ]</td><td>截取字符串中的一部分,遵循<strong>左闭右开</strong>原则,str[0,2] 是不包含第 3 个字符的.</td><td> a[1:4] 输出结果<b>ell</b></td></tr><tr><td>in</td><td>成员运算符 - 如果字符串中包含给定的字符返回 True</td><td><b>'H' in a</b> 输出结果 True</td></tr><tr><td>not in</td><td>成员运算符 - 如果字符串中不包含给定的字符返回 True</td><td><b>'M' not in a</b> 输出结果 True</td></tr><tr><td>r/R</td><td>原始字符串 - 原始字符串: 所有的字符串都是直接按照字面的意思来使用,没有转义特殊或不能打印的字符.原始字符串除在字符串的第一个引号前加上字母<span class="marked">r</span>(可以大小写)以外,与普通字符串有着几乎完全相同的语法.</td><td><pre class="prettyprint prettyprinted" style=""><span class="kwd">print</span><span class="pun">(</span><span class="pln"> r</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span><span class="pln"></span><span class="kwd">print</span><span class="pun">(</span><span class="pln"> R</span><span class="str">'\n'</span><span class="pln"></span><span class="pun">)</span></pre></td></tr><tr><td>%</td><td>格式字符串</td><td>请看下一节内容.</td></tr></tbody></table>
 - 格式化操作符辅助指令
     <table class="reference"><tbody><tr><th>符号</th><th>功能</th></tr><tr><td>*</td><td>定义宽度或者小数点精度</td></tr><tr><td>-</td><td>用做左对齐</td></tr><tr><td>+</td><td>在正数前面显示加号( + )</td></tr><tr><td>&lt;sp&gt;</td><td>在正数前面显示空格</td></tr><tr><td>#</td><td> 在八进制数前面显示零('0'),在十六进制前面显示'0x'或者'0X'(取决于用的是'x'还是'X')</td></tr><tr><td>0</td><td> 显示的数字前面填充'0'而不是默认的空格</td></tr><tr><td>%</td><td> '%%'输出一个单一的'%'</td></tr><tr><td>(var)</td><td>映射变量(字典参数)</td></tr><tr><td>m.n.</td><td>  m 是显示的最小总宽度,n 是小数点后的位数(如果可用的话)</td></tr></tbody></table>
 

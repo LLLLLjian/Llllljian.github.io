@@ -53,7 +53,7 @@ toc: true
             if ($head == null) {
                 return $head;
             }
-            $pre = $head;//注意：对象的赋值
+            $pre = $head;//注意: 对象的赋值
             $cur = $head->getNext();
             $next = null;
             while ($cur != null)                       {

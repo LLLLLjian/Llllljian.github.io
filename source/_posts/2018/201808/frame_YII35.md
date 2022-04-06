@@ -31,7 +31,7 @@ toc: true
 
 #### 标签属性选择
 - 1.默认情况下,属性标签通过yii\base\Model::generateAttributeLabel()方法自动从属性名生成.它会自动将驼峰式大小写变量名转换为多个首字母大写的单词, 例如username转换为Username,firstName转换为First Name.
-- 2.在对应模型类文件中使用attributeLabels()方法设置：
+- 2.在对应模型类文件中使用attributeLabels()方法设置: 
     ```php
         namespace app\models;
         use yii\db\ActiveRecord;
@@ -53,7 +53,7 @@ toc: true
 
         }
     ```
-- 3.在视图文件中使用label()方法设置：
+- 3.在视图文件中使用label()方法设置: 
     ```php    
         <?= $form->field($model, 'username')->label('用户名') ?>
         <?= $form->field($model, 'password')->label('密码') ?>

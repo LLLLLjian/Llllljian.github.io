@@ -82,7 +82,7 @@ toc: true
                     fast, slow = fast.next.next, slow.next
                     if fast == slow: break
                 slow = slow.next
-                fast = fast.nex.next
+                fast = fast.next.next
                 len = 1
                 while fast != slow:
                     len += 1

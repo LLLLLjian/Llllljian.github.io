@@ -1,6 +1,6 @@
 ---
 title: Interview_总结 (176)
-date: 2022-06-01
+date: 2022-06-02
 tags: Interview
 toc: true
 ---
@@ -43,9 +43,6 @@ toc: true
                 return count(1, n)
     ```
 
-
-
-
 #### 验证二叉搜索树
 - 问题描述
     * 给你一个二叉树的根节点 root ,判断其是否是一个有效的二叉搜索树.
@@ -83,7 +80,6 @@ toc: true
                 return isValid(root, None, None)
     ```
 
-
 #### 最长连续序列
 - 问题描述
     * 给定一个未排序的整数数组 nums ,找出数字连续的最长序列(不要求序列元素在原数组中连续)的长度.请你设计并实现时间复杂度为 O(n) 的算法解决此问题.
@@ -106,7 +102,6 @@ toc: true
                         longest_streak = max(longest_streak, current_streak)
                 return longest_streak
     ```
-
 
 #### 乘积最大子数组
 - 问题描述

@@ -73,7 +73,7 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共1159篇日志</a>	
+			<a href="/archives">共1167篇日志</a>	
 			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">42个标签</a>	
 		</nav>
 		<nav class="header-nav">
@@ -149,6 +149,679 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-2018/201801/function_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/function_JS.html">javascript_功能</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/function_JS.html" class="archive-article-date">
+  	<time datetime="2018-01-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="禁用退格键"><a href="#禁用退格键" class="headerlink" title="禁用退格键"></a>禁用退格键</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">onkeydown</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    e = e||event; </span><br><span class="line">    <span class="keyword">if</span>(e.<span class="property">keyCode</span> == <span class="number">8</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果是在textarea内不执行任何操作</span></span><br><span class="line">        <span class="keyword">var</span> obj = e.<span class="property">srcElement</span> || e.<span class="property">target</span>;</span><br><span class="line">        <span class="keyword">var</span> tag=obj.<span class="property">tagName</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line">            <span class="keyword">if</span>(tag != <span class="string">&quot;input&quot;</span>  &amp;&amp; tag != <span class="string">&quot;textarea&quot;</span> &amp;&amp; tag != <span class="string">&quot;password&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;         </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/function_JS.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JQ5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JQ5.html">jQuery_基础 (5)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JQ5.html" class="archive-article-date">
+  	<time datetime="2018-01-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQuery-AJAX"><a href="#jQuery-AJAX" class="headerlink" title="jQuery AJAX"></a>jQuery AJAX</h2><h3 id="load"><a href="#load" class="headerlink" title="load"></a>load</h3><pre><code>经常用于加载一段代码
+</code></pre>
+<ul>
+<li>$obj.load(url)<ul>
+<li>url : 指的是服务器的一个html文件的路径</li>
+<li>功能 : 向服务器请求一段html代码加载到(appendTO) $obj</li>
+</ul>
+</li>
+<li>$obj.load(url, 回调函数)<ul>
+<li>url : 指的是服务器的一个html文件的路径</li>
+<li>回调函数 : 可以在数据加载完毕之后进行的一些处理</li>
+</ul>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JQ5.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JQ4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JQ4.html">jQuery_基础 (4)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JQ4.html" class="archive-article-date">
+  	<time datetime="2018-01-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="自定义事件和内置动画"><a href="#自定义事件和内置动画" class="headerlink" title="自定义事件和内置动画"></a>自定义事件和内置动画</h2><h3 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h3><ul>
+<li>.trigger(“事件名”)<ul>
+<li>在每一个匹配的元素上触发某类事件  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">trigger</span>(<span class="string">&quot;click&quot;</span>);</span><br><span class="line">$(<span class="string">&quot;input&quot;</span>).<span class="title function_">trigger</span>(<span class="string">&quot;focus&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JQ4.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JQ3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JQ3.html">jQuery_基础 (3)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JQ3.html" class="archive-article-date">
+  	<time datetime="2018-01-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关于事件"><a href="#关于事件" class="headerlink" title="关于事件"></a>关于事件</h2><h3 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h3><ul>
+<li>基本用法<ul>
+<li>on(“事件名”, 响应函数) <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是点击事件&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>多个事件添加同一个函数<ul>
+<li>on(“事件名 事件名”, 响应函数)  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click mouseover&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是点击事件&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>一次性添加多个事件的响应<ul>
+<li>on({“事件名1” : “响应函数1”, “事件名2” : “响应函数2”, “事件名n” : “响应函数n”,})  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(&#123;</span><br><span class="line">    <span class="string">&quot;click&quot;</span> : <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;click&quot;</span>);&#125;,</span><br><span class="line">    <span class="string">&quot;mouseover&quot;</span> : <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;mouseover&quot;</span>);&#125;,</span><br><span class="line">    <span class="string">&quot;mouseout&quot;</span> : <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;mouseout&quot;</span>);&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JQ3.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JQ2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JQ2.html">jQuery_基础 (2)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JQ2.html" class="archive-article-date">
+  	<time datetime="2018-01-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="获取设置节点的属性"><a href="#获取设置节点的属性" class="headerlink" title="获取设置节点的属性"></a>获取设置节点的属性</h3><ul>
+<li>$(“”).attr(“属性值”)<ul>
+<li>设置或返回被选元素的属性值</li>
+<li>返回 : $(“.box”).attr(“title”)</li>
+<li>设置<ul>
+<li>设置元素指定属性的属性值<ul>
+<li>attr(“属性名”, “属性值”)</li>
+<li>$(“.box”).attr(“title”, ‘title_value’)</li>
+</ul>
+</li>
+<li>设置多个属性的属性值<ul>
+<li>attr(“属性名1”:”属性值1”, “属性名2”:”属性值值2”)</li>
+<li>$(“.box”).attr(“title”:”1111”, ‘my’:’2222’)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JQ2.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JQ" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JQ.html">jQuery_基础 (1)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JQ.html" class="archive-article-date">
+  	<time datetime="2018-01-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li>DOM对象 : 通过原生js获取的是DOM对象(DOM树上的节点就是DOM对象)</li>
+<li>jQuery对象 : 通过jQuery选择器获得的是jQuery对象</li>
+<li>jQuery对象只能使用jQuery中封装的方法,不能使用DOM对象的方法</li>
+<li>DOM对象只能使用DOM的方法不能使用jQuery中封装的方法</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JQ.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JS8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JS8.html">JavaScript_基础 (8)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JS8.html" class="archive-article-date">
+  	<time datetime="2018-01-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BOM基本操作"><a href="#BOM基本操作" class="headerlink" title="BOM基本操作"></a>BOM基本操作</h2><h3 id="BOM含义"><a href="#BOM含义" class="headerlink" title="BOM含义"></a>BOM含义</h3><pre><code>浏览器对象模型(BOM): 与浏览器交互的方法和接口
+Browser Object Model
+BOM 是为了操作浏览器出现的 API,window 是其的一个对象.
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JS8.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201801/base_JS7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201801/base_JS7.html">JavaScript_基础 (7)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201801/base_JS7.html" class="archive-article-date">
+  	<time datetime="2018-01-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="DOM基本操作"><a href="#DOM基本操作" class="headerlink" title="DOM基本操作"></a>DOM基本操作</h2><h3 id="DOM含义"><a href="#DOM含义" class="headerlink" title="DOM含义"></a>DOM含义</h3><pre><code>文档对象模型 (DOM): 处理网页内容的方法和接口
+Document Object Model
+DOM 是为了操作文档出现的 API,document 是其的一个对象；
+</code></pre>
+<h3 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h3><ul>
+<li>document<ul>
+<li>getElementById<ul>
+<li>语法 : document.getElementBId(元素ID)</li>
+<li>功能 : 通过元素ID获取节点</li>
+</ul>
+</li>
+<li>getElementsByName<ul>
+<li>语法 : document.getElementsByName(元素name)</li>
+<li>功能 : 通过元素的name属性获取节点</li>
+</ul>
+</li>
+<li>getElementsByTagName<ul>
+<li>语法 : document.getElementsByTagName(元素标签)</li>
+<li>功能 : 通过元素标签获取节点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201801/base_JS7.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-2018/201801/base_JS6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -327,654 +1000,9 @@
 
 
   
-    <article id="post-2018/201801/base_JS4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JS4.html">JavaScript_基础 (4)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JS4.html" class="archive-article-date">
-  	<time datetime="2018-01-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript流程控制"><a href="#JavaScript流程控制" class="headerlink" title="JavaScript流程控制"></a>JavaScript流程控制</h2><h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><ul>
-<li>while<ul>
-<li>语法 : while (条件表达式) {循环执行代码段}</li>
-<li>流程 : 判断条件表达式的值;当值为true时循环执行代码段;当值为false时退出循环体</li>
-<li>特性 : 先检查条件,再执行循环;条件不满足时一次循环也不执行</li>
-<li>时机 : 一个动作被重复执行到满足某个条件时</li>
-</ul>
-</li>
-<li>do-while<ul>
-<li>语法 : do {循环执行的代码段 while (条件表达式)</li>
-<li>流程 : 限制性循环体内代码段再进行判断;如果表达式的值为true,则重复执行代码段,否则就退出</li>
-<li>特性 : 先执行循环体,在进行条件判断;循环体内代码至少执行一次</li>
-<li>时机 : 希望一个动作至少被执行一次时</li>
-</ul>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JS4.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JS3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JS3.html">JavaScript_基础 (3)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JS3.html" class="archive-article-date">
-  	<time datetime="2018-01-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript运算符"><a href="#JavaScript运算符" class="headerlink" title="JavaScript运算符"></a>JavaScript运算符</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ul>
-<li>运算符 <ul>
-<li>+ : 数字求和;字符串拼接</li>
-<li>- : 操作数取反;数字相减;字符串转数值 </li>
-<li>* : 对两个运算数进行乘法运算,同号得正,异号得负</li>
-<li>&#x2F; : 对两个运算数进行除法运算,同号得正,异号得负</li>
-<li>% : 返回余数</li>
-</ul>
-</li>
-<li>复合赋值运算符 : +&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JS3.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JS2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JS2.html">JavaScript_基础 (2)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JS2.html" class="archive-article-date">
-  	<time datetime="2018-01-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h2><h3 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h3><ul>
-<li>静态方法 :<br>  function 函数名 ([虚参列表]) {函数体;[return [函数返回值;]]}</li>
-<li>动态匿名方法 :<br>  var 函数名 &#x3D; new Function([“虚参列表”], “函数体”);</li>
-<li>直接量方法 :<br>  函数名 &#x3D; function([虚参列表]){函数体};</li>
-</ul>
-<h3 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h3><ul>
-<li>直接调用 : 函数名(实参列表)</li>
-<li>在链接中调用 : &lt;a href&#x3D;”javascript:函数名()”&gt;描述文字&lt;&#x2F;a&gt;</li>
-<li>在事件中调用 : 事件类型 &#x3D; “函数名()”</li>
-<li>递归调用 : 在函数体内部调用函数自身 function 函数名() {函数体; 函数名();}</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JS2.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JS.html">JavaScript_基础 (1)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JS.html" class="archive-article-date">
-  	<time datetime="2018-01-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript数组"><a href="#JavaScript数组" class="headerlink" title="JavaScript数组"></a>JavaScript数组</h2><h3 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h3><ul>
-<li>空数组<br>  var arr &#x3D; new Array();</li>
-<li>指定长度数组<br>  var arr &#x3D; new Array(Size);</li>
-<li>指定元素数组<br>  var arr &#x3D; new Array(元素1, 元素2, …, 元素n);</li>
-<li>单维数组<br>  var arr &#x3D; [元素1, 元素2, …, 元素n];</li>
-<li>多维数组<br>  var arr &#x3D; new Array([数组序列1], [数组序列2], [数组序列n]);</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JS.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/radix_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/radix_SORT.html">SORT_基数排序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/radix_SORT.html" class="archive-article-date">
-  	<time datetime="2018-01-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>透过键值的部份资讯,将要排序的元素分配至某些“桶”中,藉以达到排序的作用
-
-第一步、首先根据个位数的数值,在走访数值(从前到后走访,后面步骤相同)时将它们分配至编号0到9的桶子中
-第二步、接下来将这些桶子中的数值重新串接起来
-第三步、根据十位数的数值,在走访数值(从前到后走访,后面步骤相同)时将它们分配至编号0到9的桶子中
-第四步、接下来将这些桶子中的数值重新串接起来
-第五步、根据百位数的数值,在走访数值(从前到后走访,后面步骤相同)时将它们分配至编号0到9的桶子中: 
-第六步、接下来将这些桶子中的数值重新串接起来
-</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SORT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/radix_SORT.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/merge_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/merge_SORT.html">SORT_归并排序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/merge_SORT.html" class="archive-article-date">
-  	<time datetime="2018-01-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>就是利用归并(合并)的思想实现的排序方法.它的原理是假设初始序列含有 n 个元素,则可以看成是 n 个有序的子序列,每个子序列的长度为 1,然后两两归并,得到 ⌈ n / 2⌉ (⌈ x ⌉ 表示不小于 x 的最小整数)个长度为 2 或 1 的有序序列；再两两归并,······,如此重复,直至得到一个长度为 n 的有序序列为止,这种排序方法就成为 2 路归并排序
-</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SORT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/merge_SORT.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/bubble_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/bubble_SORT.html">SORT_交换排序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/bubble_SORT.html" class="archive-article-date">
-  	<time datetime="2018-01-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>两两比较相邻记录的关键字,如果反序则交换,直到没有反序的记录为止
-</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SORT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/bubble_SORT.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/quick_SORT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/quick_SORT.html">SORT_交换排序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/quick_SORT.html" class="archive-article-date">
-  	<time datetime="2018-01-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><pre><code>通过一趟排序将待排记录分割成独立的两部分,其中一部分的关键字均比另一部分记录的关键字小,则可分别对这两部分记录继续进行快速排序,整个排序过程可以递归进行,以达到整个序列有序的目的.
-选择一个基准元素,通常选择第一个元素或者最后一个元素.通过一趟扫描,将待排序列分成两部分,一部分比基准元素小,一部分大于等于基准元素.此时基准元素在其排好序后的正确位置,然后再用同样的方法递归地排序划分的两部分
-</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SORT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/quick_SORT.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/113/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/112/">112</a><a class="page-number" href="/page/113/">113</a><span class="page-number current">114</span><a class="page-number" href="/page/115/">115</a><a class="page-number" href="/page/116/">116</a><a class="extend next" rel="next" href="/page/115/">下一页</a>
+      <a class="extend prev" rel="prev" href="/page/113/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/112/">112</a><a class="page-number" href="/page/113/">113</a><span class="page-number current">114</span><a class="page-number" href="/page/115/">115</a><a class="page-number" href="/page/116/">116</a><a class="page-number" href="/page/117/">117</a><a class="extend next" rel="next" href="/page/115/">下一页</a>
     </nav>
   
 
@@ -1065,14 +1093,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SORT</a>
               </li>
              
@@ -1097,11 +1117,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
+                <a href="javascript:void(0)" class="js-tag color4">Yii</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HDwiki</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Apache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1113,7 +1141,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color5">Interview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1121,27 +1149,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Interview</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Smarty</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1149,19 +1157,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Smarty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ThinkPHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Tencent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1177,11 +1185,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1189,27 +1201,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetbook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指Offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Book</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ACwing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1221,7 +1217,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+                <a href="javascript:void(0)" class="js-tag color5">Book</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1230,6 +1226,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetbook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ThinkPHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Tencent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Wechat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指Offer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ACwing</a>
               </li>
             
             <div class="clearfix"></div>

@@ -47,7 +47,10 @@
         <div id="local-search-result" class="local-search-result-cls"></div>
         <ul class="search-ul">
           <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <a q-attr="href:path" class="search-title">
+              <i class="icon-quo-left icon"></i>
+              <span q-text="title"></span>
+            </a>
             <p class="search-time">
               <i class="icon-calendar icon"></i>
               <span q-text="date|dateformat"></span>

@@ -88,7 +88,7 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共1167篇日志</a>	
+			<a href="/archives">共1180篇日志</a>	
 			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">42个标签</a>	
 		</nav>
 		<nav class="header-nav">
@@ -694,7 +694,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <div id="local-search-result" class="local-search-result-cls"></div>
         <ul class="search-ul">
           <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <a q-attr="href:path" class="search-title">
+              <i class="icon-quo-left icon"></i>
+              <span q-text="title"></span>
+            </a>
             <p class="search-time">
               <i class="icon-calendar icon"></i>
               <span q-text="date|dateformat"></span>

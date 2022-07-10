@@ -16,7 +16,7 @@
 <meta property="og:description" content="面试题别看了 这就是你的题">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-06-17T04:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-21T07:53:20.661Z">
+<meta property="article:modified_time" content="2022-07-10T15:13:17.371Z">
 <meta property="article:author" content="Llllljian">
 <meta property="article:tag" content="Interview">
 <meta name="twitter:card" content="summary">
@@ -78,7 +78,7 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共1167篇日志</a>	
+			<a href="/archives">共1180篇日志</a>	
 			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">42个标签</a>	
 		</nav>
 		<nav class="header-nav">
@@ -179,14 +179,14 @@
 
 <h4 id="计算器"><a href="#计算器" class="headerlink" title="计算器"></a>计算器</h4><ul>
 <li>问题描述<ul>
-<li>给定一个包含正整数、加(+)、减(-)、乘(<em>)、除(&#x2F;)的算数表达式(括号除外)，计算其结果。表达式仅包含非负整数，+， - ，</em>，&#x2F; 四种运算符和空格  。 整数除法仅保留整数部分。</li>
+<li>给定一个包含正整数、加(+)、减(-)、乘(*)、除(&#x2F;)的算数表达式(括号除外), 计算其结果.表达式仅包含非负整数, +,  - , *, &#x2F; 四种运算符和空格  . 整数除法仅保留整数部分.</li>
 </ul>
 </li>
 <li>思路<ul>
-<li>遇到数字记录数字，遇到符号记录符号，遇到下一个符号时，对当前记录的数字和符号进行运算，对于各符号的处理见其它人的解析。</li>
-<li>由于是由下一个符号驱动，因此需要注意最后一个运算的处理。</li>
-<li>我的代码中增加了括号的功能，遇到左括号就开始递归，遇到右括号处理运算并break出循环返回结果。</li>
-<li>值得注意的是，为了保持s在递归中不断被改变，应避免对s进行赋值（这样在内层递归中的s就不是外层传递进来的s了，而是绑定到了新值，即shadow）</li>
+<li>遇到数字记录数字, 遇到符号记录符号, 遇到下一个符号时, 对当前记录的数字和符号进行运算, 对于各符号的处理见其它人的解析.</li>
+<li>由于是由下一个符号驱动, 因此需要注意最后一个运算的处理.</li>
+<li>我的代码中增加了括号的功能, 遇到左括号就开始递归, 遇到右括号处理运算并break出循环返回结果.</li>
+<li>值得注意的是, 为了保持s在递归中不断被改变, 应避免对s进行赋值(这样在内层递归中的s就不是外层传递进来的s了, 而是绑定到了新值, 即shadow)</li>
 </ul>
 </li>
 <li>代码实现  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calculate</span>(<span class="params">self, s</span>):</span><br><span class="line">    stack = []</span><br><span class="line">    symbol_list = [<span class="string">&quot;+&quot;</span>, <span class="string">&quot;-&quot;</span>, <span class="string">&quot;*&quot;</span>, <span class="string">&quot;/&quot;</span>]</span><br><span class="line">    pre_symbol = <span class="string">&quot;+&quot;</span></span><br><span class="line">    num = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        <span class="keyword">if</span> s[i].isdigit() <span class="keyword">and</span> s[i] != <span class="string">&quot; &quot;</span>:</span><br><span class="line">            num = num*<span class="number">10</span>+<span class="built_in">int</span>(s[i])</span><br><span class="line">        <span class="keyword">if</span> s[i] <span class="keyword">in</span> symbol_list <span class="keyword">or</span> i == <span class="built_in">len</span>(s)-<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> pre_symbol == <span class="string">&quot;+&quot;</span>:</span><br><span class="line">                stack.append(num)</span><br><span class="line">            <span class="keyword">elif</span> pre_symbol == <span class="string">&quot;-&quot;</span>:</span><br><span class="line">                stack.append(-<span class="number">1</span>*num)</span><br><span class="line">            <span class="keyword">elif</span> pre_symbol == <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                stack.append(stack.pop()*num)</span><br><span class="line">            <span class="keyword">elif</span> pre_symbol == <span class="string">&quot;/&quot;</span>:</span><br><span class="line">                num_s = stack.pop()</span><br><span class="line">                <span class="keyword">if</span> num_s &lt; <span class="number">0</span>:</span><br><span class="line">                    num_s = -num_s</span><br><span class="line">                    stack.append(-(num_s//num))</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    stack.append(num_s//num)</span><br><span class="line">            pre_symbol = s[i]</span><br><span class="line">            num = <span class="number">0</span></span><br><span class="line">            <span class="comment">#print(stack)</span></span><br><span class="line">    <span class="built_in">print</span>(stack)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(stack)</span><br></pre></td></tr></table></figure></li>
@@ -593,7 +593,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <div id="local-search-result" class="local-search-result-cls"></div>
         <ul class="search-ul">
           <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <a q-attr="href:path" class="search-title">
+              <i class="icon-quo-left icon"></i>
+              <span q-text="title"></span>
+            </a>
             <p class="search-time">
               <i class="icon-calendar icon"></i>
               <span q-text="date|dateformat"></span>

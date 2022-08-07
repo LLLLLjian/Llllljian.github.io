@@ -73,7 +73,7 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共1180篇日志</a>	
+			<a href="/archives">共1195篇日志</a>	
 			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">42个标签</a>	
 		</nav>
 		<nav class="header-nav">
@@ -150,27 +150,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2018/201803/frame_YII22" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201803/frame_YII22.html">PHP_Yii框架 (22)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki4.html">HDwiki_源码分析 (4)</a>
     </h1>
   
 
         
-        <a href="/2018/201803/frame_YII22.html" class="archive-article-date">
-  	<time datetime="2018-03-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
+        <a href="/2018/201803/openSource_HDwiki4.html" class="archive-article-date">
+  	<time datetime="2018-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据提供器"><a href="#数据提供器" class="headerlink" title="数据提供器"></a>数据提供器</h3><pre><code>数据提供者是一个实现了 yii\data\DataProviderInterface 接口的类. 它主要用于获取分页和数据排序.它经常用在 data widgets 小物件里,方便终端用户进行分页与数据排序
+        <h3 id="models"><a href="#models" class="headerlink" title="models"></a>models</h3><pre><code>MVC中的模型model 主要负责功能部分,绝大部分的功能在此实现,模型对整个功能负责,它能调用数据库或者缓存文件得到数据.
+
+模型(model)文件存放于 model文件夹中,命名基本以功能为主,例如doc.class.php表示就是词条相关的模型,user.class.php就是用户相关的模型
 </code></pre>
         
       
@@ -185,7 +187,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -195,7 +197,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201803/frame_YII22.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki4.html">展开全文 >></a>
         </p>
       
 
@@ -225,27 +227,29 @@
 
 
   
-    <article id="post-2018/201803/frame_YII21" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201803/frame_YII21.html">PHP_Yii框架 (21)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki3.html">HDwiki_源码分析 (3)</a>
     </h1>
   
 
         
-        <a href="/2018/201803/frame_YII21.html" class="archive-article-date">
-  	<time datetime="2018-03-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+        <a href="/2018/201803/openSource_HDwiki3.html" class="archive-article-date">
+  	<time datetime="2018-03-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h4><pre><code>当一次要在一个页面上显示很多数据时, 通常需要将其分成几部分, 每个部分都包含一些数据列表并且一次只显示一部分.使用条件: 数据量过多或者表过大,否则直接使用ActiveDataProvider即可
+        <h3 id="control"><a href="#control" class="headerlink" title="control"></a>control</h3><pre><code>MVC中的控制器control 主要负责业务逻辑部分,所有的功能逻辑全部在此实现,控制器对整个功能负责,它调用模型(model)的方法实现它需要的功能,调用视图(view)的方法来显示数据.
+
+控制器(control)文件存放于 control/文件夹中,命名基本以功能为主,例如doc.php表示就是词条相关的控制器,user.php就是用户相关的控制
 </code></pre>
         
       
@@ -260,7 +264,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -270,7 +274,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201803/frame_YII21.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki3.html">展开全文 >></a>
         </p>
       
 
@@ -300,27 +304,27 @@
 
 
   
-    <article id="post-2018/201803/frame_YII20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201803/frame_YII20.html">PHP_Yii框架 (20)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki2.html">HDwiki_源码分析 (2)</a>
     </h1>
   
 
         
-        <a href="/2018/201803/frame_YII20.html" class="archive-article-date">
-  	<time datetime="2018-03-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-02</time>
+        <a href="/2018/201803/openSource_HDwiki2.html" class="archive-article-date">
+  	<time datetime="2018-03-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据格式器"><a href="#数据格式器" class="headerlink" title="数据格式器"></a>数据格式器</h3><h4 id="配置Formatter"><a href="#配置Formatter" class="headerlink" title="配置Formatter"></a>配置Formatter</h4><pre><code><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> [</span><br><span class="line">    <span class="string">&#x27;charset&#x27;</span> =&gt; <span class="string">&#x27;utf-8&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;language&#x27;</span> =&gt; <span class="string">&#x27;zh-CN&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;timeZone&#x27;</span> =&gt; <span class="string">&#x27;Asia/Shanghai&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;components&#x27;</span> =&gt; [</span><br><span class="line">        <span class="string">&#x27;formatter&#x27;</span> =&gt; [</span><br><span class="line">            <span class="string">&#x27;dateFormat&#x27;</span> =&gt; <span class="string">&#x27;yyyy-MM-dd&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;timeFormat&#x27;</span> =&gt; <span class="string">&#x27;HH:mm:ss&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;datetimeFormat&#x27;</span> =&gt; <span class="string">&#x27;yyyy-MM-dd HH:mm:ss&#x27;</span>,</span><br><span class="line">            <span class="comment">// 十分位之前的隔开符</span></span><br><span class="line">            <span class="string">&#x27;decimalSeparator&#x27;</span> =&gt; <span class="string">&#x27;.&#x27;</span>,</span><br><span class="line">            <span class="comment">// 千位隔开符</span></span><br><span class="line">            <span class="string">&#x27;thousandSeparator&#x27;</span> =&gt; <span class="string">&#x27;,&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;locale&#x27;</span> =&gt; <span class="string">&#x27;zh-CN&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;currencyCode&#x27;</span> =&gt; <span class="string">&#x27;CNY&#x27;</span>,</span><br><span class="line">        ],</span><br><span class="line">    ],</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+        <h3 id="5-1源码分析"><a href="#5-1源码分析" class="headerlink" title="5.1源码分析"></a>5.1源码分析</h3><pre><code>最新版本是6.0 还没有看.这里主要说一下HDwiki5.1 
 </code></pre>
         
       
@@ -335,7 +339,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -345,7 +349,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201803/frame_YII20.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki2.html">展开全文 >></a>
         </p>
       
 
@@ -375,27 +379,27 @@
 
 
   
-    <article id="post-2018/201803/frame_YII19" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/openSource_HDwiki1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201803/frame_YII19.html">PHP_Yii框架 (19)</a>
+      <a class="article-title" href="/2018/201803/openSource_HDwiki1.html">HDwiki_开源 (1)</a>
     </h1>
   
 
         
-        <a href="/2018/201803/frame_YII19.html" class="archive-article-date">
-  	<time datetime="2018-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
+        <a href="/2018/201803/openSource_HDwiki1.html" class="archive-article-date">
+  	<time datetime="2018-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><pre><code>在Yii里上传文件通常使用yii\web\UploadedFile类, 它把每个上传的文件封装成 UploadedFile 对象
+        <h3 id="HDwiki"><a href="#HDwiki" class="headerlink" title="HDwiki"></a>HDwiki</h3><pre><code>HDwiki是一个开源的wiki系统,二次开发起来还是比较方便的,花时间说一说自己的理解和心得
 </code></pre>
         
       
@@ -410,7 +414,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HDwiki</a>
         		</li>
       		
 		</ul>
@@ -420,7 +424,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201803/frame_YII19.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/openSource_HDwiki1.html">展开全文 >></a>
         </p>
       
 
@@ -450,28 +454,27 @@
 
 
   
-    <article id="post-2018/201802/frame_YII18" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII33" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII18.html">PHP_Yii框架 (18)</a>
+      <a class="article-title" href="/2018/201803/frame_YII33.html">PHP_Yii框架 (33)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII18.html" class="archive-article-date">
-  	<time datetime="2018-02-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
+        <a href="/2018/201803/frame_YII33.html" class="archive-article-date">
+  	<time datetime="2018-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="输入验证"><a href="#输入验证" class="headerlink" title="输入验证"></a>输入验证</h4><pre><code>对用户输入的内容始终保持怀疑态度,后台需要经过验证之后再进行处理
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用 yii\base\Model::validate() 方法验证用户输入的内容.</span></span><br><span class="line"><span class="comment">// 该方法会返回一个布尔值,指明是否通过验证.</span></span><br><span class="line"><span class="comment">// 若没有通过,可以通过 yii\base\Model::errors 属性获取相应的报错信息</span></span><br><span class="line"><span class="variable">$model</span> = <span class="keyword">new</span> \app\models\<span class="title function_ invoke__">ContactForm</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// populate model attributes with user inputs</span></span><br><span class="line"><span class="variable">$model</span>-&gt;<span class="title function_ invoke__">load</span>(<span class="title class_">\Yii</span>::<span class="variable">$app</span>-&gt;request-&gt;<span class="title function_ invoke__">post</span>());</span><br><span class="line"><span class="comment">// which is equivalent to the following:</span></span><br><span class="line"><span class="comment">// $model-&gt;attributes = \Yii::$app-&gt;request-&gt;post(&#x27;ContactForm&#x27;);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$model</span>-&gt;<span class="title function_ invoke__">validate</span>()) &#123;</span><br><span class="line">    <span class="comment">// all inputs are valid</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// validation failed: $errors is an array containing error messages</span></span><br><span class="line">    <span class="variable">$errors</span> = <span class="variable">$model</span>-&gt;errors;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="yii使用小技巧"><a href="#yii使用小技巧" class="headerlink" title="yii使用小技巧"></a>yii使用小技巧</h3><pre><code>写一些yii使用的小技巧
 </code></pre>
         
       
@@ -496,7 +499,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII18.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII33.html">展开全文 >></a>
         </p>
       
 
@@ -526,27 +529,27 @@
 
 
   
-    <article id="post-2018/201802/frame_YII17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII32" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII17.html">PHP_Yii框架 (17)</a>
+      <a class="article-title" href="/2018/201803/frame_YII32.html">PHP_Yii框架 (32)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII17.html" class="archive-article-date">
-  	<time datetime="2018-02-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
+        <a href="/2018/201803/frame_YII32.html" class="archive-article-date">
+  	<time datetime="2018-03-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="创建表单"><a href="#创建表单" class="headerlink" title="创建表单"></a>创建表单</h4><pre><code>在 Yii 中使用表单的主要方式是通过 yii\widgets\ActiveForm.如果是基于 模型的表单应首选这种方式.此外,在 yii\helpers\Html中也有一些实用的 方法用于添加按钮和帮助文本
+        <h3 id="关于无限分类"><a href="#关于无限分类" class="headerlink" title="关于无限分类"></a>关于无限分类</h3><pre><code>无限分类的基础前提:需要有一个分类表,必须字段为id,name,pid
 </code></pre>
         
       
@@ -571,7 +574,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII17.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII32.html">展开全文 >></a>
         </p>
       
 
@@ -601,27 +604,27 @@
 
 
   
-    <article id="post-2018/201802/frame_YII16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII31" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII16.html">PHP_Yii框架 (16)</a>
+      <a class="article-title" href="/2018/201803/frame_YII31.html">PHP_Yii框架 (31)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII16.html" class="archive-article-date">
-  	<time datetime="2018-02-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
+        <a href="/2018/201803/frame_YII31.html" class="archive-article-date">
+  	<time datetime="2018-03-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="活动记录"><a href="#活动记录" class="headerlink" title="活动记录"></a>活动记录</h3><pre><code>活动记录(ActiveRecord)提供了数据库与模型(MVC 中的 M,Model) 的交互
+        <h3 id="Url助手类"><a href="#Url助手类" class="headerlink" title="Url助手类"></a>Url助手类</h3><pre><code>帮助我们更好的管理URL
 </code></pre>
         
       
@@ -646,7 +649,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII16.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII31.html">展开全文 >></a>
         </p>
       
 
@@ -676,27 +679,27 @@
 
 
   
-    <article id="post-2018/201802/frame_YII15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII30" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII15.html">PHP_Yii框架 (15)</a>
+      <a class="article-title" href="/2018/201803/frame_YII30.html">PHP_Yii框架 (30)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII15.html" class="archive-article-date">
-  	<time datetime="2018-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-12</time>
+        <a href="/2018/201803/frame_YII30.html" class="archive-article-date">
+  	<time datetime="2018-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="查询生成器"><a href="#查询生成器" class="headerlink" title="查询生成器"></a>查询生成器</h3><pre><code>查询生成器(QueryBuilder)用于创建动态的查询语句
+        <h3 id="Html助手类"><a href="#Html助手类" class="headerlink" title="Html助手类"></a>Html助手类</h3><pre><code>在视图页面生成相应的html代码
 </code></pre>
         
       
@@ -721,7 +724,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII15.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII30.html">展开全文 >></a>
         </p>
       
 
@@ -751,27 +754,27 @@
 
 
   
-    <article id="post-2018/201802/frame_YII14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII29" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII14.html">PHP_Yii框架 (14)</a>
+      <a class="article-title" href="/2018/201803/frame_YII29.html">PHP_Yii框架 (29)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII14.html" class="archive-article-date">
-  	<time datetime="2018-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
+        <a href="/2018/201803/frame_YII29.html" class="archive-article-date">
+  	<time datetime="2018-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据访问层"><a href="#数据访问层" class="headerlink" title="数据访问层"></a>数据访问层</h3><pre><code>数据访问层(DAO)提供了简单高效的SQL查询,可以用在与数据库交互的各个地方
+        <h3 id="数组助手类"><a href="#数组助手类" class="headerlink" title="数组助手类"></a>数组助手类</h3><pre><code>更高效地处理数组或者对象
 </code></pre>
         
       
@@ -796,7 +799,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII14.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII29.html">展开全文 >></a>
         </p>
       
 
@@ -826,28 +829,27 @@
 
 
   
-    <article id="post-2018/201802/frame_YII13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201803/frame_YII28" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201802/frame_YII13.html">PHP_Yii框架 (13)</a>
+      <a class="article-title" href="/2018/201803/frame_YII28.html">PHP_Yii框架 (28)</a>
     </h1>
   
 
         
-        <a href="/2018/201802/frame_YII13.html" class="archive-article-date">
-  	<time datetime="2018-02-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-09</time>
+        <a href="/2018/201803/frame_YII28.html" class="archive-article-date">
+  	<time datetime="2018-03-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h3><pre><code>具体的可以看文档,简单记录一下自己使用的三个和两个典型的例子
-</code></pre>
+        <h3 id="核心验证器"><a href="#核心验证器" class="headerlink" title="核心验证器"></a>核心验证器</h3><p>觉得麻烦可以直接看<a href="/2018/201802/frame_YII16/#%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81">数据验证</a><br>    Yii 提供一系列常用的核心验证器,位于 yii\validators 命名空间之下. 为了避免使用冗长的类名,你可以直接用别名来指定相应的核心验证器<br>    <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rules</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line"></span><br><span class="line">    ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
         
       
 
@@ -871,7 +873,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201802/frame_YII13.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201803/frame_YII28.html">展开全文 >></a>
         </p>
       
 
@@ -903,7 +905,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/112/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/111/">111</a><a class="page-number" href="/page/112/">112</a><span class="page-number current">113</span><a class="page-number" href="/page/114/">114</a><a class="page-number" href="/page/115/">115</a><span class="space">&hellip;</span><a class="page-number" href="/page/118/">118</a><a class="extend next" rel="next" href="/page/114/">下一页</a>
+      <a class="extend prev" rel="prev" href="/page/112/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/111/">111</a><a class="page-number" href="/page/112/">112</a><span class="page-number current">113</span><a class="page-number" href="/page/114/">114</a><a class="page-number" href="/page/115/">115</a><span class="space">&hellip;</span><a class="page-number" href="/page/120/">120</a><a class="extend next" rel="next" href="/page/114/">下一页</a>
     </nav>
   
 
@@ -1038,11 +1040,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

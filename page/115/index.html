@@ -73,7 +73,7 @@
             
 		</nav>
 		<nav class="header-smart-menu">
-			<a href="/archives">共1180篇日志</a>	
+			<a href="/archives">共1195篇日志</a>	
 			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">42个标签</a>	
 		</nav>
 		<nav class="header-nav">
@@ -150,38 +150,409 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2018/201801/frame_YII2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201802/frame_YII17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/frame_YII2.html">PHP_Yii框架 (2)</a>
+      <a class="article-title" href="/2018/201802/frame_YII17.html">PHP_Yii框架 (17)</a>
     </h1>
   
 
         
-        <a href="/2018/201801/frame_YII2.html" class="archive-article-date">
-  	<time datetime="2018-01-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
+        <a href="/2018/201802/frame_YII17.html" class="archive-article-date">
+  	<time datetime="2018-02-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="请求生命周期"><a href="#请求生命周期" class="headerlink" title="请求生命周期"></a>请求生命周期</h3><ul>
-<li>用户向入口脚本 web&#x2F;index.php 发起请求.</li>
-<li>入口脚本加载应用配置并创建一个应用 实例去处理请求.</li>
-<li>应用通过请求组件解析请求的 路由.</li>
-<li>应用创建一个控制器实例去处理请求.</li>
-<li>控制器创建一个动作实例并针对操作执行过滤器.</li>
-<li>如果任何一个过滤器返回失败,则动作取消.</li>
-<li>如果所有过滤器都通过,动作将被执行.</li>
-<li>动作会加载一个数据模型,或许是来自数据库.</li>
-<li>动作会渲染一个视图,把数据模型提供给它.</li>
-<li>渲染结果返回给响应组件.</li>
-<li>响应组件发送渲染结果给用户浏览器</li>
+        <h4 id="创建表单"><a href="#创建表单" class="headerlink" title="创建表单"></a>创建表单</h4><pre><code>在 Yii 中使用表单的主要方式是通过 yii\widgets\ActiveForm.如果是基于 模型的表单应首选这种方式.此外,在 yii\helpers\Html中也有一些实用的 方法用于添加按钮和帮助文本
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII17.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII16.html">PHP_Yii框架 (16)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII16.html" class="archive-article-date">
+  	<time datetime="2018-02-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="活动记录"><a href="#活动记录" class="headerlink" title="活动记录"></a>活动记录</h3><pre><code>活动记录(ActiveRecord)提供了数据库与模型(MVC 中的 M,Model) 的交互
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII16.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII15.html">PHP_Yii框架 (15)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII15.html" class="archive-article-date">
+  	<time datetime="2018-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="查询生成器"><a href="#查询生成器" class="headerlink" title="查询生成器"></a>查询生成器</h3><pre><code>查询生成器(QueryBuilder)用于创建动态的查询语句
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII15.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII14.html">PHP_Yii框架 (14)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII14.html" class="archive-article-date">
+  	<time datetime="2018-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数据访问层"><a href="#数据访问层" class="headerlink" title="数据访问层"></a>数据访问层</h3><pre><code>数据访问层(DAO)提供了简单高效的SQL查询,可以用在与数据库交互的各个地方
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII14.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII13.html">PHP_Yii框架 (13)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII13.html" class="archive-article-date">
+  	<time datetime="2018-02-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h3><pre><code>具体的可以看文档,简单记录一下自己使用的三个和两个典型的例子
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII13.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII12.html">PHP_Yii框架 (12)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII12.html" class="archive-article-date">
+  	<time datetime="2018-02-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><ul>
+<li>Yii 内置了一个error handler错误处理器,它使错误处理更方便, Yii错误处理器做以下工作来提升错误处理效果: <ul>
+<li>所有非致命PHP错误(如,警告,提示)会转换成可获取异常；</li>
+<li>异常和致命的PHP错误会被显示, 在调试模式会显示详细的函数调用栈和源代码行数.</li>
+<li>支持使用专用的 控制器操作 来显示错误；</li>
+<li>支持不同的错误响应格式；</li>
+</ul>
+</li>
 </ul>
         
       
@@ -206,7 +577,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/frame_YII2.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201802/frame_YII12.html">展开全文 >></a>
         </p>
       
 
@@ -236,41 +607,189 @@
 
 
   
-    <article id="post-2018/201801/frame_YII" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201802/frame_YII11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/frame_YII.html">PHP_Yii框架 (1)</a>
+      <a class="article-title" href="/2018/201802/frame_YII11.html">PHP_Yii框架 (11)</a>
     </h1>
   
 
         
-        <a href="/2018/201801/frame_YII.html" class="archive-article-date">
-  	<time datetime="2018-01-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
+        <a href="/2018/201802/frame_YII11.html" class="archive-article-date">
+  	<time datetime="2018-02-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="关于Yii"><a href="#关于Yii" class="headerlink" title="关于Yii"></a>关于Yii</h3><ul>
-<li>Yii 是一个高性能,基于组件的 PHP 框架,用于快速开发现代 Web 应用程序. 名字 Yii (读作 易)在中文里有“极致简单与不断演变”两重含义, 也可看作 Yes It Is! 的缩写.</li>
-</ul>
-<h3 id="Yii特点"><a href="#Yii特点" class="headerlink" title="Yii特点"></a>Yii特点</h3><ul>
-<li>最适合做什么<ul>
-<li>Yii 是一个通用的 Web 编程框架,即可以用于开发各种用 PHP 构建的 Web 应用. 因为基于组件的框架结构和设计精巧的缓存支持,它特别适合开发大型应用, 如门户网站、社区、内容管理系统(CMS)、 电子商务项目和 RESTful Web 服务等.</li>
-</ul>
-</li>
-<li>与其他框架相比<ul>
-<li>实现了 MVC(Model-View-Controller)设计模式并基于该模式组织代码.</li>
-<li>代码简洁优雅</li>
-<li>是一个全栈框架,提供了大量久经考验,开箱即用的特性:  对关系型和 NoSQL 数据库都提供了查询生成器和 ActiveRecord；RESTful API 的开发支持；多层缓存支持,等等</li>
-<li>非常易于扩展</li>
-<li>高性能</li>
-<li>社区多,开发者团队持续跟进开发</li>
+        <h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><pre><code>在纯 PHP 中,可以分别使用全局变量 $_SESSION 和 $_COOKIE 来访问,Yii 将 session 和 cookie 封装成对象并增加一些功能, 可通过面向对象方式访问它们
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII11.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII10.html">PHP_Yii框架 (10)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII10.html" class="archive-article-date">
+  	<time datetime="2018-02-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><pre><code>一个应用的请求是用 yii\web\Request 对象来表示的,该对象提供了诸如 请求参数(通常是GET参数或者POST参数)、HTTP头、cookies等信息
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/201802/frame_YII10.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2018/201802/frame_YII9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/201802/frame_YII9.html">PHP_Yii框架 (9)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/201802/frame_YII9.html" class="archive-article-date">
+  	<time datetime="2018-02-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="请求处理"><a href="#请求处理" class="headerlink" title="请求处理"></a>请求处理</h3><ul>
+<li>运行机制概述<ul>
+<li>用户提交指向 入口脚本 web&#x2F;index.php 的请求.</li>
+<li>入口脚本会加载 配置数组 并创建一个 应用 实例用于处理该请求.</li>
+<li>应用会通过 request(请求) 应用组件 解析被请求的 路由.</li>
+<li>应用创建一个 controller(控制器) 实例具体处理请求.</li>
+<li>控制器会创建一个 action(动作) 实例并为该动作执行相关的 Filters(访问过滤器).</li>
+<li>如果任何一个过滤器验证失败,该动作会被取消.</li>
+<li>如果全部的过滤器都通过,该动作就会被执行.</li>
+<li>动作会加载一个数据模型,一般是从数据库中加载.</li>
+<li>动作会渲染一个 View(视图),并为其提供所需的数据模型.</li>
+<li>渲染得到的结果会返回给 response(响应) 应用组件.</li>
+<li>响应组件会把渲染结果发回给用户的浏览器.</li>
 </ul>
 </li>
 </ul>
@@ -297,7 +816,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/frame_YII.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201802/frame_YII9.html">展开全文 >></a>
         </p>
       
 
@@ -327,27 +846,27 @@
 
 
   
-    <article id="post-2018/201801/form_COMMON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018/201802/frame_YII8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/form_COMMON.html">公用_表单</a>
+      <a class="article-title" href="/2018/201802/frame_YII8.html">PHP_Yii框架 (8)</a>
     </h1>
   
 
         
-        <a href="/2018/201801/form_COMMON.html" class="archive-article-date">
-  	<time datetime="2018-01-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-24</time>
+        <a href="/2018/201802/frame_YII8.html" class="archive-article-date">
+  	<time datetime="2018-02-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="用户注册表单"><a href="#用户注册表单" class="headerlink" title="用户注册表单"></a>用户注册表单</h2><pre><code>基于jQuery的一些表单验证判断(需要添加部分css样式)
+        <h3 id="前端资源"><a href="#前端资源" class="headerlink" title="前端资源"></a>前端资源</h3><pre><code>Yii中的资源是和Web页面相关的文件,可为CSS文件,JavaScript文件,图片或视频等, 资源放在Web可访问的目录下,直接被Web服务器调用
 </code></pre>
         
       
@@ -362,7 +881,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">COMMON</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Yii</a>
         		</li>
       		
 		</ul>
@@ -372,583 +891,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/form_COMMON.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/function_JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/function_JS.html">javascript_功能</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/function_JS.html" class="archive-article-date">
-  	<time datetime="2018-01-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="禁用退格键"><a href="#禁用退格键" class="headerlink" title="禁用退格键"></a>禁用退格键</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">onkeydown</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    e = e||event; </span><br><span class="line">    <span class="keyword">if</span>(e.<span class="property">keyCode</span> == <span class="number">8</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果是在textarea内不执行任何操作</span></span><br><span class="line">        <span class="keyword">var</span> obj = e.<span class="property">srcElement</span> || e.<span class="property">target</span>;</span><br><span class="line">        <span class="keyword">var</span> tag=obj.<span class="property">tagName</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line">            <span class="keyword">if</span>(tag != <span class="string">&quot;input&quot;</span>  &amp;&amp; tag != <span class="string">&quot;textarea&quot;</span> &amp;&amp; tag != <span class="string">&quot;password&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;         </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/function_JS.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JQ5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JQ5.html">jQuery_基础 (5)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JQ5.html" class="archive-article-date">
-  	<time datetime="2018-01-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="jQuery-AJAX"><a href="#jQuery-AJAX" class="headerlink" title="jQuery AJAX"></a>jQuery AJAX</h2><h3 id="load"><a href="#load" class="headerlink" title="load"></a>load</h3><pre><code>经常用于加载一段代码
-</code></pre>
-<ul>
-<li>$obj.load(url)<ul>
-<li>url : 指的是服务器的一个html文件的路径</li>
-<li>功能 : 向服务器请求一段html代码加载到(appendTO) $obj</li>
-</ul>
-</li>
-<li>$obj.load(url, 回调函数)<ul>
-<li>url : 指的是服务器的一个html文件的路径</li>
-<li>回调函数 : 可以在数据加载完毕之后进行的一些处理</li>
-</ul>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JQ5.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JQ4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JQ4.html">jQuery_基础 (4)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JQ4.html" class="archive-article-date">
-  	<time datetime="2018-01-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="自定义事件和内置动画"><a href="#自定义事件和内置动画" class="headerlink" title="自定义事件和内置动画"></a>自定义事件和内置动画</h2><h3 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h3><ul>
-<li>.trigger(“事件名”)<ul>
-<li>在每一个匹配的元素上触发某类事件  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">trigger</span>(<span class="string">&quot;click&quot;</span>);</span><br><span class="line">$(<span class="string">&quot;input&quot;</span>).<span class="title function_">trigger</span>(<span class="string">&quot;focus&quot;</span>);</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JQ4.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JQ3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JQ3.html">jQuery_基础 (3)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JQ3.html" class="archive-article-date">
-  	<time datetime="2018-01-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关于事件"><a href="#关于事件" class="headerlink" title="关于事件"></a>关于事件</h2><h3 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h3><ul>
-<li>基本用法<ul>
-<li>on(“事件名”, 响应函数) <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是点击事件&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>多个事件添加同一个函数<ul>
-<li>on(“事件名 事件名”, 响应函数)  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click mouseover&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是点击事件&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>一次性添加多个事件的响应<ul>
-<li>on({“事件名1” : “响应函数1”, “事件名2” : “响应函数2”, “事件名n” : “响应函数n”,})  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(&#123;</span><br><span class="line">    <span class="string">&quot;click&quot;</span> : <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;click&quot;</span>);&#125;,</span><br><span class="line">    <span class="string">&quot;mouseover&quot;</span> : <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;mouseover&quot;</span>);&#125;,</span><br><span class="line">    <span class="string">&quot;mouseout&quot;</span> : <span class="keyword">function</span>(<span class="params"></span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;mouseout&quot;</span>);&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JQ3.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JQ2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JQ2.html">jQuery_基础 (2)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JQ2.html" class="archive-article-date">
-  	<time datetime="2018-01-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="获取设置节点的属性"><a href="#获取设置节点的属性" class="headerlink" title="获取设置节点的属性"></a>获取设置节点的属性</h3><ul>
-<li>$(“”).attr(“属性值”)<ul>
-<li>设置或返回被选元素的属性值</li>
-<li>返回 : $(“.box”).attr(“title”)</li>
-<li>设置<ul>
-<li>设置元素指定属性的属性值<ul>
-<li>attr(“属性名”, “属性值”)</li>
-<li>$(“.box”).attr(“title”, ‘title_value’)</li>
-</ul>
-</li>
-<li>设置多个属性的属性值<ul>
-<li>attr(“属性名1”:”属性值1”, “属性名2”:”属性值值2”)</li>
-<li>$(“.box”).attr(“title”:”1111”, ‘my’:’2222’)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JQ2.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JQ" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JQ.html">jQuery_基础 (1)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JQ.html" class="archive-article-date">
-  	<time datetime="2018-01-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
-<li>DOM对象 : 通过原生js获取的是DOM对象(DOM树上的节点就是DOM对象)</li>
-<li>jQuery对象 : 通过jQuery选择器获得的是jQuery对象</li>
-<li>jQuery对象只能使用jQuery中封装的方法,不能使用DOM对象的方法</li>
-<li>DOM对象只能使用DOM的方法不能使用jQuery中封装的方法</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JQ.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018/201801/base_JS8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/201801/base_JS8.html">JavaScript_基础 (8)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/201801/base_JS8.html" class="archive-article-date">
-  	<time datetime="2018-01-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="BOM基本操作"><a href="#BOM基本操作" class="headerlink" title="BOM基本操作"></a>BOM基本操作</h2><h3 id="BOM含义"><a href="#BOM含义" class="headerlink" title="BOM含义"></a>BOM含义</h3><pre><code>浏览器对象模型(BOM): 与浏览器交互的方法和接口
-Browser Object Model
-BOM 是为了操作浏览器出现的 API,window 是其的一个对象.
-</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/201801/base_JS8.html">展开全文 >></a>
+          <a class="article-more-a" href="/2018/201802/frame_YII8.html">展开全文 >></a>
         </p>
       
 
@@ -980,7 +923,7 @@ BOM 是为了操作浏览器出现的 API,window 是其的一个对象.
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/114/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/113/">113</a><a class="page-number" href="/page/114/">114</a><span class="page-number current">115</span><a class="page-number" href="/page/116/">116</a><a class="page-number" href="/page/117/">117</a><a class="page-number" href="/page/118/">118</a><a class="extend next" rel="next" href="/page/116/">下一页</a>
+      <a class="extend prev" rel="prev" href="/page/114/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/113/">113</a><a class="page-number" href="/page/114/">114</a><span class="page-number current">115</span><a class="page-number" href="/page/116/">116</a><a class="page-number" href="/page/117/">117</a><span class="space">&hellip;</span><a class="page-number" href="/page/120/">120</a><a class="extend next" rel="next" href="/page/116/">下一页</a>
     </nav>
   
 
@@ -1115,11 +1058,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
